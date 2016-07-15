@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:background="@color/steel"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent" android:background="@color/steel"
+        android:layout_height="48dp" android:orientation="horizontal" android:id="@+id/n_title">
+
+
+        <ImageButton
+            android:layout_width="30dp" android:layout_centerVertical="true" android:layout_marginStart="8dp" android:layout_marginLeft="8dp"
+            android:layout_height="30dp" android:background="@drawable/ic_arrow_back_p_24dp"
+            android:id="@+id/n_backImageButton" />
+        <ImageButton
+            android:layout_width="33dp" android:layout_centerVertical="true" android:layout_marginRight="8dp" android:layout_marginEnd="8dp"
+            android:layout_height="33dp" android:background="@drawable/ic_clear_all_black_24dp" android:layout_alignParentRight="true"
+
+            android:id="@+id/n_clearAllImageButton" />
+
+
+        <TextView
+            android:layout_width="match_parent" android:textColor="@color/windowBackground"
+            android:layout_height="30dp" android:textSize="18dp"
+            android:text="NOTIFICATIONS"
+            android:id="@+id/n_title_tv" android:gravity="center_horizontal|center_vertical"
+            android:layout_alignTop="@+id/n_backImageButton"
+            android:layout_alignLeft="@+id/n_backImageButton"
+            android:layout_alignStart="@+id/n_backImageButton" />
+
+
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/n_recycler_view" android:background="@color/steel"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"  android:padding="10dp"
+        android:layout_weight="1"
+        />
+
+    <TextView
+        android:layout_width="match_parent" android:layout_gravity="center_horizontal|center_vertical"
+        android:layout_height="match_parent" android:gravity="center" android:visibility="gone"
+        android:text="You don't have any notifications." android:paddingBottom="100dp"
+        android:id="@+id/n_placeholder" />
+
+</LinearLayout>

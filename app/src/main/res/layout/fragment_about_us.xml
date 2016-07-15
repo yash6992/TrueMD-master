@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:background="@color/window100"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent" android:background="@color/window100"
+        android:layout_height="48dp" android:orientation="horizontal" android:id="@+id/od_title">
+
+
+        <ImageButton
+            android:layout_width="30dp" android:background="?attr/selectableItemBackground"
+            android:clickable="true" android:layout_centerVertical="true" android:layout_marginStart="8dp" android:layout_marginLeft="8dp"
+            android:layout_height="30dp" android:src="@drawable/ic_arrow_back_p_24dp"
+            android:id="@+id/od_backImageButton"  />
+
+        <TextView
+            android:layout_width="match_parent" android:textColor="@color/windowBackground"
+            android:layout_height="30dp" android:textSize="18dp"
+            android:text="ABOUT US"
+            android:id="@+id/od_title_tv" android:gravity="center_horizontal|center_vertical"
+            android:layout_alignTop="@+id/od_backImageButton"
+            android:layout_alignLeft="@+id/od_backImageButton"
+            android:layout_alignStart="@+id/od_backImageButton" />
+
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent" android:layout_below="@+id/od_title"
+        android:layout_height="wrap_content" android:layout_marginTop="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:id="@+id/imageView6" android:src="@mipmap/ic_launcher"
+
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:padding="20dp"
+        android:text="New Text" android:textColor="@color/windowBackground"
+        android:id="@+id/textabout" android:textSize="13dp"
+        android:layout_below="@+id/imageView6"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp" />
+        </RelativeLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

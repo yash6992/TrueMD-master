@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/windowBackground"
+    android:layout_height="fill_parent"
+    android:fitsSystemWindows="true"
+    android:id="@+id/sv_register">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="0dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp">
+        <ImageButton
+            android:layout_width="wrap_content" android:background="@drawable/ic_arrow_back_white_24dp"
+            android:layout_height="wrap_content" android:layout_marginLeft="18dp" android:layout_marginTop="18dp"
+            android:id="@+id/imageButtonToPreLogin"  />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent" android:id="@+id/truemdtitle_linear" android:gravity="center_horizontal"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:textSize="35dp"
+                android:text="TrueMD" android:textColor="@color/white" android:textStyle="bold"
+                android:id="@+id/truemdtitle_tv"
+                android:paddingTop="0dp"
+                android:layout_centerHorizontal="true" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:textSize="14dp"
+                android:text="Your Local Pharmacy, Reinvented" android:textColor="@color/white" android:textStyle="bold"
+                android:id="@+id/truemdsubtitle_tv"
+                android:paddingTop="5dp"
+                android:layout_centerHorizontal="true" />
+
+        </LinearLayout>
+
+        <!-- Name Label -->
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent" android:layout_margin="20dp" android:padding="10dp"
+            android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Small Text" android:visibility="gone"
+            android:id="@+id/txtResponse_signup"
+            android:layout_gravity="center_horizontal" />
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp">
+            <EditText android:id="@+id/input_name"
+                android:layout_width="match_parent" android:textSize="14dp"
+                android:layout_height="wrap_content"
+                android:inputType="textCapWords" android:textColor="@color/windowBackground"
+                android:hint="Name" />
+        </android.support.design.widget.TextInputLayout>
+
+        <!--  Email Label -->
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp">
+            <EditText android:id="@+id/input_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:textSize="14dp"
+                android:inputType="number" android:textColor="@color/windowBackground"
+                android:hint="Mobile No." android:maxLength="10" />
+        </android.support.design.widget.TextInputLayout>
+
+        <!-- Password Label -->
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp">
+            <EditText android:id="@+id/input_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:textSize="14dp"
+                android:inputType="textPassword" android:textColor="@color/windowBackground"
+                android:hint="Password (min. 8 character)"/>
+        </android.support.design.widget.TextInputLayout>
+        <LinearLayout
+            android:layout_width="wrap_content" android:orientation="horizontal"
+            android:layout_height="wrap_content">
+        <CheckBox
+            android:layout_width="wrap_content" android:buttonTint="@color/colorPrimary"
+            android:layout_height="wrap_content" android:textColor="@color/aluminum"
+            android:text="Agree to the " android:textSize="12.5dp"
+            android:id="@+id/checkBox" />
+            <TextView
+                android:layout_width="wrap_content" android:id="@+id/termstv" android:textSize="12.5dp" android:textColor="@color/colorPrimary"
+                android:layout_height="wrap_content" android:text="terms and conditions" />
+
+        </LinearLayout>
+
+        <com.zl.reik.dilatingdotsprogressbar.DilatingDotsProgressBar
+            android:id="@+id/signup_progress" android:layout_gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:radius="2dp" android:layout_centerHorizontal="true"
+            android:color="@color/windowBackground"  app:dd_animationDuration="500"
+            app:dd_numDots="6" android:layout_marginTop="15dp"
+            app:dd_scaleMultiplier="2.3"
+            app:dd_horizontalSpacing="12dp"
+            />
+
+        <!-- Signup Button -->
+
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btn_signup"
+            android:layout_width="fill_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="18dp" android:textColor="@color/white"
+            android:layout_marginBottom="24dp"
+            android:padding="12dp"
+            android:text="Create Account"/>
+
+
+        </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <TextView android:id="@+id/link_login" android:visibility="invisible"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:text="Already a member? SIGN IN"
+            android:gravity="center" android:textColor="@color/steel"
+            android:textSize="14dip"/>
+
+    </LinearLayout>
+</ScrollView>

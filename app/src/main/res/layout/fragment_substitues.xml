@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent" android:id="@+id/cardinfo" android:layout_marginTop="6dp" android:layout_marginBottom="20dp"
+        android:layout_height="wrap_content" android:layout_marginRight="10dp" android:layout_marginLeft="10dp" android:padding="0dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+            <TextView
+                android:layout_width="wrap_content" android:layout_marginStart="15dp" android:layout_marginLeft="15dp"
+                android:layout_height="wrap_content" android:text="Name" android:layout_marginTop="12dp"
+                android:id="@+id/name_md" android:textColor="@color/colorPrimary" android:textSize="18dp" />
+            <TextView
+                android:layout_width="wrap_content" android:layout_marginStart="15dp" android:layout_marginLeft="15dp"
+                android:layout_height="wrap_content" android:text="manufacturer" android:layout_below="@+id/name_md" android:layout_marginTop="4dp"
+                android:id="@+id/manufacturer_md" android:textColor="@color/monsoon" android:textSize="13dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0.25dp"
+                android:id="@+id/blackline_md" android:orientation="horizontal"
+                android:background="@color/black" android:layout_below="@+id/manufacturer_md"
+                android:layout_marginLeft="15dp" android:layout_marginTop="8dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp">
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent" android:id="@+id/price_ll_md" android:layout_below="@+id/blackline_md"
+                android:layout_height="wrap_content" android:layout_marginBottom="10dp" android:layout_marginTop="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content" android:layout_marginStart="15dp" android:layout_marginLeft="15dp"
+                    android:layout_height="wrap_content" android:text="Price" android:layout_marginTop="2dp"
+                    android:id="@+id/price_md" android:textColor="@color/colorPrimary" android:textSize="16dp" />
+                <TextView
+                    android:layout_width="wrap_content" android:layout_alignParentRight="true" android:layout_alignParentEnd="true" android:layout_marginStart="15dp" android:layout_marginLeft="15dp"
+                    android:layout_height="wrap_content" android:text="size" android:layout_marginTop="2dp" android:layout_marginRight="20dp" android:layout_marginEnd="20dp"
+                    android:id="@+id/size_md" android:textColor="@color/white" android:textSize="12dp" android:background="@drawable/shape2" />
+
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0.3dp" android:background="@color/colorPrimary"
+        android:layout_marginLeft="20dp" android:layout_marginTop="0dp"
+        android:layout_marginStart="20dp" android:layout_below="@+id/cardinfo"
+        android:layout_marginEnd="20dp" android:layout_marginBottom="0dp"
+        android:layout_marginRight="20dp"> </LinearLayout>
+
+    <com.zl.reik.dilatingdotsprogressbar.DilatingDotsProgressBar
+        android:id="@+id/progress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:layout_below="@+id/cardinfo"
+        android:radius="2dp" android:layout_centerHorizontal="true"
+        android:color="@color/windowBackground"  app:dd_animationDuration="500"
+        app:dd_numDots="6" android:layout_marginTop="10dp"
+        app:dd_scaleMultiplier="2.3"
+        app:dd_horizontalSpacing="12dp"
+        />
+
+    <ListView
+        android:id="@+id/listView" android:layout_marginTop="10dp" android:layout_below="@+id/progress"
+        android:layout_width="fill_parent" android:padding="2dp" android:background="@color/white"
+        android:layout_height="fill_parent" android:divider="@color/windowBackground" >
+    </ListView>
+
+    <ImageView
+        android:layout_width="match_parent" android:layout_below="@+id/progress"
+        android:layout_height="fill_parent" android:visibility="invisible" android:layout_margin="40dp"
+        android:background="@drawable/placeholder_no_subinfo"
+        android:id="@+id/placeholderImageView" android:adjustViewBounds="true" />
+</RelativeLayout>

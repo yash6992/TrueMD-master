@@ -1,0 +1,653 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/homefragmentView"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="0dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <ImageButton
+        android:layout_width="32dp" android:layout_margin="10dp"
+        android:layout_height="32dp"
+        android:id="@+id/image_button_drawer_home" android:background="@drawable/ic_drawer_icon"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+
+    <TextView
+        android:layout_width="100dp" android:layout_centerHorizontal="true" android:layout_alignParentTop="true"
+        android:layout_height="wrap_content" android:textColor="@color/windowBackground" android:layout_marginTop="6dp"
+        android:text="TrueMD" android:textSize="25dp"
+        android:id="@+id/hf_title" />
+
+
+    <ImageButton
+        android:layout_width="32dp" android:layout_margin="10dp"
+        android:layout_height="32dp" android:rotation="0"
+        android:id="@+id/image_notification_home" android:background="@drawable/ic_notifications_active_black_24dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <ir.afshin.stickyscrollviewlib.StickyScrollView
+        android:layout_width="match_parent" android:layout_below="@id/image_button_drawer_home"
+        android:layout_height="wrap_content" android:layout_marginLeft="12dp" android:layout_marginRight="12dp"
+        android:layout_above="@+id/home_relative_layout1" android:visibility="gone">
+        <RelativeLayout
+            android:layout_width="match_parent" android:padding="0dp"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="vertical" android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content" android:id="@+id/truemdtitle_linear" android:gravity="center_horizontal"
+                android:layout_height="wrap_content" android:layout_marginTop="15dp" >
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" android:textSize="40dp"
+                    android:text="TrueMD" android:textColor="@color/windowBackground" android:textStyle="bold"
+                    android:id="@+id/truemdtitle_tv" android:gravity="bottom|center_horizontal"
+                    android:paddingBottom="4dp" android:paddingRight="2dp" android:paddingEnd="2dp"
+                    android:layout_centerHorizontal="true" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" android:textSize="17dp"
+                    android:text="Your local pharmacy, Reinvented" android:textColor="@color/windowBackground"
+                    android:id="@+id/truemdsubtitle_tv" android:gravity="bottom|center_horizontal"
+                    android:paddingBottom="4dp" android:paddingRight="2dp" android:paddingEnd="2dp"
+                    android:layout_centerHorizontal="true" />
+
+            </LinearLayout>
+
+            <ir.afshin.stickyscrollviewlib.StickyHeader
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/stick"
+                android:layout_below="@+id/truemdtitle_linear"
+
+                android:layout_marginTop="11.5dp">
+
+                <LinearLayout
+                    android:id="@+id/cardview_home"
+                    android:layout_width="match_parent" android:background="@drawable/button_purple"
+                    android:layout_height="wrap_content" android:layout_marginRight="20dp" android:layout_marginLeft="20dp"
+                    >
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="38dp" android:id="@+id/search_relative_layout"
+                        android:orientation="horizontal"
+                        android:padding="0dp" >
+
+                        <TextView
+                            android:id="@+id/ss" android:text="Search over 1,00,000 + medicines"
+                            android:layout_width="wrap_content" android:layout_alignParentLeft="true" android:layout_centerVertical="true"
+                            android:layout_height="wrap_content" android:textColor="@color/white"
+                            android:layout_marginTop="5dp" android:paddingLeft="20dp" android:paddingStart="20dp"
+                            android:textSize="13dp"  />
+                        <ImageButton
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:id="@+id/imageCameraOnSearchBar" android:background="@drawable/ic_search_white_24dp"
+                            android:layout_alignParentEnd="true" android:layout_alignParentRight="true" android:layout_centerVertical="true"
+                            android:layout_marginRight="20dp" android:layout_marginEnd="10dp" />
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+            </ir.afshin.stickyscrollviewlib.StickyHeader>
+
+
+
+
+
+
+
+
+
+        </RelativeLayout>
+    </ir.afshin.stickyscrollviewlib.StickyScrollView>
+    <RelativeLayout
+        android:layout_width="match_parent" android:visibility="gone" android:background="@drawable/button_purple_ghost" android:layout_above="@+id/home_relative_layout2"
+        android:layout_height="wrap_content" android:layout_marginTop="0dp" android:layout_marginLeft="8dp" android:layout_marginRight="8dp"
+        android:id="@+id/home_relative_layout1">
+
+
+        <ImageView
+            android:layout_width="28dp"
+            android:layout_height="28dp" android:layout_centerInParent="true"
+            android:layout_alignParentRight="true" android:layout_alignParentEnd="true"
+            android:src="@drawable/ic_local_pharmacy_white_24dp"
+            android:layout_marginRight="15dp"
+            android:id="@+id/imageView1" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_margin="8dp" android:paddingLeft="15dp"
+            android:layout_marginStart="110dp" android:layout_marginLeft="110dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content" android:layout_alignParentLeft="true" android:layout_alignParentStart="true"
+                android:layout_height="wrap_content" android:layout_alignBottom="@+id/textView14"
+                android:textColor="@color/windowBackground" android:textSize="13dp" android:textStyle="bold"
+                android:text="ORDER MEDICINES"
+                android:id="@+id/textView15" />
+
+            <TextView
+                android:layout_width="wrap_content" android:layout_alignParentLeft="true" android:layout_alignParentStart="true"
+                android:layout_height="wrap_content"
+                android:textColor="@color/windowBackground" android:textSize="9dp" android:layout_marginTop="5dp"
+                android:text="Scan your prescription or simply reorder"
+                android:id="@+id/textView14" />
+        </LinearLayout>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent" android:visibility="gone"  android:background="@drawable/button_purple_ghost" android:layout_alignParentBottom="true"
+        android:layout_height="wrap_content" android:layout_marginBottom="12dp" android:layout_marginTop="15dp" android:layout_marginLeft="20dp" android:layout_marginRight="20dp"
+        android:id="@+id/home_relative_layout2">
+
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp" android:layout_centerInParent="true"
+            android:layout_alignParentRight="true" android:layout_alignParentEnd="true"
+            android:src="@drawable/ic_alarm_white_24dp"
+            android:layout_marginRight="14dp"
+            android:id="@+id/imageView2" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_margin="8dp" android:paddingLeft="15dp"
+            android:layout_marginStart="110dp" android:layout_marginLeft="110dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content" android:layout_alignParentLeft="true" android:layout_alignParentStart="true"
+                android:layout_height="wrap_content" android:layout_alignBottom="@+id/textView24"
+                android:textColor="@color/windowBackground" android:textSize="13dp" android:textStyle="bold"
+                android:text="MEDICATION REMINDERS"
+                android:id="@+id/textView25" />
+
+            <TextView
+                android:layout_width="wrap_content" android:layout_alignParentLeft="true" android:layout_alignParentStart="true"
+                android:layout_height="wrap_content"
+                android:textColor="@color/windowBackground" android:textSize="9dp" android:layout_marginTop="5dp"
+                android:text="Managing medicine reminders made easy "
+                android:id="@+id/textView24" />
+        </LinearLayout>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent" android:visibility="gone" android:background="@drawable/button_purple_ghost"
+        android:layout_height="wrap_content" android:layout_alignParentBottom="true" android:layout_marginTop="15dp" android:layout_marginLeft="20dp" android:layout_marginRight="20dp" android:layout_marginBottom="15dp"
+        android:id="@+id/home_relative_layout3">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content" android:paddingLeft="15dp"
+            android:layout_margin="8dp"
+            android:layout_marginTop="12dp" android:layout_marginBottom="12dp"
+            android:layout_marginStart="110dp" android:layout_marginLeft="110dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content" android:layout_alignParentLeft="true" android:layout_alignParentStart="true"
+                android:layout_height="wrap_content" android:layout_alignBottom="@+id/textView34"
+                android:textColor="@color/windowBackground" android:textSize="13dp" android:textStyle="bold"
+                android:text="YOUR ORDERS"
+                android:id="@+id/textView35" />
+
+            <TextView
+                android:layout_width="wrap_content" android:layout_alignParentLeft="true" android:layout_alignParentStart="true"
+                android:layout_height="wrap_content"
+                android:textColor="@color/windowBackground" android:textSize="9dp" android:layout_marginTop="5dp"
+                android:text="A detailed view of all your Orders"
+                android:id="@+id/textView34" />
+        </LinearLayout>
+
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp" android:layout_centerInParent="true"
+            android:layout_alignParentRight="true" android:layout_alignParentEnd="true"
+            android:src="@drawable/ic_assignment_white_24dp"
+
+            android:layout_marginRight="14dp"
+            android:id="@+id/imageView3" />
+
+    </RelativeLayout>
+
+    <ir.afshin.stickyscrollviewlib.StickyScrollView
+        android:layout_width="match_parent" android:id="@+id/hf_sticky_scroll" android:padding="6dp"
+        android:layout_height="wrap_content" android:layout_below="@+id/image_button_drawer_home">
+
+        <RelativeLayout
+            android:layout_width="match_parent" android:id="@+id/hf_rel_scrolling"
+            android:layout_height="wrap_content" android:padding="1dp" >
+
+            <RelativeLayout
+                android:layout_width="match_parent" android:id="@+id/hf_1" android:layout_marginTop="0dp"
+                android:layout_height="wrap_content" android:paddingLeft="8dp" android:layout_marginBottom="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hi," android:textColor="@color/accent_dark"
+                    android:textSize="40dp" android:id="@+id/hf_hi"/>
+
+            </RelativeLayout>
+
+
+
+            <ir.afshin.stickyscrollviewlib.StickyHeader
+                android:layout_width="match_parent"  android:id="@+id/hf_2"
+                android:layout_height="wrap_content" android:layout_below="@+id/hf_1">
+                <RelativeLayout
+                    android:layout_width="match_parent"  android:id="@+id/hf_22"
+                    android:layout_height="wrap_content" >
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent" android:layout_marginBottom="10dp" android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_height="wrap_content">
+                <RelativeLayout
+                    android:layout_width="match_parent" android:orientation="horizontal" android:id="@+id/hf_search_rl"
+                    android:layout_height="wrap_content" android:padding="12dp" android:layout_marginTop="0dp" >
+
+                    <TextView
+                        android:layout_width="wrap_content" android:layout_marginLeft="10dp"
+                        android:layout_height="wrap_content" android:layout_centerVertical="true"
+                        android:text="Search for med info and substitutes" android:textColor="@color/monsoon"
+                        android:textSize="12dp" android:id="@+id/hf_search"/>
+
+                    <ImageView
+                        android:layout_width="20dp" android:layout_alignParentRight="true"
+                        android:layout_height="20dp" android:layout_centerVertical="true"
+                        android:src="@drawable/ic_search_pink_24dp"/>
+
+                </RelativeLayout>
+                    </android.support.v7.widget.CardView>
+
+                </RelativeLayout>
+            </ir.afshin.stickyscrollviewlib.StickyHeader>
+
+
+
+            <RelativeLayout
+                android:layout_width="match_parent" android:id="@+id/hf_3" android:layout_below="@+id/hf_2"
+                android:layout_height="wrap_content" android:layout_marginTop="8dp" >
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent" android:layout_margin="8dp"
+                    android:layout_height="wrap_content" >
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <RelativeLayout
+                            android:layout_width="match_parent" android:foreground="@drawable/custom_bg"
+                            android:clickable="true"
+                            android:layout_height="wrap_content" android:layout_marginTop="0dp" android:layout_marginLeft="10dp" android:layout_marginRight="10dp"
+                            android:id="@+id/hf_relative_layout1">
+
+
+                            <ImageView
+                                android:layout_width="50dp" android:layout_margin="10dp"
+                                android:layout_height="50dp" android:layout_centerInParent="true"
+                                android:layout_alignParentLeft="true" android:layout_alignParentStart="true"
+                                android:src="@drawable/orderpink"
+                                android:layout_marginLeft="10dp"
+                                android:id="@+id/hf_imageView1" />
+
+                            <LinearLayout
+                                android:orientation="vertical" android:layout_toRightOf="@+id/hf_imageView1"
+                                android:layout_width="wrap_content" android:layout_centerVertical="true"
+                                android:layout_margin="28dp" android:paddingLeft="5dp"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:layout_width="wrap_content" android:layout_alignParentLeft="true" android:layout_alignParentStart="true"
+                                    android:layout_height="wrap_content" android:layout_alignBottom="@+id/textView14"
+                                    android:textColor="@color/windowBackground" android:textSize="16dp" android:textStyle="bold"
+                                    android:text="ORDER MEDICINES"
+                                    android:id="@+id/hf_textView15" />
+
+                                <TextView
+                                    android:layout_width="wrap_content" android:layout_alignParentLeft="true" android:layout_alignParentStart="true"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/windowBackground" android:textSize="12dp" android:layout_marginTop="5dp"
+                                    android:text="Scan your prescription or simply reorder"
+                                    android:id="@+id/hf_textView14" />
+                            </LinearLayout>
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                </android.support.v7.widget.CardView>
+
+
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"  android:id="@+id/hf_4" android:layout_below="@+id/hf_3"
+                android:layout_height="wrap_content" android:layout_marginTop="4dp">
+
+                <View
+                    android:layout_width="20dp" android:visibility="gone" android:layout_marginTop="8dp" android:id="@+id/l11" android:background="@color/windowBackground"
+                    android:layout_height="1.8dp" android:layout_centerHorizontal="true" />
+                <TextView
+                    android:layout_width="wrap_content" android:layout_margin="6dp" android:layout_below="@+id/l11"
+                    android:layout_height="wrap_content" android:layout_centerVertical="true"
+                    android:text="SERVICES" android:layout_centerHorizontal="true" android:textColor="@color/windowBackground"
+                    android:textSize="12dp" android:id="@+id/hf_services_h"/>
+
+                <View
+                    android:layout_width="10dp" android:id="@+id/l12" android:layout_below="@+id/hf_services_h" android:layout_marginBottom="0dp" android:background="@color/accent_dark"
+                    android:layout_height="2.8dp" android:layout_centerHorizontal="true" />
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent" android:id="@+id/hf_5" android:layout_below="@+id/hf_4"
+                android:layout_height="wrap_content" >
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent" android:layout_margin="8dp"
+                    android:layout_height="wrap_content" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"  android:orientation="horizontal"
+                        android:layout_height="wrap_content">
+
+                        <RelativeLayout
+                            android:layout_width="0dp" android:layout_weight="1"
+                            android:layout_height="wrap_content" android:layout_marginTop="0dp" android:layout_marginLeft="10dp" android:layout_marginRight="10dp"
+                            android:id="@+id/hf_relative_layout2"  android:foreground="@drawable/custom_bg"
+                            android:clickable="true">
+
+
+                            <ImageView
+                                android:layout_width="40dp"
+                                android:layout_height="40dp" android:layout_margin="15dp"
+                                android:src="@drawable/alarm_clock_pink"
+                                android:id="@+id/hf_imageView2"
+                                android:layout_alignParentTop="true"
+                                android:layout_centerHorizontal="true" />
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:padding="5dp" android:layout_marginBottom="5dp"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/hf_imageView2"
+                                android:layout_centerHorizontal="true">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/windowBackground" android:textSize="13dp" android:textStyle="bold"
+                                    android:text="MEDS REMINDER" android:gravity="center"
+                                    android:id="@+id/hf_textView25" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"  android:gravity="center"
+                                    android:textColor="@color/windowBackground" android:textSize="9dp" android:layout_marginTop="5dp"
+                                    android:text="Smart alerts for your medication."
+                                    android:id="@+id/hf_textView24" />
+                            </LinearLayout>
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="0dp" android:layout_weight="1"  android:foreground="@drawable/custom_bg"
+                            android:clickable="true"
+                            android:layout_height="wrap_content" android:layout_marginTop="0dp" android:layout_marginLeft="0dp" android:layout_marginRight="20dp"
+                            android:id="@+id/hf_relative_layout3">
+
+
+                            <ImageView
+                                android:layout_width="40dp"
+                                android:layout_height="40dp" android:layout_margin="15dp"
+                                android:src="@drawable/chatpink"
+                                android:id="@+id/hf_imageView3"
+                                android:layout_alignParentTop="true"
+                                android:layout_centerHorizontal="true" />
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="match_parent" android:layout_marginBottom="5dp"
+                                android:padding="5dp" android:gravity="center"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/hf_imageView3"
+                                >
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/windowBackground" android:textSize="13dp" android:textStyle="bold"
+                                    android:text="CHAT ASSISTANT" android:gravity="center"
+                                    android:id="@+id/hf_textView35" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content" android:gravity="center"
+                                    android:textColor="@color/windowBackground" android:textSize="9dp" android:layout_marginTop="5dp"
+                                    android:text="A.I. bot to answer all your medicine related questions."
+                                    android:id="@+id/hf_textView34" />
+                            </LinearLayout>
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent" android:id="@+id/hf_6" android:layout_below="@+id/hf_5"
+                android:layout_height="wrap_content" android:layout_marginTop="4dp">
+
+                <View
+                    android:layout_width="20dp" android:visibility="gone" android:layout_marginTop="8dp" android:id="@+id/l21" android:background="@color/windowBackground"
+                    android:layout_height="1.8dp" android:layout_centerHorizontal="true" />
+                <TextView
+                    android:layout_width="wrap_content" android:layout_margin="6dp" android:layout_below="@+id/l21"
+                    android:layout_height="wrap_content" android:layout_centerVertical="true"
+                    android:text="OFFERS" android:layout_centerHorizontal="true" android:textColor="@color/windowBackground"
+                    android:textSize="12dp" android:id="@+id/hf_offers_h"/>
+
+                <View
+                    android:layout_width="10dp" android:id="@+id/l22" android:layout_below="@+id/hf_offers_h" android:layout_marginBottom="0dp" android:background="@color/accent_dark"
+                    android:layout_height="2.8dp" android:layout_centerHorizontal="true" />
+
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent" android:id="@+id/hf_7" android:layout_below="@+id/hf_6"
+                android:layout_height="wrap_content">
+
+                <info.truemd.materialdesign.helper.SnappingHorizontalScrollView
+                    android:id="@+id/scroll"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp" android:layout_marginTop="0dp"
+                    android:layout_weight="0.5">
+
+                </info.truemd.materialdesign.helper.SnappingHorizontalScrollView>
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent" android:id="@+id/hf_8" android:layout_below="@+id/hf_7"
+                android:layout_height="wrap_content" android:layout_marginTop="4dp">
+
+                <View
+                    android:layout_width="20dp" android:visibility="gone" android:layout_marginTop="8dp" android:id="@+id/l31" android:background="@color/accent_dark"
+                    android:layout_height="1.8dp" android:layout_centerHorizontal="true" />
+                <TextView
+                    android:layout_width="wrap_content" android:layout_margin="6dp" android:layout_below="@+id/l31"
+                    android:layout_height="wrap_content" android:layout_centerVertical="true"
+                    android:text="KNOW MORE" android:layout_centerHorizontal="true" android:textColor="@color/windowBackground"
+                    android:textSize="12dp" android:id="@+id/hf_knowmore_h"/>
+
+                <View
+                    android:layout_width="10dp" android:id="@+id/l32" android:layout_below="@+id/hf_knowmore_h" android:layout_marginBottom="0dp" android:background="@color/accent_dark"
+                    android:layout_height="2.8dp" android:layout_centerHorizontal="true" />
+
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent" android:id="@+id/hf_9" android:layout_below="@+id/hf_8"
+                android:layout_height="wrap_content" android:foreground="@drawable/custom_bg"
+                android:clickable="true" >
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent" android:layout_margin="8dp"
+                    android:layout_height="wrap_content" >
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="fill_parent" android:layout_marginTop="0dp"
+                        android:layout_gravity="bottom" android:layout_below="@+id/cardview_home"
+                        android:layout_alignParentBottom="true">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" android:layout_marginTop="20dp" android:layout_marginLeft="20dp" android:layout_marginRight="20dp"
+                            android:id="@+id/home_relative_layout4">
+
+
+                            <ImageView
+                                android:layout_width="27dp"
+                                android:layout_height="27dp" android:layout_marginTop="14dp"
+                                android:layout_alignParentLeft="true" android:layout_alignParentStart="true"
+                                android:src="@drawable/ic_order4"
+                                android:layout_marginLeft="20dp"
+                                android:id="@+id/imageView4" />
+
+                            <LinearLayout
+                                android:orientation="vertical" android:id="@+id/main4"
+                                android:layout_width="wrap_content" android:layout_toRightOf="@+id/imageView4"
+                                android:layout_margin="8dp" android:paddingLeft="15dp"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:layout_width="wrap_content" android:layout_alignParentLeft="true" android:layout_alignParentStart="true"
+                                    android:layout_height="wrap_content" android:layout_alignBottom="@+id/hf_textView44"
+                                    android:textColor="@color/windowBackground" android:textSize="13dp" android:textStyle="bold"
+                                    android:text="KNOW ABOUT YOUR MEDICATION"
+                                    android:id="@+id/hf_textView45" />
+
+                                <TextView
+                                    android:layout_width="wrap_content" android:layout_alignParentLeft="true" android:layout_alignParentStart="true"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/windowBackground" android:textSize="11dp" android:layout_marginTop="5dp"
+                                    android:text="Get details about "
+                                    android:id="@+id/hf_textView44" />
+
+
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="match_parent" android:id="@+id/b44" android:layout_below="@+id/main4" android:layout_marginBottom="10dp"
+                                android:layout_height="0.3dp" android:layout_marginTop="0dp" android:layout_marginLeft="20dp" android:layout_marginRight="20dp"
+                                android:background="@color/windowBackground" />
+                            <TextView
+                                android:layout_width="wrap_content" android:layout_alignParentLeft="true" android:layout_alignParentStart="true"
+                                android:layout_height="wrap_content" android:layout_marginLeft="23dp" android:layout_marginBottom="10dp"
+                                android:textColor="@color/windowBackground" android:textSize="11dp" android:layout_marginTop="2dp"
+                                android:text="Or have a look at the other medicines you are prescribed. " android:layout_below="@+id/b44"
+                                android:id="@+id/hf_textView46" />
+
+                        </RelativeLayout>
+
+
+
+
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent" android:id="@+id/hf_10" android:layout_below="@+id/hf_9"
+                android:layout_height="wrap_content"  android:foreground="@drawable/custom_bg"
+                android:clickable="true" >
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent" android:layout_margin="8dp"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="fill_parent" android:layout_marginTop="0dp"
+                        android:layout_gravity="bottom" android:layout_below="@+id/cardview_home"
+                        android:layout_alignParentBottom="true">
+
+
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" android:layout_marginTop="20dp" android:layout_marginLeft="20dp" android:layout_marginRight="20dp"
+                            android:id="@+id/home_relative_layout5" android:layout_marginBottom="12dp">
+
+
+                            <ImageView
+                                android:layout_width="31dp"
+                                android:layout_height="27dp" android:layout_marginTop="14dp"
+                                android:layout_alignParentLeft="true" android:layout_alignParentStart="true"
+                                android:src="@drawable/chatpink2"
+                                android:layout_marginLeft="20dp"
+                                android:id="@+id/imageView5" />
+
+                            <LinearLayout
+                                android:orientation="vertical" android:id="@+id/main5"
+                                android:layout_width="wrap_content" android:layout_toRightOf="@+id/imageView5"
+                                android:layout_margin="8dp" android:paddingLeft="15dp"
+                                android:layout_marginStart="20dp" android:layout_marginLeft="20dp"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:layout_width="wrap_content" android:layout_alignParentLeft="true" android:layout_alignParentStart="true"
+                                    android:layout_height="wrap_content" android:layout_alignBottom="@+id/hf_textView54"
+                                    android:textColor="@color/windowBackground" android:textSize="13dp" android:textStyle="bold"
+                                    android:text="HAVE A QUESTION"
+                                    android:id="@+id/hf_textView55" />
+
+                                <TextView
+                                    android:layout_width="wrap_content" android:layout_alignParentLeft="true" android:layout_alignParentStart="true"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/windowBackground" android:textSize="11dp" android:layout_marginTop="5dp"
+                                    android:text="Ask about"
+                                    android:id="@+id/hf_textView54" />
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="match_parent" android:id="@+id/b55" android:layout_below="@+id/main5" android:layout_marginBottom="10dp"
+                                android:layout_height="0.3dp" android:layout_marginTop="0dp" android:layout_marginLeft="20dp" android:layout_marginRight="20dp"
+                                android:background="@color/windowBackground" />
+                            <TextView
+                                android:layout_width="wrap_content" android:layout_alignParentLeft="true" android:layout_alignParentStart="true"
+                                android:layout_height="wrap_content" android:layout_marginLeft="23dp" android:layout_marginBottom="10dp"
+                                android:textColor="@color/windowBackground" android:textSize="11dp" android:layout_marginTop="2dp"
+                                android:text="Our chat bot can help you with your medicine related questions." android:layout_below="@+id/b55"
+                                android:id="@+id/hf_textView56" />
+                        </RelativeLayout>
+
+
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+
+    </ir.afshin.stickyscrollviewlib.StickyScrollView>
+
+</RelativeLayout>

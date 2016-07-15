@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:background="@drawable/shape_purple_ghost_squ_white_bg"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <LinearLayout
+        android:id="@+id/cardview" android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        >
+
+
+
+        <RelativeLayout android:layout_marginRight="12dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="11dp"
+            android:layout_width="match_parent" android:paddingTop="8dp" android:paddingRight="0dp" android:paddingLeft="0dp"
+            android:layout_height="wrap_content"  >
+            <TextView
+                android:id="@+id/name_item"  android:layout_marginTop="8dp"
+                android:layout_gravity="left" android:layout_marginLeft="35dp"
+                android:layout_width="wrap_content" android:layout_alignBottom="@+id/total_price"
+                android:layout_height="wrap_content" android:gravity="center_vertical"
+                android:textSize="12.5dp"  android:textColor="@color/monsoon"
+                android:text="TextView" />
+            <TextView
+                android:id="@+id/total_price" android:layout_marginTop="8dp"
+                android:layout_gravity="left" android:layout_marginRight="40dp"
+                android:layout_width="wrap_content" android:layout_alignParentRight="true"
+                android:layout_height="wrap_content" android:gravity="bottom"
+                android:textSize="12.5dp"  android:textColor="@color/oil"
+                android:text="300" />
+
+            <ImageView
+                android:layout_width="25dp" android:id="@+id/icon_type" android:padding="5dp"
+                android:layout_height="25dp" android:layout_alignParentLeft="true"
+                android:src="@drawable/morning_b" android:background="@drawable/shape_circle_morning"/>
+
+            <ImageView
+                android:layout_width="20dp" android:id="@+id/icon_gt" android:layout_marginTop="6dp"
+                android:layout_height="20dp" android:layout_alignParentRight="true"
+                android:background="@drawable/ic_greater_than"/>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent" android:paddingTop="1dp" android:paddingRight="10dp" android:paddingLeft="10dp"
+            android:layout_height="wrap_content" android:id="@+id/extra_invoice" android:layout_margin="0dp" >
+
+            <View
+                android:layout_marginTop="5dp" android:layout_marginBottom="2.5dp"
+                android:layout_width="match_parent"
+                android:layout_height="0.8dp" android:background="@color/iron" android:id="@+id/poa_b1" />
+            <TextView
+                android:layout_marginTop="5dp" android:layout_marginBottom="2.5dp"
+                android:layout_width="wrap_content" android:text="Quantity: " android:paddingLeft="20dp" android:gravity="left|center_vertical" android:textSize="11dp"
+                android:layout_height="wrap_content"    android:layout_below="@+id/poa_b1" android:id="@+id/med_info1_h" android:textColor="@color/oil" />
+            <TextView
+                android:layout_marginTop="5dp" android:layout_marginBottom="2.5dp" android:layout_below="@+id/poa_b1"
+                android:layout_width="wrap_content" android:text="2" android:paddingLeft="20dp" android:gravity="left|center_vertical" android:textSize="13dp"
+                android:layout_height="wrap_content"  android:layout_toRightOf="@+id/med_info1_h"   android:id="@+id/med_info1" android:textColor="@color/base" />
+            <TextView
+                android:layout_marginTop="5dp" android:layout_marginBottom="1.5dp"
+                android:layout_width="wrap_content" android:text="Price/ Unit: " android:paddingLeft="20dp" android:gravity="left|center_vertical" android:textSize="11dp"
+                android:layout_height="wrap_content" android:layout_below="@+id/med_info1_h"   android:id="@+id/med_info2_h" android:textColor="@color/oil" />
+            <TextView
+                android:layout_marginTop="2dp" android:layout_marginBottom="2.5dp"
+                android:layout_width="wrap_content" android:text="123" android:paddingLeft="20dp" android:gravity="left|center_vertical" android:textSize="13dp"
+                android:layout_height="wrap_content" android:layout_below="@+id/med_info1" android:layout_toRightOf="@+id/med_info2_h"   android:id="@+id/med_info2" android:textColor="@color/base" />
+
+            <TextView
+                android:layout_marginTop="5dp" android:layout_marginBottom="1.5dp"
+                android:layout_width="wrap_content" android:text="Package Size: " android:paddingLeft="20dp" android:gravity="left|center_vertical" android:textSize="11dp"
+                android:layout_height="wrap_content" android:layout_below="@+id/med_info2_h"   android:id="@+id/med_info3_h" android:textColor="@color/oil" />
+            <TextView
+                android:layout_marginTop="2dp" android:layout_marginBottom="2.5dp"
+                android:layout_width="wrap_content" android:text="13" android:paddingLeft="20dp" android:gravity="left|center_vertical" android:textSize="13dp"
+                android:layout_height="wrap_content" android:layout_below="@+id/med_info2" android:layout_toRightOf="@+id/med_info3_h"   android:id="@+id/med_info3" android:textColor="@color/base" />
+            <View
+                android:layout_marginTop="5dp" android:layout_marginBottom="12.5dp"
+                android:layout_width="match_parent" android:layout_below="@+id/med_info3"
+                android:layout_height="0.8dp" android:background="@color/iron" android:id="@+id/poa_b0" />
+
+        </RelativeLayout>
+
+
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

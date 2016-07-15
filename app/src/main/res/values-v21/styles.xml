@@ -1,0 +1,150 @@
+<resources>
+
+    <style name="MyMaterialTheme" parent="MyMaterialTheme.Base">
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowAllowEnterTransitionOverlap">true</item>
+        <item name="android:windowAllowReturnTransitionOverlap">true</item>
+        <item name="android:windowSharedElementEnterTransition">@android:transition/move</item>
+        <item name="android:windowSharedElementExitTransition">@android:transition/move</item>
+    </style>
+
+
+
+
+        <style name="AppTheme" parent="Theme.AppCompat.Light">
+            <!-- Customize your theme here. -->
+        </style>
+
+        <style name="AppTheme.Dark" parent="Theme.AppCompat.NoActionBar">
+            <item name="windowNoTitle">true</item>
+            <item name="windowActionBar">false</item>
+            <item name="android:windowBackground">@color/windowBackground</item>
+            <item name="colorPrimary">@color/colorPrimary</item>
+            <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+            <item name="colorAccent">@color/colorAccent</item>
+            <item name="colorControlNormal">@color/iron</item>
+            <item name="colorControlActivated">@color/iron</item>
+            <item name="colorControlHighlight">@color/iron</item>
+            <item name="android:textColorHint">@color/iron</item>
+            <item name="colorButtonNormal">@color/accent_dark</item>
+        </style>
+
+        <style name="AppTheme.Light" parent="Theme.AppCompat.NoActionBar">
+            <item name="windowNoTitle">true</item>
+            <item name="windowActionBar">false</item>
+            <item name="android:windowBackground">@color/windowBackground</item>
+            <item name="colorPrimary">@color/colorPrimary</item>
+            <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+            <item name="colorAccent">@color/colorAccent</item>
+            <item name="colorControlNormal">@color/monsoon</item>
+            <item name="colorControlActivated">@color/iron</item>
+            <item name="colorControlHighlight">@color/iron</item>
+            <item name="android:textColorHint">@color/monsoon</item>
+            <item name="colorButtonNormal">@color/accent_dark</item>
+        </style>
+
+        <style name="AppTheme.Dark.Dialog" parent="Theme.AppCompat.Dialog">
+            <item name="colorAccent">@color/white</item>
+            <item name="android:textColorPrimary">@color/iron</item>
+            <item name="android:background">@color/primary</item>
+        </style>
+
+        <style name="Widget.CardContent" parent="android:Widget">
+            <item name="android:paddingLeft">16dp</item>
+            <item name="android:paddingRight">16dp</item>
+            <item name="android:paddingTop">24dp</item>
+            <item name="android:paddingBottom">24dp</item>
+            <item name="android:orientation">vertical</item>
+        </style>
+
+    <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash</item>
+    </style>
+
+
+        <style name="MyMaterialTheme.Base" parent="Theme.AppCompat.NoActionBar">
+            <item name="windowNoTitle">true</item>
+            <item name="windowActionBar">false</item>
+            <item name="android:textColor">@color/colorPrimary</item>
+            <item name="android:windowBackground">@color/windowBackground</item>
+            <item name="colorPrimary">@color/colorPrimary</item>
+            <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+            <item name="colorAccent">@color/colorAccent</item>
+            <item name="android:colorButtonNormal">@color/accent_dark</item>
+            <item name="colorControlNormal">@color/iron</item>
+            <item name="colorControlActivated">@color/iron</item>
+            <item name="colorControlHighlight">@color/iron</item>
+            <item name="android:textColorHint">@color/iron</item>
+        </style>
+
+
+
+
+        <style name="MenuButtonsStyle">
+            <item name="fab_size">mini</item>
+            <item name="fab_showAnimation">@anim/jump_from_down</item>
+            <item name="fab_hideAnimation">@anim/jump_to_down</item>
+            <item name="fab_shadowColor">#444</item>
+            <item name="fab_colorNormal">@color/colorPrimary</item>
+            <item name="fab_colorPressed">@color/colorAccent</item>
+            <item name="fab_colorRipple">@color/colorPrimaryDark</item>
+        </style>
+
+        <style name="MenuButtonsSmall">
+            <item name="fab_size">mini</item>
+            <item name="fab_colorNormal">#1565C0</item>
+            <item name="fab_colorPressed">#2272CD</item>
+            <item name="fab_colorRipple">#62B2FF</item>
+        </style>
+
+    <style name="font">
+        <item name="android:fontFamily">monospace</item>
+    </style>
+
+        <style name="MenuButtonsSmall.Green">
+            <item name="fab_colorNormal">#43A047</item>
+            <item name="fab_colorPressed">#2E7D32</item>
+            <item name="fab_colorRipple">#1B5E20</item>
+        </style>
+
+    <style name="TedAppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+        <style name="MaterialDialogSheet" parent="@android:style/Theme.Dialog">
+            <item name="android:windowIsTranslucent">true</item>
+            <item name="android:windowBackground">@android:color/transparent</item>
+            <item name="android:windowContentOverlay">@null</item>
+            <item name="android:windowNoTitle">true</item>
+            <item name="android:backgroundDimEnabled">true</item>
+            <item name="android:windowIsFloating">false</item>
+            <item name="android:windowAnimationStyle">@style/MaterialDialogSheetAnimation</item>
+        </style>
+
+        <style name="MaterialDialogSheetAnimation">
+            <item name="android:windowEnterAnimation">@anim/popup_show</item>
+            <item name="android:windowExitAnimation">@anim/popup_hide</item>
+        </style>
+        <style name="ShadowBlackTextWhite">
+            <item name="android:shadowColor">@android:color/black</item>
+            <item name="android:shadowDx">1</item>
+            <item name="android:shadowDy">1</item>
+            <item name="android:shadowRadius">2</item>
+            <item name="android:textColor">@android:color/white</item>
+        </style>
+
+        <style name="myDialogAnim" parent="android:Animation">
+
+            <!-- 进入时的动画 -->
+            <item name="@android:windowEnterAnimation">@anim/dialog_enter</item>
+            <!-- 退出时的动画 -->
+            <item name="@android:windowExitAnimation">@anim/dialog_exit</item>
+        </style>
+
+
+</resources>

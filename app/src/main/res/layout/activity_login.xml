@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent" android:background="@color/windowBackground"
+    android:layout_height="fill_parent" android:id="@+id/sv_login"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fitsSystemWindows="true">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="0dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent" android:id="@+id/truemdtitle_linear" android:gravity="center_horizontal"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent" android:gravity="left" android:layout_marginTop="5dp"
+                android:layout_height="wrap_content">
+
+
+                <ImageButton
+                    android:layout_width="wrap_content" android:background="@drawable/ic_arrow_back_white_24dp"
+                    android:layout_height="wrap_content" android:layout_marginTop="18dp" android:layout_marginLeft="18dp"
+                    android:id="@+id/imageButtonToPreLogin"  />
+
+
+            </RelativeLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:textSize="35dp"
+                android:text="TrueMD" android:textColor="@color/white" android:textStyle="bold"
+                android:id="@+id/truemdtitle_tv"
+                android:paddingTop="3dp"
+                android:layout_centerHorizontal="true" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:textSize="14dp"
+                android:text="Your Local Pharmacy, Reinvented" android:textColor="@color/white" android:textStyle="bold"
+                android:id="@+id/truemdsubtitle_tv"
+                android:paddingTop="5dp"
+                android:layout_centerHorizontal="true" />
+
+
+
+        </LinearLayout>
+
+        <!--  Email Label -->
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent" android:padding="30dp"
+            android:layout_height="wrap_content" android:layout_margin="24dp">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="2dp"
+                android:paddingRight="2dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Small Text"
+            android:id="@+id/txtResponse"
+            android:layout_gravity="center_horizontal" />
+
+
+            <EditText android:id="@+id/input_email"
+                android:layout_width="match_parent" android:layout_marginTop="8dp" android:layout_marginLeft="20dp" android:layout_marginRight="20dp"
+                android:layout_marginBottom="8dp" android:textSize="14dp"
+                android:layout_height="wrap_content" android:backgroundTint="@color/iron"
+                android:inputType="number" android:textColor="@color/windowBackground" android:textColorHint="@color/monsoon"
+                android:hint="Mobile No." android:maxLength="10" />
+
+
+        <!--  Password Label -->
+
+            <EditText android:id="@+id/input_password"
+                android:layout_width="match_parent" android:backgroundTint="@color/iron"
+                android:layout_height="wrap_content" android:textColor="@color/windowBackground" android:textColorHint="@color/monsoon"
+                android:inputType="textPassword" android:layout_marginTop="8dp" android:layout_marginLeft="20dp" android:layout_marginRight="20dp"
+                android:layout_marginBottom="8dp" android:textSize="14dp"
+                android:hint="Password"/>
+
+                <com.zl.reik.dilatingdotsprogressbar.DilatingDotsProgressBar
+                    android:id="@+id/login_progress" android:layout_gravity="center_horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:radius="2dp" android:layout_centerHorizontal="true"
+                    android:color="@color/windowBackground"  app:dd_animationDuration="500"
+                    app:dd_numDots="6" android:layout_marginTop="5dp"
+                    app:dd_scaleMultiplier="2.3"
+                    app:dd_horizontalSpacing="12dp"
+                    />
+
+
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="fill_parent"
+            android:layout_height="56dp" android:textColor="@color/white"
+            android:layout_marginTop="20dp" android:layout_gravity="bottom"
+            android:layout_marginBottom="24dp" android:background="@color/accent_dark"
+            android:padding="12dp" android:layout_marginLeft="20dp" android:layout_marginRight="20dp"
+            android:text="SIGN IN"/>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <TextView android:id="@+id/link_signup"
+            android:layout_width="fill_parent" android:visibility="invisible"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:text="TrueMD isn't your pharmacy yet? SIGN UP"
+            android:gravity="center" android:textColor="@color/steel"
+            android:textSize="14dip"/>
+        <TextView android:id="@+id/link_forgot_pwd"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:text="Forgot Password?"
+            android:gravity="center" android:textColor="@color/steel"
+            android:textSize="14dip"/>
+
+    </LinearLayout>
+
+
+</ScrollView>

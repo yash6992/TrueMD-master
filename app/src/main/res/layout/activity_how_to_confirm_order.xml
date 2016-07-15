@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="16dp"
+    android:layout_height="match_parent"
+    android:layout_marginTop="0dp"
+    android:id="@+id/RLayout"
+    android:background="@color/white"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="wrap_content" android:id="@+id/howtoorder_title">
+
+    <TextView
+        android:layout_width="wrap_content" android:layout_centerHorizontal="true" android:layout_alignParentTop="true"
+        android:layout_height="wrap_content" android:textColor="@color/windowBackground" android:layout_marginTop="0dp"
+        android:text="CONFIRM ORDER" android:textSize="18dp" android:layout_marginBottom="0dp"
+        android:id="@+id/tv1" />
+
+    <ImageButton
+        android:layout_width="23dp" android:background="?attr/selectableItemBackground"
+        android:clickable="true" android:src="@drawable/ic_arrow_back_p_24dp"
+        android:layout_height="23dp" android:layout_alignParentLeft="true" android:layout_marginLeft="0dp" android:layout_marginTop="5dp"
+        android:id="@+id/backImageButtonhow" />
+
+</RelativeLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/relativeLayout" android:orientation="vertical"
+        android:layout_below="@+id/howtoorder_title"
+        android:layout_centerHorizontal="true">
+
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:adjustViewBounds="true" android:layout_marginBottom="10dp"
+            android:layout_height="wrap_content" android:src="@drawable/pharmacist_calling"
+            android:id="@+id/imageView_confirm"
+            android:background="@color/white"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <com.zl.reik.dilatingdotsprogressbar.DilatingDotsProgressBar
+            android:id="@+id/howto_progress" android:layout_gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:radius="2dp" android:layout_centerHorizontal="true"
+            android:color="@color/windowBackground"  app:dd_animationDuration="500"
+            app:dd_numDots="6" android:layout_marginTop="5dp"
+            app:dd_scaleMultiplier="2.3"
+            app:dd_horizontalSpacing="12dp"
+            />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/txt_2"
+            android:layout_width="fill_parent"
+            android:layout_height="56dp" android:textColor="@color/white"
+            android:layout_marginTop="24dp" android:layout_gravity="bottom"
+            android:layout_marginBottom="24dp" android:layout_below="@+id/howto_progress"
+            android:padding="12dp" android:layout_marginLeft="20dp" android:layout_marginRight="20dp"
+            android:text="GOT IT!"/>
+        </RelativeLayout>
+
+
+
+
+
+</LinearLayout>
+
+
+
+</RelativeLayout>
+

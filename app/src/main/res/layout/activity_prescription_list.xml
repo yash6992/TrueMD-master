@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:background="@color/steel"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent" android:background="@color/steel"
+        android:layout_height="48dp" android:orientation="horizontal" android:id="@+id/pl_title">
+
+
+        <ImageButton
+            android:layout_width="23dp" android:background="?attr/selectableItemBackground"
+            android:clickable="true" android:layout_centerVertical="true" android:layout_marginStart="8dp" android:layout_marginLeft="8dp"
+            android:layout_height="23dp" android:src="@drawable/ic_arrow_back_p_24dp"
+            android:id="@+id/pl_backImageButton" />
+
+        <TextView
+            android:layout_width="match_parent" android:textColor="@color/windowBackground"
+            android:layout_height="30dp" android:textSize="18dp"
+            android:text="PRESCRIPTIONS"
+            android:id="@+id/pl_title_tv" android:gravity="center_horizontal|center_vertical"
+            android:layout_alignTop="@+id/pl_backImageButton"
+            android:layout_alignLeft="@+id/pl_backImageButton"
+            android:layout_alignStart="@+id/pl_backImageButton" />
+
+
+    </RelativeLayout>
+
+
+    <com.zl.reik.dilatingdotsprogressbar.DilatingDotsProgressBar
+        android:id="@+id/pl_progress"
+        android:layout_width="match_parent" android:layout_below="@+id/pl_title"
+        android:layout_height="wrap_content"
+        android:radius="2dp" android:layout_centerHorizontal="true"
+        android:color="@color/windowBackground"  app:dd_animationDuration="500"
+        app:dd_numDots="6" android:layout_marginTop="5dp"
+        app:dd_scaleMultiplier="2.3"
+        app:dd_horizontalSpacing="12dp"
+        />
+    
+
+        <ListView
+            android:id="@+id/pl_listView" android:layout_marginTop="0dp" android:layout_below="@+id/pl_descrip"
+            android:layout_width="fill_parent" android:padding="10dp" android:background="@color/steel"
+            android:layout_height="fill_parent" android:divider="@color/windowBackground" >
+        </ListView>
+
+
+        <TextView
+            android:layout_width="wrap_content" android:textSize="11dp" android:textColor="@color/monsoon"
+            android:layout_height="wrap_content" android:layout_centerHorizontal="true" android:layout_below="@id/pl_progress"
+            android:text="Here are all your prescriptions in digital format." android:layout_marginTop="5dp"
+            android:id="@+id/pl_descrip"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent" android:layout_below="@+id/pl_descrip"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent" android:layout_marginTop="20dp" android:visibility="visible" android:background="@color/steel"
+            android:layout_height="match_parent" android:orientation="vertical" android:id="@+id/pl_placeholder">
+            <ImageView
+                android:layout_width="match_parent" android:layout_marginLeft="10dp" android:src="@drawable/emptypreviousorder1"
+                android:layout_height="wrap_content" android:adjustViewBounds="true"
+                android:id="@+id/pl_imageviewp" />
+            <TextView
+                android:layout_width="wrap_content" android:layout_below="@+id/uo_progress"
+                android:layout_height="wrap_content" android:background="@drawable/button_green"
+                android:text="ORDER NOW" android:layout_gravity="center" android:padding="12dp"
+                android:id="@+id/pl_placeholderTextView" android:textSize="15dp" android:textColor="@color/white" />
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+   
+
+
+    
+
+
+</RelativeLayout>

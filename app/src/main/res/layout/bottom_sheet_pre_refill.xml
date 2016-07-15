@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    android:layout_width="match_parent"
+    android:id="@+id/popup_window"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp"
+    android:padding="0dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent" android:padding="16dp"
+        android:layout_height="wrap_content" android:layout_marginTop="5dp"
+        android:id="@+id/RLayout">
+
+
+        <TextView
+            android:id="@+id/tv2" android:text="Refilling Order..." android:layout_marginLeft="13dp" android:layout_marginStart="10dp"
+            android:layout_width="wrap_content" android:textColor="@color/colorPrimary"
+            android:layout_height="wrap_content" android:textSize="16dp"
+            android:gravity="center_vertical|left"
+            android:padding="2dp" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0.45dp"
+            android:id="@+id/blackline_md" android:orientation="horizontal"
+            android:background="@color/monsoon" android:layout_below="@+id/tv2"
+            android:layout_marginLeft="5dp" android:layout_marginTop="8dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp">
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"  android:layout_marginTop="5dp" android:adjustViewBounds="true"
+            android:layout_height="wrap_content" android:src="@drawable/order_info"
+            android:id="@+id/imageView" android:layout_centerHorizontal="true"
+            android:layout_alignLeft="@+id/btn_next"
+            android:layout_alignStart="@+id/btn_next" android:visibility="gone"
+            android:layout_below="@+id/blackline_md"
+            android:layout_above="@+id/btn_next" />
+
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btn_next"
+            android:layout_width="fill_parent"
+            android:layout_height="56dp" android:textColor="@color/white"
+            android:layout_marginTop="20dp" android:layout_gravity="bottom"
+            android:layout_marginBottom="10dp" android:layout_below="@+id/refill_txt"
+            android:padding="0dp" android:layout_marginLeft="20dp" android:layout_marginRight="20dp"
+            android:text="GOT IT!"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:gravity="left"
+            android:text="You do not have to upload your prescription as we already have it with us.\nAll you have to do is to confirm the delivery address and add coupons.\nWe'll handle the rest." android:layout_below="@+id/blackline_md"
+            android:textSize="14dp" android:textColor="@color/monsoon"
+            android:id="@+id/refill_txt" android:layout_marginTop="15dp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
+
+
+    </RelativeLayout>
+
+
+
+
+
+</android.support.v7.widget.CardView>

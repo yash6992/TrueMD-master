@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent" android:background="@color/white"
+        android:layout_height="48dp" android:orientation="horizontal" android:id="@+id/od_title">
+
+        <ImageButton
+            android:layout_width="30dp" android:background="?attr/selectableItemBackground"
+            android:clickable="true" android:layout_centerVertical="true" android:layout_marginStart="8dp" android:layout_marginLeft="8dp"
+            android:layout_height="30dp" android:src="@drawable/ic_arrow_back_p_24dp"
+            android:id="@+id/od_backImageButton"  />
+
+        <TextView
+            android:layout_width="match_parent" android:textColor="@color/windowBackground"
+            android:layout_height="30dp" android:textSize="18dp"
+            android:text="OFFER DETAIL"
+            android:id="@+id/od_title_tv" android:gravity="center_horizontal|center_vertical"
+            android:layout_alignTop="@+id/od_backImageButton"
+            android:layout_alignLeft="@+id/od_backImageButton"
+            android:layout_alignStart="@+id/od_backImageButton" />
+
+    </RelativeLayout>
+
+    <WebView
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/webViewoffer"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/od_title"
+        android:layout_alignParentBottom="true" />
+
+
+</RelativeLayout>

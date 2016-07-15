@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    card_view:cardCornerRadius="@dimen/card_corner_radius"
+    card_view:cardElevation="@dimen/elevation_large">
+
+    <TextView
+        android:id="@+id/textViewCard"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center" android:visibility="gone"
+        android:textSize="25dp"
+        android:text="reminder"/>
+    <RelativeLayout
+        android:layout_width="match_parent" android:layout_gravity="center"
+        android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent" android:paddingTop="100dp"
+        android:layout_height="wrap_content" android:paddingLeft="10dp"
+        android:layout_centerHorizontal="true">
+
+
+        <TextView
+            android:layout_width="wrap_content" android:textSize="16dp" android:textColor="@color/oil"
+            android:layout_height="wrap_content" android:padding="10dp" android:layout_marginTop="-10dp"
+            android:text="28 Jun, Fri"
+            android:id="@+id/cr_date" />
+        <TextView
+            android:layout_width="wrap_content" android:textSize="30dp" android:textColor="@color/windowBackground"
+            android:layout_height="wrap_content" android:padding="10dp"
+            android:text="08:00 am" android:layout_below="@+id/cr_date"
+            android:id="@+id/cr_time" />
+        <TextView
+            android:layout_width="wrap_content" android:textSize="16dp" android:textColor="@color/windowBackground"
+            android:layout_height="wrap_content" android:padding="10dp"
+            android:text="Yashvardhan" android:layout_below="@+id/cr_time"
+            android:id="@+id/cr_patient_name" />
+        <TextView
+            android:layout_width="wrap_content" android:textSize="12dp" android:textColor="@color/monsoon"
+            android:layout_height="wrap_content" android:padding="10dp"
+            android:text="COMBIFLAM 100 MG" android:layout_below="@+id/cr_patient_name"
+            android:id="@+id/cr_med1" />
+        <TextView
+            android:layout_width="wrap_content" android:textSize="11dp" android:textColor="@color/white" android:background="@drawable/shape2"
+            android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_alignBottom="@+id/cr_med1"
+            android:text="1 Tablet" android:layout_marginRight="20dp" android:layout_marginBottom="10dp" android:paddingLeft="8dp" android:paddingRight="8dp"
+            android:id="@+id/cr_dosage1"/>
+
+        <TextView
+            android:layout_width="wrap_content" android:textSize="12dp" android:textColor="@color/monsoon"
+            android:layout_height="wrap_content" android:padding="10dp"
+            android:text="RANTAC 100 MG *" android:layout_below="@+id/cr_med1"
+            android:id="@+id/cr_med2" />
+        <TextView
+            android:layout_width="wrap_content" android:textSize="11dp" android:textColor="@color/white" android:background="@drawable/shape2"
+            android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_alignBottom="@+id/cr_med2"
+            android:text="1 Tablet" android:layout_marginRight="20dp" android:layout_marginBottom="10dp" android:paddingLeft="8dp" android:paddingRight="8dp"
+            android:id="@+id/cr_dosage2"/>
+        <TextView
+            android:layout_width="wrap_content" android:textSize="12dp" android:textColor="@color/monsoon"
+            android:layout_height="wrap_content" android:padding="10dp"
+            android:text="ELTROXIN 10 MG *" android:layout_below="@+id/cr_med2"
+            android:id="@+id/cr_med3" />
+        <TextView
+            android:layout_width="wrap_content" android:textSize="11dp" android:textColor="@color/white" android:background="@drawable/shape2"
+            android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_alignBottom="@+id/cr_med3"
+            android:text="1/2 Tablet" android:layout_marginRight="20dp" android:layout_marginBottom="10dp" android:paddingLeft="8dp" android:paddingRight="8dp"
+            android:id="@+id/cr_dosage3"/>
+        <TextView
+            android:layout_width="wrap_content" android:textSize="12dp" android:textColor="@color/monsoon"
+            android:layout_height="wrap_content" android:padding="10dp"
+            android:text="SEPTELIN 50 MG" android:layout_below="@+id/cr_med3"
+            android:id="@+id/cr_med4" />
+        <TextView
+            android:layout_width="wrap_content" android:textSize="11dp" android:textColor="@color/white" android:background="@drawable/shape2"
+            android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_alignBottom="@+id/cr_med4"
+            android:text="2 Tablet" android:layout_marginRight="20dp" android:layout_marginBottom="10dp" android:paddingLeft="8dp" android:paddingRight="8dp"
+            android:id="@+id/cr_dosage4"/>
+
+        <TextView
+            android:layout_width="wrap_content" android:textSize="12dp" android:textColor="@color/monsoon"
+            android:layout_height="wrap_content" android:padding="10dp"
+            android:text="SEPTELIN 50 MG" android:layout_below="@+id/cr_med4"
+            android:id="@+id/cr_med5" />
+        <TextView
+            android:layout_width="wrap_content" android:textSize="11dp" android:textColor="@color/white" android:background="@drawable/shape2"
+            android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_alignBottom="@+id/cr_med5"
+            android:text="2 Tablet" android:layout_marginRight="20dp" android:layout_marginBottom="10dp" android:paddingLeft="8dp" android:paddingRight="8dp"
+            android:id="@+id/cr_dosage5"/>
+
+
+        <ImageView
+            android:layout_width="70dp" android:layout_alignParentRight="true" android:paddingRight="10dp"
+            android:layout_height="70dp" android:layout_alignBottom="@+id/cr_time"
+            android:id="@+id/cr_day_image" android:layout_margin="10dp" />
+
+    </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content" android:textSize="12dp" android:textColor="@color/monsoon"
+            android:layout_height="wrap_content" android:padding="15dp"
+            android:text="Day 1" android:layout_alignParentTop="true" android:layout_alignParentRight="true"
+            android:id="@+id/cr_dayno" />
+
+        <TextView
+            android:layout_width="wrap_content" android:textSize="12dp" android:textColor="@color/monsoon"
+            android:layout_height="wrap_content" android:padding="15dp"
+            android:text="* to be taken after meals." android:layout_alignParentBottom="true" android:layout_alignParentRight="true" android:layout_alignParentLeft="true"
+            android:id="@+id/cr_meal" />
+
+    </RelativeLayout>
+
+
+</android.support.v7.widget.CardView>

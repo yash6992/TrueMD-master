@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <LinearLayout
+        android:id="@+id/cardview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp">
+
+
+
+        <RelativeLayout
+            android:layout_width="fill_parent" android:paddingTop="1dp" android:paddingRight="10dp" android:paddingLeft="10dp"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/name_list_item_search"
+                android:layout_gravity="left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12.5dp" android:textStyle="bold" android:textColor="@color/colorPrimaryDark"
+                android:text="TextView" />
+            <TextView
+                android:id="@+id/price_list_item_search"
+                android:layout_gravity="right|end" android:layout_toLeftOf="@+id/price_diff_list_item"
+                android:layout_width="wrap_content" android:layout_marginRight="10dp"
+                android:layout_height="wrap_content" android:textColor="@color/colorPrimaryDark"
+                android:textSize="12.5dp" android:textStyle="bold"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/manufacturer_list_item_search"
+                android:layout_gravity="left" android:layout_below="@+id/name_list_item_search"
+                android:layout_width="wrap_content" android:layout_marginTop="11dp"
+                android:layout_height="wrap_content"
+                android:textSize="10dp" android:textColor="@color/monsoon"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/packet_size_list_item_search"
+                android:layout_gravity="right|end" android:background="@drawable/shape2" android:layout_below="@+id/price_list_item_search"
+                android:layout_width="wrap_content" android:textColor="@color/white" android:layout_toLeftOf="@+id/price_diff_list_item"
+                android:layout_height="wrap_content" android:layout_marginTop="5dp" android:layout_marginRight="10dp"
+                android:textSize="8.5dp"
+                android:text="TextView" />
+
+            <ImageView
+                android:layout_width="20dp" android:layout_marginRight="8dp"
+                android:layout_height="20dp" android:layout_marginBottom="1dp" android:layout_alignParentRight="true" android:layout_alignParentEnd="true"
+                android:id="@+id/thumbs_image" />
+
+            <TextView
+                android:id="@+id/price_diff_list_item" android:layout_alignParentRight="true" android:layout_alignParentEnd="true"
+                android:layout_gravity="right"
+                android:layout_width="40dp" android:textColor="@color/colorPrimary" android:layout_below="@+id/thumbs_image"
+                android:layout_height="wrap_content" android:layout_marginTop="5dp"
+                android:textSize="12dp" android:gravity="center"
+                android:text="" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0.25dp" android:background="@color/colorPrimary"
+                android:layout_marginLeft="20dp" android:layout_marginTop="13dp"
+                android:layout_marginStart="20dp" android:layout_below="@+id/packet_size_list_item_search"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp">
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

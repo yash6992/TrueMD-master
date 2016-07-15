@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "1093810313818",
+    "firebase_url": "https://project-58954493201976502.firebaseio.com",
+    "project_id": "project-58954493201976502",
+    "storage_bucket": "project-58954493201976502.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1093810313818:android:9e139c965ac6e76b",
+        "android_client_info": {
+          "package_name": "info.truemd.materialdesign"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1093810313818-tvda61j18ssh7m0ujn4gvfs4j1sjf9nk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYr7QN_eQNIINL3NxkREThwloqRPp614s"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

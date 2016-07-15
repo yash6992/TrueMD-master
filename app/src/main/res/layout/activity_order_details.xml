@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+
+    android:background="@color/steel"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent" android:background="@color/steel"
+        android:layout_height="48dp" android:orientation="horizontal" android:id="@+id/od_title">
+
+
+        <ImageButton
+            android:layout_width="30dp" android:background="?attr/selectableItemBackground"
+            android:clickable="true" android:layout_centerVertical="true" android:layout_marginStart="8dp" android:layout_marginLeft="8dp"
+            android:layout_height="30dp" android:src="@drawable/ic_arrow_back_p_24dp"
+            android:id="@+id/od_backImageButton"  />
+
+        <TextView
+            android:layout_width="match_parent" android:textColor="@color/windowBackground"
+            android:layout_height="30dp" android:textSize="18dp"
+            android:text="ORDER DETAILS"
+            android:id="@+id/od_title_tv" android:gravity="center_horizontal|center_vertical"
+            android:layout_alignTop="@+id/od_backImageButton"
+            android:layout_alignLeft="@+id/od_backImageButton"
+            android:layout_alignStart="@+id/od_backImageButton" />
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content" android:layout_below="@+id/od_title" android:layout_centerHorizontal="true" android:id="@+id/od_ll_toggle" android:background="@drawable/shape6" android:orientation="horizontal"
+        android:layout_height="wrap_content" android:layout_marginBottom="7dp" android:layout_marginTop="12dp">
+
+        <belka.us.androidtoggleswitch.widgets.ToggleSwitch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="13sp" android:gravity="center_horizontal"
+            custom:activeBgColor="@color/windowBackground"
+            custom:toggleWidth="120dp"
+            custom:activeTextColor="@color/white"
+            custom:inactiveBgColor="@color/steel"
+            custom:inactiveTextColor="@color/windowBackground"
+            custom:separatorColor="@color/steel"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/od_toggle_switches_container"/>
+
+    </LinearLayout>
+
+
+
+    <FrameLayout
+        android:id="@+id/od_container_body_order_details"
+        android:layout_width="match_parent"  android:layout_below="@+id/od_ll_toggle"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+
+
+</RelativeLayout>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+<RelativeLayout
+android:id="@+id/cardview"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:layout_marginRight="10dp"
+android:layout_marginStart="10dp" android:background="@drawable/shape_purple_ghost_squ"
+android:layout_marginLeft="10dp"
+android:layout_marginEnd="10dp"
+android:layout_marginTop="10dp">
+
+
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="47dp" android:id="@+id/search_relative_layout"
+    android:orientation="horizontal" android:paddingRight="10dp" android:paddingLeft="10dp"
+    android:padding="2dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <EditText
+        android:id="@+id/autoComplete" android:hint="Start typing medicine name" android:paddingRight="10dp" android:paddingLeft="10dp"
+        android:layout_width="wrap_content" android:layout_alignParentLeft="true" android:layout_centerVertical="true"
+        android:layout_height="wrap_content" android:textColor="@color/monsoon" android:cursorVisible="true"
+        android:layout_marginTop="3dp" android:singleLine="true" android:backgroundTint="#00000000" android:textSize="15dp" android:layout_marginLeft="20dp"
+        >
+
+    </EditText>
+
+    <ImageButton
+        android:layout_width="30dp" android:visibility="invisible"
+        android:layout_height="30dp"
+        android:id="@+id/imageButtonSearch" android:background="@drawable/ic_search_purple_24dp"
+        android:layout_alignParentEnd="true" android:layout_alignParentRight="true" android:layout_centerVertical="true"
+        android:layout_marginRight="10dp" android:layout_marginEnd="10dp" />
+    </RelativeLayout>
+
+</RelativeLayout>
+
+
+
+</RelativeLayout>
+
+    <com.zl.reik.dilatingdotsprogressbar.DilatingDotsProgressBar
+        android:id="@+id/sa_progress"
+        android:layout_width="match_parent" android:layout_below="@+id/cardview"
+        android:layout_height="wrap_content"
+        android:radius="2dp" android:layout_centerHorizontal="true"
+        android:color="@color/windowBackground"  app:dd_animationDuration="500"
+        app:dd_numDots="6" android:layout_marginTop="5dp"
+        app:dd_scaleMultiplier="2.3"
+        app:dd_horizontalSpacing="12dp"
+        />
+
+    <ListView
+        android:id="@+id/listView" android:layout_below="@id/sa_progress" android:layout_marginTop="10dp" android:listSelector="@drawable/list_item_selector"
+        android:layout_width="fill_parent" android:padding="2dp" android:background="@color/white"
+        android:layout_height="fill_parent" android:divider="@color/windowBackground" >
+    </ListView>
+
+    <ImageView
+        android:layout_width="match_parent" android:layout_margin="50dp"
+        android:layout_height="match_parent" android:visibility="invisible"
+        android:id="@+id/placeholder" android:src="@drawable/nomedicine" />
+
+
+</RelativeLayout>

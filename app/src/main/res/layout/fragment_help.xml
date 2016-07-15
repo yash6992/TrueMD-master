@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:background="@color/steel"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent" android:background="@color/steel"
+        android:layout_height="48dp" android:orientation="horizontal" android:id="@+id/od_title">
+
+
+        <ImageButton
+            android:layout_width="30dp" android:background="?attr/selectableItemBackground"
+            android:clickable="true" android:layout_centerVertical="true" android:layout_marginStart="8dp" android:layout_marginLeft="8dp"
+            android:layout_height="30dp" android:src="@drawable/ic_arrow_back_p_24dp"
+            android:id="@+id/od_backImageButton"  />
+
+        <TextView
+            android:layout_width="match_parent" android:textColor="@color/windowBackground"
+            android:layout_height="30dp" android:textSize="18dp"
+            android:text="NEED HELP?"
+            android:id="@+id/od_title_tv" android:gravity="center_horizontal|center_vertical"
+            android:layout_alignTop="@+id/od_backImageButton"
+            android:layout_alignLeft="@+id/od_backImageButton"
+            android:layout_alignStart="@+id/od_backImageButton" />
+
+
+    </RelativeLayout>
+
+    <com.zl.reik.dilatingdotsprogressbar.DilatingDotsProgressBar
+        android:id="@+id/help_progress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:radius="2dp" android:layout_centerHorizontal="true"
+        android:color="@color/windowBackground"  app:dd_animationDuration="500"
+        app:dd_numDots="6" android:layout_marginTop="55dp"
+        app:dd_scaleMultiplier="2.3"
+        app:dd_horizontalSpacing="12dp"
+        />
+
+    <GridView
+        android:layout_width="match_parent" android:layout_below="@+id/od_title"
+        android:layout_height="wrap_content" android:columnWidth="100dp"
+        android:gravity="center" android:id="@+id/grid"  android:layout_marginTop="20dp" android:layout_marginBottom="76dp"
+        android:listSelector="#777777" android:layout_marginLeft="16dp" android:layout_marginRight="16dp"
+        android:numColumns="2"
+        android:stretchMode="columnWidth"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"/>
+
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_call"
+        android:layout_width="fill_parent"
+        android:layout_height="56dp" android:textColor="@color/white"
+        android:layout_marginTop="10dp" android:layout_gravity="bottom"
+        android:layout_marginBottom="10dp" android:layout_alignParentBottom="true"
+        android:padding="0dp" android:layout_marginLeft="20dp" android:layout_marginRight="20dp"
+        android:text="CALL +91 74000 74005"/>
+
+
+</RelativeLayout>

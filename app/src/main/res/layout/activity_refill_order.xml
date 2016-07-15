@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/steel"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent" android:background="@color/steel"
+        android:layout_height="48dp" android:orientation="horizontal" android:id="@+id/title_ll_co">
+
+
+        <ImageButton
+            android:layout_width="30dp" android:layout_centerVertical="true" android:layout_marginStart="8dp" android:layout_marginLeft="8dp"
+            android:layout_height="30dp" android:background="@drawable/ic_arrow_back_p_24dp"
+            android:id="@+id/backImageButtonMark_co" />
+
+        <TextView
+            android:layout_width="match_parent" android:textColor="@color/windowBackground"
+            android:layout_height="30dp" android:textSize="18dp"
+            android:text="REFILL ORDER"
+            android:id="@+id/title_co" android:gravity="center_horizontal|center_vertical"
+            android:layout_alignTop="@+id/backImageButtonMark_co"
+            android:layout_alignLeft="@+id/backImageButtonMark_co"
+            android:layout_alignStart="@+id/backImageButtonMark_co" />
+
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent" android:id="@+id/scroll_co" android:layout_below="@id/title_ll_co"
+        android:layout_height="wrap_content" android:layout_above="@+id/submit_co">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent" android:background="@color/steel" android:layout_marginRight="-12dp" android:layout_marginLeft="-12dp"
+                android:layout_height="5dp" android:orientation="vertical"  android:layout_marginTop="0dp" android:id="@+id/b5">
+
+            </LinearLayout>
+
+
+
+            <RelativeLayout
+                android:layout_width="match_parent" android:background="@color/white" android:id="@+id/details_co"
+                android:layout_height="wrap_content"  android:layout_marginTop="0dp" android:layout_below="@+id/b5">
+
+                <TextView
+                    android:layout_width="wrap_content" android:layout_marginLeft="20dp" android:layout_marginTop="8dp" android:textSize="14dp" android:id="@+id/your_order_co" android:layout_alignParentTop="true"
+                    android:layout_height="wrap_content" android:text="Your Order."  android:textColor="@color/windowBackground" android:backgroundTint="#00000000" />
+
+
+                <HorizontalScrollView
+                    android:layout_width="wrap_content" android:visibility="gone" android:id="@+id/hhsv_co" android:layout_marginTop="20dp"
+                    android:layout_height="wrap_content" android:layout_below="@id/your_order_co" >
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content" android:orientation="horizontal"
+                        android:layout_height="wrap_content" >
+
+                        <ImageView
+                            android:layout_width="80dp" android:id="@+id/coImage0"
+                            android:layout_height="80dp" android:layout_margin="3.5dp" />
+                        <ImageView
+                            android:layout_width="80dp" android:id="@+id/coImage1"
+                            android:layout_height="80dp" android:layout_margin="3.5dp" />
+                        <ImageView
+                            android:layout_width="80dp" android:id="@+id/coImage2"
+                            android:layout_height="80dp" android:layout_margin="3.5dp" />
+                        <ImageView
+                            android:layout_width="80dp" android:id="@+id/coImage3"
+                            android:layout_height="80dp" android:layout_margin="3.5dp" />
+                        <ImageView
+                            android:layout_width="80dp" android:id="@+id/coImage4"
+                            android:layout_height="80dp" android:layout_margin="3.5dp" />
+                        <ImageView
+                            android:layout_width="80dp" android:id="@+id/coImage5"
+                            android:layout_height="80dp" android:layout_margin="3.5dp" />
+                        <ImageView
+                            android:layout_width="80dp" android:id="@+id/coImage6"
+                            android:layout_height="80dp" android:layout_margin="3.5dp" />
+                        <ImageView
+                            android:layout_width="80dp" android:id="@+id/coImage7"
+                            android:layout_height="80dp" android:layout_margin="3.5dp" />
+                        <ImageView
+                            android:layout_width="80dp" android:id="@+id/coImage8"
+                            android:layout_height="80dp" android:layout_margin="3.5dp" />
+                        <ImageView
+                            android:layout_width="80dp" android:id="@+id/coImage9"
+                            android:layout_height="80dp" android:layout_margin="3.5dp" />
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+                <LinearLayout
+                    android:layout_width="match_parent" android:background="@drawable/shape_purple_ghost_med"
+                    android:layout_height="wrap_content" android:layout_below="@+id/hhsv_co" android:id="@+id/llll"
+                    android:layout_margin="10dp" android:paddingRight="15dp" android:paddingLeft="15dp"
+                    android:layout_marginBottom="0dp" >
+
+                    <EditText
+                        android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/comments_co" android:backgroundTint="#00000000"
+                        android:singleLine="true" android:textSize="11dp"
+                        android:inputType="text" android:textColor="@color/oil"
+                        android:hint="Add comments for our pharmacists (if any)"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content" android:textSize="11dp"
+                    android:layout_height="wrap_content" android:textColor="@color/windowBackground"
+                    android:text="New Text" android:layout_below="@+id/llll"
+                    android:id="@+id/discount_msg" android:layout_centerHorizontal="true" android:layout_marginBottom="8dp" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent" android:background="@color/white" android:id="@+id/pickup_address_co"
+                android:layout_height="wrap_content" android:layout_below="@id/details_co" android:layout_marginTop="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content" android:text="Delivery Address" android:textSize="13dp" android:textColor="@color/windowBackground"
+                    android:layout_height="wrap_content" android:layout_margin="7dp" android:paddingLeft="10dp" android:paddingTop="3dp" android:id="@+id/pickup_address_coH"  />
+
+                <TextView
+                    android:layout_width="wrap_content" android:text="Select an address where you want your order to be delivered" android:textSize="11dp" android:textColor="@color/monsoon"
+                    android:layout_height="wrap_content" android:layout_marginTop="-2dp" android:layout_marginLeft="7dp" android:paddingLeft="10dp" android:layout_below="@+id/pickup_address_coH" android:paddingTop="3dp" android:id="@+id/pickup_address_coST"  />
+
+                <TextView
+                    android:layout_width="match_parent" android:text="address" android:singleLine="true" android:gravity="center_vertical" android:textSize="12dp" android:textColor="@color/oil"
+                    android:layout_height="wrap_content" android:padding="11dp" android:layout_margin="10dp"  android:background="@drawable/shape_purple_ghost_med" android:id="@+id/pickup_address_coTV" android:layout_below="@id/pickup_address_coST" />
+
+
+
+                <CheckBox
+                    android:layout_width="wrap_content" android:visibility="gone" android:buttonTint="@color/colorPrimary" android:onClick="onRadioButtonClicked" android:layout_marginTop="3dp" android:layout_marginBottom="4dp" android:textSize="12dp"
+                    android:layout_height="wrap_content" android:layout_marginLeft="10dp" android:textColor="@color/windowBackground"
+                    android:text="Pick up the prescription from same address." android:layout_below="@id/pickup_address_coTV"
+                    android:id="@+id/addressRadioButton_co"  />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent" android:background="@color/white" android:id="@+id/delivery_address_co"
+                android:layout_height="wrap_content" android:visibility="gone" android:layout_below="@id/pickup_address_co" android:layout_marginTop="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content" android:text="Prescription Pickup Address" android:textSize="13dp" android:textColor="@color/windowBackground"
+                    android:layout_height="wrap_content" android:layout_margin="7dp" android:paddingLeft="10dp" android:paddingTop="3dp" android:id="@+id/delivery_address_coH"  />
+
+                <TextView
+                    android:layout_width="wrap_content" android:text="Select an address for prescription pickup" android:textSize="11dp" android:textColor="@color/monsoon"
+                    android:layout_height="wrap_content" android:layout_marginTop="-2dp" android:layout_marginLeft="7dp" android:paddingLeft="10dp" android:layout_below="@+id/delivery_address_coH" android:paddingTop="3dp" android:id="@+id/delivery_address_coST"  />
+
+                <TextView
+                    android:layout_width="match_parent" android:singleLine="true" android:background="@drawable/shape_purple_ghost_med" android:gravity="center_vertical" android:text="address" android:textSize="12dp" android:textColor="@color/oil"
+                    android:layout_height="wrap_content" android:padding="11dp" android:layout_margin="10dp" android:id="@+id/delivery_address_coTV" android:layout_below="@id/delivery_address_coST" />
+
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent" android:visibility="gone" android:background="@color/white" android:id="@+id/prescription_pickup_co"
+                android:layout_height="wrap_content" android:layout_below="@id/delivery_address_co" android:layout_marginTop="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content" android:text="Prescription Pickup Time" android:textSize="13dp" android:textColor="@color/windowBackground"
+                    android:layout_height="wrap_content" android:layout_margin="7dp" android:paddingLeft="10dp" android:paddingTop="3dp" android:id="@+id/prescription_pickup_time_coH"  />
+
+                <TextView
+                    android:layout_width="match_parent" android:background="@drawable/shape_purple_ghost_med" android:gravity="center_vertical" android:text="Today, 12:00 noon" android:textSize="12dp" android:textColor="@color/monsoon"
+                    android:layout_height="wrap_content" android:padding="11dp" android:layout_margin="10dp" android:id="@+id/prescription_pickup_time_coTV" android:layout_below="@id/prescription_pickup_time_coH" />
+
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent" android:visibility="gone" android:background="@color/white" android:id="@+id/language_co"
+                android:layout_height="wrap_content" android:layout_below="@id/prescription_pickup_co" android:layout_marginTop="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content" android:text="Packaging Info" android:textSize="13dp" android:textColor="@color/windowBackground"
+                    android:layout_height="wrap_content" android:layout_margin="7dp" android:paddingLeft="10dp" android:paddingTop="3dp" android:id="@+id/language_coH"  />
+
+                <TextView
+                    android:layout_width="wrap_content" android:text="Select a language for your TruePack" android:textSize="11dp" android:textColor="@color/monsoon"
+                    android:layout_height="wrap_content" android:layout_marginTop="-2dp" android:layout_marginLeft="7dp" android:paddingLeft="10dp" android:layout_below="@+id/language_coH" android:paddingTop="3dp" android:id="@+id/language_coST"  />
+
+                <TextView
+                    android:layout_width="match_parent" android:background="@drawable/shape_purple_ghost_med" android:gravity="center_vertical" android:text="English" android:textSize="12dp" android:textColor="@color/oil"
+                    android:layout_height="wrap_content" android:padding="11dp" android:layout_margin="10dp" android:id="@+id/language_coTV" android:layout_below="@id/language_coST" />
+
+
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent" android:background="@color/white" android:id="@+id/coupon_co" android:layout_alignParentBottom="true"
+                android:layout_height="wrap_content" android:layout_below="@id/language_co" android:layout_marginTop="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content" android:text="Promo Code" android:textSize="13dp" android:textColor="@color/windowBackground"
+                    android:layout_height="wrap_content" android:visibility="gone" android:layout_margin="7dp" android:paddingLeft="10dp" android:paddingTop="3dp" android:id="@+id/coupon_descrip"  />
+
+                <TextView
+                    android:layout_width="wrap_content" android:text="add coupons to get discounts " android:textSize="11dp" android:textColor="@color/monsoon"
+                    android:layout_height="wrap_content" android:visibility="gone" android:layout_marginTop="-2dp" android:layout_marginLeft="7dp" android:paddingLeft="10dp" android:layout_below="@+id/coupon_descrip" android:paddingTop="3dp" android:id="@+id/coupon_co_ST"  />
+
+
+
+                <TextView
+                    android:layout_width="wrap_content" android:text="I have a Promo Code" android:layout_below="@+id/coupon_co_ST" android:textSize="13dp" android:textColor="@color/windowBackground"
+                    android:layout_height="wrap_content"   android:layout_marginTop="15dp" android:layout_marginBottom="10dp" android:layout_centerHorizontal="true" android:paddingLeft="1dp" android:paddingTop="3dp" android:id="@+id/coupon_coH"  />
+
+                <LinearLayout
+                    android:layout_width="match_parent" android:orientation="vertical" android:layout_below="@id/coupon_co_ST"
+                    android:layout_height="wrap_content" android:id="@+id/ll_add_coupon">
+                    <LinearLayout
+                        android:layout_width="match_parent" android:padding="10dp" android:orientation="horizontal"
+                        android:layout_height="wrap_content" android:id="@+id/ll_edit_coupon" >
+
+
+                        <EditText
+                            android:layout_width="wrap_content" android:hint="Enter your Promo Code" android:textSize="12dp"
+                            android:layout_height="wrap_content" android:textColorHint="@color/monsoon" android:singleLine="true"
+                            android:id="@+id/coupon_et" android:layout_weight="5" android:backgroundTint="#00000000" android:textColor="@color/oil" />
+
+                        <TextView
+                            android:layout_width="wrap_content" android:layout_weight="1"
+                            android:layout_height="wrap_content" android:gravity="center"
+                            android:text="Cancel" android:textSize="14sp" android:textColor="@color/colorPrimary"
+                            android:id="@+id/submit_coupon_tv" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent" android:text="or Select one from your existing Promo Code" android:textSize="13dp" android:textColor="@color/windowBackground"
+                        android:layout_height="wrap_content"   android:layout_marginTop="0dp" android:layout_marginBottom="10dp" android:gravity="center" android:paddingLeft="0dp" android:paddingTop="3dp" android:id="@+id/coupon_coTV"  />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+    <RelativeLayout
+        android:layout_width="match_parent" android:background="@color/white" android:layout_alignParentBottom="true"
+        android:layout_height="wrap_content" android:id="@+id/submit_co">
+
+        <com.zl.reik.dilatingdotsprogressbar.DilatingDotsProgressBar
+            android:id="@+id/progress_3" android:layout_marginTop="10dp" android:layout_marginBottom="0dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:radius="2dp" android:layout_alignParentTop="true"
+            android:color="@color/windowBackground"
+            app:dd_numDots="6" android:layout_centerInParent="true"
+            app:dd_scaleMultiplier="2.3" app:dd_animationDuration="500"
+            app:dd_horizontalSpacing="12dp"
+            />
+        <TextView
+            android:layout_width="match_parent" android:textColor="@color/white" android:layout_marginLeft="12dp" android:layout_marginRight="12dp" android:layout_marginTop="10dp"
+            android:layout_height="wrap_content" android:layout_below="@+id/progress_3" android:layout_marginBottom="10dp"
+            android:text="REFILL ORDER" android:background="@drawable/button_purple" android:padding="13dp" android:textSize="13dp"
+            android:id="@+id/CheckImageButtonMark_co" android:gravity="center_horizontal|center_vertical"  />
+
+    </RelativeLayout>
+
+
+
+
+</RelativeLayout>

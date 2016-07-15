@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:background="@color/white"
+    android:layout_height="match_parent" android:id="@+id/rl_reminder"
+    >
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent" android:background="@color/white" android:layout_marginTop="10dp"
+        android:layout_height="wrap_content" android:orientation="horizontal" android:id="@+id/r_title">
+
+
+        <ImageButton
+            android:layout_width="30dp" android:layout_centerVertical="true" android:layout_marginStart="8dp" android:layout_marginLeft="8dp"
+            android:layout_height="30dp" android:background="@drawable/ic_arrow_back_p_24dp"
+            android:id="@+id/r_backImageButton" />
+
+        <TextView
+            android:layout_width="fill_parent" android:textColor="@color/windowBackground"
+            android:layout_height="30dp" android:textSize="18dp" android:layout_marginLeft="40dp"
+            android:text="YOUR REMINDERS" android:layout_centerHorizontal="true" android:paddingLeft="-40dp"
+            android:id="@+id/r_title_tv" android:gravity="center_horizontal|center_vertical"
+            android:layout_alignTop="@+id/r_backImageButton"
+            android:layout_alignLeft="@+id/r_backImageButton"
+            android:layout_alignStart="@+id/r_backImageButton" />
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"  android:background="@color/white" android:layout_below="@+id/r_title" android:gravity="center"
+        android:layout_height="wrap_content" android:id="@+id/lll" android:layout_gravity="center">
+    <com.zl.reik.dilatingdotsprogressbar.DilatingDotsProgressBar
+        android:id="@+id/progress_4"  android:layout_marginBottom="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:radius="2dp"
+        android:color="@color/windowBackground"
+        app:dd_numDots="6"
+        app:dd_scaleMultiplier="2.3" app:dd_animationDuration="500"
+        app:dd_horizontalSpacing="12dp"
+        />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent" android:layout_marginTop="5dp"
+        android:layout_height="wrap_content"
+        android:clipChildren="false" android:layout_below="@id/lll">
+
+        <TextView
+            android:id="@+id/buttonSwipeLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:textSize="12dp" android:gravity="center_horizontal"
+            android:layout_alignParentBottom="true" android:textColor="@color/windowBackground"
+             android:paddingBottom="20dp" android:paddingTop="20dp" android:layout_centerHorizontal="true"
+            android:text="You&apos;ll be reminded when to take your medicines.\n Click to turn reminders off."
+            />
+
+        <link.fls.swipestack.SwipeStack
+            android:id="@+id/swipeStack"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" android:background="@color/white"
+            android:layout_above="@+id/buttonSwipeLeft"
+            android:padding="@dimen/padding_swipestack"
+            app:stack_rotation="0"
+            app:stack_size="3"/>
+
+
+        <ImageView
+            android:layout_width="match_parent" android:layout_margin="40dp"
+            android:layout_height="match_parent" android:src="@drawable/noremindersremaining"
+            android:id="@+id/ra_placeholderi" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:visibility="invisible"
+            android:text="You don't have any reminders."
+            android:id="@+id/no_reminders" android:textColor="@color/windowBackground"
+            android:textSize="16dp" android:paddingBottom="40dp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

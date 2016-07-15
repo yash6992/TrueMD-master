@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@color/steel"
+    android:layout_height="match_parent">
+
+
+
+    <com.zl.reik.dilatingdotsprogressbar.DilatingDotsProgressBar
+        android:id="@+id/uo_progress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:radius="2dp" android:layout_centerHorizontal="true"
+        android:color="@color/windowBackground"  app:dd_animationDuration="500"
+        app:dd_numDots="6" android:layout_marginTop="20dp"
+        app:dd_scaleMultiplier="2.3"
+        app:dd_horizontalSpacing="12dp"
+        />
+
+    <ListView
+        android:id="@+id/uo_listView" android:layout_marginTop="10dp" android:layout_below="@+id/uo_progress"
+        android:layout_width="fill_parent" android:padding="10dp" android:background="@color/steel"
+        android:layout_height="fill_parent" android:divider="@color/windowBackground" >
+    </ListView>
+
+    <LinearLayout
+        android:layout_width="match_parent" android:visibility="visible" android:background="@color/steel"
+        android:layout_height="match_parent" android:orientation="vertical" android:id="@+id/uo_placeholder">
+        <ImageView
+            android:layout_width="match_parent" android:layout_marginLeft="10dp" android:src="@drawable/emptyupcomingorder1"
+            android:layout_height="wrap_content" android:adjustViewBounds="true"
+            android:id="@+id/uo_imageviewp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:background="@drawable/button_green"
+            android:text="ORDER NOW" android:layout_gravity="center" android:padding="12dp"
+            android:id="@+id/uo_placeholderTextView" android:textSize="15dp" android:textColor="@color/white" />
+
+
+    </LinearLayout>
+</RelativeLayout>

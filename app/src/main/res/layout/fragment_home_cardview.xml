@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    >
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <ImageButton
+            android:layout_width="32dp" android:layout_margin="10dp"
+            android:layout_height="32dp"
+            android:id="@+id/image_button_drawer_home" android:background="@drawable/ic_drawer_icon"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+        <ImageButton
+            android:layout_width="32dp" android:layout_margin="10dp"
+            android:layout_height="32dp" android:rotation="0"
+            android:id="@+id/image_notification_home" android:background="@drawable/ic_notifications_active_black_24dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp" android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Large Text"
+            android:id="@+id/textView1" />
+
+        <TextView
+            android:layout_width="wrap_content" android:padding="10dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Large Text"
+            android:id="@+id/textView2" />
+        </LinearLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <info.truemd.materialdesign.activity.NestedScrollingChildView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+
+
+    <RelativeLayout android:layout_width="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/homefragmentView"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="0dp"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/home_relative_layout1">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="vertical" android:layout_centerHorizontal="true"
+                    android:layout_width="wrap_content" android:id="@+id/truemdtitle_linear" android:gravity="center_horizontal"
+                    android:layout_height="wrap_content" android:layout_marginTop="15dp" >
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" android:textSize="40dp"
+                        android:text="TrueMD" android:textColor="@color/windowBackground" android:textStyle="bold"
+                        android:id="@+id/truemdtitle_tv" android:gravity="bottom|center_horizontal"
+                        android:paddingBottom="4dp" android:paddingRight="2dp" android:paddingEnd="2dp"
+                        android:layout_centerHorizontal="true" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" android:textSize="17dp"
+                        android:text="Your local pharmacy, Reinvented" android:textColor="@color/windowBackground"
+                        android:id="@+id/truemdsubtitle_tv" android:gravity="bottom|center_horizontal"
+                        android:paddingBottom="4dp" android:paddingRight="2dp" android:paddingEnd="2dp"
+                        android:layout_centerHorizontal="true" />
+
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:id="@+id/cardview_home"
+                    android:layout_width="match_parent" android:background="@drawable/button_purple"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/truemdtitle_linear" android:layout_marginRight="20dp" android:layout_marginLeft="20dp"
+                    android:layout_marginTop="22.5dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="38dp" android:id="@+id/search_relative_layout"
+                        android:orientation="horizontal"
+                        android:padding="0dp" >
+
+                        <TextView
+                            android:id="@+id/ss" android:text="Search over 1,00,000 + medicines"
+                            android:layout_width="wrap_content" android:layout_alignParentLeft="true" android:layout_centerVertical="true"
+                            android:layout_height="wrap_content" android:textColor="@color/white"
+                            android:layout_marginTop="5dp" android:paddingLeft="20dp" android:paddingStart="20dp"
+                            android:textSize="13dp"  />
+                        <ImageButton
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:id="@+id/imageCameraOnSearchBar" android:background="@drawable/ic_search_white_24dp"
+                            android:layout_alignParentEnd="true" android:layout_alignParentRight="true" android:layout_centerVertical="true"
+                            android:layout_marginRight="20dp" android:layout_marginEnd="10dp" />
+
+                    </RelativeLayout>
+                </LinearLayout>
+                <com.zl.reik.dilatingdotsprogressbar.DilatingDotsProgressBar
+                    android:id="@+id/home_progress" android:layout_below="@+id/cardview_home"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:radius="2dp" android:layout_centerHorizontal="true"
+                    android:color="@color/windowBackground"  app:dd_animationDuration="500"
+                    app:dd_numDots="6" android:layout_marginTop="20dp"
+                    app:dd_scaleMultiplier="2.3"
+                    app:dd_horizontalSpacing="12dp"
+                    />
+
+
+
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent" android:layout_marginTop="90dp"
+                    android:layout_gravity="bottom" android:layout_below="@+id/cardview_home"
+                    android:layout_alignParentBottom="true">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent" android:background="@drawable/button_purple_ghost_squ"
+                        android:layout_height="wrap_content" android:layout_marginTop="20dp" android:layout_marginLeft="20dp" android:layout_marginRight="20dp"
+                        android:id="@+id/home_relative_layout4">
+
+
+                        <ImageView
+                            android:layout_width="17dp"
+                            android:layout_height="17dp" android:layout_marginTop="14dp"
+                            android:layout_alignParentRight="true" android:layout_alignParentEnd="true"
+                            android:src="@drawable/ic_description_black_24dp"
+                            android:layout_marginRight="20dp"
+                            android:id="@+id/imageView4" />
+
+                        <LinearLayout
+                            android:orientation="vertical" android:id="@+id/main4"
+                            android:layout_width="wrap_content"
+                            android:layout_margin="8dp" android:paddingLeft="15dp"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content" android:layout_alignParentLeft="true" android:layout_alignParentStart="true"
+                                android:layout_height="wrap_content" android:layout_alignBottom="@+id/textView44"
+                                android:textColor="@color/windowBackground" android:textSize="13dp" android:textStyle="bold"
+                                android:text="KNOW ABOUT YOUR MEDICATION"
+                                android:id="@+id/textView45" />
+
+                            <TextView
+                                android:layout_width="wrap_content" android:layout_alignParentLeft="true" android:layout_alignParentStart="true"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/windowBackground" android:textSize="9dp" android:layout_marginTop="5dp"
+                                android:text="Get details about "
+                                android:id="@+id/textView44" />
+
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent" android:id="@+id/b44" android:layout_below="@+id/main4" android:layout_marginBottom="10dp"
+                            android:layout_height="0.3dp" android:layout_marginTop="0dp" android:layout_marginLeft="20dp" android:layout_marginRight="20dp"
+                            android:background="@color/windowBackground" />
+                        <TextView
+                            android:layout_width="wrap_content" android:layout_alignParentLeft="true" android:layout_alignParentStart="true"
+                            android:layout_height="wrap_content" android:layout_marginLeft="23dp" android:layout_marginBottom="10dp"
+                            android:textColor="@color/windowBackground" android:textSize="9dp" android:layout_marginTop="2dp"
+                            android:text="Or have a look at the other medicines you are prescribed. " android:layout_below="@+id/b44"
+                            android:id="@+id/textView46" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent" android:background="@drawable/button_purple_ghost_squ"
+                        android:layout_height="wrap_content" android:layout_marginTop="20dp" android:layout_marginLeft="20dp" android:layout_marginRight="20dp"
+                        android:id="@+id/home_relative_layout5" android:layout_marginBottom="12dp">
+
+
+                        <ImageView
+                            android:layout_width="17dp"
+                            android:layout_height="17dp" android:layout_marginTop="14dp"
+                            android:layout_alignParentRight="true" android:layout_alignParentEnd="true"
+                            android:src="@drawable/ic_question_answer_black_24dp"
+                            android:layout_marginRight="20dp"
+                            android:id="@+id/imageView5" />
+
+                        <LinearLayout
+                            android:orientation="vertical" android:id="@+id/main5"
+                            android:layout_width="wrap_content"
+                            android:layout_margin="8dp" android:paddingLeft="15dp"
+                            android:layout_marginStart="110dp" android:layout_marginLeft="110dp"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content" android:layout_alignParentLeft="true" android:layout_alignParentStart="true"
+                                android:layout_height="wrap_content" android:layout_alignBottom="@+id/textView54"
+                                android:textColor="@color/windowBackground" android:textSize="13dp" android:textStyle="bold"
+                                android:text="HAVE A QUESTION"
+                                android:id="@+id/textView55" />
+
+                            <TextView
+                                android:layout_width="wrap_content" android:layout_alignParentLeft="true" android:layout_alignParentStart="true"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/windowBackground" android:textSize="9dp" android:layout_marginTop="5dp"
+                                android:text="Ask about"
+                                android:id="@+id/textView54" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent" android:id="@+id/b55" android:layout_below="@+id/main5" android:layout_marginBottom="10dp"
+                            android:layout_height="0.3dp" android:layout_marginTop="0dp" android:layout_marginLeft="20dp" android:layout_marginRight="20dp"
+                            android:background="@color/windowBackground" />
+                        <TextView
+                            android:layout_width="wrap_content" android:layout_alignParentLeft="true" android:layout_alignParentStart="true"
+                            android:layout_height="wrap_content" android:layout_marginLeft="23dp" android:layout_marginBottom="10dp"
+                            android:textColor="@color/windowBackground" android:textSize="9dp" android:layout_marginTop="2dp"
+                            android:text="Our chat bot can help you with your medicine related questions." android:layout_below="@+id/b55"
+                            android:id="@+id/textView56" />
+                    </RelativeLayout>
+
+
+
+                </LinearLayout>
+
+            </RelativeLayout>
+        </ScrollView>
+
+        <RelativeLayout
+            android:layout_width="match_parent" android:background="@drawable/button_purple_ghost" android:layout_above="@+id/home_relative_layout2"
+            android:layout_height="wrap_content" android:layout_marginTop="0dp" android:layout_marginLeft="20dp" android:layout_marginRight="20dp"
+            android:id="@+id/home_relative_layout1">
+
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp" android:layout_centerInParent="true"
+                android:layout_alignParentRight="true" android:layout_alignParentEnd="true"
+                android:src="@drawable/ic_local_pharmacy_white_24dp"
+                android:layout_marginRight="15dp"
+                android:id="@+id/imageView1" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_margin="8dp" android:paddingLeft="15dp"
+                android:layout_marginStart="110dp" android:layout_marginLeft="110dp"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content" android:layout_alignParentLeft="true" android:layout_alignParentStart="true"
+                    android:layout_height="wrap_content" android:layout_alignBottom="@+id/textView14"
+                    android:textColor="@color/windowBackground" android:textSize="13dp" android:textStyle="bold"
+                    android:text="ORDER MEDICINES"
+                    android:id="@+id/textView15" />
+
+                <TextView
+                    android:layout_width="wrap_content" android:layout_alignParentLeft="true" android:layout_alignParentStart="true"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/windowBackground" android:textSize="9dp" android:layout_marginTop="5dp"
+                    android:text="Scan your prescription or simply reorder"
+                    android:id="@+id/textView14" />
+            </LinearLayout>
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"  android:background="@drawable/button_purple_ghost" android:layout_alignParentBottom="true"
+            android:layout_height="wrap_content" android:layout_marginBottom="12dp" android:layout_marginTop="15dp" android:layout_marginLeft="20dp" android:layout_marginRight="20dp"
+            android:id="@+id/home_relative_layout2">
+
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp" android:layout_centerInParent="true"
+                android:layout_alignParentRight="true" android:layout_alignParentEnd="true"
+                android:src="@drawable/ic_alarm_white_24dp"
+                android:layout_marginRight="14dp"
+                android:id="@+id/imageView2" />
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_margin="8dp" android:paddingLeft="15dp"
+                android:layout_marginStart="110dp" android:layout_marginLeft="110dp"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content" android:layout_alignParentLeft="true" android:layout_alignParentStart="true"
+                    android:layout_height="wrap_content" android:layout_alignBottom="@+id/textView24"
+                    android:textColor="@color/windowBackground" android:textSize="13dp" android:textStyle="bold"
+                    android:text="MEDICATION REMINDERS"
+                    android:id="@+id/textView25" />
+
+                <TextView
+                    android:layout_width="wrap_content" android:layout_alignParentLeft="true" android:layout_alignParentStart="true"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/windowBackground" android:textSize="9dp" android:layout_marginTop="5dp"
+                    android:text="Managing medicine reminders made easy "
+                    android:id="@+id/textView24" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent" android:visibility="gone" android:background="@drawable/button_purple_ghost"
+            android:layout_height="wrap_content" android:layout_alignParentBottom="true" android:layout_marginTop="15dp" android:layout_marginLeft="20dp" android:layout_marginRight="20dp" android:layout_marginBottom="15dp"
+            android:id="@+id/home_relative_layout3">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content" android:paddingLeft="15dp"
+                android:layout_margin="8dp"
+                android:layout_marginTop="12dp" android:layout_marginBottom="12dp"
+                android:layout_marginStart="110dp" android:layout_marginLeft="110dp"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content" android:layout_alignParentLeft="true" android:layout_alignParentStart="true"
+                    android:layout_height="wrap_content" android:layout_alignBottom="@+id/textView34"
+                    android:textColor="@color/windowBackground" android:textSize="13dp" android:textStyle="bold"
+                    android:text="YOUR ORDERS"
+                    android:id="@+id/textView35" />
+
+                <TextView
+                    android:layout_width="wrap_content" android:layout_alignParentLeft="true" android:layout_alignParentStart="true"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/windowBackground" android:textSize="9dp" android:layout_marginTop="5dp"
+                    android:text="A detailed view of all your Orders"
+                    android:id="@+id/textView34" />
+            </LinearLayout>
+
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp" android:layout_centerInParent="true"
+                android:layout_alignParentRight="true" android:layout_alignParentEnd="true"
+                android:src="@drawable/ic_assignment_white_24dp"
+
+                android:layout_marginRight="14dp"
+                android:id="@+id/imageView3" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+
+
+</android.support.design.widget.CoordinatorLayout>

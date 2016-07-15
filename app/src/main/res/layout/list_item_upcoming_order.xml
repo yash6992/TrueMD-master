@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <android.support.v7.widget.CardView
+        android:layout_width="wrap_content"  android:id="@+id/mainuo"
+        android:layout_height="wrap_content" >
+
+    <RelativeLayout
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"  android:paddingBottom="10dp"
+            android:paddingLeft="10dp" android:paddingRight="10dp" android:paddingTop="10dp"
+            android:layout_height="wrap_content" android:id="@+id/rltop" android:layout_margin="0dp">
+
+
+            <TextView
+                android:layout_width="wrap_content" android:padding="2dp" android:layout_marginLeft="20dp"
+                android:layout_height="wrap_content" android:layout_alignParentLeft="true" android:layout_alignTop="@+id/uo_order_no_h"
+                android:text="New Text" android:textSize="15.5dp" android:textColor="@color/windowBackground"
+                android:id="@+id/uo_date" />
+
+            <TextView
+                android:layout_width="wrap_content" android:padding="2dp" android:textColor="@color/monsoon"
+                android:layout_height="wrap_content"  android:layout_marginRight="2dp"
+                android:text="ORDER NO: " android:textSize="12dp" android:layout_toLeftOf="@+id/uo_order_no"
+                android:id="@+id/uo_order_no_h" />
+
+            <TextView
+                android:layout_width="wrap_content" android:padding="2dp" android:textColor="@color/oil"
+                android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_marginRight="20dp"
+                android:text="New Text" android:textSize="11dp"
+                android:id="@+id/uo_order_no" />
+
+            <TextView
+                android:layout_width="wrap_content" android:padding="2dp" android:layout_below="@+id/uo_order_no"
+                android:layout_height="wrap_content" android:visibility="invisible" android:layout_alignRight="@+id/uo_order_no" android:layout_marginTop="3dp"
+                android:text="New Text" android:textSize="12.5dp" android:textColor="@color/windowBackground"
+                android:id="@+id/uo_price" />
+
+            <TextView
+                android:layout_width="wrap_content" android:padding="2dp" android:layout_marginTop="5dp"
+                android:layout_height="wrap_content" android:layout_marginRight="20dp" android:textColor="@color/oil" android:layout_alignTop="@+id/uo_price"
+                android:text="New Text" android:textSize="14dp" android:layout_alignLeft="@+id/uo_date"
+                android:id="@+id/uo_patient_name" />
+
+        </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent" android:orientation="horizontal" android:id="@+id/b1" android:background="@color/windowBackground"
+        android:layout_height="0.2dp" android:layout_marginTop="0dp" android:layout_below="@+id/rltop" android:layout_marginBottom="5dp">
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent" android:padding="13dp" android:id="@+id/rlbottom"
+        android:layout_height="wrap_content" android:layout_below="@+id/b1">
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:textSize="12dp"
+            android:text="EXPECTED DELIVERY TIME: "
+            android:id="@+id/uo_expected_delivery_h" android:textColor="@color/monsoon" />
+
+        <TextView
+            android:layout_width="wrap_content" android:layout_marginLeft="10dp"
+            android:layout_height="wrap_content" android:textSize="12dp"
+            android:text="New Text" android:layout_toRightOf="@+id/uo_expected_delivery_h"
+            android:id="@+id/uo_expected_delivery" android:textColor="@color/oil" />
+
+        <TextView
+            android:layout_width="wrap_content" android:layout_marginTop="10dp" android:layout_below="@id/uo_expected_delivery_h"
+            android:layout_height="wrap_content" android:textSize="12dp"
+            android:text="STATUS: " android:textColor="@color/monsoon"
+            android:id="@+id/uo_status_h" />
+
+        <TextView
+            android:layout_width="wrap_content"  android:layout_marginTop="10dp" android:layout_below="@+id/uo_expected_delivery_h"
+            android:layout_height="wrap_content" android:layout_marginLeft="10dp"
+            android:text="New Text" android:layout_toRightOf="@+id/uo_status_h"
+            android:id="@+id/uo_status" android:textSize="12dp" android:textColor="@color/oil" />
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:orientation="horizontal" android:id="@+id/uo_ll_status" android:layout_marginBottom="7dp"
+        android:layout_width="match_parent" android:layout_marginTop="7dp" android:layout_below="@id/rlbottom"
+        android:layout_height="wrap_content" android:paddingLeft="5dp" android:paddingTop="3dp" android:paddingRight="3dp">
+
+
+        <LinearLayout
+            android:layout_width="0dp" android:layout_weight="1" android:padding="2dp" android:gravity="center"
+            android:layout_height="wrap_content" >
+        <TextView
+            android:layout_width="20dp"  android:background="@drawable/shape_solid_circle_dark"
+            android:layout_height="20dp" android:textSize="10dp" android:gravity="center"
+            android:text="1" android:textColor="@color/white"
+            android:id="@+id/uo_textView11" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:padding="0dp" android:layout_marginLeft="2dp"
+            android:text="Order Received" android:textSize="8.5dp" android:textColor="@color/windowBackground"
+            android:id="@+id/uo_textView12" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp" android:layout_weight="1" android:padding="2dp" android:gravity="center"
+            android:layout_height="wrap_content" >
+            <TextView
+                android:layout_width="20dp"  android:background="@drawable/shape_solid_circle_dark"
+                android:layout_height="20dp" android:textSize="10dp" android:gravity="center"
+                android:text="2" android:textColor="@color/white"
+                android:id="@+id/uo_textView21" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:padding="0dp" android:layout_marginLeft="2dp"
+                android:text="Digitizing" android:textSize="8.5dp" android:textColor="@color/windowBackground"
+                android:id="@+id/uo_textView22" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="0dp" android:layout_weight="1" android:padding="2dp" android:gravity="center"
+            android:layout_height="wrap_content" >
+            <TextView
+                android:layout_width="20dp"  android:background="@drawable/shape_solid_circle_dark"
+                android:layout_height="20dp" android:textSize="10dp" android:gravity="center"
+                android:text="3" android:textColor="@color/white"
+                android:id="@+id/uo_textView31" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:padding="0dp" android:layout_marginLeft="2dp"
+                android:text="Packaging" android:textSize="8.5dp" android:textColor="@color/windowBackground"
+                android:id="@+id/uo_textView32" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="0dp" android:layout_weight="1" android:padding="2dp" android:gravity="center"
+            android:layout_height="match_parent" >
+            <TextView
+                android:layout_width="20dp"  android:background="@drawable/shape_solid_circle_dark"
+                android:layout_height="20dp" android:textSize="10dp" android:gravity="center"
+                android:text="4" android:textColor="@color/white"
+                android:id="@+id/uo_textView41" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:padding="0dp" android:layout_marginLeft="2dp"
+                android:text="Out for delivery" android:textSize="8.5dp" android:textColor="@color/windowBackground"
+                android:id="@+id/uo_textView42" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent" android:orientation="horizontal" android:id="@+id/b2" android:background="@color/windowBackground"-->
+        <!--android:layout_height="0.2dp" android:layout_marginTop="0dp" android:layout_below="@+id/uo_ll_status" android:layout_marginBottom="5dp">-->
+
+    <!--</LinearLayout>-->
+
+        <LinearLayout
+            android:layout_width="match_parent" android:id="@+id/payment_ll" android:layout_below="@id/uo_ll_status"
+            android:layout_height="wrap_content" android:layout_margin="0dp" android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp" android:layout_weight="1"
+                android:layout_height="wrap_content" android:id="@+id/payment_status_h"
+                android:text="PAYMENT STATUS: " android:layout_gravity="center_vertical"
+                android:textColor="@color/monsoon" android:paddingBottom="10dp"
+                android:textSize="12dp"
+                android:layout_marginLeft="15dp"/>
+
+            <TextView
+                android:layout_width="0dp" android:layout_weight="1.2"
+                android:layout_height="wrap_content" android:paddingBottom="10dp"
+                android:text="N.A." android:layout_gravity="center_vertical"
+                android:textColor="@color/oil" android:id="@+id/payment_status"
+                android:textSize="12dp"
+                android:layout_marginLeft="3dp"/>
+
+            <TextView
+                android:id="@+id/btn_pay_now" android:layout_weight="0.8"
+                android:layout_width="0dp" android:gravity="center"
+                android:layout_height="wrap_content" android:textColor="@color/white"
+                android:layout_marginTop="0dp"  android:background="@drawable/button_green"
+                android:layout_marginBottom="10dp" android:textSize="10.5dp"
+                android:paddingTop="7dp" android:paddingBottom="7dp" android:layout_marginLeft="20dp" android:layout_marginRight="20dp"
+                android:text="PAY NOW"/>
+
+        </LinearLayout>
+
+</RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+    <LinearLayout
+        android:layout_width="match_parent" android:orientation="horizontal" android:id="@+id/b2"
+        android:layout_height="10dp" android:layout_marginTop="0dp" android:layout_below="@+id/mainuo" android:layout_marginBottom="0dp">
+    </LinearLayout>
+    </RelativeLayout>
+
+
+
+

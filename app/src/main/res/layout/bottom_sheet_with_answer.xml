@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    android:layout_width="match_parent"
+    android:id="@+id/popup_window"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp"
+    android:padding="0dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent" android:padding="16dp"
+        android:layout_height="wrap_content" android:layout_marginTop="5dp"
+        android:id="@+id/RLayout">
+
+
+        <TextView
+            android:id="@+id/tvq" android:text="Q?" android:layout_marginLeft="13dp" android:layout_marginStart="10dp"
+            android:layout_width="wrap_content" android:textColor="@color/windowBackground"
+            android:layout_height="wrap_content" android:textSize="17dp"
+            android:gravity="center_vertical|left"
+            android:padding="2dp" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0.45dp"
+            android:id="@+id/blackline_md" android:orientation="horizontal"
+            android:background="@color/monsoon" android:layout_below="@+id/tvq"
+            android:layout_marginLeft="5dp" android:layout_marginTop="8dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp">
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tva" android:text="A." android:layout_marginLeft="13dp" android:layout_marginStart="10dp"
+            android:layout_width="wrap_content" android:textColor="@color/monsoon" android:layout_marginTop="12dp"
+            android:layout_height="wrap_content" android:textSize="13dp"  android:layout_below="@id/blackline_md"
+            android:gravity="center_vertical|left"
+            android:padding="2dp" />
+
+
+
+    </RelativeLayout>
+
+
+
+
+
+</android.support.v7.widget.CardView>

@@ -1,0 +1,155 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/viewContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="24dp"
+    android:paddingRight="24dp"
+    android:background="@color/windowBackground"
+    tools:context="info.truemd.materialdesign.activity.SmsActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:id="@+id/layout_otp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:textSize="35dp"
+                android:text="TrueMD" android:textColor="@color/white" android:textStyle="bold"
+                android:id="@+id/truemdtitle_tv" android:layout_marginBottom="0dp"
+                android:paddingTop="15dp" android:layout_marginTop="10dp"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:textSize="14dp"
+                android:text="Your Local Pharmacy, Reinvented" android:textColor="@color/white" android:textStyle="bold"
+                android:id="@+id/truemdsubtitle_tv"
+                android:paddingTop="5dp"
+                android:layout_centerHorizontal="true" />
+
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="5dp" android:layout_marginTop="5dp"
+                android:indeterminateTint="@color/colorAccent"
+                android:indeterminateTintMode="src_atop"
+                android:visibility="visible" />
+
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:gravity="center_horizontal"
+                android:paddingLeft="40dp"
+                android:paddingRight="40dp"
+                android:text="@string/msg_sit_back"
+                android:textColor="@android:color/white"
+                android:textSize="14dp"
+                android:id="@+id/msg_sit_back_tv"/>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="25dp"
+                android:gravity="center_horizontal"
+                android:paddingLeft="40dp" android:id="@+id/msg_manual_otp_tv"
+                android:paddingRight="40dp"
+                android:text="@string/msg_manual_otp"
+                android:textColor="@android:color/white"
+                android:textSize="12dp" />
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent" android:padding="30dp"
+                android:layout_height="wrap_content" android:layout_marginTop="24dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:paddingLeft="2dp"
+                    android:paddingRight="2dp">
+
+
+                    <!--  Email Label -->
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp">
+                        <EditText android:id="@+id/inputOtp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" android:textSize="14dp"
+                            android:inputType="number" android:textColor="@color/windowBackground"
+                            android:hint="Enter OTP (4 Digit)" android:maxLength="4" />
+                    </android.support.design.widget.TextInputLayout>
+
+                    <com.zl.reik.dilatingdotsprogressbar.DilatingDotsProgressBar
+                        android:id="@+id/sms_progress" android:layout_gravity="center_horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:radius="2dp" android:layout_centerHorizontal="true"
+                        android:color="@color/windowBackground"  app:dd_animationDuration="500"
+                        app:dd_numDots="6" android:layout_marginTop="5dp"
+                        app:dd_scaleMultiplier="2.3"
+                        app:dd_horizontalSpacing="12dp"
+                        />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/btn_verify_otp"
+                android:layout_width="wrap_content"
+                android:layout_height="56dp" android:textColor="@color/white"
+                android:layout_marginTop="12dp" android:layout_gravity="bottom|center_horizontal"
+                android:layout_marginBottom="18dp"
+                 android:layout_marginLeft="20dp" android:layout_marginRight="20dp"
+                android:text="DONE"/>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+
+        </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_edit_mobile"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center" android:layout_below="@+id/layout_otp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txt_edit_mobile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:text="Change Number?"
+            android:textColor="@android:color/white"
+            android:textSize="14dp" />
+
+        <ImageButton
+            android:id="@+id/btn_edit_mobile"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:background="@null"
+            android:src="@drawable/ic_edit_mobile" />
+    </LinearLayout>
+    </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

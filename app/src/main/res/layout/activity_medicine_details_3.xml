@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="wrap_content" android:layout_centerHorizontal="true" android:id="@+id/ll_toggle" android:background="@drawable/shape6" android:orientation="horizontal"
+        android:layout_height="wrap_content" android:layout_marginBottom="7dp" android:layout_marginTop="12dp">
+
+    <belka.us.androidtoggleswitch.widgets.ToggleSwitch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="13sp" android:gravity="center_horizontal"
+        custom:activeBgColor="@color/windowBackground"
+        custom:toggleWidth="120dp"
+        custom:activeTextColor="@color/white"
+        custom:inactiveBgColor="@color/white"
+        custom:inactiveTextColor="@color/windowBackground"
+        custom:separatorColor="@color/white"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/toggle_switches_container"/>
+
+    </LinearLayout>
+
+
+
+    <FrameLayout
+        android:id="@+id/container_body_medicine_details"
+        android:layout_width="match_parent"  android:layout_below="@+id/ll_toggle"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+
+    <ImageButton
+        android:layout_width="30dp" android:background="@drawable/ic_arrow_back_p_24dp"
+        android:layout_height="30dp" android:layout_marginLeft="10dp" android:layout_marginTop="16dp" android:layout_marginStart="10dp"
+        android:id="@+id/backImageButton" />
+
+</RelativeLayout>

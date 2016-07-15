@@ -1,0 +1,37 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">0dp</dimen>
+    <dimen name="activity_vertical_margin">0dp</dimen>
+    <dimen name="nav_drawer_width">275dp</dimen>
+    <dimen name="spacing_normal">16dp</dimen>
+    <dimen name="image_width">120dp</dimen>
+    <dimen name="image_final_width">32dp</dimen>
+    <dimen name="detail_backdrop_height">192dp</dimen>
+    <dimen name="card_margin">16dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="list_item_avatar_size">40dp</dimen>
+    <dimen name="card_corner_radius">6dp</dimen>
+    <dimen name="elevation_large">8dp</dimen>
+
+    <dimen name="card_gap_local">50dp</dimen>
+
+    <dimen name="ic_clear_margin">15dp</dimen>
+
+
+    <dimen name="margin_fab">16dp</dimen>
+    <dimen name="padding_normal">8dp</dimen>
+    <dimen name="padding_swipestack">32dp</dimen>
+
+    <dimen name="elevation_normal">4dp</dimen>
+
+    <dimen name="camera_height">800dp</dimen>
+    <dimen name="selected_image_height">75dp</dimen>
+
+    <dimen name="card_gap_bottom_local">10dp</dimen>
+
+
+    <dimen name="tab_max_width">264dp</dimen>
+    <dimen name="tab_padding_bottom">16dp</dimen>
+    <dimen name="tab_label">14sp</dimen>
+    <dimen name="custom_tab_layout_height">72dp</dimen>
+</resources>

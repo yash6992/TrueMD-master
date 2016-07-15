@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#512DA8</color>
+    <color name="colorPrimaryDark">#311B92</color>
+    <color name="textColorPrimary">#673AB7</color>
+    <color name="windowBackground">#673AB7</color>
+    <color name="navBackground">#FFFFFF</color>
+    <color name="navBackgroundDark">#EEEEEE</color>
+    <color name="navTextColor">#673AB7</color>
+    <color name="navLL">#AAAAAA</color>
+    <color name="red_btn">#de4953</color>
+
+    <color name="material_login_login_color">#FFFFFF</color>
+    <color name="material_login_register_color">#E91E63</color>
+    <color name="material_login_login_error_color">#ffbebe</color>
+    <color name="material_login_register_error_color">#673AB7</color>
+
+    <color name="yellow">#ffff00</color>
+
+    <color name="green">#00ff44</color>
+
+    <color name="windowBackground_end">#673AB7</color>
+    <color name="navigationBarColor">#000000</color>
+    <color name="colorAccent">#ffffff</color>
+
+    <color name="window100">#EDE7F6</color>
+
+    <color name="color300">#E91E63</color>
+    <color name="color600">#C2185B</color>
+    <color name="color900">#880E4F</color>
+
+    <color name="primary">#5E35B1</color>
+    <color name="primary_dark">#303F9F</color>
+    <color name="primary_darker">#1A237E</color>
+    <color name="accent">#FFFFFF</color>
+    <color name="autocomplete_background_color">#1A237E</color>
+
+    <color name="accent_dark">#E91E63</color>
+
+    <color name="secondary_text">#727272</color>
+
+    <color name="white_overlay">#F3F3F3</color>
+
+    <color name="black">#000000</color>
+    <color name="jet">#222222</color>
+    <color name="oil">#333333</color>
+    <color name="monsoon">#777777</color>
+    <color name="jumbo">#888888</color>
+    <color name="aluminum">#999999</color>
+    <color name="base">#AAAAAA</color>
+    <color name="iron">#CCCCCC</color>
+    <color name="steel">#EFEFEF</color>
+    <color name="white">#FFFFFF</color>
+
+    <color name="card1_bg">#FFFFFF</color>
+    <color name="card2_bg">#FFFFFF</color>
+    <color name="card3_bg">#FFFFFF</color>
+    <color name="card4_bg">#FFFFFF</color>
+    <color name="card5_bg">#ef075c</color>
+    <color name="card6_bg">#22adf5</color>
+    <color name="card7_bg">#5cee36</color>
+</resources>

@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/steel"
+    android:padding="0dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent" android:background="@color/steel"
+        android:layout_height="48dp" android:orientation="horizontal" android:id="@+id/poa_title">
+
+
+        <ImageButton
+            android:layout_width="30dp" android:layout_centerVertical="true" android:layout_marginStart="8dp" android:layout_marginLeft="8dp"
+            android:layout_height="30dp" android:background="@drawable/ic_arrow_back_p_24dp"
+            android:id="@+id/poa_backImageButton" />
+
+        <TextView
+            android:layout_width="match_parent" android:textColor="@color/windowBackground"
+            android:layout_height="30dp" android:textSize="18dp"
+            android:text="ORDER DETAILS"
+            android:id="@+id/poa_title_tv" android:gravity="center_horizontal|center_vertical"
+            android:layout_alignTop="@+id/poa_backImageButton"
+            android:layout_alignLeft="@+id/poa_backImageButton"
+            android:layout_alignStart="@+id/poa_backImageButton" />
+
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent" android:background="@color/steel"
+        android:layout_height="fill_parent" android:layout_marginTop="50dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent" android:orientation="horizontal"
+                android:layout_height="wrap_content" android:id="@+id/top3_ll">
+
+                <LinearLayout
+                    android:layout_width="0dp" android:orientation="vertical"
+                    android:layout_height="70dp" android:layout_weight="1">
+
+                    <TextView
+                        android:layout_width="match_parent" android:text="AMOUNT" android:gravity="center" android:textSize="12dp"
+                        android:layout_height="0dp" android:id="@+id/poa_total_amount_h" android:layout_weight="1" android:textColor="@color/base" />
+
+
+                    <TextView
+                        android:layout_width="match_parent" android:text="Rs. 1000" android:gravity="center" android:textSize="13dp"
+                        android:layout_height="0dp" android:id="@+id/poa_total_amount" android:layout_weight="1" android:textColor="@color/oil" />
+
+                </LinearLayout>
+                <View
+                    android:layout_width="0.3dp" android:background="@color/base"
+                    android:layout_height="65dp" />
+
+                <LinearLayout
+                    android:layout_width="0dp" android:orientation="vertical"
+                    android:layout_height="70dp" android:layout_weight="1">
+                    <TextView
+                        android:layout_width="match_parent" android:text="STATUS" android:gravity="center" android:textSize="12dp"
+                        android:layout_height="0dp" android:id="@+id/poa_status_h" android:layout_weight="1" android:textColor="@color/base" />
+
+
+                    <TextView
+                        android:layout_width="match_parent" android:text="DELIVERED" android:gravity="center" android:textSize="13dp"
+                        android:layout_height="0dp" android:layout_weight="1" android:id="@+id/poa_status" android:textColor="@color/base" />
+
+                </LinearLayout>
+                <View
+                    android:layout_width="0.3dp" android:background="@color/base"
+                    android:layout_height="65dp" />
+                <LinearLayout
+                    android:layout_width="0dp" android:orientation="vertical"
+                    android:layout_height="70dp" android:layout_weight="1">
+                    <TextView
+                        android:layout_width="match_parent" android:text="ITEMS" android:gravity="center" android:textSize="13dp"
+                        android:layout_height="0dp" android:layout_weight="1" android:id="@+id/poa_no_of_items_h"  android:textColor="@color/base" />
+
+
+                    <TextView
+                        android:layout_width="match_parent" android:text="3" android:gravity="center" android:textSize="12dp"
+                        android:layout_height="0dp" android:layout_weight="1" android:id="@+id/poa_no_of_items" android:textColor="@color/oil" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+<android.support.v7.widget.CardView
+    android:layout_width="wrap_content" android:layout_margin="12dp" android:id="@+id/med_list_ll"
+    android:layout_height="wrap_content" android:layout_below="@+id/top3_ll">
+            <RelativeLayout
+                android:layout_width="match_parent"   android:background="@color/white"
+                android:layout_height="wrap_content" android:visibility="visible" >
+
+                <TextView
+                    android:layout_marginTop="15dp" android:layout_marginBottom="2.5dp"
+                    android:layout_width="wrap_content" android:text="Delivered at: " android:paddingLeft="20dp" android:gravity="left|center_vertical" android:textSize="11dp"
+                    android:layout_height="wrap_content"   android:id="@+id/poa_delivery_time_h" android:textColor="@color/oil" />
+                <TextView
+                    android:layout_marginTop="13dp" android:layout_marginBottom="2.5dp"
+                    android:layout_width="wrap_content"  android:text="xxx, xx xxx, xxxx" android:paddingLeft="20dp" android:gravity="left|center_vertical" android:textSize="13dp"
+                    android:layout_height="wrap_content"  android:layout_toRightOf="@+id/poa_delivery_time_h"  android:id="@+id/poa_delivery_time" android:textColor="@color/base" />
+                 <View
+                    android:layout_marginTop="15dp" android:layout_marginBottom="12.5dp"
+                    android:layout_width="match_parent" android:layout_below="@+id/poa_delivery_time_h"
+                    android:layout_height="0.8dp" android:background="@color/steel" android:id="@+id/poa_b12" />
+
+
+                <info.truemd.materialdesign.helper.NestedListView
+                    android:id="@+id/poa_listView" android:layout_marginTop="0dp" android:layout_below="@+id/poa_b12"
+                    android:layout_width="match_parent" android:padding="2dp" android:background="@color/white"
+                    android:layout_height="wrap_content">
+                </info.truemd.materialdesign.helper.NestedListView>
+
+                <View
+                   android:padding="10dp" android:layout_margin="10dp"
+                    android:layout_width="match_parent" android:layout_below="@+id/poa_listView"
+                    android:layout_height="0.8dp" android:background="@color/steel" android:id="@+id/poa_b6" />
+
+                <TextView
+                     android:textStyle="bold" android:layout_below="@+id/poa_b6" android:layout_margin="3dp"
+                    android:layout_width="wrap_content" android:text="Please Note: " android:paddingLeft="20dp" android:gravity="left|center_vertical" android:textSize="13dp"
+                    android:layout_height="wrap_content"  android:layout_weight="1" android:id="@+id/poa_please_note_h" android:textColor="@color/windowBackground" />
+
+                <TextView
+                    android:layout_below="@+id/poa_please_note_h" android:layout_margin="3dp"
+                    android:layout_width="wrap_content" android:text="You cannot return this order as this has already been delivered." android:paddingLeft="20dp" android:gravity="left|center_vertical" android:textSize="13dp"
+                    android:layout_height="wrap_content"  android:layout_weight="1" android:id="@+id/poa_please_note" android:textColor="@color/oil" />
+
+                <TextView
+                    android:layout_alignBottom="@+id/poa_please_note_h" android:layout_alignParentRight="true" android:layout_marginRight="30dp"
+                    android:layout_width="wrap_content" android:text="(?)" android:paddingLeft="20dp" android:gravity="left|center_vertical" android:textSize="13dp"
+                    android:layout_height="wrap_content"  android:layout_weight="1" android:id="@+id/poa_please_note_link" android:textColor="@color/windowBackground" />
+
+
+                <View
+                    android:padding="10dp" android:layout_margin="10dp"
+                    android:layout_width="match_parent" android:layout_below="@+id/poa_please_note"
+                    android:layout_height="0.8dp" android:background="@color/steel" android:id="@+id/poa_b7" />
+                <TextView
+                    android:layout_width="wrap_content" android:layout_marginLeft="20dp" android:layout_marginBottom="10dp" android:textColor="@color/windowBackground" android:layout_below="@+id/poa_b7"
+                    android:layout_height="wrap_content" android:id="@+id/poa_document" android:text="Click to see prescription images" android:textSize="12dp"/>
+
+
+
+            </RelativeLayout>
+</android.support.v7.widget.CardView>
+
+            <com.zl.reik.dilatingdotsprogressbar.DilatingDotsProgressBar
+                android:id="@+id/poa_progress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_below="@+id/med_list_ll"
+                android:radius="2dp" android:layout_centerHorizontal="true"
+                android:color="@color/windowBackground"  app:dd_animationDuration="500"
+                app:dd_numDots="6" android:layout_marginTop="5dp"
+                app:dd_scaleMultiplier="2.3"
+                app:dd_horizontalSpacing="12dp"
+                />
+
+            <TextView
+                android:layout_width="match_parent" android:layout_marginTop="10dp" android:background="@drawable/button_purple" android:padding="13dp"
+                android:layout_height="wrap_content" android:textColor="@color/white" android:textSize="15dp"  android:layout_marginBottom="12dp" android:layout_marginLeft="16dp" android:layout_marginRight="16dp"
+                android:layout_below="@+id/poa_progress" android:id="@+id/poa_refill_order" android:gravity="center" android:text="REFILL ORDER"/>
+
+
+            <View
+                android:layout_width="match_parent" android:layout_below="@+id/poa_refill_order"
+                android:layout_height="40dp" android:background="@color/steel" android:id="@+id/poa_b1" />
+
+            <TextView
+                android:layout_width="wrap_content" android:layout_marginTop="15dp" android:text="ORDER DETAILS" android:paddingLeft="20dp" android:gravity="left|center_vertical" android:textSize="12dp"
+                android:layout_height="20dp" android:layout_below="@+id/poa_refill_order" android:layout_weight="1" android:id="@+id/poa_order_details_h" android:textColor="@color/base" />
+
+            <RelativeLayout
+                android:layout_width="match_parent" android:layout_below="@+id/poa_b1"
+                android:layout_height="wrap_content" android:background="@color/white">
+
+                <TextView
+                    android:layout_marginTop="15dp" android:layout_marginBottom="2.5dp"
+                    android:layout_width="wrap_content" android:text="Order No: " android:paddingLeft="20dp" android:gravity="left|center_vertical" android:textSize="11dp"
+                    android:layout_height="wrap_content"   android:id="@+id/poa_order_no_h" android:textColor="@color/oil" />
+                <TextView
+                    android:layout_marginTop="13dp" android:layout_marginBottom="2.5dp"
+                    android:layout_width="wrap_content"  android:text="766589" android:paddingLeft="20dp" android:gravity="left|center_vertical" android:textSize="13dp"
+                    android:layout_height="wrap_content"  android:layout_toRightOf="@+id/poa_order_no_h"  android:id="@+id/poa_order_no" android:textColor="@color/base" />
+                <TextView
+                    android:layout_marginTop="5dp" android:layout_marginBottom="2.5dp"
+                    android:layout_width="wrap_content" android:text="Order placed: " android:paddingLeft="20dp" android:gravity="left|center_vertical" android:textSize="11dp"
+                    android:layout_height="wrap_content" android:layout_below="@+id/poa_order_no_h" android:id="@+id/poa_order_placed_h" android:textColor="@color/oil" />
+                <TextView
+                    android:layout_marginTop="3.5dp" android:layout_marginBottom="2.5dp"
+                    android:layout_width="wrap_content" android:text="xxx, xx xxx, xxxx" android:paddingLeft="20dp" android:gravity="left|center_vertical" android:textSize="13dp"
+                    android:layout_height="wrap_content" android:layout_below="@+id/poa_order_no_h" android:layout_toRightOf="@+id/poa_order_placed_h"  android:id="@+id/poa_order_placed" android:textColor="@color/base" />
+
+                <View
+                    android:layout_marginTop="15dp" android:layout_marginBottom="12.5dp"
+                    android:layout_width="match_parent" android:layout_below="@+id/poa_order_placed_h"
+                    android:layout_height="0.8dp" android:background="@color/steel" android:id="@+id/poa_b2" />
+                <TextView
+                    android:layout_marginTop="5dp" android:layout_marginBottom="2.5dp"
+                    android:layout_width="wrap_content" android:text="Total Amount: " android:paddingLeft="20dp" android:gravity="left|center_vertical" android:textSize="11dp"
+                    android:layout_height="wrap_content" android:layout_below="@+id/poa_b2" android:layout_weight="1" android:id="@+id/poa_amount_h" android:textColor="@color/oil" />
+
+                <TextView
+                    android:layout_marginTop="5dp" android:layout_marginBottom="2.5dp" android:textStyle="bold"
+                    android:layout_width="wrap_content" android:text="2312" android:paddingLeft="20dp" android:gravity="left|center_vertical" android:textSize="12dp"
+                    android:layout_height="wrap_content" android:layout_below="@+id/poa_amount_h" android:layout_weight="1" android:id="@+id/poa_amount" android:textColor="@color/black" />
+                <TextView
+                    android:layout_marginTop="5dp" android:layout_marginBottom="2.5dp" android:layout_toRightOf="@+id/poa_amount"
+                    android:layout_width="wrap_content" android:text="2312" android:paddingLeft="20dp" android:gravity="left|center_vertical" android:textSize="12dp"
+                    android:layout_height="wrap_content" android:layout_below="@+id/poa_amount_h" android:layout_weight="1" android:id="@+id/poa_amount_details" android:textColor="@color/base" />
+
+
+
+                <TextView
+                    android:layout_marginTop="15dp" android:layout_marginBottom="2.5dp"
+                    android:layout_width="wrap_content" android:text="Shipping Address: " android:paddingLeft="20dp" android:gravity="left|center_vertical" android:textSize="11dp"
+                    android:layout_height="wrap_content" android:layout_below="@+id/poa_amount_details" android:layout_weight="1" android:id="@+id/poa_delivery_address_h" android:textColor="@color/oil" />
+
+                <TextView
+                    android:layout_marginTop="11dp" android:layout_marginBottom="2.5dp"
+                    android:layout_width="wrap_content" android:text="xxxxx\nxxxxx\nxxxxxxxxxxxx\nxxxxxxxxxxxxx\nxxxx, 100010" android:paddingLeft="20dp" android:gravity="left|center_vertical" android:textSize="12dp"
+                    android:layout_height="wrap_content" android:layout_below="@+id/poa_delivery_address_h" android:layout_weight="1" android:id="@+id/poa_delivery_address" android:textColor="@color/base" />
+                <View
+                    android:layout_marginTop="15dp" android:layout_marginBottom="12.5dp"
+                    android:layout_width="match_parent" android:layout_below="@+id/poa_delivery_address"
+                    android:layout_height="0.8dp" android:background="@color/steel" android:id="@+id/poa_b3" />
+                <TextView
+                    android:layout_marginTop="5dp" android:layout_marginBottom="2.5dp"
+                    android:layout_width="wrap_content" android:text="Payment Method" android:paddingLeft="20dp" android:gravity="left|center_vertical" android:textSize="11dp"
+                    android:layout_height="wrap_content" android:layout_below="@+id/poa_b3" android:layout_weight="1" android:id="@+id/poa_payment_method_h" android:textColor="@color/oil" />
+
+                <TextView
+                    android:layout_marginTop="5dp" android:layout_marginBottom="12.5dp"
+                    android:layout_width="wrap_content" android:text="Cash" android:paddingLeft="20dp" android:gravity="left|center_vertical" android:textSize="13dp"
+                    android:layout_height="wrap_content" android:layout_below="@+id/poa_payment_method_h" android:layout_weight="1" android:id="@+id/poa_payment_method" android:textColor="@color/base" />
+
+                <View
+                    android:layout_marginTop="15dp" android:layout_marginBottom="12.5dp"
+                    android:layout_width="match_parent" android:layout_below="@+id/poa_payment_method"
+                    android:layout_height="0.8dp" android:background="@color/steel" android:id="@+id/poa_b4" />
+                <TextView
+                    android:layout_marginTop="5dp" android:layout_marginBottom="2.5dp"
+                    android:layout_width="match_parent" android:text="For any queries, Call:"  android:gravity="center_horizontal|center_vertical" android:textSize="11dp"
+                    android:layout_height="wrap_content" android:layout_below="@+id/poa_b4" android:layout_weight="1" android:id="@+id/poa_queries_h" android:textColor="@color/oil" />
+
+                <TextView
+                    android:layout_marginTop="5dp" android:layout_marginBottom="14.5dp"
+                    android:layout_width="match_parent" android:text="74000 74005" android:gravity="center_horizontal|center_vertical" android:textSize="15dp"
+                    android:layout_height="wrap_content" android:layout_below="@+id/poa_queries_h" android:layout_weight="1" android:id="@+id/poa_queries" android:textColor="@color/windowBackground" />
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
