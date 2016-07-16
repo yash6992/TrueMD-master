@@ -8,7 +8,9 @@
     android:background="@color/white"
     android:layout_height="match_parent">
 
-
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
     <RelativeLayout
         android:layout_width="match_parent" android:id="@+id/cardinfoRL"
@@ -142,12 +144,10 @@
             />
 
 
-        <ScrollView
-            android:layout_width="match_parent" android:layout_marginTop="25dp" android:layout_below="@+id/cardinfo"
-            android:layout_height="wrap_content">
+
         <LinearLayout
             android:layout_width="match_parent" android:padding="3dp"
-            android:layout_height="wrap_content"
+            android:layout_height="wrap_content" android:layout_marginTop="25dp" android:layout_below="@+id/cardinfo"
             android:orientation="vertical">
 
             <LinearLayout
@@ -205,7 +205,7 @@
                     android:id="@+id/btn_reactions"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    fancy:fb_text="FAQs" android:layout_marginTop="3dp"
+                    fancy:fb_text="How it works?" android:layout_marginTop="3dp"
                     fancy:fb_ghost="false" fancy:fb_textSize="15dp"
                     fancy:fb_defaultColor="@color/white" fancy:fb_borderWidth="1dp" fancy:fb_borderColor="@color/windowBackground"
 
@@ -249,7 +249,7 @@
 
 
         </LinearLayout>
-        </ScrollView>
+
 
 
         <com.github.clans.fab.FloatingActionMenu
@@ -288,6 +288,6 @@
 
     </RelativeLayout>
 
-
+</ScrollView>
 
 </RelativeLayout>

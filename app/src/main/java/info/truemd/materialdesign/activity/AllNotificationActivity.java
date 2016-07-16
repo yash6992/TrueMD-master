@@ -15,6 +15,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.support.v7.widget.helper.ItemTouchHelper;
+import android.text.format.DateUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,6 +26,10 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import org.joda.time.DateTime;
+import org.joda.time.chrono.ISOChronology;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -32,8 +37,10 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 
 import info.truemd.materialdesign.R;
+import info.truemd.materialdesign.helper.CustomHtmlTextParsing;
 import info.truemd.materialdesign.helper.SessionManager;
 import io.paperdb.Paper;
 
@@ -45,7 +52,7 @@ import io.paperdb.Paper;
 public class AllNotificationActivity extends AppCompatActivity {
 
     RecyclerView mRecyclerView;
-    String notificationJarray;
+    String notificationJarray; TextView title;
     JSONArray allNotification;
     ImageButton backImageButton, clearAll;
     SessionManager sessionManager; int lastInsertedIndex;
@@ -56,9 +63,11 @@ public class AllNotificationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_all_notification);
         sessionManager= new SessionManager(AllNotificationActivity.this);
         HashMap<String, String> user = sessionManager.getUserDetails();
-
+        Typeface tf_r = Typeface.createFromAsset(getAssets(), "fonts/OpenSans-Regular.ttf");
         backImageButton = (ImageButton) findViewById(R.id.n_backImageButton);
         clearAll = (ImageButton) findViewById(R.id.n_clearAllImageButton);
+        title = (TextView) findViewById(R.id.n_title_tv);
+        title.setTypeface(tf_r);
         clearAll.setVisibility(View.INVISIBLE);
         try {
         List<String> allKeysnoti = Paper.book("notification").getAllKeys();
@@ -345,9 +354,9 @@ public class AllNotificationActivity extends AppCompatActivity {
                     viewHolder.itemView.setBackgroundColor(getResources().getColor(R.color.windowBackground));
                     viewHolder.titleTextView.setVisibility(View.GONE);
                     viewHolder.title.setVisibility(View.GONE);
-                    viewHolder.orderh.setVisibility(View.GONE);
+                   // viewHolder.orderh.setVisibility(View.GONE);
                     viewHolder.orderno.setVisibility(View.GONE);
-                    viewHolder.undoButton.setVisibility(View.VISIBLE);
+                    viewHolder.undoButton.setVisibility(View.INVISIBLE);
                     viewHolder.undoButton.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
@@ -367,16 +376,47 @@ public class AllNotificationActivity extends AppCompatActivity {
                     viewHolder.itemView.setBackgroundColor(Color.WHITE);
                     viewHolder.titleTextView.setVisibility(View.VISIBLE);
                     viewHolder.title.setVisibility(View.VISIBLE);
-                    viewHolder.orderh.setVisibility(View.VISIBLE);
+                    //viewHolder.orderh.setVisibility(View.VISIBLE);
                     viewHolder.orderno.setVisibility(View.VISIBLE);
-                    viewHolder.titleTextView.setText(item.optString("message"));
+                    viewHolder.titleTextView.setText(CustomHtmlTextParsing.parse(item.optString("message")));
                     viewHolder.title.setText(item.optString("title"));
-                    viewHolder.orderno.setText(item.optString("order_no"));
+
+                    String dateTime = item.optString("timestamp");
+
+                    DateTimeFormatter formatter = DateTimeFormat.forPattern("yyyy-MM-dd'T'HH:mm:ss.SSSZZ")
+                            .withLocale(Locale.ROOT)
+                            .withChronology(ISOChronology.getInstanceUTC());
+
+                    DateTime then = formatter.parseDateTime(dateTime);
+
+                    DateTime now = DateTime.now();
+
+                    long diff = now.getMillis()-then.getMillis();
+
+                   String timeAgo=" ";
+
+                    if(diff<60000) {
+                      timeAgo = "just now";
+                    }
+                    else if(diff>60000&&diff<3600000){
+                        timeAgo =(String) DateUtils.getRelativeTimeSpanString( then.getMillis(), now.getMillis(),DateUtils.MINUTE_IN_MILLIS);
+                    }
+                    else if(diff>3600000&&diff<86400000){
+                        timeAgo =(String) DateUtils.getRelativeTimeSpanString( then.getMillis(), now.getMillis(),DateUtils.HOUR_IN_MILLIS);
+                    }
+                    else if(diff>86400000&&diff<259200000){
+                        timeAgo =(String) DateUtils.getRelativeTimeSpanString( then.getMillis(), now.getMillis(),DateUtils.DAY_IN_MILLIS);
+                    }
+                    else if(diff>259200000) {
+                        DateTimeFormatter dtfOut = DateTimeFormat.forPattern("MM/dd/yyyy");
+                        timeAgo = dtfOut.print(then);
+                    }
+                    viewHolder.orderno.setText(timeAgo);
                     viewHolder.undoButton.setVisibility(View.GONE);
                     viewHolder.undoButton.setOnClickListener(null);
                 }
             } catch (Exception e) {
-                Log.e("OnBindViewHolder: ",e.getMessage());
+                Log.e("OnBindViewHolder: ",position+":"+e.getMessage());
                 e.printStackTrace();
             }
         }
@@ -455,6 +495,7 @@ public class AllNotificationActivity extends AppCompatActivity {
             undoButton = (Button) itemView.findViewById(R.id.undo_button);
 
             Typeface tf_l= Typeface.createFromAsset(parent.getContext().getAssets(),"fonts/OpenSans-Regular.ttf");
+            Typeface tf_b= Typeface.createFromAsset(parent.getContext().getAssets(),"fonts/OpenSans-Bold.ttf");
 
             title.setTypeface(tf_l);
             orderno.setTypeface(tf_l);

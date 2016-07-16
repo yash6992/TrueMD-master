@@ -48,13 +48,163 @@
                 android:layout_height="wrap_content"  android:layout_marginTop="0dp" android:layout_below="@+id/b5">
 
                 <EditText
-                    android:layout_width="wrap_content" android:layout_marginLeft="20dp" android:layout_marginTop="8dp" android:textSize="14dp" android:id="@+id/your_order_co" android:layout_alignParentTop="true"
+                    android:layout_width="wrap_content" android:layout_marginLeft="20dp" android:layout_marginTop="4dp" android:textSize="14dp" android:id="@+id/your_order_co" android:layout_alignParentTop="true"
                     android:layout_height="wrap_content" android:text="Your Order."  android:textColor="@color/windowBackground" android:backgroundTint="#00000000" />
 
 
                 <HorizontalScrollView
-                    android:layout_width="wrap_content" android:id="@+id/hhsv_co" android:layout_marginTop="20dp"
+                    android:layout_width="wrap_content" android:id="@+id/hhsv_co" android:layout_marginTop="10dp"
                     android:layout_height="wrap_content" android:layout_below="@id/your_order_co" >
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <LinearLayout
+                            android:layout_width="wrap_content" android:orientation="horizontal"
+                            android:layout_height="wrap_content" >
+
+                        <LinearLayout
+                            android:layout_width="80dp" android:id="@+id/coL0" android:orientation="horizontal"
+                            android:layout_height="80dp" android:layout_margin="3.5dp" android:layout_gravity="center" >
+
+                            <com.wang.avi.AVLoadingIndicatorView
+                                android:id="@+id/load0"
+                                android:layout_width="40dp"
+                                android:layout_height="22dp" android:layout_marginLeft="20dp"  android:layout_marginTop="26dp"
+                                android:visibility="invisible"
+                                app:indicator="BallPulse"
+                                app:indicator_color="@color/white"
+                                />
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="80dp" android:id="@+id/coL1" android:orientation="horizontal"
+                                android:layout_height="80dp" android:layout_margin="3.5dp" android:layout_gravity="center" >
+
+                                <com.wang.avi.AVLoadingIndicatorView
+                                    android:id="@+id/load1"
+                                    android:layout_width="40dp"
+                                    android:layout_height="22dp" android:layout_marginLeft="20dp"  android:layout_marginTop="26dp"
+                                    android:visibility="invisible"
+                                    app:indicator="BallPulse"
+                                    app:indicator_color="@color/white"
+                                    />
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="80dp" android:id="@+id/coL2" android:orientation="horizontal"
+                                android:layout_height="80dp" android:layout_margin="3.5dp" android:layout_gravity="center" >
+
+                                <com.wang.avi.AVLoadingIndicatorView
+                                    android:id="@+id/load2"
+                                    android:layout_width="40dp"
+                                    android:layout_height="22dp" android:layout_marginLeft="20dp"  android:layout_marginTop="26dp"
+                                    android:visibility="invisible"
+                                    app:indicator="BallPulse"
+                                    app:indicator_color="@color/white"
+                                    />
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="80dp" android:id="@+id/coL3" android:orientation="horizontal"
+                                android:layout_height="80dp" android:layout_margin="3.5dp" android:layout_gravity="center" >
+
+                                <com.wang.avi.AVLoadingIndicatorView
+                                    android:id="@+id/load3"
+                                    android:layout_width="40dp"
+                                    android:layout_height="22dp" android:layout_marginLeft="20dp"  android:layout_marginTop="26dp"
+                                    android:visibility="invisible"
+                                    app:indicator="BallPulse"
+                                    app:indicator_color="@color/white"
+                                    />
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="80dp" android:id="@+id/coL4" android:orientation="horizontal"
+                                android:layout_height="80dp" android:layout_margin="3.5dp" android:layout_gravity="center" >
+
+                                <com.wang.avi.AVLoadingIndicatorView
+                                    android:id="@+id/load4"
+                                    android:layout_width="40dp"
+                                    android:layout_height="22dp" android:layout_marginLeft="20dp"  android:layout_marginTop="26dp"
+                                    android:visibility="invisible"
+                                    app:indicator="BallPulse"
+                                    app:indicator_color="@color/white"
+                                    />
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="80dp" android:id="@+id/coL5" android:orientation="horizontal"
+                                android:layout_height="80dp" android:layout_margin="3.5dp" android:layout_gravity="center" >
+
+                                <com.wang.avi.AVLoadingIndicatorView
+                                    android:id="@+id/load5"
+                                    android:layout_width="40dp"
+                                    android:layout_height="22dp" android:layout_marginLeft="20dp"  android:layout_marginTop="26dp"
+                                    android:visibility="invisible"
+                                    app:indicator="BallPulse"
+                                    app:indicator_color="@color/white"
+                                    />
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="80dp" android:id="@+id/coL6" android:orientation="horizontal"
+                                android:layout_height="80dp" android:layout_margin="3.5dp" android:layout_gravity="center" >
+
+                                <com.wang.avi.AVLoadingIndicatorView
+                                    android:id="@+id/load6"
+                                    android:layout_width="40dp"
+                                    android:layout_height="22dp" android:layout_marginLeft="20dp"  android:layout_marginTop="26dp"
+                                    android:visibility="invisible"
+                                    app:indicator="BallPulse"
+                                    app:indicator_color="@color/white"
+                                    />
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="80dp" android:id="@+id/coL7" android:orientation="horizontal"
+                                android:layout_height="80dp" android:layout_margin="3.5dp" android:layout_gravity="center" >
+
+                                <com.wang.avi.AVLoadingIndicatorView
+                                    android:id="@+id/load7"
+                                    android:layout_width="40dp"
+                                    android:layout_height="22dp" android:layout_marginLeft="20dp"  android:layout_marginTop="26dp"
+                                    android:visibility="invisible"
+                                    app:indicator="BallPulse"
+                                    app:indicator_color="@color/white"
+                                    />
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="80dp" android:id="@+id/coL8" android:orientation="horizontal"
+                                android:layout_height="80dp" android:layout_margin="3.5dp" android:layout_gravity="center" >
+
+                                <com.wang.avi.AVLoadingIndicatorView
+                                    android:id="@+id/load8"
+                                    android:layout_width="40dp"
+                                    android:layout_height="22dp" android:layout_marginLeft="20dp"  android:layout_marginTop="26dp"
+                                    android:visibility="invisible"
+                                    app:indicator="BallPulse"
+                                    app:indicator_color="@color/white"
+                                    />
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="80dp" android:id="@+id/coL9" android:orientation="horizontal"
+                                android:layout_height="80dp" android:layout_margin="3.5dp" android:layout_gravity="center" >
+
+                                <com.wang.avi.AVLoadingIndicatorView
+                                    android:id="@+id/load9"
+                                    android:layout_width="40dp"
+                                    android:layout_height="22dp" android:layout_marginLeft="20dp"  android:layout_marginTop="26dp"
+                                    android:visibility="invisible"
+                                    app:indicator="BallPulse"
+                                    app:indicator_color="@color/white"
+                                    />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
 
 
                     <LinearLayout
@@ -92,6 +242,7 @@
                             android:layout_width="80dp" android:id="@+id/coImage9"
                             android:layout_height="80dp" android:layout_margin="3.5dp" />
                     </LinearLayout>
+                    </RelativeLayout>
                 </HorizontalScrollView>
 
                 <LinearLayout

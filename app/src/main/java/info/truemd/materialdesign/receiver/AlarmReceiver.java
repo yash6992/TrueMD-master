@@ -78,7 +78,7 @@ public class AlarmReceiver extends BroadcastReceiver
                 .setContentTitle("TrueMD Reminder")
                 .setContentText("")
                 .setSubText("Remember to take your medicines")
-                .setSmallIcon(R.drawable.morning_w)
+                .setSmallIcon(R.drawable.ic_stat_noti)
                 .setContentIntent(pIntent3)
                 .setSound(soundUri)
                 .build();

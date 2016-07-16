@@ -20,7 +20,7 @@
         <TextView
             android:layout_width="fill_parent" android:textColor="@color/windowBackground"
             android:layout_height="30dp" android:textSize="18dp" android:layout_marginLeft="40dp"
-            android:text="YOUR REMINDERS" android:layout_centerHorizontal="true" android:paddingLeft="-40dp"
+            android:text="YOUR NEXT REMINDER" android:layout_centerHorizontal="true" android:paddingLeft="-40dp"
             android:id="@+id/r_title_tv" android:gravity="center_horizontal|center_vertical"
             android:layout_alignTop="@+id/r_backImageButton"
             android:layout_alignLeft="@+id/r_backImageButton"
@@ -30,7 +30,7 @@
     </RelativeLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"  android:background="@color/white" android:layout_below="@+id/r_title" android:gravity="center"
+        android:layout_width="match_parent" android:orientation="vertical"  android:background="@color/white" android:layout_below="@+id/r_title" android:gravity="center"
         android:layout_height="wrap_content" android:id="@+id/lll" android:layout_gravity="center">
     <com.zl.reik.dilatingdotsprogressbar.DilatingDotsProgressBar
         android:id="@+id/progress_4"  android:layout_marginBottom="0dp"
@@ -44,17 +44,22 @@
         />
     </LinearLayout>
 
+    <TextView
+        android:layout_width="wrap_content" android:id="@+id/r_next_reminder" android:layout_below="@+id/lll"
+        android:layout_height="wrap_content" android:text=" " android:textColor="@color/aluminum"
+        android:textSize="13dp" android:layout_centerHorizontal="true" />
+
     <RelativeLayout
-        android:layout_width="match_parent" android:layout_marginTop="5dp"
+        android:layout_width="match_parent" android:layout_marginTop="0dp"
         android:layout_height="wrap_content"
-        android:clipChildren="false" android:layout_below="@id/lll">
+        android:clipChildren="false" android:layout_below="@id/r_next_reminder">
 
         <TextView
             android:id="@+id/buttonSwipeLeft"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:textSize="12dp" android:gravity="center_horizontal"
             android:layout_alignParentBottom="true" android:textColor="@color/windowBackground"
-             android:paddingBottom="20dp" android:paddingTop="20dp" android:layout_centerHorizontal="true"
+             android:paddingBottom="10dp" android:paddingTop="10dp" android:layout_centerHorizontal="true"
             android:text="You&apos;ll be reminded when to take your medicines.\n Click to turn reminders off."
             />
 

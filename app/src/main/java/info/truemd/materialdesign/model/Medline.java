@@ -5,19 +5,35 @@ package info.truemd.materialdesign.model;
  */
 public class Medline {
 
-    String why, precaution, storage, diet;
+    String why;
+    String precaution;
+    String storage;
+    String diet;
 
-    public Medline(String why, String precaution, String storage, String diet) {
+
+    String how;
+
+    public Medline(String why, String precaution, String storage, String diet, String how) {
         this.why = why;
         this.precaution = precaution;
         this.storage = storage;
         this.diet = diet;
+        this.how = how;
     }
 
     public String getWhy() {
 
         return why;
     }
+
+    public String getHow() {
+        return how;
+    }
+
+    public void setHow(String how) {
+        this.how = how;
+    }
+
 
     public void setWhy(String why) {
         this.why = why;

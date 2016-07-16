@@ -97,7 +97,7 @@ public class CustomCardReminderAdapter extends BaseAdapter {
         date.setText(""+pouch.getString("date")); med1.setText(""); d1.setText("");
         time.setText(""+pouch.getString("time")); med2.setText(""); d2.setText("");
         name.setText(""+pouch.getString("patient_name"));med3.setText(""); d3.setText("");
-        dayno.setText(""+pouch.getString("day_no")); med4.setText(""); d4.setText("");
+        dayno.setText("Day "+pouch.getString("day_no")); med4.setText(""); d4.setText("");
             med5.setText(""); d5.setText("");
             String tod="morning";
 

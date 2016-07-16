@@ -12,6 +12,7 @@ import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
@@ -63,6 +64,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import cn.pedant.SweetAlert.SweetAlertDialog;
 import info.truemd.materialdesign.R;
 import info.truemd.materialdesign.adapter.CustomAddressBSAdapter;
 import info.truemd.materialdesign.adapter.CustomCouponBSAdapter;
@@ -498,6 +500,7 @@ public class ConfirmOrderActivity extends AppCompatActivity {
 
     public class UploadBitmapOperation extends AsyncTask<Bitmap, Integer, String> {
 
+        UploadBitmapOperation asyncObject; CountDownTimer imageUploadTimer;
         @Override
         protected void onPreExecute() {
             // TODO Auto-generated method stub
@@ -506,6 +509,45 @@ public class ConfirmOrderActivity extends AppCompatActivity {
              */
 
             Log.e("RESP:: ", "on pre");
+
+            asyncObject = this;
+             imageUploadTimer = new CountDownTimer(120000, 12000) {
+                public void onTick(long millisUntilFinished) {
+                    // You can monitor the progress here as well by changing the onTick() time
+
+                    Toast.makeText(ConfirmOrderActivity.this, "Images are being uploaded.", Toast.LENGTH_SHORT).show();
+                }
+                public void onFinish() {
+                    // stop async task if not in progress
+                    if (asyncObject.getStatus() == AsyncTask.Status.RUNNING) {
+                        asyncObject.cancel(false);
+                        // Add any specific task you wish to do as your extended class variable works here as well.
+
+
+
+                        new SweetAlertDialog(ConfirmOrderActivity.this, SweetAlertDialog.WARNING_TYPE)
+                                .setTitleText("Oops..!!")
+                                .setContentText("The server is taking too long to respond or there might be an issue with your internet connection.\n Try after some time.")
+                                .setConfirmText("OK")
+                                .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                                    @Override
+                                    public void onClick(SweetAlertDialog sDialog) {
+
+                                        ConfirmOrderActivity.this.finish();
+                                        startActivity(new Intent(ConfirmOrderActivity.this, OrderMedicineActivity.class));
+//                                            System.exit(0);
+
+                                    }
+                                })
+
+                                .show();
+
+                    }
+                }
+            };
+            imageUploadTimer.start();
+
+
 
             new MainActivity().checkInternet(ConfirmOrderActivity.this);
 
@@ -557,7 +599,23 @@ public class ConfirmOrderActivity extends AppCompatActivity {
                 }
             } catch (Exception e) {
                 Log.e("RESP:: ", "error"+e.getMessage());
-                Toast.makeText(getApplicationContext(),e.getMessage(),Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(),e.getMessage(),Toast.LENGTH_SHORT).show();
+                new SweetAlertDialog(ConfirmOrderActivity.this, SweetAlertDialog.WARNING_TYPE)
+                        .setTitleText("Oops..!!")
+                        .setContentText("The server is taking too long to respond or there might be an issue with your internet connection.\n Try after some time.")
+                        .setConfirmText("OK")
+                        .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                            @Override
+                            public void onClick(SweetAlertDialog sDialog) {
+
+                                ConfirmOrderActivity.this.finish();
+                                startActivity(new Intent(ConfirmOrderActivity.this, OrderMedicineActivity.class));
+//                                            System.exit(0);
+
+                            }
+                        })
+
+                        .show();
                 e.printStackTrace();
                 getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
 
@@ -578,6 +636,7 @@ public class ConfirmOrderActivity extends AppCompatActivity {
              * update ui thread and remove dialog
              */
 
+            imageUploadTimer.cancel();
 
             Log.e("RESP:: ", "on post execute");
             Toast.makeText(getApplicationContext(),completeUpload+"/ "+confirmBitmapList.size()+" images uploaded.", Toast.LENGTH_SHORT).show();

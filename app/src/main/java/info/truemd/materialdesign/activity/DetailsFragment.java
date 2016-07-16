@@ -57,7 +57,7 @@ public class DetailsFragment extends Fragment{
 
     String genericMedString;
     // temporary string to show the parsed response
-    private String jsonResponse, sideEffects, precautions, why, storage, diet, faqs, medName;
+    private String jsonResponse, sideEffects, precautions,how, why, storage, diet, faqs, medName;
     TextView nameMD, priceMD, manufacturerMD, scheduleMD, constituentsMD, sizeMD, pregh,lacth,conmd;
     FancyButton sideEffectsMD, precautionsMD, allergiesMD, reactionsMD,b1MD,b2MD;
     ImageButton pregnancyMD, lactationMD;
@@ -85,7 +85,7 @@ public class DetailsFragment extends Fragment{
 
         medName=MedicineDetailsActivity2.name;
         med= new Medicine();
-        sideEffects=""; precautions=""; why="";faqs = ""; storage=""; diet=""; genericMedString="";
+        sideEffects=""; precautions=""; why="";how="";faqs = ""; storage=""; diet=""; genericMedString="";
         pSweetDialog = new SweetAlertDialog(getActivity(), SweetAlertDialog.PROGRESS_TYPE);
         pSweetDialog.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
         pSweetDialog.setTitleText("Loading");
@@ -123,7 +123,7 @@ public class DetailsFragment extends Fragment{
                         startActivity(toOrder);
                         break;
                     case R.id.lactationImageButton:
-                        openBottomSheetSideEffects("Lactation Safety",lact,medName, "National Library of Medicine® (NLM)"  );
+                        openBottomSheetSideEffects("Lactation Safety",lact, medName, "National Library of Medicine® (NLM)"  );
 
                         break;
                     case R.id.pregnancyImageButton:
@@ -137,29 +137,28 @@ public class DetailsFragment extends Fragment{
 //                        ToolTipView myToolTipView = toolTipRelativeLayout.showToolTipForView(toolTip, rootView.findViewById(R.id.preg_ll));
 //                        //myToolTipView.setOnToolTipViewClickedListener((MedicineDetailsActivity2)getActivity());
 
-                        openBottomSheetSideEffects("Pregnancy Safety",preg,medName, "National Library of Medicine® (NLM)"  );
-
+                        openBottomSheetSideEffects("Pregnancy Safety", preg, medName, "National Library of Medicine® (NLM)"  );
                         break;
                     case R.id.btn_side_effects:
-                        openBottomSheetSideEffects("Side effects",sideEffects,medName,"Source: FDA adverse event database via openFDA.gov"  );
+                        openBottomSheetSideEffects("Side effects", sideEffects, medName,"Source: FDA adverse event database via openFDA.gov"  );
                         break;
                     case R.id.btn_precautions:
-                        openBottomSheetSideEffects("Precautions",precautions,medName, "National Library of Medicine® (NLM)" );
+                        openBottomSheetSideEffects("Precautions", precautions, medName, "National Library of Medicine® (NLM)" );
                         break;
                     case R.id.btn_allergies:
-                        openBottomSheetSideEffects("Uses of",why,medName, "National Library of Medicine® (NLM)" );
+                        openBottomSheetSideEffects("Uses of", why , medName, "National Library of Medicine® (NLM)" );
                         break;
                     case R.id.btn_blah_blah_1:
-                        openBottomSheetSideEffects("Diet control",diet,medName, "National Library of Medicine® (NLM)" );
+                        openBottomSheetSideEffects("Diet control", diet, medName, "National Library of Medicine® (NLM)" );
                         break;
                     case R.id.btn_blah_blah_2:
-                        openBottomSheetSideEffects("Storage",storage,medName, "National Library of Medicine® (NLM)" );
+                        openBottomSheetSideEffects("Storage", storage, medName, "National Library of Medicine® (NLM)" );
                         break;
                     case R.id.btn_reactions:
-                        openBottomSheetSideEffects("FAQs",faqs,medName ,"Source: FDA adverse event database via openFDA.gov");
+                        openBottomSheetSideEffects("How?", how, medName ,"National Library of Medicine® (NLM)");
                         break;
-               /* case R.id.fab32:
-                    text = fab32.getLabelText();*/
+                    /* case R.id.fab32:
+                        text = fab32.getLabelText();*/
 
                 }
 
@@ -444,7 +443,8 @@ public class DetailsFragment extends Fragment{
                         JSONObject r = genericsJsonArray.getJSONObject(i);
                         Generic genMed = new Generic();
                         genMed.setName(r.optString("name"));
-                        genMed.setFaqs(r.optString("faqs"));
+                        genMed.setFaqs(r.optString("howItWorks"));
+                       //genMed.setHow(r.optString("how"));
                         genMed.setSe(r.optString("sideEffects"));
                         genMed.setStrength(r.optString("strength"));
                         genMed.setUses(r.optString("usedFor"));
@@ -454,13 +454,13 @@ public class DetailsFragment extends Fragment{
                             Log.e("genericMedlineJA: ",i+" : "+ml.toString());
                             if(ml.toString().length()>3)
                             {
-                                Medline medline = new Medline(ml.optString("why"),ml.optString("precaution"),ml.optString("storage"),ml.optString("diet"));
+                                Medline medline = new Medline(ml.optString("why"),ml.optString("precaution"),ml.optString("storage"),ml.optString("diet"), ml.optString("how"));
                                 genMed.setMedline(medline);
                                 Log.e("MedlineObject: ", medline.getWhy().toString());
                             }
                             else
                             {
-                                Medline medline = new Medline(""+genMed.getUses(),"","","");
+                                Medline medline = new Medline(""+genMed.getUses(),"","","",""+genMed.getFaqs());
                                 genMed.setMedline(medline);
                                 Log.e("MedlineObject: ", medline.getWhy().toString());
                             }
@@ -546,22 +546,7 @@ public class DetailsFragment extends Fragment{
                 sdialog.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
                     @Override
                     public void onClick(SweetAlertDialog sDialog) {
-//                            sDialog
-//                                    .setTitleText("Deleted!")
-//                                    .setContentText("Your imaginary file has been deleted!")
-//                                    .setConfirmText("OK")
-//                                    .setConfirmClickListener(null)
-//                                    .changeAlertType(SweetAlertDialog.ERROR_TYPE);
 
-//                            FragmentManager fragmentManager = getSupportFragmentManager();
-//                            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-//                            fragmentTransaction.replace(R.id.container_body, new HomeFragment());
-//                            //fragmentTransaction.commit();
-//                            fragmentTransaction.addToBackStack(null);
-//                            fragmentTransaction.commitAllowingStateLoss();
-//
-//                            // set the toolbar title
-//                            getSupportActionBar().setTitle("TrueMD");
 
                         getActivity().finish();
 
@@ -602,7 +587,6 @@ public class DetailsFragment extends Fragment{
                 scheduleMD.setBackground(getResources().getDrawable(R.drawable.shape9));
                 sizeMD.setBackground(getResources().getDrawable(R.drawable.shape2));
 
-
                 nameMD.setText(TrueMDJSONUtils.goThroughNullCheck(med.getName()));
                 manufacturerMD.setText(TrueMDJSONUtils.goThroughNullCheck(med.getMf()));
                 priceMD.setText("\u20B9 "+TrueMDJSONUtils.goThroughNullCheck(med.getMrp()));
@@ -632,6 +616,9 @@ public class DetailsFragment extends Fragment{
 
                 why+= "<b>"+TrueMDJSONUtils.goThroughNullCheck(genmed.getName())+"</b>"+"\n";
                 why+= TrueMDJSONUtils.goThroughNullCheck(genmed.getMedline().getWhy())+"\n\n";
+
+                how+= "<b>"+TrueMDJSONUtils.goThroughNullCheck(genmed.getName())+"</b>"+"\n";
+                how+= TrueMDJSONUtils.goThroughNullCheck(genmed.getMedline().getHow())+"\n\n";
 
                 diet+= "<b>"+TrueMDJSONUtils.goThroughNullCheck(genmed.getName())+"</b>"+"\n";
                 diet+= TrueMDJSONUtils.goThroughNullCheck(genmed.getMedline().getDiet())+"\n\n";

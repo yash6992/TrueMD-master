@@ -587,8 +587,10 @@ public class PreLoginActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-    PreLoginActivity.this.finish();
-        System.exit(0);
+        super.onBackPressed();
+        PreLoginActivity.this.finish();
+        //System.exit(0);
+        this.finishAffinity();
     }
 
 

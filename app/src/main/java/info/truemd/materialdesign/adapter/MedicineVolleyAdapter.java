@@ -84,7 +84,7 @@ public class MedicineVolleyAdapter {
 
                         try {
                             JSONObject ml = r.getJSONObject("medline");
-                            Medline medline = new Medline(ml.getString("why"),ml.getString("precaution"),ml.getString("storage"),ml.getString("diet"));
+                            Medline medline = new Medline(ml.optString("why"),ml.optString("precaution"),ml.optString("storage"),ml.optString("diet"),ml.optString("how"));
                             genMed.setMedline(medline);
                         } catch (JSONException e) {
                             Log.e("Medline in mVolley: ", r.getJSONObject("medline").toString());

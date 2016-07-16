@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
+import android.text.format.DateUtils;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -74,6 +75,7 @@ public class ReminderActivity extends AppCompatActivity implements SwipeStack.Sw
     public JSONArray pouchesAllOrders, pouchesToShow;
     DilatingDotsProgressBar mDilatingDotsProgressBar;
     SessionManager sessionManager; ImageView placeholder;
+    TextView nextReminder;
 
 
     @Override
@@ -90,6 +92,7 @@ public class ReminderActivity extends AppCompatActivity implements SwipeStack.Sw
         r_title = (TextView) findViewById((R.id.r_title_tv));
         backImage = (ImageButton) findViewById(R.id.r_backImageButton);
         noReminders = (TextView) findViewById(R.id.no_reminders);
+        nextReminder = (TextView) findViewById(R.id.r_next_reminder);
         noReminders.setVisibility(View.GONE);
 
         mDilatingDotsProgressBar=(DilatingDotsProgressBar) findViewById(R.id.progress_4);
@@ -104,6 +107,7 @@ public class ReminderActivity extends AppCompatActivity implements SwipeStack.Sw
         HashMap<String, String> user = sessionManager.getUserDetails();
         placeholder.setImageResource(R.drawable.emptyreminders);
         placeholder.setVisibility(View.VISIBLE);
+        nextReminder.setTypeface(tf_l);
 
 
 //        try {
@@ -620,6 +624,8 @@ public class ReminderActivity extends AppCompatActivity implements SwipeStack.Sw
         JSONArray pouchesToReallyShow = new JSONArray();
         Log.e("showRem: ",""+ pouchesToShow.length());
 
+        boolean done=false;
+
 
         for(int loop=0; loop<pouchesToShow.length(); loop++){
 
@@ -632,6 +638,8 @@ public class ReminderActivity extends AppCompatActivity implements SwipeStack.Sw
 
                String forTime =  pouchToCheck.optString("datetime");
 
+
+
                 Log.e("showRem: ",loop+" "+forTime);
 
                 DateTime dateA = formatter.parseDateTime(forTime);
@@ -639,6 +647,13 @@ public class ReminderActivity extends AppCompatActivity implements SwipeStack.Sw
                 Log.e("setReminderPouch: ", "datetime: "+dateA+" now: "+current);
 
                 if(dateA.compareTo(current)>0) {
+
+                    done=true;
+
+                    String timetoshow = timeDifferenceInString(forTime);
+
+                    nextReminder.setText("is "+timetoshow);
+
                     Log.e("setReminderPouch: ", "true");
                     //jsonReallyValues.add(pouchToCheck);
                     pouchesToReallyShow.put(pouchToCheck);
@@ -788,6 +803,48 @@ public class ReminderActivity extends AppCompatActivity implements SwipeStack.Sw
         }
 
 
+
+    }
+
+    public String timeDifferenceInString(String datetime)
+    {
+        //String dateTime = item.optString("timestamp");
+
+        DateTimeFormatter formatter = DateTimeFormat.forPattern("yyyy-MM-dd'T'HH:mm:ss.SSSZZ")
+                .withLocale(Locale.ROOT)
+                .withChronology(ISOChronology.getInstanceUTC());
+
+        DateTime then = formatter.parseDateTime(datetime);
+
+        DateTime now = DateTime.now();
+
+        long diff = then.getMillis()-now.getMillis();
+
+        String timeAgo=" ";
+
+        if(diff<60000) {
+            timeAgo = "just now";
+        }
+        else if(diff>60000&&diff<3600000){
+            timeAgo =""+(String) DateUtils.getRelativeTimeSpanString( then.getMillis(), now.getMillis(),DateUtils.MINUTE_IN_MILLIS);
+            timeAgo.replace("ago","from now");
+        }
+        else if(diff>3600000&&diff<86400000){
+            timeAgo =(String) DateUtils.getRelativeTimeSpanString( then.getMillis(), now.getMillis(),DateUtils.HOUR_IN_MILLIS);
+            timeAgo.replace("ago","from now");
+        }
+        else if(diff>86400000&&diff<259200000){
+            timeAgo =(String) DateUtils.getRelativeTimeSpanString( then.getMillis(), now.getMillis(),DateUtils.DAY_IN_MILLIS);
+            timeAgo.replace("ago","from now");
+        }
+        else if(diff>259200000) {
+            DateTimeFormatter dtfOut = DateTimeFormat.forPattern("MM/dd/yyyy");
+            timeAgo = "on "+dtfOut.print(then);
+        }
+
+        Log.e("nextReminder: ",""+timeAgo);
+
+        return timeAgo;
 
     }
 

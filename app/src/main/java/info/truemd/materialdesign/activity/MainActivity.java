@@ -229,7 +229,7 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
         userName_mobile = mobile;
 
         try {
-            reminderIDOld = Integer.parseInt(""+Paper.book("reminder_id").read("id"));
+          //  reminderIDOld = Integer.parseInt(""+Paper.book("reminder_id").read("id"));
         } catch (NumberFormatException e) {
             e.printStackTrace();
         }
@@ -553,8 +553,9 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
                                     @Override
                                     public void onClick(SweetAlertDialog sDialog) {
 
-                                        MainActivity.this.finish();
-                                        System.exit(0);
+
+                                        MainActivity.this.finishAffinity();
+                                       // System.exit(0);
 
                                     }
                                 })
@@ -695,8 +696,9 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
                         @Override
                         public void onClick(SweetAlertDialog sDialog) {
 
-                            MainActivity.this.finish();
-                            System.exit(0);
+                            //MainActivity.this.finish();
+                            MainActivity.this.finishAffinity();
+                            //System.exit(0);
 
                         }
                     })
@@ -848,9 +850,9 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
                         .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
                             @Override
                             public void onClick(SweetAlertDialog sDialog) {
-
-                                MainActivity.this.finish();
-                                System.exit(0);
+//MainActivity.this.finish();
+                                MainActivity.this.finishAffinity();
+                                //System.exit(0);
 
                             }
                         })
@@ -902,9 +904,9 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
                             @Override
                             public void onClick(SweetAlertDialog sDialog) {
 
-                                MainActivity.this.finish();
-                                System.exit(0);
-
+                                //MainActivity.this.finish();
+                                MainActivity.this.finishAffinity();
+                                //System.exit(0);
                             }
                         })
 
@@ -1081,9 +1083,9 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
                                 @Override
                                 public void onClick(SweetAlertDialog sDialog) {
 
-                                    MainActivity.this.finish();
-                                    System.exit(0);
-
+                                    //MainActivity.this.finish();
+                                    MainActivity.this.finishAffinity();
+                                    //System.exit(0);
                                 }
                             })
 
@@ -1488,9 +1490,9 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
                             @Override
                             public void onClick(SweetAlertDialog sDialog) {
 
-                                MainActivity.this.finish();
-                                System.exit(0);
-
+                                //MainActivity.this.finish();
+                                MainActivity.this.finishAffinity();
+                                //System.exit(0);
                             }
                         })
 
@@ -1580,45 +1582,8 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
 
     public boolean setRemindersFromPouches(JSONArray pouches) throws JSONException
     {
-//        {
-//            "_id":{
-//            "$oid":"574d085131d54fff074cffcd"
-//        },
-//            "code":"620089",
-//                "created_at":"2016-05-31T03:43:13.948Z",
-//                "date":"30 May",
-//                "datetime":"2016-05-30T16:00:00.000+00:00",
-//                "day":"Mon",
-//                "day_no":1,
-//                "meds":[
-//            {
-//                "name":"LANOXIN 0.25MG TABLET",
-//                    "truemdCode":"IQz6I3",
-//                    "quantity":0,
-//                    "truePack":true,
-//                    "daily_frequency":4,
-//                    "weekly_frequency":null,
-//                    "duration_type":"day",
-//                    "meal":"after"
-//            },
-//            {
-//                "name":"CLOPIDOGREL 75MG TABLET",
-//                    "truemdCode":"46V434",
-//                    "quantity":0,
-//                    "truePack":true,
-//                    "daily_frequency":3,
-//                    "weekly_frequency":null,
-//                    "duration_type":"tbc",
-//                    "meal":"before"
-//            }
-//            ],
-//            "patient_name":"Yashvardhan ",
-//                "time":"12:00 PM",
-//                "time_of_day":"afternoon",
-//                "updated_at":"2016-05-31T03:43:13.948Z"
-//        }
 
-        boolean success = false;
+        boolean success = false; int id=0;
 
         for (int i=0; i<pouches.length();i++)
         {
@@ -1642,9 +1607,10 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
                         Log.e("setReminderPouch: ", "datetime: "+dateA+" current: "+current);
                         long getTimeToAlarmMilliSec = dateA.getMillis()-current.getMillis();
                         Log.e("setReminderPouch: ", ""+getTimeToAlarmMilliSec);
-                        String remID= Paper.book("reminder_id").read("id");
-                        int id = Integer.parseInt(remID);
-                        scheduleAlarm(getTimeToAlarmMilliSec,id );
+                        //String remID= Paper.book("reminder_id").read("id");
+                        //int id = Integer.parseInt(remID);
+
+                        scheduleAlarm(getTimeToAlarmMilliSec,id);
                         id++;
 
                         Paper.book("reminder_id").write("id", ""+id);
@@ -1780,7 +1746,7 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
                     Paper.book("reminder").write(""+user.get(SessionManager.KEY_MOBILE_UM),jsonObject.toString());
                     setRemindersFromPouches(pouches);
                     Log.e("FCMinGetPouches:","Reminders set:"+ Paper.book("reminder_id").read("id"));
-                    cancelAllAlarms(MainActivity.this, reminderIDOld);
+                    //cancelAllAlarms(MainActivity.this, reminderIDOld);
                     Log.e("FCMinGetPouches:","Reminders cancelled:"+reminderIDOld);
 
 

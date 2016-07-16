@@ -5,6 +5,8 @@ package info.truemd.materialdesign.activity;
  */
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -19,6 +21,7 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -523,7 +526,7 @@ public class HomeFragment extends Fragment {
         // [END fetch_config_with_callback]
 
         if(mFirebaseRemoteConfig.getString("mandatory_update").equalsIgnoreCase("true")){
-            new SweetAlertDialog(getActivity(), SweetAlertDialog.WARNING_TYPE)
+            SweetAlertDialog sdialog = new SweetAlertDialog(getActivity(), SweetAlertDialog.WARNING_TYPE)
                     .setTitleText("A new version is available.")
                     .setContentText("Please update to the latest version as the current version is no longer supported.")
                     .setConfirmText("UPDATE")
@@ -537,9 +540,25 @@ public class HomeFragment extends Fragment {
                             startActivity(browserIntent);
 
                         }
-                    })
+                    });
 
-                    .show();
+                    sdialog.show();
+
+            sdialog.setOnKeyListener(new Dialog.OnKeyListener() {
+
+                @Override
+                public boolean onKey(DialogInterface arg0, int keyCode,
+                                     KeyEvent event) {
+                    // TODO Auto-generated method stub
+                    if (keyCode == KeyEvent.KEYCODE_BACK) {
+
+                        getActivity().finish();
+
+                        System.exit(0);
+                    }
+                    return true;
+                }
+            });
         }
 
     }

@@ -31,22 +31,22 @@
                 android:layout_alignStart="@+id/title_text_view" />
 
             <TextView
-                android:layout_width="wrap_content" android:padding="2dp" android:textColor="@color/monsoon"
+                android:layout_width="wrap_content" android:visibility="invisible" android:padding="2dp" android:textColor="@color/monsoon"
                 android:layout_height="wrap_content"  android:layout_marginRight="72dp" android:layout_alignBottom="@+id/n_title"
                 android:text="ORDER NO: " android:textSize="11dp" android:layout_alignParentRight="true"
                 android:id="@+id/n_order_no_h" />
 
             <TextView
-                android:layout_width="wrap_content" android:padding="2dp" android:textColor="@color/oil" android:layout_alignBottom="@+id/n_title"
+                android:layout_width="wrap_content" android:padding="2dp" android:textColor="@color/base" android:layout_alignBottom="@+id/n_title"
                 android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_marginRight="20dp"
-                android:text="New Text" android:textSize="11dp"
+                android:text="" android:textSize="11dp"
                 android:id="@+id/n_order_no" />
 
             <TextView
                 android:id="@+id/title_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center_vertical"
+                android:gravity="center_vertical" android:textColor="@color/aluminum"
                 android:layout_below="@+id/n_title"
                 android:layout_margin="16dp"
                 android:textSize="12.5sp" android:text="Message content ..."

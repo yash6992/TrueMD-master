@@ -77,18 +77,30 @@ public class FCMMessageService extends FirebaseMessagingService{
         Log.e("FCM:","Reminders till now:"+ Paper.book("reminder_id").read("id"));
 
         try {
-            reminderIDOld = Integer.parseInt(""+Paper.book("reminder_id").read("id"));
+            //reminderIDOld = Integer.parseInt(""+Paper.book("reminder_id").read("id"));
         } catch (NumberFormatException e) {
             e.printStackTrace();
         }
-
-        String title = TrueMDJSONUtils.goThroughNullCheck(remoteMessage.getData().get("title"));
-        String activity = TrueMDJSONUtils.goThroughNullCheck(remoteMessage.getData().get("status"));
-        String timestamp = TrueMDJSONUtils.goThroughNullCheck(remoteMessage.getData().get("timestamp"));
-        String orderNo = TrueMDJSONUtils.goThroughNullCheck(remoteMessage.getData().get("order_no"));
-        String message = TrueMDJSONUtils.goThroughNullCheck(remoteMessage.getData().get("message"));
-
         Map<String, String> singleNotification = remoteMessage.getData();
+
+        String title = ""; String activity = "";  String timestamp = ""; String orderNo = ""; String message = "";
+
+        if(singleNotification.containsKey("timestamp")) {
+             title = TrueMDJSONUtils.goThroughNullCheck(remoteMessage.getData().get("title"));
+             activity = TrueMDJSONUtils.goThroughNullCheck(remoteMessage.getData().get("status"));
+             timestamp = TrueMDJSONUtils.goThroughNullCheck(remoteMessage.getData().get("timestamp"));
+             orderNo = TrueMDJSONUtils.goThroughNullCheck(remoteMessage.getData().get("order_no"));
+             message = TrueMDJSONUtils.goThroughNullCheck(remoteMessage.getData().get("message"));
+        }
+        else
+        {
+            title = TrueMDJSONUtils.goThroughNullCheck(remoteMessage.getData().get("title"));
+            //activity = TrueMDJSONUtils.goThroughNullCheck(remoteMessage.getData().get("status"));
+           // timestamp = TrueMDJSONUtils.goThroughNullCheck(remoteMessage.getData().get("timestamp"));
+           // orderNo = TrueMDJSONUtils.goThroughNullCheck(remoteMessage.getData().get("order_no"));
+            message = TrueMDJSONUtils.goThroughNullCheck(remoteMessage.getData().get("message"));
+        }
+
 
         JSONObject singleNotificationObject = new JSONObject(singleNotification);
         Log.e("JSONNotification: ",singleNotificationObject.toString());
@@ -157,14 +169,14 @@ public class FCMMessageService extends FirebaseMessagingService{
      * @param messageBody FCM message body received.
      */
     private void sendNotificationNormal(String... messageBody) {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, AllNotificationActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0 /* Request code */, intent,
                 PendingIntent.FLAG_ONE_SHOT);
 
         Uri defaultSoundUri= RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         android.support.v4.app.NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this)
-                .setSmallIcon(R.mipmap.ic_launcher)
+                .setSmallIcon(R.drawable.ic_stat_noti)
                 .setContentTitle(messageBody[0])
                 .setContentText(messageBody[4])
                 .setAutoCancel(true)
@@ -188,7 +200,7 @@ public class FCMMessageService extends FirebaseMessagingService{
 
         Uri defaultSoundUri= RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         android.support.v4.app.NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this)
-                .setSmallIcon(R.mipmap.ic_launcher)
+                .setSmallIcon(R.drawable.ic_stat_noti)
                 .setContentTitle(messageBody[0])
                 .setContentText(messageBody[4])
                 .setAutoCancel(true)
@@ -200,18 +212,6 @@ public class FCMMessageService extends FirebaseMessagingService{
 
         notificationManager.notify(0 /* ID of notification */, notificationBuilder.build());
 
-        //scheduleAlarm(30000,1);
-        //scheduleAlarm(60000,2);
-//        setAlarmForTime("2016-07-10T16:27:00.001Z");
-//        setAlarmForTime("2016-07-10T16:28:00.001Z");
-//        setAlarmForTime("2016-07-10T16:29:00.001Z");
-//        setAlarmForTime("2016-07-10T16:30:00.001Z");
-//        setAlarmForTime("2016-07-10T16:31:00.001Z");
-//        setAlarmForTime("2016-07-10T16:22:00.001Z");
-//        setAlarmForTime("2016-07-10T16:23:00.001Z");
-//        setAlarmForTime("2016-07-10T16:24:00.001Z");
-//        setAlarmForTime("2016-07-10T16:25:00.001Z");
-//        setAlarmForTime("2016-07-10T16:26:00.001Z");
         getPouches();
 
 
@@ -262,7 +262,7 @@ public class FCMMessageService extends FirebaseMessagingService{
 
         Uri defaultSoundUri= RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         android.support.v4.app.NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this)
-                .setSmallIcon(R.mipmap.ic_launcher)
+                .setSmallIcon(R.drawable.ic_stat_noti)
                 .setContentTitle(messageBody[0])
                 .setContentText(messageBody[4])
                 .setAutoCancel(true)
@@ -315,7 +315,7 @@ public class FCMMessageService extends FirebaseMessagingService{
 //                "updated_at":"2016-05-31T03:43:13.948Z"
 //        }
 
-        boolean success = false;
+        boolean success = false; int id=0;
 
         for (int i=0; i<pouches.length();i++)
         {
@@ -339,8 +339,9 @@ public class FCMMessageService extends FirebaseMessagingService{
                         Log.e("setReminderPouch: ", "datetime: "+dateA+" current: "+current);
                         long getTimeToAlarmMilliSec = dateA.getMillis()-current.getMillis();
                         Log.e("setReminderPouch: ", ""+getTimeToAlarmMilliSec);
-                        String remID= Paper.book("reminder_id").read("id");
-                        int id = Integer.parseInt(remID);
+                        //String remID= Paper.book("reminder_id").read("id");
+                        //int id = Integer.parseInt(remID);
+
                         scheduleAlarm(getTimeToAlarmMilliSec,id );
                         id++;
 
@@ -477,7 +478,7 @@ public class FCMMessageService extends FirebaseMessagingService{
                     Paper.book("reminder").write(""+user.get(SessionManager.KEY_MOBILE_UM),jsonObject.toString());
                     setRemindersFromPouches(pouches);
                     Log.e("FCMinGetPouches:","Reminders set:"+ Paper.book("reminder_id").read("id"));
-                    cancelAllAlarms(FCMMessageService.this, reminderIDOld);
+                    //cancelAllAlarms(FCMMessageService.this, reminderIDOld);
                     Log.e("FCMinGetPouches:","Reminders cancelled:"+reminderIDOld);
 
                 }

@@ -118,7 +118,7 @@ public class CustomPrescriptionMedAdapter extends BaseAdapter {
 
                 String quantity= ""+med.getString("quantity")+" "+type+" ";
 
-                int duration=med.getInt("duration");
+
                 String duration_type=med.getString("duration_type");
 
                 if(duration_type.equalsIgnoreCase("sos"))
@@ -128,6 +128,7 @@ public class CustomPrescriptionMedAdapter extends BaseAdapter {
                 }
                 else
                 {
+                    int duration=med.getInt("duration");
                     duration_string=""+duration+" "+ duration_type;
 
                     if (frequency_daily.equalsIgnoreCase("0.5")&&frequency_weekly.equalsIgnoreCase("")&&frequency_monthly.equalsIgnoreCase(""))

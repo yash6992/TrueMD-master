@@ -8,15 +8,19 @@
     android:background="@color/white"
     android:layout_height="match_parent">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent" android:id="@+id/cardinfoRL"
+            android:layout_height="wrap_content" android:layout_marginTop="0dp">
 
 
-    <RelativeLayout
-        android:layout_width="match_parent" android:id="@+id/cardinfoRL"
-        android:layout_height="wrap_content" android:layout_marginTop="0dp">
 
-        <LinearLayout
-            android:layout_width="match_parent" android:id="@+id/cardinfo" android:layout_marginTop="6dp" android:layout_marginBottom="20dp"
-            android:layout_height="wrap_content" android:layout_marginRight="10dp" android:layout_marginLeft="10dp" android:padding="0dp">
+            <LinearLayout
+                android:layout_width="match_parent" android:id="@+id/cardinfo" android:layout_marginTop="6dp" android:layout_marginBottom="20dp"
+                android:layout_height="wrap_content" android:layout_marginRight="10dp" android:layout_marginLeft="10dp" android:padding="0dp">
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -74,9 +78,9 @@
                         android:layout_height="wrap_content" android:layout_marginTop="18dp" android:layout_marginRight="21dp" android:layout_marginEnd="21dp">
 
                         <ImageButton
-                        android:layout_width="wrap_content"  android:id="@+id/pregnancyImageButton" android:background="@drawable/ic_pregnant_woman_white_24dp"
-                        android:layout_height="wrap_content"
-                        />
+                            android:layout_width="wrap_content"  android:id="@+id/pregnancyImageButton" android:background="@drawable/ic_pregnant_woman_white_24dp"
+                            android:layout_height="wrap_content"
+                            />
                     </LinearLayout>
                     <TextView
                         android:layout_width="wrap_content" android:layout_marginTop="2dp" android:textSize="9dp" android:textColor="@color/base" android:layout_alignRight="@+id/preg_ll"
@@ -115,177 +119,175 @@
                     </LinearLayout>
 
                 </RelativeLayout>
-        </LinearLayout>
+            </LinearLayout>
 
 
 
 
-        <com.github.clans.fab.FloatingActionMenu
-            android:id="@+id/menu_down"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="-45dp"
-            android:paddingRight="10dp"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            android:paddingLeft="10dp"
-            android:elevation="6dp"
-            fab:menu_labels_ellipsize="end"
-            fab:menu_labels_singleLine="true"
-            fab:menu_fab_size="normal"
-            fab:menu_openDirection="down"
-            android:layout_below="@+id/cardinfo"
-            android:layout_alignRight="@+id/cardinfo"
-            android:layout_alignEnd="@+id/cardinfo">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0.3dp" android:background="@color/colorPrimary"
+                android:layout_marginLeft="20dp" android:layout_marginTop="0dp"
+                android:layout_marginStart="20dp" android:layout_below="@+id/cardinfo"
+                android:layout_marginEnd="20dp" android:layout_marginBottom="0dp"
+                android:layout_marginRight="20dp"> </LinearLayout>
 
-            <com.github.clans.fab.FloatingActionButton
+            <com.zl.reik.dilatingdotsprogressbar.DilatingDotsProgressBar
+                android:id="@+id/progress_1" android:layout_marginTop="10dp"
+                android:layout_width="match_parent" android:layout_below="@+id/cardinfo"
+                android:layout_height="wrap_content"
+                android:radius="2dp"  app:dd_animationDuration="500"
+                android:color="@color/windowBackground"
+                app:dd_numDots="6" android:layout_centerInParent="true"
+                app:dd_scaleMultiplier="2.3"
+                app:dd_horizontalSpacing="12dp"
+                />
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent" android:padding="3dp"
+                android:layout_height="wrap_content" android:layout_marginTop="25dp" android:layout_below="@+id/cardinfo"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent" android:layout_marginTop="10dp"
+                    android:layout_height="wrap_content" android:layout_gravity="center_horizontal|center_vertical"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginRight="6dp">
+                    <mehdi.sakout.fancybuttons.FancyButton
+                        android:id="@+id/btn_side_effects"
+                        android:layout_width="match_parent" fancy:fb_borderWidth="1dp" fancy:fb_borderColor="@color/windowBackground"
+
+                        android:layout_height="wrap_content"
+                        fancy:fb_text="Side Effects" fancy:fb_ghost="false" fancy:fb_textSize="15dp"
+                        fancy:fb_defaultColor="@color/white"
+                        fancy:fb_focusColor="@color/window100"  fancy:fb_textColor="@color/windowBackground" android:layout_weight="1"
+                        fancy:fb_radius="30dp"
+                        android:layout_marginTop="3dp" />
+
+                    <mehdi.sakout.fancybuttons.FancyButton
+                        android:id="@+id/btn_precautions"
+                        android:layout_width="match_parent" fancy:fb_borderWidth="1dp" fancy:fb_borderColor="@color/windowBackground"
+
+                        android:layout_height="wrap_content"
+                        fancy:fb_text="Precautions" android:layout_marginTop="3dp"
+                        fancy:fb_ghost="false" fancy:fb_textSize="15dp"
+                        fancy:fb_defaultColor="@color/white"
+                        fancy:fb_focusColor="@color/window100"  fancy:fb_textColor="@color/windowBackground" android:layout_weight="1"
+                        fancy:fb_radius="30dp"
+                        android:layout_marginLeft="15dp" />
+
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent" android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_height="wrap_content" android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginRight="6dp">
+
+                    <mehdi.sakout.fancybuttons.FancyButton
+                        android:id="@+id/btn_allergies"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        fancy:fb_text="Used for" android:layout_marginTop="3dp"
+                        fancy:fb_ghost="false" fancy:fb_textSize="15dp"
+                        fancy:fb_defaultColor="@color/white" fancy:fb_borderWidth="1dp" fancy:fb_borderColor="@color/windowBackground"
+
+                        fancy:fb_focusColor="@color/window100"  fancy:fb_textColor="@color/windowBackground" android:layout_weight="1"
+                        fancy:fb_radius="30dp"/>
+
+                    <mehdi.sakout.fancybuttons.FancyButton
+                        android:id="@+id/btn_reactions"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        fancy:fb_text="How it works?" android:layout_marginTop="3dp"
+                        fancy:fb_ghost="false" fancy:fb_textSize="15dp"
+                        fancy:fb_defaultColor="@color/white" fancy:fb_borderWidth="1dp" fancy:fb_borderColor="@color/windowBackground"
+
+                        fancy:fb_focusColor="@color/window100"  fancy:fb_textColor="@color/windowBackground" android:layout_weight="1"
+                        fancy:fb_radius="30dp"
+                        android:layout_marginLeft="15dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent" android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_height="wrap_content" android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginRight="6dp">
+
+                    <mehdi.sakout.fancybuttons.FancyButton
+                        android:id="@+id/btn_blah_blah_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        fancy:fb_text="Diet Control" android:layout_marginTop="3dp"
+                        android:layout_weight="1" fancy:fb_ghost="false" fancy:fb_textSize="15dp"
+                        fancy:fb_defaultColor="@color/white" fancy:fb_borderWidth="1dp" fancy:fb_borderColor="@color/windowBackground"
+                        fancy:fb_focusColor="@color/window100"  fancy:fb_textColor="@color/windowBackground" fancy:fb_radius="30dp"/>
+
+                    <mehdi.sakout.fancybuttons.FancyButton
+                        android:id="@+id/btn_blah_blah_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        fancy:fb_text="How to store?" android:layout_marginTop="3dp"
+                        fancy:fb_ghost="false" fancy:fb_textSize="15dp" fancy:fb_borderWidth="1dp" fancy:fb_borderColor="@color/windowBackground"
+                        fancy:fb_defaultColor="@color/white"
+                        fancy:fb_focusColor="@color/window100"  fancy:fb_textColor="@color/windowBackground"
+                        android:layout_weight="1"
+                        fancy:fb_radius="30dp"
+                        android:layout_marginLeft="15dp" />
+
+                </LinearLayout>
+
+
+
+
+            </LinearLayout>
+
+
+
+            <com.github.clans.fab.FloatingActionMenu
+                android:id="@+id/menu_down"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_question_answer_white_24dp"
-                fab:fab_size="mini" android:id="@+id/menu_chat"
-                fab:fab_label="Ask about the medicine" />
+                android:layout_marginTop="-45dp"
+                android:paddingRight="10dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:elevation="6dp"
+                fab:menu_labels_ellipsize="end"
+                fab:menu_labels_singleLine="true"
+                fab:menu_fab_size="normal"
+                fab:menu_openDirection="down"
+                android:layout_below="@+id/cardinfo"
+                android:layout_alignRight="@+id/cardinfo"
+                android:layout_alignEnd="@+id/cardinfo">
 
-            <com.github.clans.fab.FloatingActionButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_alarm_add_white_24dp"
-                fab:fab_size="mini" android:id="@+id/menu_remind"
-                fab:fab_label="Order Medicines" />
-
-        </com.github.clans.fab.FloatingActionMenu>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0.3dp" android:background="@color/colorPrimary"
-            android:layout_marginLeft="20dp" android:layout_marginTop="0dp"
-            android:layout_marginStart="20dp" android:layout_below="@+id/cardinfo"
-            android:layout_marginEnd="20dp" android:layout_marginBottom="0dp"
-            android:layout_marginRight="20dp"> </LinearLayout>
-
-        <com.zl.reik.dilatingdotsprogressbar.DilatingDotsProgressBar
-            android:id="@+id/progress_1" android:layout_marginTop="10dp"
-            android:layout_width="match_parent" android:layout_below="@+id/cardinfo"
-            android:layout_height="wrap_content"
-            android:radius="2dp"  app:dd_animationDuration="500"
-            android:color="@color/windowBackground"
-            app:dd_numDots="6" android:layout_centerInParent="true"
-            app:dd_scaleMultiplier="2.3"
-            app:dd_horizontalSpacing="12dp"
-            />
-
-
-        <ScrollView
-            android:layout_width="match_parent" android:layout_marginTop="25dp" android:layout_below="@+id/cardinfo"
-            android:layout_height="wrap_content">
-        <LinearLayout
-            android:layout_width="match_parent" android:padding="3dp"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent" android:layout_marginTop="10dp"
-                android:layout_height="wrap_content" android:layout_gravity="center_horizontal|center_vertical"
-                android:orientation="horizontal"
-                android:layout_marginLeft="6dp"
-                android:layout_marginRight="6dp">
-                <mehdi.sakout.fancybuttons.FancyButton
-                    android:id="@+id/btn_side_effects"
-                    android:layout_width="match_parent" fancy:fb_borderWidth="1dp" fancy:fb_borderColor="@color/windowBackground"
-
+                <com.github.clans.fab.FloatingActionButton
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    fancy:fb_text="Side Effects" fancy:fb_ghost="false" fancy:fb_textSize="15dp"
-                    fancy:fb_defaultColor="@color/white"
-                    fancy:fb_focusColor="@color/window100"  fancy:fb_textColor="@color/windowBackground" android:layout_weight="1"
-                    fancy:fb_radius="30dp"
-                    android:layout_marginTop="3dp" />
+                    android:src="@drawable/ic_question_answer_white_24dp"
+                    fab:fab_size="mini" android:id="@+id/menu_chat"
+                    fab:fab_label="Ask about the medicine" />
 
-                <mehdi.sakout.fancybuttons.FancyButton
-                    android:id="@+id/btn_precautions"
-                    android:layout_width="match_parent" fancy:fb_borderWidth="1dp" fancy:fb_borderColor="@color/windowBackground"
-
+                <com.github.clans.fab.FloatingActionButton
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    fancy:fb_text="Precautions" android:layout_marginTop="3dp"
-                    fancy:fb_ghost="false" fancy:fb_textSize="15dp"
-                    fancy:fb_defaultColor="@color/white"
-                    fancy:fb_focusColor="@color/window100"  fancy:fb_textColor="@color/windowBackground" android:layout_weight="1"
-                    fancy:fb_radius="30dp"
-                    android:layout_marginLeft="15dp" />
+                    android:src="@drawable/ic_alarm_add_white_24dp"
+                    fab:fab_size="mini" android:id="@+id/menu_remind"
+                    fab:fab_label="Order Medicines" />
 
+            </com.github.clans.fab.FloatingActionMenu>
 
+        </RelativeLayout>
 
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent" android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_height="wrap_content" android:layout_marginTop="10dp"
-                android:orientation="horizontal"
-                android:layout_marginLeft="6dp"
-                android:layout_marginRight="6dp">
-
-                <mehdi.sakout.fancybuttons.FancyButton
-                    android:id="@+id/btn_allergies"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    fancy:fb_text="Used for" android:layout_marginTop="3dp"
-                    fancy:fb_ghost="false" fancy:fb_textSize="15dp"
-                    fancy:fb_defaultColor="@color/white" fancy:fb_borderWidth="1dp" fancy:fb_borderColor="@color/windowBackground"
-
-                    fancy:fb_focusColor="@color/window100"  fancy:fb_textColor="@color/windowBackground" android:layout_weight="1"
-                    fancy:fb_radius="30dp"/>
-
-                <mehdi.sakout.fancybuttons.FancyButton
-                    android:id="@+id/btn_reactions"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    fancy:fb_text="FAQs" android:layout_marginTop="3dp"
-                    fancy:fb_ghost="false" fancy:fb_textSize="15dp"
-                    fancy:fb_defaultColor="@color/white" fancy:fb_borderWidth="1dp" fancy:fb_borderColor="@color/windowBackground"
-
-                    fancy:fb_focusColor="@color/window100"  fancy:fb_textColor="@color/windowBackground" android:layout_weight="1"
-                    fancy:fb_radius="30dp"
-                    android:layout_marginLeft="15dp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent" android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_height="wrap_content" android:layout_marginTop="10dp"
-                android:orientation="horizontal"
-                android:layout_marginLeft="6dp"
-                android:layout_marginRight="6dp">
-
-                <mehdi.sakout.fancybuttons.FancyButton
-                    android:id="@+id/btn_blah_blah_1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    fancy:fb_text="Diet Control" android:layout_marginTop="3dp"
-                    android:layout_weight="1" fancy:fb_ghost="false" fancy:fb_textSize="15dp"
-                    fancy:fb_defaultColor="@color/white" fancy:fb_borderWidth="1dp" fancy:fb_borderColor="@color/windowBackground"
-                    fancy:fb_focusColor="@color/window100"  fancy:fb_textColor="@color/windowBackground" fancy:fb_radius="30dp"/>
-
-                <mehdi.sakout.fancybuttons.FancyButton
-                    android:id="@+id/btn_blah_blah_2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    fancy:fb_text="How to store?" android:layout_marginTop="3dp"
-                    fancy:fb_ghost="false" fancy:fb_textSize="15dp" fancy:fb_borderWidth="1dp" fancy:fb_borderColor="@color/windowBackground"
-                    fancy:fb_defaultColor="@color/white"
-                    fancy:fb_focusColor="@color/window100"  fancy:fb_textColor="@color/windowBackground"
-                    android:layout_weight="1"
-                    fancy:fb_radius="30dp"
-                    android:layout_marginLeft="15dp" />
-
-            </LinearLayout>
-
-
-
-
-        </LinearLayout>
-        </ScrollView>
-
-
-    </RelativeLayout>
-
-
+    </ScrollView>
 
 </RelativeLayout>
