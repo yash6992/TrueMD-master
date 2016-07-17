@@ -62,7 +62,7 @@ public class CustomCardReminderAdapter extends BaseAdapter {
             JSONArray meds =pouch.getJSONArray("meds");
             int medlength = meds.length();
 
-        TextView textViewCard = (TextView) convertView.findViewById(R.id.textViewCard);
+        TextView textViewCard = (TextView) convertView.findViewById(R.id.cr_meal);
 
         Typeface tf_l= Typeface.createFromAsset(context.getAssets(), "fonts/OpenSans-Regular.ttf");
         Typeface tf_b= Typeface.createFromAsset(context.getAssets(), "fonts/Aldrich-Regular.ttf");
@@ -202,6 +202,8 @@ public class CustomCardReminderAdapter extends BaseAdapter {
                     med3.setText(""+jmed3.getString("name")); d3.setText(""+jmed3.getString("quantity"));
                     med4.setText(""+jmed4.getString("name")); d4.setText(""+jmed4.getString("quantity"));
                     med5.setText(""+jmed5.getString("name")); d5.setText(""+jmed5.getString("quantity"));
+
+                    textViewCard.setVisibility(View.VISIBLE);
                 }
 
                 break;
