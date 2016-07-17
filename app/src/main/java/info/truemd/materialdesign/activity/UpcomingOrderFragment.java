@@ -152,7 +152,7 @@ public class UpcomingOrderFragment extends Fragment {
                     .addToHeader("X-User-Email", user.get(SessionManager.KEY_MOBILE_UM) + "@truemd.in")
                     .buildArrayRequester(new JsonArrayListenerToGetUpcomingOrder()); //or .buildArrayRequester(listener);
 
-            mRequester.request(Methods.GET, "http://truemd-carebook.rhcloud.com/orders.json?status_not=ODel,OCan");
+            mRequester.request(Methods.GET, "http://truemd-carebook.rhcloud.com/orders.json?status_not=ODel,OCan,ORej,ORef");
 
         }  catch (Exception e) {
             e.printStackTrace();

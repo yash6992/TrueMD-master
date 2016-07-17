@@ -148,7 +148,7 @@ public class PreviousOrderFragment extends Fragment {
                     .addToHeader("X-User-Email", user.get(SessionManager.KEY_MOBILE_UM) + "@truemd.in")
                     .buildArrayRequester(new JsonArrayListenerToGetPreviousOrder()); //or .buildArrayRequester(listener);
 
-            mRequester.request(Methods.GET, "http://truemd-carebook.rhcloud.com/orders.json?status=ODel,OCan");
+            mRequester.request(Methods.GET, "http://truemd-carebook.rhcloud.com/orders.json?status=ODel,OCan,ORef,ORej");
 
         }  catch (Exception e) {
             e.printStackTrace();

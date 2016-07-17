@@ -143,7 +143,7 @@
                         android:layout_width="wrap_content" android:text="GRAND TOTAL"  android:textSize="13.5dp" android:textColor="@color/windowBackground"
                         android:layout_height="wrap_content" android:padding="7dp" android:layout_marginTop="5dp" android:id="@+id/total_id_h"/>
                     <TextView
-                        android:layout_width="wrap_content" android:text="To be decided after our pharmacists digitize your prescription. " android:textSize="12.5dp" android:textColor="@color/monsoon"
+                        android:layout_width="wrap_content" android:text="You will be notified of the final amount soon.\nPay via cash on delivery or online payment.\n\nWe will send you a message for the same." android:textSize="12.5dp" android:textColor="@color/monsoon"
                         android:layout_height="wrap_content" android:padding="7dp" android:id="@+id/total_id_tv"/>
 
                 </LinearLayout>
