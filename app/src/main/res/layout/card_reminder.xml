@@ -108,7 +108,7 @@
 
         <TextView
             android:layout_width="wrap_content" android:textSize="12dp" android:textColor="@color/monsoon"
-            android:layout_height="wrap_content" android:padding="15dp"
+            android:layout_height="wrap_content" android:padding="15dp" android:visibility="invisible"
             android:text="* to be taken after meals." android:layout_alignParentBottom="true" android:layout_alignParentRight="true" android:layout_alignParentLeft="true"
             android:id="@+id/cr_meal" />
 

@@ -836,14 +836,14 @@ public class ReminderActivity extends AppCompatActivity implements SwipeStack.Sw
         }
         else if(diff>86400000&&diff<259200000){
             timeAgo =(String) DateUtils.getRelativeTimeSpanString( then.getMillis(), now.getMillis(),DateUtils.DAY_IN_MILLIS);
-            timeAgo.replace("ago","from now");
+            timeAgo.replace("In"," in");
         }
         else if(diff>259200000) {
             DateTimeFormatter dtfOut = DateTimeFormat.forPattern("dd/MM/yyyy");
             timeAgo = "on "+dtfOut.print(then);
         }
 
-        Log.e("nextReminder: ",""+timeAgo);
+        Log.e("nextReminder: ","then:"+then+"now:"+now+":"+diff+":"+timeAgo);
 
         return timeAgo;
 
