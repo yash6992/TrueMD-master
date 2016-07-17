@@ -7,8 +7,10 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.graphics.Matrix;
 import android.graphics.Typeface;
+import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -41,6 +43,7 @@ import com.alirezaafkar.json.requester.requesters.JsonArrayRequester;
 import com.alirezaafkar.json.requester.requesters.JsonObjectRequester;
 import com.alirezaafkar.json.requester.requesters.RequestBuilder;
 import com.android.volley.Request;
+import com.wang.avi.AVLoadingIndicatorView;
 import com.zl.reik.dilatingdotsprogressbar.DilatingDotsProgressBar;
 
 import org.apache.commons.lang3.StringUtils;
@@ -79,7 +82,11 @@ public class ConfirmOrderActivity extends AppCompatActivity {
 
 
     ImageView coImage0,coImage1,coImage2,coImage3,coImage4,coImage5,coImage6,coImage7,coImage8,coImage9;
+    AVLoadingIndicatorView coli0,coli1,coli2,coli3,coli4,coli5,coli6,coli7,coli8,coli9;
+    LinearLayout coll0,coll1,coll2,coll3,coll4,coll5,coll6,coll7,coll8,coll9;
     ImageButton backCOIB;TextView submitCOIB; DilatingDotsProgressBar mDilatingDotsProgressBar;
+    ArrayList<LinearLayout> llList;
+    ArrayList<AVLoadingIndicatorView> loadingList;
     ScrollView scrollCO;
     ArrayList<Bitmap> confirmBitmapList;static SessionManager session; static int completeUpload;
     RelativeLayout deliveryCO, pickupCO; String []  language;ArrayList<String> coupon, valid,details,addresstypetosend, addressvaluetosend;
@@ -137,6 +144,28 @@ public class ConfirmOrderActivity extends AppCompatActivity {
         InputMethodManager imm1 = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
         imm1.hideSoftInputFromWindow(commentsCO.getWindowToken(), 0);
 
+        coli0=(AVLoadingIndicatorView)findViewById(R.id.load0);
+        coli1=(AVLoadingIndicatorView)findViewById(R.id.load1);
+        coli2=(AVLoadingIndicatorView)findViewById(R.id.load2);
+        coli3=(AVLoadingIndicatorView)findViewById(R.id.load3);
+        coli4=(AVLoadingIndicatorView)findViewById(R.id.load4);
+        coli5=(AVLoadingIndicatorView)findViewById(R.id.load5);
+        coli6=(AVLoadingIndicatorView)findViewById(R.id.load6);
+        coli7=(AVLoadingIndicatorView)findViewById(R.id.load7);
+        coli8=(AVLoadingIndicatorView)findViewById(R.id.load8);
+        coli9=(AVLoadingIndicatorView)findViewById(R.id.load9);
+
+
+        coll0=(LinearLayout)findViewById(R.id.coL0);
+        coll1=(LinearLayout)findViewById(R.id.coL1);
+        coll2=(LinearLayout)findViewById(R.id.coL2);
+        coll3=(LinearLayout)findViewById(R.id.coL3);
+        coll4=(LinearLayout)findViewById(R.id.coL4);
+        coll5=(LinearLayout)findViewById(R.id.coL5);
+        coll6=(LinearLayout)findViewById(R.id.coL6);
+        coll7=(LinearLayout)findViewById(R.id.coL7);
+        coll8=(LinearLayout)findViewById(R.id.coL8);
+        coll9=(LinearLayout)findViewById(R.id.coL9);
 
 
         coImage0=(ImageView)findViewById(R.id.coImage0);
@@ -150,9 +179,38 @@ public class ConfirmOrderActivity extends AppCompatActivity {
         coImage8=(ImageView)findViewById(R.id.coImage8);
         coImage9=(ImageView)findViewById(R.id.coImage9);
 
+        llList = new ArrayList<LinearLayout>();
+
+        llList.add(coll0);
+        llList.add(coll1);
+        llList.add(coll2);
+        llList.add(coll3);
+        llList.add(coll4);
+        llList.add(coll5);
+        llList.add(coll6);
+        llList.add(coll7);
+        llList.add(coll8);
+        llList.add(coll9);
+
+
+        loadingList = new ArrayList<AVLoadingIndicatorView>();
+
+        loadingList.add(coli0);
+        loadingList.add(coli1);
+        loadingList.add(coli2);
+        loadingList.add(coli3);
+        loadingList.add(coli4);
+        loadingList.add(coli5);
+        loadingList.add(coli6);
+        loadingList.add(coli7);
+        loadingList.add(coli8);
+        loadingList.add(coli9);
+
+
         scrollCO=(ScrollView)findViewById(R.id.scroll_co);
 
-        ArrayList<ImageView> confirmImageList = new ArrayList<ImageView>();
+        final ArrayList<ImageView> confirmImageList = new ArrayList<ImageView>();
+
         confirmImageList.add(coImage0);
         confirmImageList.add(coImage1);
         confirmImageList.add(coImage2);
@@ -281,10 +339,15 @@ public class ConfirmOrderActivity extends AppCompatActivity {
         for (i=0;i<confirmUriList.size();i++)
         {
             setImageFromUri(confirmImageList.get(i),confirmUriList.get(i));
+            loadingList.get(i).setVisibility(View.GONE);
+            llList.get(i).setVisibility(View.GONE);
         }
         for (;i<10;i++)
         {
             confirmImageList.get(i).setVisibility(View.GONE);
+            loadingList.get(i).setVisibility(View.GONE);
+            llList.get(i).setVisibility(View.GONE);
+
         }
 
         View.OnClickListener clicklistener = new View.OnClickListener() {
@@ -293,7 +356,46 @@ public class ConfirmOrderActivity extends AppCompatActivity {
                 String text = "";
 
                 switch (v.getId()) {
-
+                    case R.id.coImage0:
+                        Log.e("Confirm: ","in BS IV");
+                        openBottomSheetImageViewer(coImage0);
+                        break;
+                    case R.id.coImage1:
+                        Log.e("Confirm: ","in BS IV");
+                        openBottomSheetImageViewer(coImage1);
+                        break;
+                    case R.id.coImage2:
+                        Log.e("Confirm: ","in BS IV");
+                        openBottomSheetImageViewer(coImage2);
+                        break;
+                    case R.id.coImage3:
+                        Log.e("Confirm: ","in BS IV");
+                        openBottomSheetImageViewer(coImage3);
+                        break;
+                    case R.id.coImage4:
+                        Log.e("Confirm: ","in BS IV");
+                        openBottomSheetImageViewer(coImage4);
+                        break;
+                    case R.id.coImage5:
+                        Log.e("Confirm: ","in BS IV");
+                        openBottomSheetImageViewer(coImage5);
+                        break;
+                    case R.id.coImage6:
+                        Log.e("Confirm: ","in BS IV");
+                        openBottomSheetImageViewer(coImage6);
+                        break;
+                    case R.id.coImage7:
+                        Log.e("Confirm: ","in BS IV");
+                        openBottomSheetImageViewer(coImage7);
+                        break;
+                    case R.id.coImage8:
+                        Log.e("Confirm: ","in BS IV");
+                        openBottomSheetImageViewer(coImage8);
+                        break;
+                    case R.id.coImage9:
+                        Log.e("Confirm: ","in BS IV");
+                        openBottomSheetImageViewer(coImage9);
+                        break;
                     case R.id.delivery_address_coTV:
                         if(addresstypetosend.size()==0)
                         {
@@ -359,6 +461,10 @@ public class ConfirmOrderActivity extends AppCompatActivity {
                             int j = 0;
                             for (j = 0; j < confirmBitmapList.size(); j++) {
                                 new UploadBitmapOperation().execute(confirmBitmapList.get(j));
+                                loadingList.get(j).setVisibility(View.VISIBLE);
+                                llList.get(j).setVisibility(View.VISIBLE);
+                                confirmImageList.get(j).setColorFilter(Color.rgb(123, 123, 123), android.graphics.PorterDuff.Mode.MULTIPLY);
+
 
                             }
                         }
@@ -391,6 +497,9 @@ public class ConfirmOrderActivity extends AppCompatActivity {
         pickupTVCO.setOnClickListener(clicklistener);
         languageTVCO.setOnClickListener(clicklistener);
         couponHCO.setOnClickListener(clicklistener);
+
+        for(int g=0; g<10;g++)
+            confirmImageList.get(g).setOnClickListener(clicklistener);
 
     }
     @Override
@@ -511,11 +620,11 @@ public class ConfirmOrderActivity extends AppCompatActivity {
             Log.e("RESP:: ", "on pre");
 
             asyncObject = this;
-             imageUploadTimer = new CountDownTimer(120000, 12000) {
+             imageUploadTimer = new CountDownTimer(300000, 12000) {
                 public void onTick(long millisUntilFinished) {
                     // You can monitor the progress here as well by changing the onTick() time
 
-                    Toast.makeText(ConfirmOrderActivity.this, "Images are being uploaded.", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(ConfirmOrderActivity.this, "Images are being uploaded.", Toast.LENGTH_SHORT).show();
                 }
                 public void onFinish() {
                     // stop async task if not in progress
@@ -555,7 +664,7 @@ public class ConfirmOrderActivity extends AppCompatActivity {
         }
 
         @Override
-        protected String doInBackground(Bitmap... messageText) {
+        protected String doInBackground( Bitmap... messageText) {
             // TODO Auto-generated method stub
             /**
              * Do network related stuff
@@ -641,6 +750,8 @@ public class ConfirmOrderActivity extends AppCompatActivity {
             Log.e("RESP:: ", "on post execute");
             Toast.makeText(getApplicationContext(),completeUpload+"/ "+confirmBitmapList.size()+" images uploaded.", Toast.LENGTH_SHORT).show();
             //hidepDialog();
+            loadingList.get(completeUpload-1).setVisibility(View.GONE);
+            llList.get(completeUpload-1).setVisibility(View.GONE);
 
             if(completeUpload==confirmBitmapList.size()) {
                 //mDilatingDotsProgressBar.hideNow();
@@ -1437,5 +1548,28 @@ public class ConfirmOrderActivity extends AppCompatActivity {
     }
 
 
+    public void openBottomSheetImageViewer( ImageView b){
+
+        Log.e("Confirm: ","in BS IV");
+
+        View view = getLayoutInflater().inflate(R.layout.bottom_sheet_image_viewer, null);
+
+        ImageView iv = (ImageView) view.findViewById(R.id.bs_imageView);
+
+        Bitmap bitmap = ((BitmapDrawable)b.getDrawable()).getBitmap();
+
+        iv.setImageBitmap(bitmap);
+
+        final Dialog mBottomSheetDialog = new Dialog (this,
+                R.style.MaterialDialogSheet);
+        mBottomSheetDialog.setContentView (view);
+        mBottomSheetDialog.setCancelable(true);
+        mBottomSheetDialog.getWindow().setLayout(LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.MATCH_PARENT);
+        mBottomSheetDialog.getWindow ().setGravity(Gravity.CENTER);
+        mBottomSheetDialog.show();
+
+
+    }
 
     }

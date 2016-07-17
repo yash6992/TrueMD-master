@@ -47,14 +47,14 @@
             android:id="@+id/textView4OM" />
 
         <TextView
-            android:layout_width="match_parent" android:gravity="center_horizontal" android:textSize="12sp" android:layout_below="@id/textView4OM"
-            android:layout_height="wrap_content" android:textColor="@color/monsoon" android:layout_marginLeft="5dp" android:layout_marginTop="12dp"
+            android:layout_width="match_parent" android:gravity="center_horizontal" android:textSize="12sp" android:layout_above="@+id/uploadPrescriptionButtonOM"
+            android:layout_height="wrap_content" android:textColor="@color/monsoon" android:layout_marginLeft="5dp" android:layout_marginTop="6dp"
             android:text="Available only in Indore." android:layout_alignParentLeft="true"
             android:id="@+id/textView5OM" />
 
         <ImageView
-            android:layout_width="match_parent" android:adjustViewBounds="true" android:layout_above="@+id/uploadPrescriptionButtonOM"
-            android:src="@drawable/order_info" android:layout_below="@id/textView5OM"
+            android:layout_width="match_parent" android:adjustViewBounds="true" android:layout_above="@+id/textView5OM"
+            android:src="@drawable/order_info" android:layout_below="@+id/titleOM"
             android:layout_height="match_parent" android:background="@color/white" android:layout_marginRight="-12dp" android:layout_marginLeft="-12dp"
             android:id="@+id/idealPrescriptionImageViewOM" />
 
@@ -77,7 +77,7 @@
             android:id="@+id/textView6OM" />
 
         <TextView
-            android:layout_width="match_parent" android:textColor="@color/white" android:layout_marginLeft="0dp" android:layout_marginRight="0dp" android:layout_marginTop="15dp"
+            android:layout_width="match_parent" android:textColor="@color/white" android:layout_marginLeft="0dp" android:layout_marginRight="0dp" android:layout_marginTop="8dp"
             android:layout_height="wrap_content" android:layout_above="@id/textView6OM" android:layout_marginBottom="10dp"
             android:text="UPLOAD PRESCRIPTION" android:background="@drawable/button_purple" android:padding="13dp" android:textSize="13dp"
             android:id="@+id/uploadPrescriptionButtonOM" android:gravity="center_horizontal|center_vertical"  />

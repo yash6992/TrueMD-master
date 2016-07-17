@@ -59,11 +59,47 @@
                     <RelativeLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content">
+
                         <LinearLayout
                             android:layout_width="wrap_content" android:orientation="horizontal"
                             android:layout_height="wrap_content" >
 
+                            <ImageView
+                                android:layout_width="80dp" android:id="@+id/coImage0"
+                                android:layout_height="80dp" android:layout_margin="3.5dp" />
+                            <ImageView
+                                android:layout_width="80dp" android:id="@+id/coImage1"
+                                android:layout_height="80dp" android:layout_margin="3.5dp" />
+                            <ImageView
+                                android:layout_width="80dp" android:id="@+id/coImage2"
+                                android:layout_height="80dp" android:layout_margin="3.5dp" />
+                            <ImageView
+                                android:layout_width="80dp" android:id="@+id/coImage3"
+                                android:layout_height="80dp" android:layout_margin="3.5dp" />
+                            <ImageView
+                                android:layout_width="80dp" android:id="@+id/coImage4"
+                                android:layout_height="80dp" android:layout_margin="3.5dp" />
+                            <ImageView
+                                android:layout_width="80dp" android:id="@+id/coImage5"
+                                android:layout_height="80dp" android:layout_margin="3.5dp" />
+                            <ImageView
+                                android:layout_width="80dp" android:id="@+id/coImage6"
+                                android:layout_height="80dp" android:layout_margin="3.5dp" />
+                            <ImageView
+                                android:layout_width="80dp" android:id="@+id/coImage7"
+                                android:layout_height="80dp" android:layout_margin="3.5dp" />
+                            <ImageView
+                                android:layout_width="80dp" android:id="@+id/coImage8"
+                                android:layout_height="80dp" android:layout_margin="3.5dp" />
+                            <ImageView
+                                android:layout_width="80dp" android:id="@+id/coImage9"
+                                android:layout_height="80dp" android:layout_margin="3.5dp" />
+                        </LinearLayout>
                         <LinearLayout
+                            android:layout_width="wrap_content" android:orientation="horizontal"
+                            android:layout_height="wrap_content" >
+
+                            <LinearLayout
                             android:layout_width="80dp" android:id="@+id/coL0" android:orientation="horizontal"
                             android:layout_height="80dp" android:layout_margin="3.5dp" android:layout_gravity="center" >
 
@@ -71,7 +107,7 @@
                                 android:id="@+id/load0"
                                 android:layout_width="40dp"
                                 android:layout_height="22dp" android:layout_marginLeft="20dp"  android:layout_marginTop="26dp"
-                                android:visibility="invisible"
+                                android:visibility="visible"
                                 app:indicator="BallPulse"
                                 app:indicator_color="@color/white"
                                 />
@@ -207,41 +243,6 @@
                         </LinearLayout>
 
 
-                    <LinearLayout
-                        android:layout_width="wrap_content" android:orientation="horizontal"
-                        android:layout_height="wrap_content" >
-
-                        <ImageView
-                            android:layout_width="80dp" android:id="@+id/coImage0"
-                            android:layout_height="80dp" android:layout_margin="3.5dp" />
-                        <ImageView
-                            android:layout_width="80dp" android:id="@+id/coImage1"
-                            android:layout_height="80dp" android:layout_margin="3.5dp" />
-                        <ImageView
-                            android:layout_width="80dp" android:id="@+id/coImage2"
-                            android:layout_height="80dp" android:layout_margin="3.5dp" />
-                        <ImageView
-                            android:layout_width="80dp" android:id="@+id/coImage3"
-                            android:layout_height="80dp" android:layout_margin="3.5dp" />
-                        <ImageView
-                            android:layout_width="80dp" android:id="@+id/coImage4"
-                            android:layout_height="80dp" android:layout_margin="3.5dp" />
-                        <ImageView
-                            android:layout_width="80dp" android:id="@+id/coImage5"
-                            android:layout_height="80dp" android:layout_margin="3.5dp" />
-                        <ImageView
-                            android:layout_width="80dp" android:id="@+id/coImage6"
-                            android:layout_height="80dp" android:layout_margin="3.5dp" />
-                        <ImageView
-                            android:layout_width="80dp" android:id="@+id/coImage7"
-                            android:layout_height="80dp" android:layout_margin="3.5dp" />
-                        <ImageView
-                            android:layout_width="80dp" android:id="@+id/coImage8"
-                            android:layout_height="80dp" android:layout_margin="3.5dp" />
-                        <ImageView
-                            android:layout_width="80dp" android:id="@+id/coImage9"
-                            android:layout_height="80dp" android:layout_margin="3.5dp" />
-                    </LinearLayout>
                     </RelativeLayout>
                 </HorizontalScrollView>
 

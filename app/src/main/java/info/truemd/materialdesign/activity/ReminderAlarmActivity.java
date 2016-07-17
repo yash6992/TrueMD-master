@@ -404,12 +404,7 @@ public class ReminderAlarmActivity extends AppCompatActivity implements SwipeSta
     public void onBackPressed() {
 
         finish();
-
-        Intent intent_main = new Intent(getApplicationContext(),MainActivity.class);
-        intent_main.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        getApplicationContext().startActivity(intent_main);
-
-
+        ReminderAlarmActivity.this.finishAffinity();
         super.onBackPressed();
 
     }

@@ -648,12 +648,13 @@ public class ReminderActivity extends AppCompatActivity implements SwipeStack.Sw
 
                 if(dateA.compareTo(current)>0) {
 
-                    done=true;
-
                     String timetoshow = timeDifferenceInString(forTime);
 
-                    nextReminder.setText("is "+timetoshow);
+                    if(!done){
+                        nextReminder.setText("is "+timetoshow);
+                    }
 
+                    done=true;
                     Log.e("setReminderPouch: ", "true");
                     //jsonReallyValues.add(pouchToCheck);
                     pouchesToReallyShow.put(pouchToCheck);
@@ -816,7 +817,7 @@ public class ReminderActivity extends AppCompatActivity implements SwipeStack.Sw
 
         DateTime then = formatter.parseDateTime(datetime);
 
-        DateTime now = DateTime.now();
+        DateTime now = DateTime.now().plusMillis(19800000);
 
         long diff = then.getMillis()-now.getMillis();
 
@@ -827,18 +828,18 @@ public class ReminderActivity extends AppCompatActivity implements SwipeStack.Sw
         }
         else if(diff>60000&&diff<3600000){
             timeAgo =""+(String) DateUtils.getRelativeTimeSpanString( then.getMillis(), now.getMillis(),DateUtils.MINUTE_IN_MILLIS);
-            timeAgo.replace("ago","from now");
+            timeAgo.replace("In","in");
         }
         else if(diff>3600000&&diff<86400000){
             timeAgo =(String) DateUtils.getRelativeTimeSpanString( then.getMillis(), now.getMillis(),DateUtils.HOUR_IN_MILLIS);
-            timeAgo.replace("ago","from now");
+            timeAgo.replace("In","in");
         }
         else if(diff>86400000&&diff<259200000){
             timeAgo =(String) DateUtils.getRelativeTimeSpanString( then.getMillis(), now.getMillis(),DateUtils.DAY_IN_MILLIS);
             timeAgo.replace("ago","from now");
         }
         else if(diff>259200000) {
-            DateTimeFormatter dtfOut = DateTimeFormat.forPattern("MM/dd/yyyy");
+            DateTimeFormatter dtfOut = DateTimeFormat.forPattern("dd/MM/yyyy");
             timeAgo = "on "+dtfOut.print(then);
         }
 

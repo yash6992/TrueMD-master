@@ -5,7 +5,9 @@ import android.app.Dialog;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.Typeface;
+import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -71,6 +73,8 @@ public class UpcomingOrderActivity extends AppCompatActivity {
     String pstatus = "N.A.";
     String shorturl=""; JSONArray documents;
     DilatingDotsProgressBar mDilatingDotsProgressBar; String dollaroid;
+    ImageView iv0,iv1,iv2,iv3,iv4,iv5,iv6,iv7,iv8,iv9;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -569,7 +573,6 @@ public class UpcomingOrderActivity extends AppCompatActivity {
         TextView txth = (TextView)view.findViewById( R.id.tv2);
         TextView txtc = (TextView)view.findViewById( R.id.txt_medname);
 
-        ImageView iv0,iv1,iv2,iv3,iv4,iv5,iv6,iv7,iv8,iv9;
 
 
 
@@ -603,9 +606,9 @@ public class UpcomingOrderActivity extends AppCompatActivity {
             Glide
                     .with(getApplicationContext())
                     .load(docUrls.get(i))
+                    .asBitmap()
                     .centerCrop()
                     .placeholder(R.drawable.prescriptions)
-                    .crossFade()
                     .into(confirmImageList.get(i));
         }
         for (;i<10;i++)
@@ -636,6 +639,68 @@ public class UpcomingOrderActivity extends AppCompatActivity {
         mBottomSheetDialog.show();
 
 
+        iv0.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openBottomSheetImageViewer(0,iv0);
+            }
+        });
+        iv1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openBottomSheetImageViewer(0,iv1);
+            }
+        });
+        iv2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openBottomSheetImageViewer(0,iv2);
+            }
+        });
+        iv3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openBottomSheetImageViewer(0,iv3);
+            }
+        });
+        iv4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openBottomSheetImageViewer(0,iv4);
+            }
+        });
+        iv5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openBottomSheetImageViewer(0,iv5);
+            }
+        });
+        iv6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openBottomSheetImageViewer(0,iv6);
+            }
+        });
+        iv7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openBottomSheetImageViewer(0,iv7);
+            }
+        });
+        iv8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openBottomSheetImageViewer(0,iv8);
+            }
+        });
+        iv9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openBottomSheetImageViewer(0,iv9);
+            }
+        });
+
+
     }
     @Override
     public void onBackPressed() {
@@ -644,5 +709,27 @@ public class UpcomingOrderActivity extends AppCompatActivity {
         super.onBackPressed();
 
     }
+    public void openBottomSheetImageViewer(int position, ImageView b){
+
+        View view = getLayoutInflater().inflate(R.layout.bottom_sheet_image_viewer, null);
+
+        ImageView iv = (ImageView) view.findViewById(R.id.bs_imageView);
+
+        Bitmap bitmap = ((BitmapDrawable)b.getDrawable()).getBitmap();
+
+        iv.setImageBitmap(bitmap);
+
+        final Dialog mBottomSheetDialog = new Dialog (this,
+                R.style.MaterialDialogSheet);
+        mBottomSheetDialog.setContentView (view);
+        mBottomSheetDialog.setCancelable(true);
+        mBottomSheetDialog.getWindow().setLayout(LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.MATCH_PARENT);
+        mBottomSheetDialog.getWindow ().setGravity(Gravity.CENTER);
+        mBottomSheetDialog.show();
+
+
+    }
+
 
 }
