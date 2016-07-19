@@ -112,7 +112,7 @@ public class PreLoginActivity extends AppCompatActivity {
             JsonObjectRequester mRequester = new RequestBuilder(PreLoginActivity.this)
                     //.requestCode(REQUEST_CODE)
                     .contentType(ContentType.TYPE_JSON) //or ContentType.TYPE_FORM
-                    .showError(true) //Show error with toast on Network or Server error
+                    .showError(false) //Show error with toast on Network or Server error
                     .shouldCache(true)
                     .timeOut(20000)
                     .priority(Request.Priority.NORMAL)
@@ -302,7 +302,7 @@ public class PreLoginActivity extends AppCompatActivity {
             mRequester = new RequestBuilder(PreLoginActivity.this)
                     //.requestCode(REQUEST_CODE)
                     .contentType(ContentType.TYPE_JSON) //or ContentType.TYPE_FORM
-                    .showError(true) //Show error with toast on Network or Server error
+                    .showError(false) //Show error with toast on Network or Server error
                     .shouldCache(true)
                     .timeOut(50000)
                     .priority(Request.Priority.NORMAL)
@@ -451,7 +451,7 @@ public class PreLoginActivity extends AppCompatActivity {
             mRequester = new RequestBuilder(PreLoginActivity.this)
                     //.requestCode(REQUEST_CODE)
                     .contentType(ContentType.TYPE_JSON) //or ContentType.TYPE_FORM
-                    .showError(true) //Show error with toast on Network or Server error
+                    .showError(false) //Show error with toast on Network or Server error
                     .shouldCache(false)
                     .timeOut(50000)
                     .priority(Request.Priority.NORMAL)

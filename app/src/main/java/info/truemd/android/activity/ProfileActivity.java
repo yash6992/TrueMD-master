@@ -265,7 +265,7 @@ public class ProfileActivity extends AppCompatActivity {
             JsonObjectRequester mRequester = new RequestBuilder(ProfileActivity.this)
                     //.requestCode(REQUEST_CODE)
                     .contentType(ContentType.TYPE_JSON) //or ContentType.TYPE_FORM
-                    .showError(true) //Show error with toast on Network or Server error
+                    .showError(false) //Show error with toast on Network or Server error
                     .shouldCache(true)
                     .timeOut(20000)
                     .priority(Request.Priority.NORMAL)

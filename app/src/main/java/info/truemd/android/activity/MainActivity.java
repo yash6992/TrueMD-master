@@ -119,8 +119,8 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
     public FragmentDrawer drawerFragment;
     public HomeFragment homeFragment;
     public static String nameFromGetUser = "";
-    public final static String dev_key = "14032356f848f2da097c9213015c5f71";
-    public final static String app_url = "http://truemd-carebook.rhcloud.com";
+    public final static String dev_key = "68e8d8e774be34514a6fac97b8844b60";
+    public final static String app_url = "http://production-truemdhq.rhcloud.com";
     private DrawerLayout mDrawer; public LinearLayout blocker;
     public static JSONObject getUserObject;
     public static boolean reminderOn;
@@ -673,7 +673,7 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
             mRequester = new RequestBuilder(MainActivity.this)
                     //.requestCode(REQUEST_CODE)
                     .contentType(ContentType.TYPE_JSON) //or ContentType.TYPE_FORM
-                    .showError(true) //Show error with toast on Network or Server error
+                    .showError(false) //Show error with toast on Network or Server error
                     .shouldCache(false)
                     .timeOut(20000)
                     .priority(Request.Priority.NORMAL)
@@ -965,7 +965,7 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
             mRequester = new RequestBuilder(MainActivity.this)
                     //.requestCode(REQUEST_CODE)
                     .contentType(ContentType.TYPE_JSON) //or ContentType.TYPE_FORM
-                    .showError(true) //Show error with toast on Network or Server error
+                    .showError(false) //Show error with toast on Network or Server error
                     .shouldCache(false)
                     .timeOut(20000)
                     .priority(Request.Priority.NORMAL)
@@ -1380,7 +1380,7 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
             JsonObjectRequester mRequester = new RequestBuilder(MainActivity.this)
                     //.requestCode(REQUEST_CODE)
                     .contentType(ContentType.TYPE_JSON) //or ContentType.TYPE_FORM
-                    .showError(true) //Show error with toast on Network or Server error
+                    .showError(false) //Show error with toast on Network or Server error
                     .shouldCache(true)
                     .timeOut(20000)
                     .priority(Request.Priority.NORMAL)
@@ -1717,7 +1717,7 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
             mRequester = new RequestBuilder(MainActivity.this)
                     //.requestCode(REQUEST_CODE)
                     .contentType(ContentType.TYPE_JSON) //or ContentType.TYPE_FORM
-                    .showError(true) //Show error with toast on Network or Server error
+                    .showError(false) //Show error with toast on Network or Server error
                     .shouldCache(false)
                     .timeOut(50000)
                     .priority(Request.Priority.NORMAL)

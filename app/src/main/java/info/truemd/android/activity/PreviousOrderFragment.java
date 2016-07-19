@@ -138,7 +138,7 @@ public class PreviousOrderFragment extends Fragment {
             mRequester = new RequestBuilder(context_pof)
                     //.requestCode(REQUEST_CODE)
                     .contentType(ContentType.TYPE_JSON) //or ContentType.TYPE_FORM
-                    .showError(true) //Show error with toast on Network or Server error
+                    .showError(false) //Show error with toast on Network or Server error
                     .shouldCache(true)
                     .timeOut(50000)
                     .priority(Request.Priority.NORMAL)
@@ -308,6 +308,8 @@ public class PreviousOrderFragment extends Fragment {
             //placeholdertv.setText("You don't have any completed orders.");
             placeholderi.setImageResource(R.drawable.emptypreviousorder1);
             placeholder.setVisibility(View.VISIBLE);
+
+
 
         }
 

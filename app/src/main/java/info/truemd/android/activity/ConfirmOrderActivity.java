@@ -959,7 +959,7 @@ public class ConfirmOrderActivity extends AppCompatActivity {
                 mRequester = new RequestBuilder(ConfirmOrderActivity.this)
                         //.requestCode(REQUEST_CODE)
                         .contentType(ContentType.TYPE_JSON) //or ContentType.TYPE_FORM
-                        .showError(true) //Show error with toast on Network or Server error
+                        .showError(false) //Show error with toast on Network or Server error
                         .shouldCache(true)
                         .priority(Request.Priority.NORMAL)
                         .timeOut(50000)
@@ -1029,7 +1029,7 @@ public class ConfirmOrderActivity extends AppCompatActivity {
                 mRequester = new RequestBuilder(ConfirmOrderActivity.this)
                         //.requestCode(REQUEST_CODE)
                         .contentType(ContentType.TYPE_JSON) //or ContentType.TYPE_FORM
-                        .showError(true) //Show error with toast on Network or Server error
+                        .showError(false) //Show error with toast on Network or Server error
                         .shouldCache(true)
                         .priority(Request.Priority.NORMAL)
                         .timeOut(50000)
@@ -1066,7 +1066,7 @@ public class ConfirmOrderActivity extends AppCompatActivity {
                 mRequester = new RequestBuilder(ConfirmOrderActivity.this)
                         //.requestCode(REQUEST_CODE)
                         .contentType(ContentType.TYPE_JSON) //or ContentType.TYPE_FORM
-                        .showError(true) //Show error with toast on Network or Server error
+                        .showError(false) //Show error with toast on Network or Server error
                         .shouldCache(true)
                         .priority(Request.Priority.NORMAL)
                         .timeOut(50000)
@@ -1155,7 +1155,7 @@ public class ConfirmOrderActivity extends AppCompatActivity {
                 mRequester = new RequestBuilder(ConfirmOrderActivity.this)
                         //.requestCode(REQUEST_CODE)
                         .contentType(ContentType.TYPE_JSON) //or ContentType.TYPE_FORM
-                        .showError(true) //Show error with toast on Network or Server error
+                        .showError(false) //Show error with toast on Network or Server error
                         .shouldCache(true)
                         .priority(Request.Priority.NORMAL)
                         .timeOut(50000)

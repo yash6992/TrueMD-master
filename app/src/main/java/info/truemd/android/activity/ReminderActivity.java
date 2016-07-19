@@ -345,7 +345,7 @@ public class ReminderActivity extends AppCompatActivity implements SwipeStack.Sw
                     storeReminder();
                 }
                 else{
-                    placeholder.setImageResource(R.drawable.noremindersremaining);
+                    placeholder.setImageResource(R.drawable.emptyreminders);
                     placeholder.setVisibility(View.VISIBLE);
                     // noReminders.setVisibility(View.VISIBLE);
                 }
@@ -487,7 +487,7 @@ public class ReminderActivity extends AppCompatActivity implements SwipeStack.Sw
            JsonObjectRequester mRequester = new RequestBuilder(getApplicationContext())
                     //.requestCode(REQUEST_CODE)
                     .contentType(ContentType.TYPE_JSON) //or ContentType.TYPE_FORM
-                    .showError(true) //Show error with toast on Network or Server error
+                    .showError(false) //Show error with toast on Network or Server error
                     .shouldCache(true)
                     .timeOut(20000)
                     .priority(Request.Priority.NORMAL)
@@ -691,7 +691,7 @@ public class ReminderActivity extends AppCompatActivity implements SwipeStack.Sw
             JsonObjectRequester mRequester = new RequestBuilder(getApplicationContext())
                     //.requestCode(REQUEST_CODE)
                     .contentType(ContentType.TYPE_JSON) //or ContentType.TYPE_FORM
-                    .showError(true) //Show error with toast on Network or Server error
+                    .showError(false) //Show error with toast on Network or Server error
                     .shouldCache(true)
                     .timeOut(20000)
                     .priority(Request.Priority.NORMAL)
