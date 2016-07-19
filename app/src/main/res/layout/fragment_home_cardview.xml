@@ -54,7 +54,7 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <info.truemd.materialdesign.activity.NestedScrollingChildView
+    <info.truemd.android.activity.NestedScrollingChildView
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/viewpager"
         android:layout_width="match_parent"

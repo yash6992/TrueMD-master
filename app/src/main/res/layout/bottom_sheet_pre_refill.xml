@@ -56,7 +56,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:gravity="left"
-            android:text="You do not have to upload your prescription as we already have it with us.\nAll you have to do is to confirm the delivery address and add coupons.\nWe'll handle the rest." android:layout_below="@+id/blackline_md"
+            android:text="You do not have to upload your prescription since we already have it.\nAll you have to do is confirm the delivery address.\n\nMake sure to have the prescription ready at the time of delivery." android:layout_below="@+id/blackline_md"
             android:textSize="14dp" android:textColor="@color/monsoon"
             android:id="@+id/refill_txt" android:layout_marginTop="15dp"
             android:layout_centerVertical="true"

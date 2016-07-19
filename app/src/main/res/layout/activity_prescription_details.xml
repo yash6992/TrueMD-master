@@ -30,7 +30,7 @@
     </RelativeLayout>
 
     <android.support.v7.widget.CardView
-        android:layout_width="wrap_content" android:layout_below="@+id/pd_title"
+        android:layout_width="wrap_content" android:layout_below="@+id/pd_title" android:background="@color/white"
         android:layout_height="wrap_content" android:layout_margin="10dp" android:id="@+id/ccc">
 
     <RelativeLayout

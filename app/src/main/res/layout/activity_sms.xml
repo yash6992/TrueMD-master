@@ -7,7 +7,7 @@
     android:paddingLeft="24dp"
     android:paddingRight="24dp"
     android:background="@color/windowBackground"
-    tools:context="info.truemd.materialdesign.activity.SmsActivity">
+    tools:context="info.truemd.android.activity.SmsActivity">
 
     <ScrollView
         android:layout_width="match_parent"
