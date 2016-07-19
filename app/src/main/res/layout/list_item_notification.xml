@@ -68,7 +68,7 @@
         android:id="@+id/undo_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="UNDO"
+        android:text="UNDO" android:visibility="gone"
         android:textAllCaps="true"
         android:textColor="@android:color/white"
         android:layout_gravity="end|center_vertical"

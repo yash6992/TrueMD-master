@@ -53,7 +53,7 @@ public class AllNotificationActivity extends AppCompatActivity {
 
     RecyclerView mRecyclerView;
     String notificationJarray; TextView title;
-    JSONArray allNotification;
+    JSONArray allNotification, reverse;
     ImageButton backImageButton, clearAll;
     SessionManager sessionManager; int lastInsertedIndex;
 
@@ -75,8 +75,14 @@ public class AllNotificationActivity extends AppCompatActivity {
         {
             notificationJarray = Paper.book("notification").read(""+user.get(SessionManager.KEY_MOBILE_UM));
             Log.e("ifAllNotification:", notificationJarray);
-            allNotification= new JSONArray(notificationJarray);
-            lastInsertedIndex = allNotification.length();
+            allNotification= new JSONArray();
+            reverse= new JSONArray(notificationJarray);
+            lastInsertedIndex = reverse.length();
+
+            for(int loop=lastInsertedIndex-1; loop>=0; loop--){
+                Log.e("",""+reverse.getJSONObject(loop).toString());
+                allNotification.put(reverse.getJSONObject(loop));
+            }
 
         }
         else
@@ -89,7 +95,7 @@ public class AllNotificationActivity extends AppCompatActivity {
             Log.e("elseAllNotification:", "");
         }
 
-        Log.e("finallyAllNotification:", ""+Paper.book("notification").read(""+user.get(SessionManager.KEY_MOBILE_UM)));
+        Log.e("finallyAllNotification:", allNotification.toString());
 
 
 
@@ -355,7 +361,38 @@ public class AllNotificationActivity extends AppCompatActivity {
                     viewHolder.titleTextView.setVisibility(View.GONE);
                     viewHolder.title.setVisibility(View.GONE);
                    // viewHolder.orderh.setVisibility(View.GONE);
-                    viewHolder.orderno.setVisibility(View.GONE);
+                    viewHolder.orderno.setVisibility(View.VISIBLE);
+                    String dateTime = item.optString("timestamp");
+
+                    DateTimeFormatter formatter = DateTimeFormat.forPattern("yyyy-MM-dd'T'HH:mm:ss.SSSZZ")
+                            .withLocale(Locale.ROOT)
+                            .withChronology(ISOChronology.getInstanceUTC());
+
+                    DateTime then = formatter.parseDateTime(dateTime);
+
+                    DateTime now = DateTime.now();
+
+                    long diff = now.getMillis()-then.getMillis();
+
+                    String timeAgo=" ";
+
+                    if(diff<60000) {
+                        timeAgo = "just now";
+                    }
+                    else if(diff>60000&&diff<3600000){
+                        timeAgo =(String) DateUtils.getRelativeTimeSpanString( then.getMillis(), now.getMillis(),DateUtils.MINUTE_IN_MILLIS);
+                    }
+                    else if(diff>3600000&&diff<86400000){
+                        timeAgo =(String) DateUtils.getRelativeTimeSpanString( then.getMillis(), now.getMillis(),DateUtils.HOUR_IN_MILLIS);
+                    }
+                    else if(diff>86400000&&diff<259200000){
+                        timeAgo =(String) DateUtils.getRelativeTimeSpanString( then.getMillis(), now.getMillis(),DateUtils.DAY_IN_MILLIS);
+                    }
+                    else if(diff>259200000) {
+                        DateTimeFormatter dtfOut = DateTimeFormat.forPattern("MM/dd/yyyy");
+                        timeAgo = dtfOut.print(then);
+                    }
+                    viewHolder.orderno.setText(timeAgo);
                     viewHolder.undoButton.setVisibility(View.INVISIBLE);
                     viewHolder.undoButton.setOnClickListener(new View.OnClickListener() {
                         @Override
