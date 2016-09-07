@@ -74,6 +74,7 @@ import info.truemd.android.adapter.CustomCouponBSAdapter;
 import info.truemd.android.adapter.CustomLanguageBSAdapter;
 import info.truemd.android.helper.SessionManager;
 import info.truemd.android.helper.TrueMDJSONUtils;
+import io.paperdb.Paper;
 
 /**
  * Created by yashvardhansrivastava on 20/04/16.
@@ -253,7 +254,7 @@ public class ConfirmOrderActivity extends AppCompatActivity {
 
         discount.setText(MainActivity.discountMsg);
 
-        yourOrderCO.setText(MainActivity.nameFromGetUser);
+        yourOrderCO.setText(Paper.book("user").read("name", ""));
 
         //EditText couponET = (EditText) findViewById(R.id.coupon_et); couponET.setTypeface(tf_r);
         //TextView cancel = (TextView) findViewById(R.id.submit_coupon_tv); cancel.setTypeface(tf_r);
