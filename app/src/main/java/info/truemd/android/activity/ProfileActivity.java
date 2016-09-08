@@ -384,7 +384,7 @@ public class ProfileActivity extends AppCompatActivity {
             {
                 new SweetAlertDialog(ProfileActivity.this, SweetAlertDialog.WARNING_TYPE)
                         .setTitleText("Oops..!!")
-                        .setContentText("The server is taking too long to respond or there might be an issue with your internet connection.\n Try after some time.")
+                        .setContentText("There might be an issue with your internet connection.\n Try after some time.")
                         .setConfirmText("OK")
                         .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
                             @Override

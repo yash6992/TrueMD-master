@@ -36,7 +36,8 @@ public class OrderMedicineActivity extends AppCompatActivity {
 
     ImageView idealPres;
     ImageButton backImageButtonOM, info, help; Dialog mBottomSheetDialog1, mBottomSheetDialog3;
-    TextView titleOM, t1, t2, uploadPrescription, refillOrder;
+    TextView titleOM, t1, t2, refillOrder;
+    Button uploadPrescription;
     DilatingDotsProgressBar orderProgress;
 
     @Override
@@ -53,7 +54,7 @@ public class OrderMedicineActivity extends AppCompatActivity {
         titleOM=(TextView) findViewById(R.id.titleOM);
         t1=(TextView) findViewById(R.id.textView4OM);
         t2=(TextView) findViewById(R.id.textView5OM);
-        uploadPrescription=(TextView) findViewById(R.id.uploadPrescriptionButtonOM);
+        uploadPrescription=(Button) findViewById(R.id.uploadPrescriptionButtonOM);
         refillOrder=(TextView) findViewById(R.id.refillButtonOM);
         orderProgress = (DilatingDotsProgressBar) findViewById(R.id.order_progress);
 
@@ -61,7 +62,7 @@ public class OrderMedicineActivity extends AppCompatActivity {
         mBottomSheetDialog1= new Dialog(OrderMedicineActivity.this,
                 R.style.MaterialDialogSheet);
 
-        titleOM.setTypeface(tf_pacifico);
+        titleOM.setTypeface(tf_pacifico); t2.setText("\u20B9 99 delivery charge applicable on all orders.");
         t1.setTypeface(tf_l);t2.setTypeface(tf_l);uploadPrescription.setTypeface(tf_l);refillOrder.setTypeface(tf_l);
 
         uploadPrescription.setOnClickListener(new View.OnClickListener() {

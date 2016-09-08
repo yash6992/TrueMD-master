@@ -49,7 +49,7 @@
         <TextView
             android:layout_width="match_parent" android:gravity="center_horizontal" android:textSize="12sp" android:layout_above="@+id/uploadPrescriptionButtonOM"
             android:layout_height="wrap_content" android:textColor="@color/monsoon" android:layout_marginLeft="5dp" android:layout_marginTop="6dp"
-            android:text="Available only in Indore." android:layout_alignParentLeft="true"
+            android:text="Delivery charges applicable (Rs. 99)" android:layout_alignParentLeft="true"
             android:id="@+id/textView5OM" />
 
         <ImageView
@@ -60,14 +60,10 @@
 
         <TextView
             android:layout_width="match_parent" android:textColor="@color/windowBackground"
-            android:layout_height="wrap_content" android:background="@drawable/button_purple_ghost" android:padding="13dp"
-            android:text="REFILL PREVIOUS ORDERS" android:textSize="13dp"
+            android:layout_height="43dp" android:background="@drawable/button_purple_ghost_squ" android:padding="13dp"
+            android:text="REFILL PREVIOUS ORDERS" android:textSize="13dp" android:layout_margin="4dp"
             android:id="@+id/refillButtonOM"  android:gravity="center_horizontal|center_vertical"
-            android:layout_alignParentBottom="true"
-            android:layout_alignLeft="@+id/uploadPrescriptionButtonOM"
-            android:layout_alignStart="@+id/uploadPrescriptionButtonOM"
-            android:layout_alignRight="@+id/uploadPrescriptionButtonOM"
-            android:layout_alignEnd="@+id/uploadPrescriptionButtonOM"/>
+            android:layout_alignParentBottom="true"/>
 
 
         <TextView
@@ -76,11 +72,13 @@
             android:text="or you could simply" android:layout_above="@id/refillButtonOM" android:layout_marginBottom="10dp"
             android:id="@+id/textView6OM" />
 
-        <TextView
-            android:layout_width="match_parent" android:textColor="@color/white" android:layout_marginLeft="0dp" android:layout_marginRight="0dp" android:layout_marginTop="8dp"
-            android:layout_height="wrap_content" android:layout_above="@id/textView6OM" android:layout_marginBottom="10dp"
-            android:text="UPLOAD PRESCRIPTION" android:background="@drawable/button_purple" android:padding="13dp" android:textSize="13dp"
-            android:id="@+id/uploadPrescriptionButtonOM" android:gravity="center_horizontal|center_vertical"  />
+         <android.support.v7.widget.AppCompatButton
+            android:id="@+id/uploadPrescriptionButtonOM"
+            android:layout_width="fill_parent" android:layout_above="@id/textView6OM"
+            android:layout_height="56dp" android:textColor="@color/white"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="0dp"
+            android:text="UPLOAD PRESCRIPTION"/>
 
         <ImageButton
             android:layout_width="25dp"  android:paddingBottom="5dp" android:visibility="invisible"

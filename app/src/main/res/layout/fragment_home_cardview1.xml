@@ -222,7 +222,7 @@
     </RelativeLayout>
 
     <ir.afshin.stickyscrollviewlib.StickyScrollView
-        android:layout_width="match_parent" android:id="@+id/hf_sticky_scroll" android:padding="6dp"
+        android:layout_width="match_parent" android:id="@+id/hf_sticky_scroll"
         android:layout_height="wrap_content" android:layout_below="@+id/image_button_drawer_home">
 
         <RelativeLayout
@@ -231,7 +231,7 @@
 
             <RelativeLayout
                 android:layout_width="match_parent" android:id="@+id/hf_1" android:layout_marginTop="0dp"
-                android:layout_height="wrap_content" android:paddingLeft="8dp" android:layout_marginBottom="20dp">
+                android:layout_height="wrap_content" android:paddingLeft="14dp" android:layout_marginBottom="20dp">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -250,8 +250,8 @@
                     android:layout_width="match_parent"  android:id="@+id/hf_22"
                     android:layout_height="wrap_content" >
                     <android.support.v7.widget.CardView
-                        android:layout_width="match_parent" android:layout_marginBottom="10dp" android:layout_marginRight="9dp"
-                        android:layout_marginLeft="9dp"
+                        android:layout_width="match_parent" android:layout_marginBottom="10dp" android:layout_marginRight="15dp"
+                        android:layout_marginLeft="15dp"
                         android:layout_height="wrap_content">
                 <RelativeLayout
                     android:layout_width="match_parent" android:orientation="horizontal" android:id="@+id/hf_search_rl"
@@ -266,7 +266,7 @@
                     <ImageView
                         android:layout_width="20dp" android:layout_alignParentRight="true"
                         android:layout_height="20dp" android:layout_centerVertical="true"
-                        android:src="@drawable/ic_search_pink_24dp"/>
+                        android:src="@drawable/ic_search_purple_24dp"/>
 
                 </RelativeLayout>
                     </android.support.v7.widget.CardView>
@@ -280,12 +280,10 @@
                 android:layout_width="match_parent" android:id="@+id/hf_3" android:layout_below="@+id/hf_2"
                 android:layout_height="wrap_content" android:layout_marginTop="8dp" >
 
-                <android.support.v7.widget.CardView
-                    android:layout_width="match_parent" android:layout_margin="8dp"
-                    android:layout_height="wrap_content" >
+
 
                     <RelativeLayout
-                        android:layout_width="match_parent"
+                        android:layout_width="match_parent" android:background="@color/white"
                         android:layout_height="wrap_content">
                         <RelativeLayout
                             android:layout_width="match_parent" android:foreground="@drawable/custom_bg"
@@ -295,10 +293,10 @@
 
 
                             <ImageView
-                                android:layout_width="50dp" android:layout_margin="10dp"
+                                android:layout_width="50dp" android:layout_margin="13dp"
                                 android:layout_height="50dp" android:layout_centerInParent="true"
                                 android:layout_alignParentLeft="true" android:layout_alignParentStart="true"
-                                android:src="@drawable/orderpink"
+                                android:src="@drawable/medicines"
                                 android:layout_marginLeft="10dp"
                                 android:id="@+id/hf_imageView1" />
 
@@ -326,7 +324,6 @@
 
                     </RelativeLayout>
 
-                </android.support.v7.widget.CardView>
 
 
 
@@ -350,20 +347,17 @@
 
             </RelativeLayout>
             <RelativeLayout
-                android:layout_width="match_parent" android:id="@+id/hf_5" android:layout_below="@+id/hf_4"
-                android:layout_height="wrap_content" >
+                android:layout_width="match_parent" android:id="@+id/hf_5" android:layout_marginTop="8dp" android:layout_below="@+id/hf_4"
+                android:layout_height="wrap_content" android:background="@color/white" >
 
-                <android.support.v7.widget.CardView
-                    android:layout_width="match_parent" android:layout_margin="8dp"
-                    android:layout_height="wrap_content" >
 
                     <LinearLayout
                         android:layout_width="match_parent"  android:orientation="horizontal"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content" >
 
                         <RelativeLayout
                             android:layout_width="0dp" android:layout_weight="1"
-                            android:layout_height="wrap_content" android:layout_marginTop="0dp" android:layout_marginLeft="10dp" android:layout_marginRight="10dp"
+                            android:layout_height="wrap_content" android:layout_marginTop="0dp" android:layout_marginLeft="10dp" android:layout_marginRight="0dp"
                             android:id="@+id/hf_relative_layout2"  android:foreground="@drawable/custom_bg"
                             android:clickable="true">
 
@@ -371,7 +365,7 @@
                             <ImageView
                                 android:layout_width="40dp"
                                 android:layout_height="40dp" android:layout_margin="15dp"
-                                android:src="@drawable/alarm_clock_pink"
+                                android:src="@drawable/bell"
                                 android:id="@+id/hf_imageView2"
                                 android:layout_alignParentTop="true"
                                 android:layout_centerHorizontal="true" />
@@ -399,18 +393,20 @@
                                     android:id="@+id/hf_textView24" />
                             </LinearLayout>
                         </RelativeLayout>
-
+                        <View
+                            android:layout_width="0.4dp" android:background="@color/windowBackground"
+                            android:layout_height="match_parent" />
                         <RelativeLayout
                             android:layout_width="0dp" android:layout_weight="1"  android:foreground="@drawable/custom_bg"
                             android:clickable="true"
-                            android:layout_height="wrap_content" android:layout_marginTop="0dp" android:layout_marginLeft="0dp" android:layout_marginRight="20dp"
+                            android:layout_height="wrap_content" android:layout_marginTop="0dp" android:layout_marginLeft="0dp" android:layout_marginRight="10dp"
                             android:id="@+id/hf_relative_layout3">
 
 
                             <ImageView
                                 android:layout_width="40dp"
                                 android:layout_height="40dp" android:layout_margin="15dp"
-                                android:src="@drawable/chatpink"
+                                android:src="@drawable/chat"
                                 android:id="@+id/hf_imageView3"
                                 android:layout_alignParentTop="true"
                                 android:layout_centerHorizontal="true" />
@@ -440,7 +436,7 @@
                         </RelativeLayout>
                     </LinearLayout>
 
-                </android.support.v7.widget.CardView>
+
 
             </RelativeLayout>
             <RelativeLayout
@@ -495,19 +491,17 @@
 
             </RelativeLayout>
             <RelativeLayout
-                android:layout_width="match_parent" android:id="@+id/hf_9" android:layout_below="@+id/hf_8"
+                android:layout_width="match_parent" android:layout_marginTop="8dp" android:id="@+id/hf_9" android:layout_below="@+id/hf_8"
                 android:layout_height="wrap_content" android:foreground="@drawable/custom_bg"
                 android:clickable="true" >
 
-                <android.support.v7.widget.CardView
-                    android:layout_width="match_parent" android:layout_margin="8dp"
-                    android:layout_height="wrap_content" >
+
 
                     <LinearLayout
                         android:orientation="vertical"
                         android:layout_width="match_parent"
                         android:layout_height="fill_parent" android:layout_marginTop="0dp"
-                        android:layout_gravity="bottom" android:layout_below="@+id/cardview_home"
+                        android:layout_gravity="bottom"  android:background="@color/white"
                         android:layout_alignParentBottom="true">
 
                         <RelativeLayout
@@ -520,7 +514,7 @@
                                 android:layout_width="27dp"
                                 android:layout_height="27dp" android:layout_marginTop="14dp"
                                 android:layout_alignParentLeft="true" android:layout_alignParentStart="true"
-                                android:src="@drawable/ic_order4"
+                                android:src="@drawable/archive"
                                 android:layout_marginLeft="20dp"
                                 android:id="@+id/imageView4" />
 
@@ -547,15 +541,12 @@
 
                             </LinearLayout>
 
-                            <View
-                                android:layout_width="match_parent" android:id="@+id/b44" android:layout_below="@+id/main4" android:layout_marginBottom="10dp"
-                                android:layout_height="0.3dp" android:layout_marginTop="0dp" android:layout_marginLeft="20dp" android:layout_marginRight="20dp"
-                                android:background="@color/windowBackground" />
+
                             <TextView
                                 android:layout_width="wrap_content" android:layout_alignParentLeft="true" android:layout_alignParentStart="true"
                                 android:layout_height="wrap_content" android:layout_marginLeft="23dp" android:layout_marginBottom="10dp"
                                 android:textColor="@color/windowBackground" android:textSize="11dp" android:layout_marginTop="2dp"
-                                android:text="Or have a look at the other medicines you are prescribed. " android:layout_below="@+id/b44"
+                                android:text="Or have a look at the other medicines you are prescribed. " android:layout_below="@+id/main4"
                                 android:id="@+id/hf_textView46" />
 
                         </RelativeLayout>
@@ -566,24 +557,27 @@
 
                     </LinearLayout>
 
-                </android.support.v7.widget.CardView>
+
 
             </RelativeLayout>
 
+            <View
+                android:layout_width="match_parent" android:layout_below="@+id/hf_9" android:id="@+id/v1"
+                android:layout_height="0.4dp" android:background="@color/windowBackground"
+                />
+
             <RelativeLayout
-                android:layout_width="match_parent" android:id="@+id/hf_10" android:layout_below="@+id/hf_9"
+                android:layout_width="match_parent" android:id="@+id/hf_10" android:layout_below="@+id/v1"
                 android:layout_height="wrap_content"  android:foreground="@drawable/custom_bg"
                 android:clickable="true" >
 
-                <android.support.v7.widget.CardView
-                    android:layout_width="match_parent" android:layout_margin="8dp"
-                    android:layout_height="wrap_content">
+
 
                     <LinearLayout
                         android:orientation="vertical"
                         android:layout_width="match_parent"
                         android:layout_height="fill_parent" android:layout_marginTop="0dp"
-                        android:layout_gravity="bottom" android:layout_below="@+id/cardview_home"
+                        android:layout_gravity="bottom" android:background="@color/white"
                         android:layout_alignParentBottom="true">
 
 
@@ -598,7 +592,7 @@
                                 android:layout_width="31dp"
                                 android:layout_height="27dp" android:layout_marginTop="14dp"
                                 android:layout_alignParentLeft="true" android:layout_alignParentStart="true"
-                                android:src="@drawable/chatpink2"
+                                android:src="@drawable/chat2"
                                 android:layout_marginLeft="20dp"
                                 android:id="@+id/imageView5" />
 
@@ -624,15 +618,12 @@
                                     android:id="@+id/hf_textView54" />
                             </LinearLayout>
 
-                            <View
-                                android:layout_width="match_parent" android:id="@+id/b55" android:layout_below="@+id/main5" android:layout_marginBottom="10dp"
-                                android:layout_height="0.3dp" android:layout_marginTop="0dp" android:layout_marginLeft="20dp" android:layout_marginRight="20dp"
-                                android:background="@color/windowBackground" />
+
                             <TextView
                                 android:layout_width="wrap_content" android:layout_alignParentLeft="true" android:layout_alignParentStart="true"
                                 android:layout_height="wrap_content" android:layout_marginLeft="23dp" android:layout_marginBottom="10dp"
                                 android:textColor="@color/windowBackground" android:textSize="11dp" android:layout_marginTop="2dp"
-                                android:text="Our chat bot can help you with your medicine related questions." android:layout_below="@+id/b55"
+                                android:text="Our chat bot can help you with your medicine related questions." android:layout_below="@+id/main5"
                                 android:id="@+id/hf_textView56" />
                         </RelativeLayout>
 
@@ -640,7 +631,7 @@
 
                     </LinearLayout>
 
-                </android.support.v7.widget.CardView>
+
 
             </RelativeLayout>
 
