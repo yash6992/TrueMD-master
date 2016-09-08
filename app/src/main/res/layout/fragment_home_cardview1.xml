@@ -234,7 +234,7 @@
                 android:layout_height="wrap_content" android:paddingLeft="14dp" android:layout_marginBottom="20dp">
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="wrap_content" android:layout_marginTop="5dp"
                     android:layout_height="wrap_content"
                     android:text="Hi," android:textColor="@color/accent_dark"
                     android:textSize="40dp" android:id="@+id/hf_hi"/>

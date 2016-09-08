@@ -58,10 +58,10 @@
             android:layout_height="match_parent" android:background="@color/white" android:layout_marginRight="-12dp" android:layout_marginLeft="-12dp"
             android:id="@+id/idealPrescriptionImageViewOM" />
 
-        <TextView
-            android:layout_width="match_parent" android:textColor="@color/windowBackground"
-            android:layout_height="43dp" android:background="@drawable/button_purple_ghost_squ" android:padding="13dp"
-            android:text="REFILL PREVIOUS ORDERS" android:textSize="13dp" android:layout_margin="4dp"
+        <android.support.v7.widget.AppCompatButton
+            android:layout_width="match_parent" android:textColor="@color/monsoon"
+            android:layout_height="56dp"  android:backgroundTint="@color/iron"
+            android:text="REFILL PREVIOUS ORDERS"  android:layout_marginTop="0dp"
             android:id="@+id/refillButtonOM"  android:gravity="center_horizontal|center_vertical"
             android:layout_alignParentBottom="true"/>
 
@@ -76,7 +76,7 @@
             android:id="@+id/uploadPrescriptionButtonOM"
             android:layout_width="fill_parent" android:layout_above="@id/textView6OM"
             android:layout_height="56dp" android:textColor="@color/white"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="8dp" android:backgroundTint="@color/windowBackground"
             android:layout_marginBottom="0dp"
             android:text="UPLOAD PRESCRIPTION"/>
 

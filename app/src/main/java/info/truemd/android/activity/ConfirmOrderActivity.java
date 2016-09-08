@@ -358,64 +358,60 @@ public class ConfirmOrderActivity extends AppCompatActivity {
 
                 switch (v.getId()) {
                     case R.id.coImage0:
-                        Log.e("Confirm: ","in BS IV");
+                        Log.e("Confirm: ", "in BS IV");
                         openBottomSheetImageViewer(coImage0);
                         break;
                     case R.id.coImage1:
-                        Log.e("Confirm: ","in BS IV");
+                        Log.e("Confirm: ", "in BS IV");
                         openBottomSheetImageViewer(coImage1);
                         break;
                     case R.id.coImage2:
-                        Log.e("Confirm: ","in BS IV");
+                        Log.e("Confirm: ", "in BS IV");
                         openBottomSheetImageViewer(coImage2);
                         break;
                     case R.id.coImage3:
-                        Log.e("Confirm: ","in BS IV");
+                        Log.e("Confirm: ", "in BS IV");
                         openBottomSheetImageViewer(coImage3);
                         break;
                     case R.id.coImage4:
-                        Log.e("Confirm: ","in BS IV");
+                        Log.e("Confirm: ", "in BS IV");
                         openBottomSheetImageViewer(coImage4);
                         break;
                     case R.id.coImage5:
-                        Log.e("Confirm: ","in BS IV");
+                        Log.e("Confirm: ", "in BS IV");
                         openBottomSheetImageViewer(coImage5);
                         break;
                     case R.id.coImage6:
-                        Log.e("Confirm: ","in BS IV");
+                        Log.e("Confirm: ", "in BS IV");
                         openBottomSheetImageViewer(coImage6);
                         break;
                     case R.id.coImage7:
-                        Log.e("Confirm: ","in BS IV");
+                        Log.e("Confirm: ", "in BS IV");
                         openBottomSheetImageViewer(coImage7);
                         break;
                     case R.id.coImage8:
-                        Log.e("Confirm: ","in BS IV");
+                        Log.e("Confirm: ", "in BS IV");
                         openBottomSheetImageViewer(coImage8);
                         break;
                     case R.id.coImage9:
-                        Log.e("Confirm: ","in BS IV");
+                        Log.e("Confirm: ", "in BS IV");
                         openBottomSheetImageViewer(coImage9);
                         break;
                     case R.id.delivery_address_coTV:
-                        if(addresstypetosend.size()==0)
-                        {
+                        if (addresstypetosend.size() == 0) {
                             Intent toAddAddress = new Intent(ConfirmOrderActivity.this, AddAddressActivity.class);
 
                             startActivity(toAddAddress);
-                        }
-                        else
-                        openBottomSheetAddress("Select Address", false, addresstypetosend, addressvaluetosend);
+                        } else
+                            openBottomSheetAddress("Select Address", false, addresstypetosend, addressvaluetosend);
                         break;
 
                     case R.id.pickup_address_coTV:
-                        if(addresstypetosend.size()==0)
-                        {
+                        if (addresstypetosend.size() == 0) {
                             Intent toAddAddress = new Intent(ConfirmOrderActivity.this, AddAddressActivity.class);
 
                             startActivity(toAddAddress);
-                        }
-                        else
+                        } else
                             openBottomSheetAddress("Select Address", true, addresstypetosend, addressvaluetosend);
 
                         //openBottomSheetAddress("Select Address", false, addresstypetosend, addressvaluetosend);
@@ -434,12 +430,10 @@ public class ConfirmOrderActivity extends AppCompatActivity {
                         });
                         break;
                     case R.id.coupon_coTV:
-                        if(addresstypetosend.size()==0)
-                        {
-                            Toast.makeText(ConfirmOrderActivity.this,"You don't have any personal coupon codes.",Toast.LENGTH_SHORT).show();
-                        }
-                        else
-                        openBottomSheetCoupon("Select Coupon", coupon, valid, details);
+                        if (addresstypetosend.size() == 0) {
+                            Toast.makeText(ConfirmOrderActivity.this, "You don't have any personal coupon codes.", Toast.LENGTH_SHORT).show();
+                        } else
+                            openBottomSheetCoupon("Select Coupon", coupon, valid, details);
                         break;
                     case R.id.backImageButtonMark_co:
                         onBackPressed();
@@ -447,28 +441,73 @@ public class ConfirmOrderActivity extends AppCompatActivity {
                     case R.id.CheckImageButtonMark_co:
 
 
-                        if(TrueMDJSONUtils.isEmpty(selectedAddressjobj)) {
-                            Log.e("in orderValid():: ", "2 completeUpload= " + completeUpload);
-                            Log.e("in orderValid():: ", "2 delivery= " + selectedAddressjobj.toString());
-                            completeUpload = 0;
-                            documentsUploaded.clear();
-                            Toast.makeText(ConfirmOrderActivity.this, "Please select the delivery address.", Toast.LENGTH_SHORT).show();
-                        }
+                        if(couponFinal.length()!=0){
+                                    if (TrueMDJSONUtils.isEmpty(selectedAddressjobj)) {
+                                        Log.e("in orderValid():: ", "2 completeUpload= " + completeUpload);
+                                        Log.e("in orderValid():: ", "2 delivery= " + selectedAddressjobj.toString());
+                                        completeUpload = 0;
+                                        documentsUploaded.clear();
+                                        Toast.makeText(ConfirmOrderActivity.this, "Please select the delivery address.", Toast.LENGTH_SHORT).show();
+                                    } else {
+                                        mDilatingDotsProgressBar.showNow();
+                                        getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
+                                                WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+                                        Log.e("Confirm Activity:: ", "pressed upload:: " + confirmUriList.get(0).getPath().toString());
+                                        int j = 0;
+                                        for (j = 0; j < confirmBitmapList.size(); j++) {
+                                            new UploadBitmapOperation().execute(confirmBitmapList.get(j));
+                                            loadingList.get(j).setVisibility(View.VISIBLE);
+                                            llList.get(j).setVisibility(View.VISIBLE);
+                                            confirmImageList.get(j).setColorFilter(Color.rgb(123, 123, 123), android.graphics.PorterDuff.Mode.MULTIPLY);
+
+
+                                        }
+                                    }
+                                }
                         else {
-                            mDilatingDotsProgressBar.showNow();
-                            getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
-                                    WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
-                            Log.e("Confirm Activity:: ", "pressed upload:: " + confirmUriList.get(0).getPath().toString());
-                            int j = 0;
-                            for (j = 0; j < confirmBitmapList.size(); j++) {
-                                new UploadBitmapOperation().execute(confirmBitmapList.get(j));
-                                loadingList.get(j).setVisibility(View.VISIBLE);
-                                llList.get(j).setVisibility(View.VISIBLE);
-                                confirmImageList.get(j).setColorFilter(Color.rgb(123, 123, 123), android.graphics.PorterDuff.Mode.MULTIPLY);
+
+                            new SweetAlertDialog(ConfirmOrderActivity.this, SweetAlertDialog.NORMAL_TYPE)
+                                    .setTitleText("No coupons selected")
+                                    .setContentText("Please add coupons to get discounts.")
+                                    .setCancelText("I'll add coupons.")
+                                    .setConfirmText("Continue")
+                                    .showCancelButton(true)
+                                    .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                                        @Override
+                                        public void onClick(SweetAlertDialog sDialog) {
+                                            if (TrueMDJSONUtils.isEmpty(selectedAddressjobj)) {
+                                                Log.e("in orderValid():: ", "2 completeUpload= " + completeUpload);
+                                                Log.e("in orderValid():: ", "2 delivery= " + selectedAddressjobj.toString());
+                                                completeUpload = 0;
+                                                documentsUploaded.clear();
+                                                Toast.makeText(ConfirmOrderActivity.this, "Please select the delivery address.", Toast.LENGTH_SHORT).show();
+                                            } else {
+                                                mDilatingDotsProgressBar.showNow();
+                                                getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
+                                                        WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+                                                Log.e("Confirm Activity:: ", "pressed upload:: " + confirmUriList.get(0).getPath().toString());
+                                                int j = 0;
+                                                for (j = 0; j < confirmBitmapList.size(); j++) {
+                                                    new UploadBitmapOperation().execute(confirmBitmapList.get(j));
+                                                    loadingList.get(j).setVisibility(View.VISIBLE);
+                                                    llList.get(j).setVisibility(View.VISIBLE);
+                                                    confirmImageList.get(j).setColorFilter(Color.rgb(123, 123, 123), android.graphics.PorterDuff.Mode.MULTIPLY);
 
 
-                            }
-                        }
+                                                }
+                                            }
+
+
+                                        }
+                                    })
+                                    .setCancelClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                                        @Override
+                                        public void onClick(SweetAlertDialog sDialog) {
+                                            sDialog.cancel();
+                                        }
+                                    })
+                                    .show();
+                                }
 
 
                         break;
@@ -505,8 +544,33 @@ public class ConfirmOrderActivity extends AppCompatActivity {
     }
     @Override
     public void onBackPressed(){
-        finish();
-        startActivity(new Intent(ConfirmOrderActivity.this, OrderMedicineActivity.class));
+
+
+        new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE)
+                .setTitleText("Are you sure?")
+                .setContentText("You will have to select all prescription images again.")
+                .setCancelText("No")
+                .setConfirmText("Yes")
+                .showCancelButton(true)
+                .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                    @Override
+                    public void onClick(SweetAlertDialog sDialog) {
+
+                        finish();
+                        startActivity(new Intent(ConfirmOrderActivity.this, OrderMedicineActivity.class));
+
+                    }
+                })
+                .setCancelClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                    @Override
+                    public void onClick(SweetAlertDialog sDialog) {
+                        sDialog.cancel();
+                    }
+                })
+                .show();
+
+
+
     }
     public void setImageFromUri(ImageView imgView, Uri absPathUri)
     {

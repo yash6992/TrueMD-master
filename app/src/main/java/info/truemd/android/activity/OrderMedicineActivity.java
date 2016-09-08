@@ -36,8 +36,8 @@ public class OrderMedicineActivity extends AppCompatActivity {
 
     ImageView idealPres;
     ImageButton backImageButtonOM, info, help; Dialog mBottomSheetDialog1, mBottomSheetDialog3;
-    TextView titleOM, t1, t2, refillOrder;
-    Button uploadPrescription;
+    TextView titleOM, t1, t2 ;
+    Button uploadPrescription,refillOrder;
     DilatingDotsProgressBar orderProgress;
 
     @Override
@@ -55,7 +55,7 @@ public class OrderMedicineActivity extends AppCompatActivity {
         t1=(TextView) findViewById(R.id.textView4OM);
         t2=(TextView) findViewById(R.id.textView5OM);
         uploadPrescription=(Button) findViewById(R.id.uploadPrescriptionButtonOM);
-        refillOrder=(TextView) findViewById(R.id.refillButtonOM);
+        refillOrder=(Button) findViewById(R.id.refillButtonOM);
         orderProgress = (DilatingDotsProgressBar) findViewById(R.id.order_progress);
 
         help = (ImageButton) findViewById(R.id.helpimageButton);

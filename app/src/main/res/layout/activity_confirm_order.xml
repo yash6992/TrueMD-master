@@ -15,7 +15,7 @@
             android:layout_height="30dp" android:background="@drawable/ic_arrow_back_p_24dp"
             android:id="@+id/backImageButtonMark_co" />
 
-        <TextView
+        <android.support.v7.widget.AppCompatButton
             android:layout_width="match_parent" android:textColor="@color/windowBackground"
             android:layout_height="30dp" android:textSize="18dp"
             android:text="CONFIRM ORDER"

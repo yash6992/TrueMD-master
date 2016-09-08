@@ -66,6 +66,7 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="colorControlNormal">@color/iron</item>
+        <item name="colorButtonNormal">@color/accent_dark</item>
         <item name="colorControlActivated">@color/iron</item>
         <item name="colorControlHighlight">@color/iron</item>
         <item name="android:textColorHint">@color/iron</item>
