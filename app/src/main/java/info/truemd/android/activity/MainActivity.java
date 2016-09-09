@@ -111,6 +111,7 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
     private FirebaseRemoteConfig mFirebaseRemoteConfig;
     static boolean onBackAtNoInternet;
     public static String chatInitializerTrueMDCode = "I44IQI";
+    public static String userPinCode = "";
     public static String chatInitializerTrueMDName = "CROCIN 500MG TABLET";
     public static boolean fromMedicineDetailsChat = false;
     public static boolean fromHomeToChat = false;
@@ -731,10 +732,12 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
                         String email_alt = obj.optString("email_alt");
                         String name = obj.optString("name");
                         String sex = TrueMDJSONUtils.goThroughNullCheck(obj.optString("sex"));
+                        String pincode = obj.optString("pincode");
 
                         profileEmailAlt = email_alt;
                         profileGender = sex;
                         profileName = name;
+                        userPinCode = pincode;
 
                         nameFromGetUser=obj.getString("name");
                         discountMsg=obj.optString("discount_msg");
@@ -742,6 +745,8 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
                         discountMsg = discountMsg.replace("300", "\u20B9 "+"300");
 
                         Paper.book("user").write("name",nameFromGetUser);
+                        Paper.book("user").write("gender",profileGender);
+                        Paper.book("user").write("pincode",userPinCode);
 
 
                         Log.e("GenderEmail:",nameFromGetUser+" :e: "+email_alt+" s: "+sex);

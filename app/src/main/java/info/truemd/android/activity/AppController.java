@@ -87,6 +87,18 @@ public class AppController extends MultiDexApplication {
         }
         Log.e("AppController:", ""+Paper.book("user").read("name"));
 
+        List<String> allKeysp = Paper.book("user").getAllKeys();
+        if(allKeysp.contains("pincode"))
+        {
+            // Paper.book("introduction").write("intro","0");
+        }
+        else
+        {
+            Paper.book("user").write("pincode","");
+        }
+        Log.e("AppController:", ""+Paper.book("user").read("pincode"));
+
+
         List<String> allKeys4 = Paper.book("nav").getAllKeys();
         if(allKeys4.contains("selected"))
         {
