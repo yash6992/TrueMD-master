@@ -15,6 +15,7 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -59,7 +60,7 @@ import io.paperdb.Paper;
 public class PrescriptionListActivity extends AppCompatActivity {
 
     ImageButton backImage; TextView pl_title, descrip;
-    ListView lv; TextView placeholdertv;
+    ListView lv; Button placeholdertv;
     DilatingDotsProgressBar mDilatingDotsProgressBar;
     Context context_pla;
     JsonArrayRequester mRequester;
@@ -91,7 +92,7 @@ public class PrescriptionListActivity extends AppCompatActivity {
         mDilatingDotsProgressBar = (DilatingDotsProgressBar) findViewById(R.id.pl_progress);
         placeholder = (LinearLayout) findViewById(R.id.pl_placeholder);
         placeholderi=(ImageView) findViewById(R.id.pl_imageviewp);
-        placeholdertv=(TextView) findViewById(R.id.pl_placeholderTextView);
+        placeholdertv=(Button) findViewById(R.id.pl_placeholderTextView);
 
         placeholder.setVisibility(View.GONE);
 

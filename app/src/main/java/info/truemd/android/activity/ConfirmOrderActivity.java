@@ -17,6 +17,7 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.CardView;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -88,9 +89,9 @@ public class ConfirmOrderActivity extends AppCompatActivity {
     ImageButton backCOIB;TextView submitCOIB; DilatingDotsProgressBar mDilatingDotsProgressBar;
     ArrayList<LinearLayout> llList; boolean errorUploading=false;
     ArrayList<AVLoadingIndicatorView> loadingList;
-    ScrollView scrollCO;
+    ScrollView scrollCO; CardView deliveryCO;
     ArrayList<Bitmap> confirmBitmapList;static SessionManager session; static int completeUpload;
-    RelativeLayout deliveryCO, pickupCO; String []  language;ArrayList<String> coupon, valid,details,addresstypetosend, addressvaluetosend;
+    RelativeLayout  pickupCO; String []  language;ArrayList<String> coupon, valid,details,addresstypetosend, addressvaluetosend;
     TextView discount,couponHCO,couponTCO,couponST, couponD, submitcouponTVCO,titleCO, pickupHCO, pickupTVCO, pickupD, pickupST, deliveryHCO,deliveryD, deliveryST, languageHCO,languageST, languageD,languageTVCO; CheckBox radioButtonCO;
     EditText couponCOET,yourOrderCO, commentsCO; ArrayList<JSONObject> documentsUploaded;LinearLayout couponLLCO;
     public static ArrayList<JSONObject> pickupjarray, deliveryjarray;
@@ -223,7 +224,7 @@ public class ConfirmOrderActivity extends AppCompatActivity {
         confirmImageList.add(coImage8);
         confirmImageList.add(coImage9);
 
-        deliveryCO = (RelativeLayout) findViewById(R.id.pickup_address_co);
+        deliveryCO = (CardView) findViewById(R.id.pickup_address_co);
         pickupCO = (RelativeLayout) findViewById(R.id.delivery_address_co);
 
         backCOIB = (ImageButton) findViewById(R.id.backImageButtonMark_co);

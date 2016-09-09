@@ -15,7 +15,7 @@
             android:layout_height="30dp" android:background="@drawable/ic_arrow_back_p_24dp"
             android:id="@+id/backImageButtonMark_co" />
 
-        <android.support.v7.widget.AppCompatButton
+        <TextView
             android:layout_width="match_parent" android:textColor="@color/windowBackground"
             android:layout_height="30dp" android:textSize="18dp"
             android:text="CONFIRM ORDER"
@@ -29,7 +29,7 @@
 
     <ScrollView
         android:layout_width="match_parent" android:id="@+id/scroll_co" android:layout_below="@id/title_ll_co"
-        android:layout_height="wrap_content" android:layout_above="@+id/submit_co">
+        android:layout_height="wrap_content" android:layout_above="@+id/submit_co" >
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -42,13 +42,15 @@
             </LinearLayout>
 
 
-
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent" android:id="@+id/details_co" android:layout_marginBottom="12dp" android:layout_marginRight="12dp" android:layout_marginLeft="12dp"
+                android:layout_height="wrap_content" android:layout_below="@+id/b5" android:padding="3dp">
             <RelativeLayout
-                android:layout_width="match_parent" android:background="@color/white" android:id="@+id/details_co"
-                android:layout_height="wrap_content"  android:layout_marginTop="0dp" android:layout_below="@+id/b5">
+                android:layout_width="match_parent" android:background="@color/white"
+                android:layout_height="wrap_content"  android:layout_marginTop="0dp" >
 
                 <EditText
-                    android:layout_width="wrap_content" android:layout_marginLeft="20dp" android:layout_marginTop="4dp" android:textSize="14dp" android:id="@+id/your_order_co" android:layout_alignParentTop="true"
+                    android:layout_width="wrap_content" android:layout_marginLeft="13dp" android:layout_marginTop="4dp" android:textSize="14dp" android:id="@+id/your_order_co" android:layout_alignParentTop="true"
                     android:layout_height="wrap_content" android:text="Your Order."  android:textColor="@color/windowBackground" android:backgroundTint="#00000000" />
 
 
@@ -247,30 +249,38 @@
                 </HorizontalScrollView>
 
                 <LinearLayout
-                    android:layout_width="match_parent" android:background="@drawable/shape_purple_ghost_med"
+                    android:layout_width="match_parent" android:background="@drawable/shape_purple_ghost_squ"
                     android:layout_height="wrap_content" android:layout_below="@+id/hhsv_co"
                     android:layout_margin="10dp" android:paddingRight="15dp" android:paddingLeft="15dp"
                     android:layout_marginBottom="0dp" android:id="@+id/llll" >
 
                     <EditText
                         android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/comments_co" android:backgroundTint="#00000000"
-                        android:singleLine="true" android:textSize="11dp"
-                        android:inputType="text" android:textColor="@color/oil"
-                        android:hint="Add comments for our pharmacists (if any)"/>
+                        android:singleLine="true" android:textSize="11dp"  android:inputType="textMultiLine"
+                    android:lines="8"
+                    android:minLines="1"
+                    android:gravity="top|left" android:textColorHint="@color/iron"
+                    android:maxLines="10"
+                        android:textColor="@color/oil"
+                        android:hint="Add comments for our pharmacists.\n\nFor example:\n\nNo. of days you want the medicines for.\nAny medicines in the prescription you want us to skip."/>
 
                 </LinearLayout>
 
                 <TextView
-                    android:layout_width="wrap_content" android:textSize="11dp"
+                    android:layout_width="wrap_content" android:textSize="11dp" android:padding="3dp"
                     android:layout_height="wrap_content" android:textColor="@color/windowBackground"
                     android:text="New Text" android:layout_below="@+id/llll"
                     android:id="@+id/discount_msg" android:layout_centerHorizontal="true" android:layout_marginBottom="8dp" />
 
             </RelativeLayout>
+            </android.support.v7.widget.CardView>
 
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent" android:layout_below="@id/details_co" android:layout_marginBottom="12dp" android:layout_marginRight="12dp" android:layout_marginLeft="12dp"
+                android:layout_height="wrap_content" android:padding="3dp" android:id="@+id/pickup_address_co">
             <RelativeLayout
-                android:layout_width="match_parent" android:background="@color/white" android:id="@+id/pickup_address_co"
-                android:layout_height="wrap_content" android:layout_below="@id/details_co" android:layout_marginTop="12dp">
+                android:layout_width="match_parent" android:background="@color/white"
+                android:layout_height="wrap_content" >
 
                 <TextView
                     android:layout_width="wrap_content" android:text="Delivery Address" android:textSize="13dp" android:textColor="@color/windowBackground"
@@ -282,7 +292,7 @@
 
                 <TextView
                     android:layout_width="match_parent" android:text="address" android:singleLine="true" android:gravity="center_vertical" android:textSize="12dp" android:textColor="@color/oil"
-                    android:layout_height="wrap_content" android:padding="11dp" android:layout_margin="10dp"  android:background="@drawable/shape_purple_ghost_med" android:id="@+id/pickup_address_coTV" android:layout_below="@id/pickup_address_coST" />
+                    android:layout_height="wrap_content" android:padding="11dp" android:layout_margin="10dp"  android:background="@drawable/shape_purple_ghost_squ" android:id="@+id/pickup_address_coTV" android:layout_below="@id/pickup_address_coST" />
 
 
 
@@ -293,6 +303,7 @@
                     android:id="@+id/addressRadioButton_co"  />
 
             </RelativeLayout>
+            </android.support.v7.widget.CardView>
 
             <RelativeLayout
                 android:layout_width="match_parent" android:background="@color/white" android:id="@+id/delivery_address_co"
@@ -353,7 +364,7 @@
 
             <RelativeLayout
                 android:layout_width="match_parent" android:background="@color/white" android:id="@+id/coupon_co" android:layout_alignParentBottom="true"
-                android:layout_height="wrap_content" android:layout_below="@id/language_co" android:layout_marginTop="12dp">
+                android:layout_height="wrap_content" android:layout_below="@id/language_co" android:layout_marginTop="0dp">
 
                 <TextView
                     android:layout_width="wrap_content" android:text="Promo Code" android:textSize="13dp" android:textColor="@color/windowBackground"
@@ -366,12 +377,13 @@
 
 
                 <TextView
-                    android:layout_width="wrap_content" android:text="I have a Promo Code" android:layout_below="@+id/coupon_co_ST" android:textSize="13dp" android:textColor="@color/windowBackground"
+                    android:layout_width="wrap_content" android:text="Have a Promo Code?" android:layout_below="@+id/coupon_co_ST" android:textSize="13dp" android:textColor="@color/windowBackground"
                     android:layout_height="wrap_content"   android:layout_marginTop="15dp" android:layout_marginBottom="10dp" android:layout_centerHorizontal="true" android:paddingLeft="1dp" android:paddingTop="3dp" android:id="@+id/coupon_coH"  />
 
                 <LinearLayout
                     android:layout_width="match_parent" android:orientation="vertical" android:layout_below="@id/coupon_co_ST"
-                    android:layout_height="wrap_content" android:id="@+id/ll_add_coupon">
+                    android:layout_height="wrap_content" android:id="@+id/ll_add_coupon"
+                    android:layout_alignParentBottom="true">
                     <LinearLayout
                         android:layout_width="match_parent" android:padding="10dp" android:orientation="horizontal"
                         android:layout_height="wrap_content" android:id="@+id/ll_edit_coupon" >
@@ -421,10 +433,10 @@
             app:dd_scaleMultiplier="2.3" app:dd_animationDuration="500"
             app:dd_horizontalSpacing="12dp"
             />
-        <TextView
+        <android.support.v7.widget.AppCompatButton
             android:layout_width="match_parent" android:textColor="@color/white" android:layout_marginLeft="12dp" android:layout_marginRight="12dp" android:layout_marginTop="10dp"
-            android:layout_height="wrap_content" android:layout_below="@+id/progress_3" android:layout_marginBottom="10dp"
-            android:text="CONFIRM ORDER" android:background="@drawable/button_purple" android:padding="13dp" android:textSize="13dp"
+            android:layout_height="56dp" android:layout_below="@+id/progress_3" android:layout_marginBottom="10dp"
+            android:text="CONFIRM ORDER"  android:padding="13dp" android:textSize="13dp" android:backgroundTint="@color/windowBackground"
             android:id="@+id/CheckImageButtonMark_co" android:gravity="center_horizontal|center_vertical"  />
 
     </RelativeLayout>

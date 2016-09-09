@@ -15,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -63,7 +64,7 @@ import io.paperdb.Paper;
 public class UpcomingOrderFragment extends Fragment {
 
     View rootView; int rece;
-    ListView lv; TextView placeholdertv;
+    ListView lv; Button placeholdertv;
     DilatingDotsProgressBar mDilatingDotsProgressBar;
     Context context_uof;
     ArrayList<JSONObject> aljoUOrders;
@@ -104,7 +105,7 @@ public class UpcomingOrderFragment extends Fragment {
 
         mDilatingDotsProgressBar = (DilatingDotsProgressBar) rootView.findViewById(R.id.uo_progress);
         placeholder = (LinearLayout) rootView.findViewById(R.id.uo_placeholder);
-        placeholdertv=(TextView) rootView.findViewById(R.id.uo_placeholderTextView);
+        placeholdertv=(Button) rootView.findViewById(R.id.uo_placeholderTextView);
 
         Typeface tf_l=Typeface.createFromAsset(getActivity().getAssets(),"fonts/OpenSans-Regular.ttf");
         placeholderi=(ImageView) rootView.findViewById(R.id.uo_imageviewp);

@@ -40,9 +40,9 @@
             android:layout_width="match_parent" android:layout_marginLeft="10dp" android:src="@drawable/emptypreviousorder1"
             android:layout_height="wrap_content" android:adjustViewBounds="true"
             android:id="@+id/po_imageviewp" />
-        <TextView
-            android:layout_width="wrap_content" android:layout_below="@+id/uo_progress"
-            android:layout_height="wrap_content" android:background="@drawable/button_green"
+        <android.support.v7.widget.AppCompatButton
+            android:layout_width="wrap_content" android:layout_below="@+id/po_progress"
+            android:layout_height="56dp" android:backgroundTint="@color/accent_dark"
             android:text="ORDER NOW" android:layout_gravity="center" android:padding="12dp"
             android:id="@+id/po_placeholderTextView" android:textSize="15dp" android:textColor="@color/white" />
 
