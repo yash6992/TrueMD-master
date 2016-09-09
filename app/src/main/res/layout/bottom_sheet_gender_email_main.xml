@@ -85,17 +85,30 @@
             app:dd_horizontalSpacing="12dp" android:layout_below="@+id/wiz_email_alt"
             />
 
+            <LinearLayout
+                android:layout_width="match_parent" android:id="@+id/llbtn"
+                android:layout_height="wrap_content" android:layout_below="@+id/wiz_progress">
+                <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/btn_wiz_skip" android:layout_weight="1"
+                    android:layout_width="0dp" android:backgroundTint="@color/aluminum"
+                    android:layout_height="56dp" android:textColor="@color/white"
+                    android:layout_marginTop="12dp" android:layout_gravity="bottom" android:padding="5dp"
+                    android:layout_marginBottom="0dp" android:layout_marginRight="6dp"
+                    android:text="SKIP"
+                    />
         <android.support.v7.widget.AppCompatButton
-            android:id="@+id/btn_wiz_submit"
-            android:layout_width="fill_parent"
+            android:id="@+id/btn_wiz_submit" android:layout_marginLeft="6dp"
+            android:layout_width="0dp" android:layout_weight="1"
             android:layout_height="56dp" android:textColor="@color/white"
             android:layout_marginTop="12dp" android:layout_gravity="bottom" android:padding="5dp"
-            android:layout_marginBottom="0dp" android:layout_below="@+id/wiz_progress"
+            android:layout_marginBottom="0dp"
             android:text="SUBMIT"
              />
 
+            </LinearLayout>
+
         <TextView
-            android:layout_width="wrap_content" android:paddingLeft="8dp" android:layout_below="@+id/btn_wiz_submit"  android:textColor="@color/iron" android:textSize="12dp"
+            android:layout_width="wrap_content" android:paddingLeft="8dp" android:layout_below="@+id/llbtn"  android:textColor="@color/iron" android:textSize="12dp"
             android:layout_height="wrap_content" android:id="@+id/nospam" android:text="Don't worry, We promise we won't spam your inbox." />
 
         </RelativeLayout>

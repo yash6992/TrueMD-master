@@ -119,16 +119,18 @@ public class FragmentDrawer extends Fragment {
 
         navUsername.setText(""+mobile);
        // navMobile.setText(""+ Paper.book("user").read("name"));
-        navMobile.setText(MainActivity.nameFromGetUser);
+        navMobile.setText(Paper.book("user").read("name").toString());
 
-        if(MainActivity.profileGender.equalsIgnoreCase("male"))
-            usergender.setImageResource(R.drawable.male);
-        else if(MainActivity.profileGender.equalsIgnoreCase("female"))
-            usergender.setImageResource(R.drawable.female);
-        else
-            usergender.setImageResource(R.drawable.man_copy);
-
-
+        try {
+            if(Paper.book("user").read("gender","male").toString().equalsIgnoreCase("male"))
+                usergender.setImageResource(R.drawable.male);
+            else if(Paper.book("user").read("gender","male").toString().equalsIgnoreCase("female"))
+                usergender.setImageResource(R.drawable.female);
+            else
+                usergender.setImageResource(R.drawable.male);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
 
         recyclerView.setAdapter(adapter);

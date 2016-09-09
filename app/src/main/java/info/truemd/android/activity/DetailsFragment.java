@@ -16,6 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -275,6 +276,7 @@ public class DetailsFragment extends Fragment{
         TextView txtc = (TextView)view.findViewById( R.id.txt_content);
         TextView txtl = (TextView)view.findViewById( R.id.txt_link);
         TextView txtmn = (TextView)view.findViewById( R.id.txt_medname);
+        ImageView placeholder = (ImageView) view.findViewById(R.id.image_placeholder);
 
         txth.setTypeface(tf_b);
         txtc.setTypeface(tf_r);
@@ -282,11 +284,30 @@ public class DetailsFragment extends Fragment{
         txtmn.setTypeface(tf_r);
 
         txtmn.setVisibility(View.INVISIBLE);
+        placeholder.setVisibility(View.GONE);
 
-        txtmn.setText(medname);
-        txth.setText(heading);
-        txtc.setText(CustomHtmlTextParsing.parse(content));
-        txtl.setText(link);
+        Log.e("content length:", " "+CustomHtmlTextParsing.parse(content).toString().length() );
+
+        if(CustomHtmlTextParsing.parse(content).toString().length()<5)
+        {
+            txtmn.setText(medname);
+            txth.setText(heading);
+            placeholder.setVisibility(View.VISIBLE);
+            txtc.setVisibility(View.GONE);
+            txtl.setVisibility(View.GONE);
+        }
+        else
+        {
+            placeholder.setVisibility(View.GONE);
+            txtc.setVisibility(View.VISIBLE);
+            txtl.setVisibility(View.VISIBLE);
+            txtmn.setText(medname);
+            txth.setText(heading);
+            txtc.setText(CustomHtmlTextParsing.parse(content));
+            txtl.setText(link);
+        }
+
+
 
 
 

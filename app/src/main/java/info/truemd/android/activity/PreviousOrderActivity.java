@@ -45,7 +45,7 @@ import info.truemd.android.helper.TrueMDJSONUtils;
 public class PreviousOrderActivity extends AppCompatActivity {
 
 
-    TextView docslink,poa_refill_order,poa_title_tv,poa_total_amount_h,poa_total_amount, poa_status, poa_status_h, poa_no_of_items_h,poa_no_of_items,poa_please_note_h,poa_please_note;
+    TextView docslink,poa_title_tv,poa_total_amount_h,poa_total_amount, poa_status, poa_status_h, poa_no_of_items_h,poa_no_of_items,poa_please_note_h,poa_please_note;
     TextView poa_please_note_link,poa_order_details_h,poa_order_no_h,poa_order_no,poa_order_placed_h,poa_order_placed,poa_delivery_address_h,poa_delivery_address;
     TextView poa_queries_h,poa_queries,poa_payment_method_h,poa_payment_method,poa_amount_h,poa_amount, poa_delivery_time_h,poa_delivery_time, poa_amount_details ;
     JSONObject jsonObjectPreviousOrder, jsonObjectInvoice;ImageButton poa_backImageButton;
@@ -54,6 +54,7 @@ public class PreviousOrderActivity extends AppCompatActivity {
     String mode,shorturl=""; ArrayList<String> docsUrls;
     boolean status,instamojo_flag=false; JSONArray documents;
     ImageView iv0,iv1,iv2,iv3,iv4,iv5,iv6,iv7,iv8,iv9;
+    Button poa_refill_order;
 
 
     @Override
@@ -98,7 +99,7 @@ public class PreviousOrderActivity extends AppCompatActivity {
         poa_total_amount_h = (TextView) findViewById(R.id.poa_total_amount_h);
         poa_total_amount = (TextView) findViewById(R.id.poa_total_amount);
         poa_status_h = (TextView) findViewById(R.id.poa_status_h);
-        poa_refill_order = (TextView) findViewById(R.id.poa_refill_order);
+        poa_refill_order = (Button) findViewById(R.id.poa_refill_order);
         docslink = (TextView) findViewById(R.id.poa_document);
 
 

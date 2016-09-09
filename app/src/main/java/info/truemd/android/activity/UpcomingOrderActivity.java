@@ -12,12 +12,14 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.AppCompatButton;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -59,7 +61,7 @@ import info.truemd.android.helper.SessionManager;
 public class UpcomingOrderActivity extends AppCompatActivity {
 
 
-    TextView uoa_cancel_order,uoa_title_tv,uoa_total_amount_h,uoa_total_amount, uoa_status, uoa_status_h, uoa_no_of_items_h,uoa_no_of_items,uoa_please_note_h,uoa_please_note;
+    TextView uoa_title_tv,uoa_total_amount_h,uoa_total_amount, uoa_status, uoa_status_h, uoa_no_of_items_h,uoa_no_of_items,uoa_please_note_h,uoa_please_note;
     TextView uoa_please_note_link,uoa_order_details_h,uoa_order_no_h,uoa_order_no,uoa_order_placed_h,uoa_order_placed,uoa_delivery_address_h,uoa_delivery_address;
     TextView uoa_queries_h,uoa_queries,uoa_payment_method_h,uoa_payment_method,uoa_amount_h,uoa_amount, uoa_delivery_time_h,uoa_completed_task,uoa_delivery_time, uoa_amount_details ;
     TextView uoa_p,uoa_ph,uoa_btn_pn,docslink;
@@ -74,6 +76,7 @@ public class UpcomingOrderActivity extends AppCompatActivity {
     String shorturl=""; JSONArray documents;
     DilatingDotsProgressBar mDilatingDotsProgressBar; String dollaroid;
     ImageView iv0,iv1,iv2,iv3,iv4,iv5,iv6,iv7,iv8,iv9;
+    AppCompatButton uoa_cancel_order;
 
 
     @Override
@@ -121,7 +124,7 @@ public class UpcomingOrderActivity extends AppCompatActivity {
         uoa_total_amount_h = (TextView) findViewById(R.id.uoa_total_amount_h);
         uoa_total_amount = (TextView) findViewById(R.id.uoa_total_amount);
         uoa_status_h = (TextView) findViewById(R.id.uoa_status_h);
-        uoa_cancel_order = (TextView) findViewById(R.id.cancel_order);
+        uoa_cancel_order = (AppCompatButton) findViewById(R.id.cancel_order);
         docslink = (TextView) findViewById(R.id.uoa_document);
 
         uoa_status = (TextView) findViewById(R.id.uoa_status);
@@ -273,7 +276,8 @@ public class UpcomingOrderActivity extends AppCompatActivity {
         Log.e("OrderCancelLabel:",""+is_cancellable);
 
         if(!is_cancellable) {
-            uoa_cancel_order.setBackgroundColor(getResources().getColor(R.color.base));
+            uoa_cancel_order.setBackgroundColor(getResources().getColor(R.color.aluminum));
+
         }
         else{
 

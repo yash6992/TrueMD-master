@@ -35,6 +35,23 @@
 
     </RelativeLayout>
 
+
+    <RelativeLayout
+        android:layout_width="match_parent" android:id="@+id/n_placeholder_rl" android:layout_below="@+id/n_title"
+        android:layout_height="wrap_content" android:layout_margin="67dp">
+
+        <LinearLayout
+            android:layout_width="match_parent" android:layout_marginTop="20dp" android:visibility="visible" android:background="@color/steel"
+            android:layout_height="match_parent" android:orientation="vertical" android:id="@+id/pl_placeholder">
+            <ImageView
+                android:layout_width="match_parent" android:layout_marginLeft="10dp" android:src="@drawable/emptynotification"
+                android:layout_height="wrap_content" android:adjustViewBounds="true"
+                android:id="@+id/n_imageviewp" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/n_recycler_view" android:background="@color/steel"
         android:layout_width="match_parent"

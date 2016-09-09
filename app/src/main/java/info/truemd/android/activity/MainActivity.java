@@ -1230,6 +1230,7 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
          female = (ImageView) view.findViewById(R.id.female);
         TextView txts = (TextView)view.findViewById( R.id.nospam);
         Button submit = (Button) view.findViewById( R.id.btn_wiz_submit);
+        Button skip = (Button) view.findViewById( R.id.btn_wiz_skip);
          email_alt = (EditText) view.findViewById(R.id.wiz_email_alt_ET);
 
          ll = (LinearLayout) view.findViewById(R.id.wiz_gender_ll);
@@ -1240,7 +1241,7 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
 
         txth.setTypeface(tf_r);txts.setTypeface(tf_r);
 
-        submit.setTypeface(tf_r);
+        submit.setTypeface(tf_r);skip.setTypeface(tf_r);
 
         male.setBackground(getResources().getDrawable(R.drawable.no_bg));
         female.setBackground(getResources().getDrawable(R.drawable.no_bg));
@@ -1278,6 +1279,8 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
         mBottomSheetDialog.getWindow ().setGravity(Gravity.CENTER);
         mBottomSheetDialog.show();
 
+
+
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -1285,9 +1288,9 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
                 String email_altS = email_alt.getText().toString().trim();
                 String gender = "";
 
-                    if (sel != 0){
+                    if (sel != 0 && email_altS.length()>0){
 
-                        if(email_altS.length()>0) {
+
 
                             if(validateEmail(email_altS)){
 
@@ -1300,6 +1303,8 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
 
                             codecodepair.put("sex",gender);
                             codecodepair.put("email_alt",email_altS);
+                                Paper.book("user").write("gender",gender);
+
                             try {
                                 JSONObject orderJsonObject = getJsonObjectFromContentValues( "user",codecodepair);
                                 Log.e("updateUser: ",""+orderJsonObject);
@@ -1312,34 +1317,52 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
                                 email_alt.setError("Please enter a valid Email Id.");
                             }
 
+
+
+
                         }
-                        else{
-                            ContentValues codecodepair = new ContentValues();
 
-                            if (sel == 1)
-                                gender = "male";
-                            else if (sel == 2)
-                                gender = "female";
-
-
-                            codecodepair.put("sex",gender);
-                            try {
-                                JSONObject orderJsonObject = getJsonObjectFromContentValues("user", codecodepair);
-
-                                updateUser(orderJsonObject);
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }
-                        }
-                    }
 
                 else{
-                        Toast.makeText(getApplicationContext(), "Choose one.", Toast.LENGTH_SHORT).show();
+                        email_alt.setError("Please enter the email id.");
                     }
             }
 
 
         });
+        skip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                //String email_altS = email_alt.getText().toString().trim();
+                String gender = "";
+
+                if (sel != 0) {
+
+                    ContentValues codecodepair = new ContentValues();
+
+                    if (sel == 1)
+                        gender = "male";
+                    else if (sel == 2)
+                        gender = "female";
+
+
+                    codecodepair.put("sex",gender);
+                    Paper.book("user").write("gender",gender);
+                    try {
+                        JSONObject orderJsonObject = getJsonObjectFromContentValues("user", codecodepair);
+
+                        updateUser(orderJsonObject);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+                else {
+                    Toast.makeText(getApplicationContext(), "Choose one.", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
 
     }
     private Pattern pattern;

@@ -36,6 +36,7 @@ import java.util.regex.Pattern;
 import cn.pedant.SweetAlert.SweetAlertDialog;
 import info.truemd.android.R;
 import info.truemd.android.helper.SessionManager;
+import io.paperdb.Paper;
 
 public class ProfileActivity extends AppCompatActivity {
 
@@ -163,6 +164,8 @@ public class ProfileActivity extends AppCompatActivity {
                             codecodepair.put("sex",gender);
                             codecodepair.put("name", nameS );
                             codecodepair.put("email_alt",email_altS);
+                            Paper.book("user").write("gender",gender);
+                            Paper.book("user").write("name",nameS);
                             try {
                                 JSONObject orderJsonObject = getJsonObjectFromContentValues( "user",codecodepair);
 
@@ -181,6 +184,8 @@ public class ProfileActivity extends AppCompatActivity {
 
                         codecodepair.put("sex",gender);
                         codecodepair.put("name", nameS );
+                        Paper.book("user").write("gender",gender);
+                        Paper.book("user").write("name",nameS);
                         try {
                             JSONObject orderJsonObject = getJsonObjectFromContentValues("user", codecodepair);
 

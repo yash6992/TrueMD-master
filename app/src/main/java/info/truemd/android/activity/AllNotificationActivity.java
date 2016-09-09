@@ -24,6 +24,7 @@ import android.view.MenuItem;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import org.joda.time.DateTime;
@@ -55,6 +56,7 @@ public class AllNotificationActivity extends AppCompatActivity {
     String notificationJarray; TextView title;
     JSONArray allNotification, reverse;
     ImageButton backImageButton, clearAll;
+    RelativeLayout placeholder;
     SessionManager sessionManager; int lastInsertedIndex;
 
     @Override
@@ -68,6 +70,7 @@ public class AllNotificationActivity extends AppCompatActivity {
         clearAll = (ImageButton) findViewById(R.id.n_clearAllImageButton);
         title = (TextView) findViewById(R.id.n_title_tv);
         title.setTypeface(tf_r);
+        placeholder = (RelativeLayout) findViewById(R.id.n_placeholder_rl);
         clearAll.setVisibility(View.INVISIBLE);
         try {
         List<String> allKeysnoti = Paper.book("notification").getAllKeys();
@@ -131,6 +134,18 @@ public class AllNotificationActivity extends AppCompatActivity {
         mRecyclerView.setHasFixedSize(true);
        // setUpItemTouchHelper();
        // setUpAnimationDecoratorHelper();
+
+        placeholder.setVisibility(View.GONE);
+
+        if (lastInsertedIndex ==0)
+        {
+            placeholder.setVisibility(View.VISIBLE);
+        }
+        else
+        {
+            placeholder.setVisibility(View.GONE);
+            ((TestAdapter)mRecyclerView.getAdapter()).setUndoOn(true);
+        }
 
         ((TestAdapter)mRecyclerView.getAdapter()).setUndoOn(true);
     }
@@ -331,6 +346,8 @@ public class AllNotificationActivity extends AppCompatActivity {
             itemsPendingRemoval = new ArrayList<>();
 
             // let's generate some items
+
+
 
             // this should give us a couple of screens worth
             for (int i=0; i< lastInsertedIndex; i++) {
