@@ -89,7 +89,7 @@ public class OrderMedicineActivity extends AppCompatActivity {
             t2.setText(cityname.substring(0,cityname.indexOf(','))+": \u20B9 99 delivery charge applicable on all orders.");
         } catch (Exception e) {
             Log.e("Err:cityname:"," "+e.getMessage());
-            openBottomSheetForAskPincode();
+            //openBottomSheetForAskPincode();
             e.printStackTrace();
         }
 

@@ -64,7 +64,7 @@ dependencies {
             multiDexEnabled true
             minSdkVersion 16
             targetSdkVersion 22
-            versionCode 10
+            versionCode 12
             versionName "1.5"
             vectorDrawables.useSupportLibrary = true
             generatedDensities = []
@@ -84,7 +84,12 @@ dependencies {
             release {
                 shrinkResources true
                 minifyEnabled true
-                proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+                proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            }
+            debug {
+                shrinkResources true
+                minifyEnabled true
+                proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             }
         }
     }

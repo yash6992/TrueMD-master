@@ -84,7 +84,7 @@ public class NavigationDrawerAdapter extends RecyclerView.Adapter<NavigationDraw
             }
             else if(position==3){
                 Glide.with(context)
-                        .load(R.drawable.chat)
+                        .load(R.drawable.chat3)
                         .into(holder.nav_icon);
                 if( Paper.book("nav").read("selected").toString().equalsIgnoreCase("3")){
                     holder.title.setTextColor(Color.parseColor("#E91E63"));

@@ -86,18 +86,18 @@ public class FCMMessageService extends FirebaseMessagingService{
         String title = ""; String activity = "";  String timestamp = ""; String orderNo = ""; String message = "";
 
         if(singleNotification.containsKey("timestamp")) {
-             title = TrueMDJSONUtils.goThroughNullCheck(remoteMessage.getData().get("title"));
-             activity = TrueMDJSONUtils.goThroughNullCheck(remoteMessage.getData().get("status"));
-             timestamp = TrueMDJSONUtils.goThroughNullCheck(remoteMessage.getData().get("timestamp"));
-             orderNo = TrueMDJSONUtils.goThroughNullCheck(remoteMessage.getData().get("order_no"));
-             message = TrueMDJSONUtils.goThroughNullCheck(remoteMessage.getData().get("message"));
+            title = TrueMDJSONUtils.goThroughNullCheck(remoteMessage.getData().get("title"));
+            activity = TrueMDJSONUtils.goThroughNullCheck(remoteMessage.getData().get("status"));
+            timestamp = TrueMDJSONUtils.goThroughNullCheck(remoteMessage.getData().get("timestamp"));
+            orderNo = TrueMDJSONUtils.goThroughNullCheck(remoteMessage.getData().get("order_no"));
+            message = TrueMDJSONUtils.goThroughNullCheck(remoteMessage.getData().get("message"));
         }
         else
         {
             title = TrueMDJSONUtils.goThroughNullCheck(remoteMessage.getData().get("title"));
             //activity = TrueMDJSONUtils.goThroughNullCheck(remoteMessage.getData().get("status"));
-           // timestamp = TrueMDJSONUtils.goThroughNullCheck(remoteMessage.getData().get("timestamp"));
-           // orderNo = TrueMDJSONUtils.goThroughNullCheck(remoteMessage.getData().get("order_no"));
+            // timestamp = TrueMDJSONUtils.goThroughNullCheck(remoteMessage.getData().get("timestamp"));
+            // orderNo = TrueMDJSONUtils.goThroughNullCheck(remoteMessage.getData().get("order_no"));
             message = TrueMDJSONUtils.goThroughNullCheck(remoteMessage.getData().get("message"));
         }
 
@@ -159,7 +159,7 @@ public class FCMMessageService extends FirebaseMessagingService{
             performActionODel(title, activity, timestamp, orderNo, message);
         }
         else
-        sendNotificationNormal(title, activity, timestamp, orderNo, message);
+            sendNotificationNormal(title, activity, timestamp, orderNo, message);
     }
     // [END receive_message]
 

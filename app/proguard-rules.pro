@@ -25,5 +25,17 @@
     public static int e(...);
 }
 
+-keep class cn.** { *; }
+-keep class com.** { *; }
+-keep class belka.** { *; }
+-keep class com.** { *; }
+-keep class ir.** { *; }
+-keep class mehdi.** { *; }
+-keep class net.** { *; }
+-keep class link.** { *; }
+-keep class nl.** { *; }
+
 -dontwarn com.squareup.picasso.**
 -dontwarn org.objenesis.instantiator.**
+
+-optimizations !code/simplification/arithmetic, !code/allocation/variable,!code/simplification/cast,!field/*,!class/merging/*

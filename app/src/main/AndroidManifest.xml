@@ -179,11 +179,11 @@
 
         <!-- Register the Alarm Receiver -->
         <receiver android:name=".receiver.AlarmReceiver" />
-        <receiver android:name=".receiver.AlarmSetter">
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-            </intent-filter>
-        </receiver>
+        <!--<receiver android:name=".receiver.AlarmSetter">-->
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.BOOT_COMPLETED" />-->
+            <!--</intent-filter>-->
+        <!--</receiver>-->
 
         <service android:name=".service.AlarmService" />
 
