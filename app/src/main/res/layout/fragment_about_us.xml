@@ -6,9 +6,8 @@
     android:layout_height="match_parent">
 
     <RelativeLayout
-        android:layout_width="match_parent" android:background="@color/window100"
+        android:layout_width="match_parent" android:background="@color/steel"
         android:layout_height="48dp" android:orientation="horizontal" android:id="@+id/od_title">
-
 
         <ImageButton
             android:layout_width="30dp" android:background="?attr/selectableItemBackground"
@@ -25,7 +24,6 @@
             android:layout_alignLeft="@+id/od_backImageButton"
             android:layout_alignStart="@+id/od_backImageButton" />
 
-
     </RelativeLayout>
 
     <ScrollView
@@ -36,22 +34,119 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-    <ImageView
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:id="@+id/imageView6" android:src="@mipmap/ic_launcher"
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent" android:id="@+id/textabout_card"
+                android:layout_height="wrap_content" android:layout_margin="14dp">
 
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp" />
+               <RelativeLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:id="@+id/imageView6" android:src="@mipmap/ic_launcher"
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" android:padding="20dp"
-        android:text="New Text" android:textColor="@color/windowBackground"
-        android:id="@+id/textabout" android:textSize="13dp"
-        android:layout_below="@+id/imageView6"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="25dp" />
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="15dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:padding="20dp"
+                    android:text="New Text" android:textColor="@color/monsoon"
+                    android:id="@+id/textabout" android:textSize="12dp"
+                    android:layout_below="@+id/imageView6"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="25dp" />
+                            </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent" android:layout_marginRight="14dp" android:layout_marginLeft="14dp" android:layout_marginBottom="14dp"
+                android:layout_height="wrap_content" android:layout_below="@+id/textabout_card">
+
+            <LinearLayout
+                android:layout_width="match_parent" android:padding="14dp"  android:gravity="center_horizontal" android:orientation="vertical"
+                android:layout_height="wrap_content" android:layout_below="@id/textabout_card">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:padding="10dp"
+                    android:text="Check us out @" android:textColor="@color/windowBackground"
+                    android:id="@+id/visit_us" android:textSize="16dp"
+                    android:layout_below="@+id/imageView6"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="0dp" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent" android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="0dp" android:layout_weight="1" android:gravity="center"
+                        android:layout_height="50dp" android:layout_margin="14dp">
+
+                    <ImageButton
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:id="@+id/fb" android:background="@drawable/fb" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dp" android:layout_weight="1"  android:gravity="center"
+                        android:layout_height="50dp" android:layout_margin="14dp">
+
+                    <ImageButton
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:id="@+id/insta" android:background="@drawable/insta" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent" android:orientation="horizontal"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="0dp" android:layout_weight="1"  android:gravity="center"
+                            android:layout_height="50dp" android:layout_margin="14dp">
+                    <ImageButton
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:id="@+id/medium" android:background="@drawable/medium" />
+                            </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="0dp" android:layout_weight="1" android:layout_margin="14dp"
+                                android:layout_height="50dp"  android:gravity="center">
+                    <ImageButton
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:id="@+id/twitter" android:background="@drawable/twitter" />
+
+                </LinearLayout>
+
+
+                    </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:padding="0dp" android:gravity="center"
+                    android:text="or rather go old fashioned.\nDrop us a mail." android:textColor="@color/windowBackground"
+                    android:id="@+id/goold" android:textSize="16dp"
+                    android:layout_below="@+id/imageView6"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:padding="0dp"
+                    android:text="care@truemd.in" android:textColor="@color/monsoon"
+                    android:id="@+id/mail_us" android:textSize="19dp"
+                    android:layout_below="@+id/imageView6"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="8dp" />
+
+            </LinearLayout>
+            </android.support.v7.widget.CardView>
+
         </RelativeLayout>
     </ScrollView>
 

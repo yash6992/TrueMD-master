@@ -112,6 +112,7 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
     static boolean onBackAtNoInternet;
     public static String chatInitializerTrueMDCode = "I44IQI";
     public static String userPinCode = "";
+    public static String userPinCodeCity = "";
     public static String chatInitializerTrueMDName = "CROCIN 500MG TABLET";
     public static boolean fromMedicineDetailsChat = false;
     public static boolean fromHomeToChat = false;
@@ -127,6 +128,7 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
     public static boolean reminderOn;
     public static String latestMedName = "";
     public static String latestMedTrueMDCode = "";
+    public static boolean showRateUs = false;
     public static boolean chatGhostOn = false;
     public static boolean prescriptionGhostOn = false;
     public static boolean gotObject = false;
@@ -742,12 +744,37 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
                         nameFromGetUser=obj.getString("name");
                         discountMsg=obj.optString("discount_msg");
 
-                        discountMsg = discountMsg.replace("300", "\u20B9 "+"300");
+                        //discountMsg = discountMsg.replace("300", "\u20B9 "+"300");
 
                         Paper.book("user").write("name",nameFromGetUser);
                         Paper.book("user").write("gender",profileGender);
                         Paper.book("user").write("pincode",userPinCode);
+                        //Paper.book("user").write("pincode_city", userPinCodeCity);
 
+                       String rateus =  Paper.book("introduction").read("rateus","0").toString();
+
+                        String counterss = Paper.book("introduction").read("ratecounter").toString();
+
+                        Log.e("RATING:", " "+rateus+" "+counterss+" "+showRateUs);
+
+                        //int ratecounter = 1;
+                        int ratecounter =  Integer.parseInt(""+counterss);
+
+                        ratecounter++;
+
+                        Log.e("RATING:", " "+rateus+" "+ratecounter+" "+showRateUs);
+
+
+                        if(rateus.equalsIgnoreCase("0") && ratecounter%5==0)
+                            showRateUs=true;
+                        else if(rateus.equalsIgnoreCase("1"))
+                            showRateUs=false;
+                        else
+                            showRateUs=false;
+
+
+
+                        Paper.book("introduction").write("ratecounter",""+ratecounter);
 
                         Log.e("GenderEmail:",nameFromGetUser+" :e: "+email_alt+" s: "+sex);
 

@@ -143,11 +143,11 @@ public class MedicineDetailsActivity2 extends AppCompatActivity implements Simpl
             finish();
 
         MainActivity.fromMedicineDetailsChat=false;
-//
-            Intent intent_main = new Intent(getApplicationContext(),MainActivity.class);
-            intent_main.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-            //intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-            getApplicationContext().startActivity(intent_main);
+
+//            Intent intent_main = new Intent(getApplicationContext(),MainActivity.class);
+//            intent_main.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//            //intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//            getApplicationContext().startActivity(intent_main);
 
 
             super.onBackPressed();

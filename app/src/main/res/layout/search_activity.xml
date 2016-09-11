@@ -68,7 +68,7 @@ android:layout_marginTop="10dp">
     </ListView>
 
     <ImageView
-        android:layout_width="match_parent" android:layout_margin="50dp"
+        android:layout_width="match_parent" android:layout_margin="50dp" android:padding="60dp"
         android:layout_height="match_parent" android:visibility="invisible"
         android:id="@+id/placeholder" android:src="@drawable/nomedicine" />
 

@@ -77,13 +77,13 @@ public class CustomCardReminderAdapter extends BaseAdapter {
         TextView med2 = (TextView) convertView.findViewById(R.id.cr_med2);
         TextView med3 = (TextView) convertView.findViewById(R.id.cr_med3);
         TextView med4 = (TextView) convertView.findViewById(R.id.cr_med4);
-            TextView med5 = (TextView) convertView.findViewById(R.id.cr_med5);
+            //TextView med5 = (TextView) convertView.findViewById(R.id.cr_med5);
 
         TextView d1 = (TextView) convertView.findViewById(R.id.cr_dosage1);
         TextView d2 = (TextView) convertView.findViewById(R.id.cr_dosage2);
         TextView d3 = (TextView) convertView.findViewById(R.id.cr_dosage3);
         TextView d4 = (TextView) convertView.findViewById(R.id.cr_dosage4);
-            TextView d5 = (TextView) convertView.findViewById(R.id.cr_dosage5);
+            //TextView d5 = (TextView) convertView.findViewById(R.id.cr_dosage5);
 
         ImageView maen = (ImageView) convertView.findViewById(R.id.cr_day_image);
 
@@ -91,14 +91,14 @@ public class CustomCardReminderAdapter extends BaseAdapter {
         time.setTypeface(tf_b); med2.setTypeface(tf_l); d2.setTypeface(tf_l);
         name.setTypeface(tf_l); med3.setTypeface(tf_l); d3.setTypeface(tf_l);
         dayno.setTypeface(tf_l); med4.setTypeface(tf_l); d4.setTypeface(tf_l);
-            med5.setTypeface(tf_l); d5.setTypeface(tf_l);
+            //med5.setTypeface(tf_l); d5.setTypeface(tf_l);
 
 
         date.setText(""+pouch.getString("date")); med1.setText(""); d1.setText("");
         time.setText(""+pouch.getString("time")); med2.setText(""); d2.setText("");
         name.setText(""+pouch.getString("patient_name"));med3.setText(""); d3.setText("");
         dayno.setText("Day "+pouch.getString("day_no")); med4.setText(""); d4.setText("");
-            med5.setText(""); d5.setText("");
+            //med5.setText(""); d5.setText("");
             String tod="morning";
 
             if(pouch.has("time_of_day")){  tod = pouch.getString("time_of_day");}
@@ -133,7 +133,7 @@ public class CustomCardReminderAdapter extends BaseAdapter {
                     med2.setVisibility(View.GONE); d2.setVisibility(View.GONE);
                     med3.setVisibility(View.GONE); d3.setVisibility(View.GONE);
                     med4.setVisibility(View.GONE); d4.setVisibility(View.GONE);
-                    med5.setVisibility(View.GONE); d5.setVisibility(View.GONE);
+                    //med5.setVisibility(View.GONE); d5.setVisibility(View.GONE);
 
                 }
                 break;
@@ -145,7 +145,7 @@ public class CustomCardReminderAdapter extends BaseAdapter {
                     med2.setText(""+jmed2.getString("name")); d2.setText(""+jmed2.getString("quantity"));
                     med3.setVisibility(View.GONE); d3.setVisibility(View.GONE);
                     med4.setVisibility(View.GONE); d4.setVisibility(View.GONE);
-                    med5.setVisibility(View.GONE); d5.setVisibility(View.GONE);
+                    //med5.setVisibility(View.GONE); d5.setVisibility(View.GONE);
 
                 }
                 break;
@@ -158,7 +158,7 @@ public class CustomCardReminderAdapter extends BaseAdapter {
                     med2.setText(""+jmed2.getString("name")); d2.setText(""+jmed2.getString("quantity"));
                     med3.setText(""+jmed3.getString("name")); d3.setText(""+jmed3.getString("quantity"));
                     med4.setVisibility(View.GONE); d4.setVisibility(View.GONE);
-                    med5.setVisibility(View.GONE); d5.setVisibility(View.GONE);
+                   // med5.setVisibility(View.GONE); d5.setVisibility(View.GONE);
 
                 }
                 break;
@@ -172,7 +172,7 @@ public class CustomCardReminderAdapter extends BaseAdapter {
                     med2.setText(""+jmed2.getString("name")); d2.setText(""+jmed2.getString("quantity"));
                     med3.setText(""+jmed3.getString("name")); d3.setText(""+jmed3.getString("quantity"));
                     med4.setText(""+jmed4.getString("name")); d4.setText(""+jmed4.getString("quantity"));
-                    med5.setVisibility(View.GONE); d5.setVisibility(View.GONE);
+                    //med5.setVisibility(View.GONE); d5.setVisibility(View.GONE);
 
                 }
                 break;
@@ -187,7 +187,7 @@ public class CustomCardReminderAdapter extends BaseAdapter {
                     med2.setText(""+jmed2.getString("name")); d2.setText(""+jmed2.getString("quantity"));
                     med3.setText(""+jmed3.getString("name")); d3.setText(""+jmed3.getString("quantity"));
                     med4.setText(""+jmed4.getString("name")); d4.setText(""+jmed4.getString("quantity"));
-                    med5.setText(""+jmed5.getString("name")); d5.setText(""+jmed5.getString("quantity"));
+                   // med5.setText(""+jmed5.getString("name")); d5.setText(""+jmed5.getString("quantity"));
                 }
                 break;
                 default:
@@ -201,7 +201,7 @@ public class CustomCardReminderAdapter extends BaseAdapter {
                     med2.setText(""+jmed2.getString("name")); d2.setText(""+jmed2.getString("quantity"));
                     med3.setText(""+jmed3.getString("name")); d3.setText(""+jmed3.getString("quantity"));
                     med4.setText(""+jmed4.getString("name")); d4.setText(""+jmed4.getString("quantity"));
-                    med5.setText(""+jmed5.getString("name")); d5.setText(""+jmed5.getString("quantity"));
+                   // med5.setText(""+jmed5.getString("name")); d5.setText(""+jmed5.getString("quantity"));
 
                     textViewCard.setVisibility(View.VISIBLE);
                 }

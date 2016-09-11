@@ -42,6 +42,7 @@ import java.util.Map;
 
 import info.truemd.android.R;
 import info.truemd.android.helper.SessionManager;
+import io.paperdb.Paper;
 
 /**
  * Created by yashvardhansrivastava on 20/04/16.
@@ -81,8 +82,10 @@ public class AddAddressActivity extends AppCompatActivity {
         landmarkET = (EditText) findViewById(R.id.landmarkET);
         cityET = (EditText) findViewById(R.id.cityET);
 
-        cityET.setText("Indore");
+        cityET.setText("");
         pinET = (EditText) findViewById(R.id.pincodeET);
+
+        pinET.setText(Paper.book("user").read("pincode").toString());
 
         titleTVAA = (TextView) findViewById(R.id.titleAA);
         saveAA = (TextView) findViewById(R.id.save_tv_aa);
@@ -473,7 +476,7 @@ public class AddAddressActivity extends AppCompatActivity {
 
             cityET.setError(null);
         }
-        if (pin.isEmpty()||!pin.startsWith("4520")) {
+        if (pin.isEmpty()||!pin.startsWith("")) {
             pinET.setError("Please type in a valid Indore Pin Code.");
             valid = false;
         } else {

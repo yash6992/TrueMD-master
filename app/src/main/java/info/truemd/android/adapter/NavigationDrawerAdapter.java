@@ -55,76 +55,80 @@ public class NavigationDrawerAdapter extends RecyclerView.Adapter<NavigationDraw
         holder.title.setTypeface(tf_l);
         holder.title.setText(current.getTitle());
         //holder.nav_icon.setImageResource(current.getIcon());
-        if(position==0){
-            //holder.nav_icon.setImageResource(R.drawable.home);
-            Glide.with(context)
-                    .load(R.drawable.home)
-                    .into(holder.nav_icon);
-            if( Paper.book("nav").read("selected").toString().equalsIgnoreCase("0")){
-                holder.title.setTextColor(Color.parseColor("#E91E63"));
-                holder.nav_icon.setImageResource(R.drawable.home_pink_nav);
+        try {
+            if(position==0){
+                //holder.nav_icon.setImageResource(R.drawable.home);
+                Glide.with(context)
+                        .load(R.drawable.home)
+                        .into(holder.nav_icon);
+                if( Paper.book("nav").read("selected").toString().equalsIgnoreCase("0")){
+                    holder.title.setTextColor(Color.parseColor("#E91E63"));
+                    holder.nav_icon.setImageResource(R.drawable.home_pink_nav);
+                }
             }
-        }
-        else if(position==1){
-            Glide.with(context)
-                    .load(R.drawable.prescriptions)
-                    .into(holder.nav_icon);
-            if( Paper.book("nav").read("selected").toString().equalsIgnoreCase("1")){
-                holder.title.setTextColor(Color.parseColor("#E91E63"));
+            else if(position==1){
+                Glide.with(context)
+                        .load(R.drawable.prescriptions)
+                        .into(holder.nav_icon);
+                if( Paper.book("nav").read("selected").toString().equalsIgnoreCase("1")){
+                    holder.title.setTextColor(Color.parseColor("#E91E63"));
+                }
             }
-        }
-        else if(position==2){
-            Glide.with(context)
-                    .load(R.drawable.order3)
-                    .into(holder.nav_icon);
-            if( Paper.book("nav").read("selected").toString().equalsIgnoreCase("2")){
-                holder.title.setTextColor(Color.parseColor("#E91E63"));
+            else if(position==2){
+                Glide.with(context)
+                        .load(R.drawable.order3)
+                        .into(holder.nav_icon);
+                if( Paper.book("nav").read("selected").toString().equalsIgnoreCase("2")){
+                    holder.title.setTextColor(Color.parseColor("#E91E63"));
+                }
             }
-        }
-        else if(position==3){
-            Glide.with(context)
-                    .load(R.drawable.chat)
-                    .into(holder.nav_icon);
-            if( Paper.book("nav").read("selected").toString().equalsIgnoreCase("3")){
-                holder.title.setTextColor(Color.parseColor("#E91E63"));
+            else if(position==3){
+                Glide.with(context)
+                        .load(R.drawable.chat)
+                        .into(holder.nav_icon);
+                if( Paper.book("nav").read("selected").toString().equalsIgnoreCase("3")){
+                    holder.title.setTextColor(Color.parseColor("#E91E63"));
+                }
             }
-        }
-        else if(position==4){
-            Glide.with(context)
-                    .load(R.drawable.birthday_card)
-                    .into(holder.nav_icon);
-            if( Paper.book("nav").read("selected").toString().equalsIgnoreCase("4")){
-                holder.title.setTextColor(Color.parseColor("#E91E63"));
+            else if(position==4){
+                Glide.with(context)
+                        .load(R.drawable.birthday_card)
+                        .into(holder.nav_icon);
+                if( Paper.book("nav").read("selected").toString().equalsIgnoreCase("4")){
+                    holder.title.setTextColor(Color.parseColor("#E91E63"));
+                }
             }
-        }
-        else if(position==5){
-            Glide.with(context)
-                    .load(R.drawable.lifesaver)
-                    .into(holder.nav_icon);
-            if( Paper.book("nav").read("selected").toString().equalsIgnoreCase("5")){
-                holder.title.setTextColor(Color.parseColor("#E91E63"));
+            else if(position==5){
+                Glide.with(context)
+                        .load(R.drawable.lifesaver)
+                        .into(holder.nav_icon);
+                if( Paper.book("nav").read("selected").toString().equalsIgnoreCase("5")){
+                    holder.title.setTextColor(Color.parseColor("#E91E63"));
+                }
             }
-        }
-        else if(position==6){
-            Glide.with(context)
-                    .load(R.drawable.newspaper)
-                    .into(holder.nav_icon);
-            if( Paper.book("nav").read("selected").toString().equalsIgnoreCase("6")){
-                holder.title.setTextColor(Color.parseColor("#E91E63"));
+            else if(position==6){
+                Glide.with(context)
+                        .load(R.drawable.newspaper)
+                        .into(holder.nav_icon);
+                if( Paper.book("nav").read("selected").toString().equalsIgnoreCase("6")){
+                    holder.title.setTextColor(Color.parseColor("#E91E63"));
+                }
             }
-        }
-        else if(position==7){
-            Glide.with(context)
-                    .load(R.drawable.tos)
-                    .into(holder.nav_icon);
-            if( Paper.book("nav").read("selected").toString().equalsIgnoreCase("7")){
-                holder.title.setTextColor(Color.parseColor("#E91E63"));
+            else if(position==7){
+                Glide.with(context)
+                        .load(R.drawable.tos)
+                        .into(holder.nav_icon);
+                if( Paper.book("nav").read("selected").toString().equalsIgnoreCase("7")){
+                    holder.title.setTextColor(Color.parseColor("#E91E63"));
+                }
             }
+            else if(position==8)
+                Glide.with(context)
+                        .load(R.drawable.logout)
+                        .into(holder.nav_icon);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        else if(position==8)
-            Glide.with(context)
-                    .load(R.drawable.logout)
-                    .into(holder.nav_icon);
 
     }
 

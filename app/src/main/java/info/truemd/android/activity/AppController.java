@@ -73,6 +73,9 @@ public class AppController extends MultiDexApplication {
         {
             Paper.book("introduction").write("intro","0");
             Paper.book("introduction").write("preshelp","0");
+            Paper.book("introduction").write("askpin","0");
+            Paper.book("introduction").write("rateus","0");
+            Paper.book("introduction").write("ratecounter","1");
         }
         Log.e("AppControllerIntro:", ""+Paper.book("introduction").read("intro"));
 
@@ -95,8 +98,10 @@ public class AppController extends MultiDexApplication {
         else
         {
             Paper.book("user").write("pincode","");
+            Paper.book("user").write("pincode_city","");
+
         }
-        Log.e("AppController:", ""+Paper.book("user").read("pincode"));
+        Log.e("AppController:", ""+Paper.book("user").read("pincode")+Paper.book("user").read("pincode_city"));
 
 
         List<String> allKeys4 = Paper.book("nav").getAllKeys();

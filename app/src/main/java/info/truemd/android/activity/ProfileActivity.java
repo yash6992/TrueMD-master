@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -40,13 +41,14 @@ import io.paperdb.Paper;
 
 public class ProfileActivity extends AppCompatActivity {
 
-    TextView title, spam, nametitle, settingtitle;
+    TextView title, spam, nametitle, settingtitle, pincodecity;
     ImageButton back;
     ImageView malei, femalei;
-    String gender, name, email_alt;
-    EditText nameet, email_altet;
-    Button btn_update; int sel;
+    String gender, name, email_alt, pincode, pincodeCity, pincodeDelStatus;
+    EditText nameet, email_altet, pincodeet;
+    Button btn_update; int sel; JSONObject orderJsonObject;
     DilatingDotsProgressBar wizProgress;
+    ScrollView scroll;
 
 
     @Override
@@ -54,19 +56,25 @@ public class ProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
+        orderJsonObject = new JSONObject();
+
         Typeface tf_r= Typeface.createFromAsset(getAssets(), "fonts/OpenSans-Regular.ttf");
 
-        Log.e("in Profile: ", ""+ MainActivity.profileName +" "+MainActivity.profileGender+" "+ MainActivity.profileEmailAlt);
+        Log.e("in Profile: ", ""+ MainActivity.profileName +" "+MainActivity.profileGender+" "+ MainActivity.profileEmailAlt+" "+ MainActivity.userPinCode);
 
         title = (TextView) findViewById(R.id.pro_title_tv);
         spam = (TextView) findViewById(R.id.nospam);
         nametitle = (TextView) findViewById(R.id.pro_name_tv2);
         settingtitle = (TextView) findViewById(R.id.tv2);
+        pincodecity = (TextView) findViewById(R.id.pro_pincode);
+        scroll= (ScrollView) findViewById(R.id.sc);
+
 
         title.setTypeface(tf_r);
         spam.setTypeface(tf_r);
         nametitle.setTypeface(tf_r);
         settingtitle.setTypeface(tf_r);
+        pincodecity.setTypeface(tf_r);
 
         wizProgress = (DilatingDotsProgressBar) findViewById(R.id.pro_progress);
 
@@ -92,9 +100,12 @@ public class ProfileActivity extends AppCompatActivity {
 
         name = MainActivity.profileName;
         email_alt = MainActivity.profileEmailAlt;
+        pincode =Paper.book("user").read("pincode").toString();
+        pincodeCity = Paper.book("user").read("pincode_city").toString();
 
         nameet = (EditText) findViewById(R.id.pro_name_ET);
         email_altet = (EditText) findViewById(R.id.pro_email_alt_ET);
+        pincodeet = (EditText) findViewById(R.id.pro_pincode_ET);
 
         nameet.setText(MainActivity.profileName);
 
@@ -103,6 +114,9 @@ public class ProfileActivity extends AppCompatActivity {
         getWindow().setSoftInputMode(
                 WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN
         );
+
+        pincodeet.setText(pincode);
+        pincodecity.setText(pincodeCity);
 
         if(sel==1)
         {
@@ -164,12 +178,14 @@ public class ProfileActivity extends AppCompatActivity {
                             codecodepair.put("sex",gender);
                             codecodepair.put("name", nameS );
                             codecodepair.put("email_alt",email_altS);
+                            codecodepair.put("pincode",isPincodeValid(pincodeet.getText().toString())?pincodeet.getText().toString():"" );
                             Paper.book("user").write("gender",gender);
                             Paper.book("user").write("name",nameS);
                             try {
-                                JSONObject orderJsonObject = getJsonObjectFromContentValues( "user",codecodepair);
+                                orderJsonObject = getJsonObjectFromContentValues( "user",codecodepair);
 
-                                updateUser(orderJsonObject);
+                                if(isPincodeValid(pincodeet.getText().toString()))
+                                        updatePincode();
                             } catch (JSONException e) {
                                 e.printStackTrace();
                             }
@@ -184,12 +200,14 @@ public class ProfileActivity extends AppCompatActivity {
 
                         codecodepair.put("sex",gender);
                         codecodepair.put("name", nameS );
+                        codecodepair.put("pincode", isPincodeValid(pincodeet.getText().toString())?pincodeet.getText().toString():"");
                         Paper.book("user").write("gender",gender);
                         Paper.book("user").write("name",nameS);
                         try {
-                            JSONObject orderJsonObject = getJsonObjectFromContentValues("user", codecodepair);
+                             orderJsonObject = getJsonObjectFromContentValues("user", codecodepair);
 
-                            updateUser(orderJsonObject);
+                            if(isPincodeValid(pincodeet.getText().toString()))
+                                updatePincode();
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -206,6 +224,34 @@ public class ProfileActivity extends AppCompatActivity {
 
 
 
+
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finishAffinity();
+        startActivity(new Intent(ProfileActivity.this, MainActivity.class));
+    }
+
+    boolean isPincodeValid(String pincode){
+
+        if (pincode.length()==6){
+            try {
+                double d = Double.parseDouble(pincode);
+            } catch (NumberFormatException nfe) {
+                return false;
+            }
+            return true;
+        }
+        else
+        {
+            wizProgress.hideNow();
+            pincodeet.setError("Please enter a valid pincode.");
+            return false;
+
+        }
 
 
     }
@@ -306,24 +352,12 @@ public class ProfileActivity extends AppCompatActivity {
                     try {
 
 
-
                         wizProgress.hideNow();
 
 
-                        new SweetAlertDialog(ProfileActivity.this, SweetAlertDialog.SUCCESS_TYPE)
-                                .setTitleText("Awesome..!!")
-                                .setContentText("")
-                                .setConfirmText("OK")
-                                .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
-                                    @Override
-                                    public void onClick(SweetAlertDialog sDialog) {
+                       Toast.makeText(getApplicationContext(), "Profile Saved.", Toast.LENGTH_SHORT).show();
 
-                                        startActivity(new Intent(ProfileActivity.this, MainActivity.class));
-                                        //System.exit(0);
-
-                                    }
-                                })
-                                .show();
+                        scroll.fullScroll(View.FOCUS_DOWN);
 
                     } catch (Exception e) {
                         e.printStackTrace();
@@ -410,7 +444,164 @@ public class ProfileActivity extends AppCompatActivity {
 
 
     }
+    public void updatePincode(){
 
+
+        try {
+            SessionManager session = new SessionManager(ProfileActivity.this);
+
+            HashMap<String, String> user = session.getUserDetails();
+
+            JsonObjectRequester mRequester = new RequestBuilder(ProfileActivity.this)
+                    //.requestCode(REQUEST_CODE)
+                    .contentType(ContentType.TYPE_JSON) //or ContentType.TYPE_FORM
+                    .showError(false) //Show error with toast on Network or Server error
+                    .shouldCache(true)
+                    .timeOut(20000)
+                    .priority(Request.Priority.NORMAL)
+                    .allowNullResponse(true)
+                    //.tag(REQUEST_TAG)
+                    .addToHeader("X-User-Token", user.get(SessionManager.KEY_AUTHENTICATION_UM))
+                    .addToHeader("Content-Type","application/json")
+                    .addToHeader("X-User-Email", user.get(SessionManager.KEY_MOBILE_UM) + "@truemd.in")
+                    .buildObjectRequester(new JsonObjectListenerToUpdatePincode()); //or .buildArrayRequester(listener);
+            //http://truemd-carebook.rhcloud.com/checkUser?mobile=9581649079
+            mRequester.request(Methods.GET, MainActivity.app_url+"/check_pincode?pincode=" + pincodeet.getText().toString() );
+
+        }  catch (Exception e) {
+
+            Log.e("updateUser: ",""+e.getMessage());
+            e.printStackTrace();
+
+        }
+
+    }
+
+
+    private class JsonObjectListenerToUpdatePincode extends Response.SimpleObjectResponse {
+
+
+        @Override
+        public void onResponse(int requestCode, @Nullable JSONObject jsonObject) {
+            //Ok
+            try {
+
+                if (jsonObject.toString().length() > 5) {
+
+
+                    if (jsonObject.optBoolean("status") == false) {
+
+                        Paper.book("user").write("pincode", isPincodeValid(pincodeet.getText().toString())?pincodeet.getText().toString():""  );
+                        Paper.book("user").write("pincode_city", jsonObject.optString("message")  );
+
+                        pincodecity.setText(Paper.book("user").read("pincode_city").toString());
+
+                        Paper.book("introduction").write("askpin","0");
+                        updateUser(orderJsonObject);
+
+
+                    } else {
+
+
+                        Log.e("PreLogin resp: ", "" + jsonObject);
+                        try {
+
+                            Paper.book("user").write("pincode",  isPincodeValid(pincodeet.getText().toString())?pincodeet.getText().toString():"" );
+                            Paper.book("user").write("pincode_city", jsonObject.optString("city")+", "+ jsonObject.optString("state")+"\n\nWe are delivering in your pincode area."   );
+                            //wizProgress.hideNow();
+
+                            pincodecity.setText(Paper.book("user").read("pincode_city").toString());
+
+                            Paper.book("introduction").write("askpin","1");
+                            updateUser(orderJsonObject);
+
+
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                            Log.e("PreLogin err: ", "" + e.getMessage());
+
+                        }
+
+                        //lv.setAdapter(new CustomUpcomingOrderAdapter(getApplicationContext(),dateArray,orderNoArray,nameArray, statusArray, dotsArray, gTotalArray, deliveryTimeArray,aljoPreLogins  ));
+                    }
+                }
+
+
+
+                else {
+                    wizProgress.hideNow();
+
+                }
+            } catch (Exception e) {
+
+                Log.e("PreLoginWeberr: ", e.getMessage());
+
+                e.printStackTrace();
+            }
+        }
+
+        @Override
+        public void onErrorResponse(int requestCode, VolleyError volleyError, @Nullable JSONObject errorObject) {
+            //Error (Not server or network error)
+            Log.e ("onErrorResponse: ", requestCode +" : "+errorObject.toString()+" : "+volleyError.getMessage());
+
+            Toast.makeText(getApplicationContext()," There might be some network issue. Please try again."
+                    ,Toast.LENGTH_SHORT).show();
+            wizProgress.hideNow();
+
+        }
+
+
+
+        @Override
+        public void onRequestStart(int requestCode) {
+            //placeholder.setVisibility(View.INVISIBLE);
+            Log.e("PreLogin resp: ", "onRequestStarted()");
+            wizProgress.showNow();
+
+        }
+
+
+
+
+        @Override
+        public void onRequestFinish(int requestCode) {
+            Log.e("PreLogin resp: ", "onRequestFinish()");
+
+
+
+
+        }
+        @Override
+        public void onFinishResponse(int requestCode, VolleyError volleyError, String message) {
+            //Network or Server error
+            wizProgress.hideNow();
+            Log.e ("onErrorResponse: ", requestCode +" : "+message.toString()+" : "+volleyError.getMessage());
+            if(message.equalsIgnoreCase("Timeout error")||message.equalsIgnoreCase("No Connection")||message.equalsIgnoreCase("Check your connection")||message.equalsIgnoreCase("Server error"))
+            {
+                new SweetAlertDialog(ProfileActivity.this, SweetAlertDialog.WARNING_TYPE)
+                        .setTitleText("Oops..!!")
+                        .setContentText("There might be an issue with your internet connection.\n Try after some time.")
+                        .setConfirmText("OK")
+                        .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                            @Override
+                            public void onClick(SweetAlertDialog sDialog) {
+
+                                ProfileActivity.this.finish();
+                                //System.exit(0);
+
+                            }
+                        })
+
+                        .show();
+            }
+
+
+        }
+
+
+
+    }
 
 
 }

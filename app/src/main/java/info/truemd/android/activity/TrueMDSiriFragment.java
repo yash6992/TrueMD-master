@@ -13,6 +13,18 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Vibrator;
 import android.speech.RecognizerIntent;
+import java.util.ArrayList;
+import java.util.Locale;
+
+import android.app.Activity;
+import android.content.ActivityNotFoundException;
+import android.content.Intent;
+import android.os.Bundle;
+import android.speech.RecognizerIntent;
+import android.view.View;
+import android.widget.ImageButton;
+import android.widget.TextView;
+import android.widget.Toast;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -88,7 +100,9 @@ public class TrueMDSiriFragment extends Fragment {
     ArrayList<ResponseChat> responseS1;
     SessionManager session;
     DialogPlus dialog;
-    private final int REQ_CODE_SPEECH_INPUT = 100;
+    private static final int RESULT_OK = -1;
+    private static final int REQUEST_CODE = 1234;
+    private final int SPEECH_RECOGNITION_CODE = 1;
 
 
 
@@ -184,7 +198,10 @@ public class TrueMDSiriFragment extends Fragment {
                     if (messageET.getText().toString().length() == 0) {
 
                         new MainActivity().checkInternet(getActivity());
-                        promptSpeechInput();
+
+                                   startSpeechToText();
+
+
                     } else {
 
                                 String messageText = messageET.getText().toString();
@@ -1040,58 +1057,39 @@ public class TrueMDSiriFragment extends Fragment {
         });
     }
 
-
-    private void promptSpeechInput() {
-//        Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
-//        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,
-//                RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
-//        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault());
-//        intent.putExtra(RecognizerIntent.EXTRA_PROMPT,
-//                getString(R.string.speech_prompt));
-//        try {
-//            startActivityForResult(intent, 1111);
-//        } catch (ActivityNotFoundException a) {
-//            Toast.makeText(getActivity(),
-//                    getString(R.string.speech_not_supported),
-//                    Toast.LENGTH_SHORT).show();
-//        }
-
-
-        Intent intent = new Intent(
-                RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
-
-        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, "en-US");
-
+    /**
+     * Start speech to text intent. This opens up Google Speech Recognition API dialog box to listen the speech input.
+     * */
+    private void startSpeechToText() {
+        Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
+        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault());
+        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,
+                RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
+        intent.putExtra(RecognizerIntent.EXTRA_PROMPT,
+                "Speak something...");
         try {
-            startActivityForResult(intent, 1111);
-
+            startActivityForResult(intent, SPEECH_RECOGNITION_CODE);
         } catch (ActivityNotFoundException a) {
-            Toast t = Toast.makeText(getActivity(),
-                    "Opps! Your device doesn't support Speech to Text",
-                    Toast.LENGTH_SHORT);
-            t.show();
+            Toast.makeText(context,
+                    "Sorry! Speech recognition is not supported in this device.",
+                    Toast.LENGTH_SHORT).show();
         }
-
-
     }
 
     /**
-     * Receiving speech input
+     * Callback for speech recognition activity
      * */
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        Log.e("Voice: ", requestCode+" "+resultCode+" "+data.toString());
-
         switch (requestCode) {
-            case 1111: {
-                if (resultCode == Activity.RESULT_OK && null != data) {
+            case SPEECH_RECOGNITION_CODE: {
+                if (resultCode == RESULT_OK && null != data) {
 
                     ArrayList<String> result = data
                             .getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
-                    //txtSpeechInput.setText(result.get(0));
-
+                    String text = result.get(0);
                     ChatMessage chatMessage = new ChatMessage();
                     chatMessage.setId(++k);//dummy
                     chatMessage.setMessage(result.get(0));
@@ -1109,13 +1107,13 @@ public class TrueMDSiriFragment extends Fragment {
                     new ExecuteNetworkOperation().execute(result.get(0));
 
 
-
                 }
                 break;
             }
 
         }
     }
+
 
     public void displayResponseChat (ArrayList<ResponseChat> rcal) {
 

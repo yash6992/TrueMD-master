@@ -6,6 +6,7 @@ package info.truemd.android.activity;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.Dialog;
+import android.content.ActivityNotFoundException;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -60,8 +61,8 @@ public class HomeFragment extends Fragment {
     private static String LOG_TAG = "HomeFragmentViewActivity";
     private ImageButton cameraButtonHome;
     private ImageButton imageButtonDrawer, imageNotificationButton;
-    private RelativeLayout searchRelativeLayout, rel4, rel5;
-    private TextView tv14,tv15,tv24,tv25,tv34,tv35,tv44,tv45,tv46,tv54,tv55,tv56,ss,ser,offer,kmore, tv_truemd, tv_truemdst;
+    private RelativeLayout searchRelativeLayout, rel4, rel5, hf3ru;
+    private TextView tv14,tv15,tv24,tv25,tv34,tv35,tv44,tv45,tv46,tv54,tv55,tv56, tv14ru, tv15ru,ss,ser,offer,kmore, tv_truemd, tv_truemdst;
     private RelativeLayout ll1,ll2,ll3;
     private SnappingHorizontalScrollView scrollView;
     JSONObject getUserObject;
@@ -110,9 +111,12 @@ public class HomeFragment extends Fragment {
 
 
         tv_truemd = (TextView) rootView.findViewById(R.id.hf_title);
+        hf3ru = (RelativeLayout) rootView.findViewById(R.id.hf_relative_layout1ru) ;
         tv_truemdst = (TextView) rootView.findViewById(R.id.hf_hi);
         tv14 = (TextView) rootView.findViewById(R.id.hf_textView14);
         tv15 = (TextView) rootView.findViewById(R.id.hf_textView15);
+        tv14ru = (TextView) rootView.findViewById(R.id.hf_textView14ru);
+        tv15ru = (TextView) rootView.findViewById(R.id.hf_textView15ru);
         tv24 = (TextView) rootView.findViewById(R.id.hf_textView24);
         tv25 = (TextView) rootView.findViewById(R.id.hf_textView25);
         tv34 = (TextView) rootView.findViewById(R.id.hf_textView34);
@@ -133,6 +137,8 @@ public class HomeFragment extends Fragment {
         rel5 = (RelativeLayout) rootView.findViewById(R.id.home_relative_layout5);
 
         tv15.setTypeface(tf_l);
+        tv15ru.setTypeface(tf_l);
+        tv14ru.setTypeface(tf_l);
         tv25.setTypeface(tf_l);
         tv35.setTypeface(tf_l);
         tv14.setTypeface(tf_l);
@@ -298,6 +304,7 @@ public class HomeFragment extends Fragment {
         rel4.setVisibility(View.GONE);
         rel5.setVisibility(View.GONE);
        // ll3.setVisibility(View.GONE);
+        hf3ru.setVisibility(View.GONE);
 
 
         if(MainActivity.chatGhostOn&&MainActivity.prescriptionGhostOn) {
@@ -313,10 +320,23 @@ public class HomeFragment extends Fragment {
             rel5.setVisibility(View.GONE);
         }
 
+        if(MainActivity.showRateUs)
+            hf3ru.setVisibility(View.VISIBLE);
+        else
+            hf3ru.setVisibility(View.GONE);
+
         scrollView = (SnappingHorizontalScrollView) rootView.findViewById(R.id.scroll);
         inflateLayoutsToHorizontalView(scrollView);
 
         scrollView.setOnScreenSwitchListener(onScreenSwitchListener());
+
+        hf3ru.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Paper.book("introduction").write("rateus","1");
+                launchMarket();
+            }
+        });
 
         scrollView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -329,6 +349,15 @@ public class HomeFragment extends Fragment {
         });
 
         return rootView;
+    }
+    private void launchMarket() {
+        Uri uri = Uri.parse("market://details?id=" + getActivity().getPackageName());
+        Intent myAppLinkToMarket = new Intent(Intent.ACTION_VIEW, uri);
+        try {
+            startActivity(myAppLinkToMarket);
+        } catch (ActivityNotFoundException e) {
+            Toast.makeText(getActivity(), " unable to find market app", Toast.LENGTH_LONG).show();
+        }
     }
 
 

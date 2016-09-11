@@ -64,8 +64,8 @@ dependencies {
             multiDexEnabled true
             minSdkVersion 16
             targetSdkVersion 22
-            versionCode 4
-            versionName "1.2"
+            versionCode 10
+            versionName "1.5"
             vectorDrawables.useSupportLibrary = true
             generatedDensities = []
         }
