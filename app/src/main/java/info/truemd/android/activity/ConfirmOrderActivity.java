@@ -92,7 +92,7 @@ public class ConfirmOrderActivity extends AppCompatActivity {
     ScrollView scrollCO; CardView deliveryCO;
     ArrayList<Bitmap> confirmBitmapList;static SessionManager session; static int completeUpload;
     RelativeLayout  pickupCO; String []  language;ArrayList<String> coupon, valid,details,addresstypetosend, addressvaluetosend;
-    TextView discount,couponHCO,couponTCO,couponST, couponD, submitcouponTVCO,titleCO, pickupHCO, pickupTVCO, pickupD, pickupST, deliveryHCO,deliveryD, deliveryST, languageHCO,languageST, languageD,languageTVCO; CheckBox radioButtonCO;
+    TextView deliveryConditions, discount,couponHCO,couponTCO,couponST, couponD, submitcouponTVCO,titleCO, pickupHCO, pickupTVCO, pickupD, pickupST, deliveryHCO,deliveryD, deliveryST, languageHCO,languageST, languageD,languageTVCO; CheckBox radioButtonCO;
     EditText couponCOET,yourOrderCO, commentsCO; ArrayList<JSONObject> documentsUploaded;LinearLayout couponLLCO;
     public static ArrayList<JSONObject> pickupjarray, deliveryjarray;
     public static TextView deliveryTVCO;
@@ -230,6 +230,7 @@ public class ConfirmOrderActivity extends AppCompatActivity {
         backCOIB = (ImageButton) findViewById(R.id.backImageButtonMark_co);
         submitCOIB = (TextView) findViewById(R.id.CheckImageButtonMark_co); submitCOIB.setTypeface(tf_l);
 
+        deliveryConditions = (TextView) findViewById(R.id.delivery_conditions);deliveryConditions.setTypeface(tf_l);
         couponHCO = (TextView) findViewById(R.id.coupon_coTV);couponHCO.setTypeface(tf_l);
         couponTCO = (TextView) findViewById(R.id.coupon_coH);couponTCO.setTypeface(tf_r);
         couponLLCO = (LinearLayout) findViewById(R.id.ll_add_coupon);couponLLCO.setVisibility(View.GONE);
@@ -254,6 +255,15 @@ public class ConfirmOrderActivity extends AppCompatActivity {
         radioButtonCO.setChecked(true);
 
         discount.setText(MainActivity.discountMsg);
+
+        String pincode = Paper.book("user").read("pincode");
+
+        String cityname =Paper.book("user").read("pincode_city");
+
+        if(pincode.startsWith("4520"))
+            deliveryConditions.setText(cityname.substring(0,cityname.indexOf(','))+": Free home delivery for all orders.");
+        else
+            deliveryConditions.setText(cityname.substring(0,cityname.indexOf(','))+": \u20B9 99 delivery charge applicable on this orders.");
 
         yourOrderCO.setText(Paper.book("user").read("name", ""));
 

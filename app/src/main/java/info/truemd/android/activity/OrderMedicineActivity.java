@@ -83,6 +83,8 @@ public class OrderMedicineActivity extends AppCompatActivity {
 
         titleOM.setTypeface(tf_pacifico);
 
+        t2.setVisibility(View.GONE);
+
         try {
             String cityname =Paper.book("user").read("pincode_city");
 
