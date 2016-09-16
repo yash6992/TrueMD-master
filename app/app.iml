@@ -260,8 +260,8 @@
     <orderEntry type="library" exported="" name="objenesis-2.1" level="project" />
     <orderEntry type="library" exported="" name="palette-v7-23.1.0" level="project" />
     <orderEntry type="library" exported="" name="play-services-drive-9.2.1" level="project" />
-    <orderEntry type="library" exported="" name="protobuf-java-2.6.1" level="project" />
     <orderEntry type="library" exported="" name="kryo-serializers-0.33" level="project" />
+    <orderEntry type="library" exported="" name="protobuf-java-2.6.1" level="project" />
     <orderEntry type="library" exported="" name="firebase-config-9.2.1" level="project" />
     <orderEntry type="library" exported="" name="play-services-contextmanager-9.2.1" level="project" />
     <orderEntry type="library" exported="" name="firebase-core-9.2.1" level="project" />
