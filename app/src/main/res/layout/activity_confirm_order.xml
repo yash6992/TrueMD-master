@@ -273,7 +273,7 @@
 
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent" android:layout_below="@id/details_co" android:layout_marginBottom="12dp" android:layout_marginRight="12dp" android:layout_marginLeft="12dp"
-                android:layout_height="wrap_content" android:padding="3dp" android:visibility="gone" android:id="@+id/pickup_address_co">
+                android:layout_height="wrap_content" android:padding="3dp" android:visibility="visible" android:id="@+id/pickup_address_co">
             <RelativeLayout
                 android:layout_width="match_parent" android:background="@color/white"
                 android:layout_height="wrap_content" >
