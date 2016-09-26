@@ -44,6 +44,7 @@ import java.util.Map;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
 import info.truemd.android.R;
+import info.truemd.android.helper.ExceptionHandler;
 import info.truemd.android.helper.SessionManager;
 import io.paperdb.Paper;
 
@@ -61,6 +62,7 @@ public class OrderMedicineActivity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Thread.setDefaultUncaughtExceptionHandler(new ExceptionHandler(this));
         setContentView(R.layout.activity_order_medicine);
 
         Typeface tf_l=Typeface.createFromAsset(getAssets(),"fonts/OpenSans-Regular.ttf");
@@ -481,7 +483,7 @@ public class OrderMedicineActivity extends AppCompatActivity {
                             mBottomSheetDialog4.dismiss();
                             String cityname =Paper.book("user").read("pincode_city").toString();
 
-                            t2.setText(cityname.substring(0,cityname.indexOf(','))+": \u20B9 99 delivery charge applicable on all orders.");
+                            t2.setText(cityname.substring(0,cityname.indexOf(','))+": "+MainActivity.shippingMsg);
                              Paper.book("introduction").write("askpin","1");
 
 

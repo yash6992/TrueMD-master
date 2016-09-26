@@ -17,6 +17,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -51,6 +52,7 @@ import info.truemd.android.adapter.CustomAddressBSAdapter;
 import info.truemd.android.adapter.CustomCouponBSAdapter;
 import info.truemd.android.adapter.CustomLanguageBSAdapter;
 import info.truemd.android.adapter.CustomRefillAddressBSAdapter;
+import info.truemd.android.helper.ExceptionHandler;
 import info.truemd.android.helper.SessionManager;
 import info.truemd.android.helper.TrueMDJSONUtils;
 
@@ -59,7 +61,7 @@ public class RefillOrderActivity extends AppCompatActivity {
     JSONObject orderToBeRefilled;
 
 
-    ImageButton backCOIB;TextView submitCOIB; DilatingDotsProgressBar mDilatingDotsProgressBar;
+    ImageButton backCOIB;Button submitCOIB; DilatingDotsProgressBar mDilatingDotsProgressBar;
     ArrayList<Bitmap> confirmBitmapList;static SessionManager session; static int completeUpload;
     ScrollView scrollCO; String orderdollaroid;
     RelativeLayout deliveryCO, pickupCO; String []  language;ArrayList<String> coupon, valid,details,addresstypetosend, addressvaluetosend;
@@ -75,6 +77,7 @@ public class RefillOrderActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Thread.setDefaultUncaughtExceptionHandler(new ExceptionHandler(this));
         setContentView(R.layout.activity_refill_order);
         session = new SessionManager(RefillOrderActivity.this);
 
@@ -101,7 +104,7 @@ public class RefillOrderActivity extends AppCompatActivity {
         scrollCO = (ScrollView) findViewById(R.id.scroll_co);
 
         backCOIB = (ImageButton) findViewById(R.id.backImageButtonMark_co);
-        submitCOIB = (TextView) findViewById(R.id.CheckImageButtonMark_co); submitCOIB.setTypeface(tf_l);
+        submitCOIB = (Button) findViewById(R.id.CheckImageButtonMark_co); submitCOIB.setTypeface(tf_l);
 
         couponHCO = (TextView) findViewById(R.id.coupon_coTV);couponHCO.setTypeface(tf_l);
         couponTCO = (TextView) findViewById(R.id.coupon_coH);couponTCO.setTypeface(tf_r);
@@ -126,7 +129,7 @@ public class RefillOrderActivity extends AppCompatActivity {
         pickupCO.setVisibility(View.GONE);
         radioButtonCO.setChecked(true);
 
-        discount.setText(MainActivity.discountMsg);
+        discount.setText(MainActivity.discountMsg+"\n"+MainActivity.shippingMsg);
 
         try {
             orderToBeRefilled = new JSONObject(getIntent().getStringExtra("refillJOS"));

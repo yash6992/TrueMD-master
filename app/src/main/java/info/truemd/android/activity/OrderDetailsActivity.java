@@ -22,6 +22,7 @@ import java.util.ArrayList;
 
 import belka.us.androidtoggleswitch.widgets.ToggleSwitch;
 import info.truemd.android.R;
+import info.truemd.android.helper.ExceptionHandler;
 import info.truemd.android.helper.SimpleGestureFilter;
 import info.truemd.android.helper.SimpleGestureFilter.SimpleGestureListener;
 import info.truemd.android.model.Medicine;
@@ -41,6 +42,7 @@ public class OrderDetailsActivity extends AppCompatActivity implements SimpleGes
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Thread.setDefaultUncaughtExceptionHandler(new ExceptionHandler(this));
         setContentView(R.layout.activity_order_details);
         Paper.book("nav").write("selected","2");
         // Detect touched area

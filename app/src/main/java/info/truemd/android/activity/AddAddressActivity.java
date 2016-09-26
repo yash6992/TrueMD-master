@@ -16,6 +16,7 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -49,7 +50,7 @@ import io.paperdb.Paper;
  */
 public class AddAddressActivity extends AppCompatActivity {
 
-    EditText typeET, nameET, line1ET, line2ET, landmarkET, cityET, pinET; TextView chhose, titleTVAA, saveAA;
+    EditText typeET, nameET, line1ET, line2ET, landmarkET, cityET, pinET; TextView chhose, titleTVAA; Button saveAA;
     ImageButton backIBAA; DilatingDotsProgressBar mDilatingDotsProgressBar;
     String type,name,line1,line2,landmark,city,pin;
     JSONObject addressJsonObject; TextInputLayout typetil;
@@ -88,7 +89,7 @@ public class AddAddressActivity extends AppCompatActivity {
         pinET.setText(Paper.book("user").read("pincode").toString());
 
         titleTVAA = (TextView) findViewById(R.id.titleAA);
-        saveAA = (TextView) findViewById(R.id.save_tv_aa);
+        saveAA = (Button) findViewById(R.id.save_tv_aa);
         chhose = (TextView) findViewById(R.id.choosetype);
 
         titleTVAA.setTypeface(tf_r);
@@ -236,6 +237,8 @@ public class AddAddressActivity extends AppCompatActivity {
 
     public void submitAdd(){
 
+        mDilatingDotsProgressBar.showNow();
+
         Log.e("in submitAdd():: ", "add submission started");
 
         HashMap<String, String> user = session.getUserDetails();
@@ -304,6 +307,7 @@ public class AddAddressActivity extends AppCompatActivity {
         public void onResponse(int requestCode, @Nullable JSONObject jsonObject) {
             //Ok
             try {
+
                 if (jsonObject.toString().length() > 5) {
 
 
@@ -340,6 +344,7 @@ public class AddAddressActivity extends AppCompatActivity {
 
 
                     Toast.makeText(AddAddressActivity.this, "User address added.", Toast.LENGTH_SHORT).show();
+                    mDilatingDotsProgressBar.hideNow();
                     finish();
 
                     try {
@@ -368,7 +373,7 @@ public class AddAddressActivity extends AppCompatActivity {
         @Override
         public void onRequestStart(int requestCode) {
             if(mDilatingDotsProgressBar.getVisibility()!=View.VISIBLE)
-                mDilatingDotsProgressBar.showNow();
+               // mDilatingDotsProgressBar.showNow();
             getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
                     WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
         }
@@ -379,7 +384,7 @@ public class AddAddressActivity extends AppCompatActivity {
         @Override
         public void onRequestFinish(int requestCode) {
             if(mDilatingDotsProgressBar.getVisibility()==View.VISIBLE)
-                mDilatingDotsProgressBar.hideNow();
+                //mDilatingDotsProgressBar.hideNow();
             getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
 
 

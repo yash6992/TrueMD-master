@@ -48,6 +48,7 @@ import cn.pedant.SweetAlert.SweetAlertDialog;
 import info.truemd.android.R;
 import info.truemd.android.adapter.CustomPrescriptionAdapter;
 import info.truemd.android.adapter.CustomPreviousOrderAdapter;
+import info.truemd.android.helper.ExceptionHandler;
 import info.truemd.android.helper.SessionManager;
 import info.truemd.android.helper.SimpleGestureFilter;
 import info.truemd.android.helper.SimpleGestureFilter.SimpleGestureListener;
@@ -72,6 +73,7 @@ public class PrescriptionListActivity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Thread.setDefaultUncaughtExceptionHandler(new ExceptionHandler(this));
         setContentView(R.layout.activity_prescription_list);
 
         Paper.book("nav").write("selected","1");

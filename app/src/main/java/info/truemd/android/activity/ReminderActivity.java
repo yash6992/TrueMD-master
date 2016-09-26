@@ -55,6 +55,7 @@ import java.util.Locale;
 import info.truemd.android.R;
 import info.truemd.android.adapter.CustomCardReminderAdapter;
 import info.truemd.android.adapter.CustomUpcomingOrderAdapter;
+import info.truemd.android.helper.ExceptionHandler;
 import info.truemd.android.helper.SessionManager;
 import info.truemd.android.receiver.AlarmReceiver;
 import io.paperdb.Paper;
@@ -81,6 +82,7 @@ public class ReminderActivity extends AppCompatActivity implements SwipeStack.Sw
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Thread.setDefaultUncaughtExceptionHandler(new ExceptionHandler(this));
         setContentView(R.layout.activity_reminder);
 
         Typeface tf_l= Typeface.createFromAsset(getAssets(), "fonts/OpenSans-Regular.ttf");

@@ -95,7 +95,7 @@
                 </HorizontalScrollView>
 
                 <LinearLayout
-                    android:layout_width="match_parent" android:background="@drawable/shape_purple_ghost_med"
+                    android:layout_width="match_parent" android:background="@drawable/shape_purple_ghost_squ"
                     android:layout_height="wrap_content" android:layout_below="@+id/hhsv_co" android:id="@+id/llll"
                     android:layout_margin="10dp" android:paddingRight="15dp" android:paddingLeft="15dp"
                     android:layout_marginBottom="0dp" >
@@ -104,7 +104,8 @@
                         android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/comments_co" android:backgroundTint="#00000000"
                         android:singleLine="true" android:textSize="11dp"
                         android:inputType="text" android:textColor="@color/oil"
-                        android:hint="Add comments for our pharmacists (if any)"/>
+                        android:hint="Add comments for our pharmacists.\n\nFor example:\n\nNo. of days you want the medicines for.\nAny medicines in the prescription you want us to skip."/>
+                    />
 
                 </LinearLayout>
 
@@ -131,7 +132,7 @@
 
                 <TextView
                     android:layout_width="match_parent" android:text="address" android:singleLine="true" android:gravity="center_vertical" android:textSize="12dp" android:textColor="@color/oil"
-                    android:layout_height="wrap_content" android:padding="11dp" android:layout_margin="10dp"  android:background="@drawable/shape_purple_ghost_med" android:id="@+id/pickup_address_coTV" android:layout_below="@id/pickup_address_coST" />
+                    android:layout_height="wrap_content" android:padding="11dp" android:layout_margin="10dp"  android:background="@drawable/shape_purple_ghost_squ" android:id="@+id/pickup_address_coTV" android:layout_below="@id/pickup_address_coST" />
 
 
 
@@ -156,7 +157,7 @@
                     android:layout_height="wrap_content" android:layout_marginTop="-2dp" android:layout_marginLeft="7dp" android:paddingLeft="10dp" android:layout_below="@+id/delivery_address_coH" android:paddingTop="3dp" android:id="@+id/delivery_address_coST"  />
 
                 <TextView
-                    android:layout_width="match_parent" android:singleLine="true" android:background="@drawable/shape_purple_ghost_med" android:gravity="center_vertical" android:text="address" android:textSize="12dp" android:textColor="@color/oil"
+                    android:layout_width="match_parent" android:singleLine="true" android:background="@drawable/shape_purple_ghost_squ" android:gravity="center_vertical" android:text="address" android:textSize="12dp" android:textColor="@color/oil"
                     android:layout_height="wrap_content" android:padding="11dp" android:layout_margin="10dp" android:id="@+id/delivery_address_coTV" android:layout_below="@id/delivery_address_coST" />
 
 
@@ -172,7 +173,7 @@
                     android:layout_height="wrap_content" android:layout_margin="7dp" android:paddingLeft="10dp" android:paddingTop="3dp" android:id="@+id/prescription_pickup_time_coH"  />
 
                 <TextView
-                    android:layout_width="match_parent" android:background="@drawable/shape_purple_ghost_med" android:gravity="center_vertical" android:text="Today, 12:00 noon" android:textSize="12dp" android:textColor="@color/monsoon"
+                    android:layout_width="match_parent" android:background="@drawable/shape_purple_ghost_squ" android:gravity="center_vertical" android:text="Today, 12:00 noon" android:textSize="12dp" android:textColor="@color/monsoon"
                     android:layout_height="wrap_content" android:padding="11dp" android:layout_margin="10dp" android:id="@+id/prescription_pickup_time_coTV" android:layout_below="@id/prescription_pickup_time_coH" />
 
 
@@ -192,7 +193,7 @@
                     android:layout_height="wrap_content" android:layout_marginTop="-2dp" android:layout_marginLeft="7dp" android:paddingLeft="10dp" android:layout_below="@+id/language_coH" android:paddingTop="3dp" android:id="@+id/language_coST"  />
 
                 <TextView
-                    android:layout_width="match_parent" android:background="@drawable/shape_purple_ghost_med" android:gravity="center_vertical" android:text="English" android:textSize="12dp" android:textColor="@color/oil"
+                    android:layout_width="match_parent" android:background="@drawable/shape_purple_ghost_squ" android:gravity="center_vertical" android:text="English" android:textSize="12dp" android:textColor="@color/oil"
                     android:layout_height="wrap_content" android:padding="11dp" android:layout_margin="10dp" android:id="@+id/language_coTV" android:layout_below="@id/language_coST" />
 
 
@@ -268,10 +269,10 @@
             app:dd_scaleMultiplier="2.3" app:dd_animationDuration="500"
             app:dd_horizontalSpacing="12dp"
             />
-        <TextView
-            android:layout_width="match_parent" android:textColor="@color/white" android:layout_marginLeft="12dp" android:layout_marginRight="12dp" android:layout_marginTop="10dp"
-            android:layout_height="wrap_content" android:layout_below="@+id/progress_3" android:layout_marginBottom="10dp"
-            android:text="REFILL ORDER" android:background="@drawable/button_purple" android:padding="13dp" android:textSize="13dp"
+        <android.support.v7.widget.AppCompatButton
+            android:layout_width="match_parent" android:backgroundTint="@color/windowBackground" android:textColor="@color/white" android:layout_marginLeft="12dp" android:layout_marginRight="12dp" android:layout_marginTop="10dp"
+            android:layout_height="56dp" android:layout_below="@+id/progress_3" android:layout_marginBottom="10dp"
+            android:text="REFILL ORDER"  android:padding="13dp" android:textSize="13dp"
             android:id="@+id/CheckImageButtonMark_co" android:gravity="center_horizontal|center_vertical"  />
 
     </RelativeLayout>

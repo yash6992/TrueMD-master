@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
 import info.truemd.android.R;
+import info.truemd.android.helper.ExceptionHandler;
 
 /**
  * Created by yashvardhansrivastava on 02/07/16.
@@ -30,6 +31,7 @@ public class OfferDisplayActivity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Thread.setDefaultUncaughtExceptionHandler(new ExceptionHandler(this));
         setContentView(R.layout.activity_offer_display);
         title = (TextView) findViewById(R.id.od_title_tv);
         back = (ImageButton) findViewById(R.id.od_backImageButton);
@@ -52,7 +54,6 @@ public class OfferDisplayActivity extends AppCompatActivity {
       // progressBar = ProgressDialog.show(Main.this, "WebView Example", "Loading...");
 
         progressBar= new SweetAlertDialog(this, SweetAlertDialog.PROGRESS_TYPE);
-        progressBar.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
         progressBar.setTitleText("Loading");
         progressBar.setCancelable(false);
         progressBar.show();

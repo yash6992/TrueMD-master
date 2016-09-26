@@ -98,6 +98,7 @@ import java.util.regex.Pattern;
 import cn.pedant.SweetAlert.SweetAlertDialog;
 import info.truemd.android.BuildConfig;
 import info.truemd.android.R;
+import info.truemd.android.helper.ExceptionHandler;
 import info.truemd.android.helper.SessionManager;
 import info.truemd.android.helper.TrueMDJSONUtils;
 import info.truemd.android.receiver.AlarmReceiver;
@@ -143,7 +144,7 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
     DilatingDotsProgressBar homeProgress;
     private Handler mHandler;
     static int s_position;
-    public static String discountMsg, tosUrl,faqsUrl,whyPrescriptionUrl, inviteMsg, about_us, referralMsg="";
+    public static String discountMsg,shippingMsg, tosUrl,faqsUrl,whyPrescriptionUrl, inviteMsg, about_us, referralMsg="";
     Dialog mBottomSheetDialog;
     public AndroidLogger logger;
     DilatingDotsProgressBar wizProgress;
@@ -173,6 +174,7 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Thread.setDefaultUncaughtExceptionHandler(new ExceptionHandler(this));
         setContentView(R.layout.activity_main);
 
         
@@ -197,7 +199,7 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
 
 
         mHandler = new Handler();
-        discountMsg="";
+        discountMsg="";shippingMsg="";
         onBackAtNoInternet=false; getUserObject = new JSONObject();
 
         Log.d("MainActivity: ", "before intent");
@@ -743,6 +745,7 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
 
                         nameFromGetUser=obj.getString("name");
                         discountMsg=obj.optString("discount_msg");
+                        shippingMsg=obj.optString("shipping_msg");
 
                         //discountMsg = discountMsg.replace("300", "\u20B9 "+"300");
 

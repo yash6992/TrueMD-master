@@ -62,10 +62,10 @@ dependencies {
         defaultConfig {
             applicationId "info.truemd.android"
             multiDexEnabled true
-            minSdkVersion 16
+            minSdkVersion 17
             targetSdkVersion 22
-            versionCode 13
-            versionName "1.5"
+            versionCode 16
+            versionName "1.6"
             vectorDrawables.useSupportLibrary = true
             generatedDensities = []
         }

@@ -37,6 +37,7 @@ import java.util.HashMap;
 
 import info.truemd.android.R;
 import info.truemd.android.adapter.CustomInvoiceAdapter;
+import info.truemd.android.helper.ExceptionHandler;
 import info.truemd.android.helper.TrueMDJSONUtils;
 
 /**
@@ -60,6 +61,7 @@ public class PreviousOrderActivity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Thread.setDefaultUncaughtExceptionHandler(new ExceptionHandler(this));
         setContentView(R.layout.activity_previous_order);
         context_poa=getApplicationContext();
 

@@ -46,6 +46,7 @@ import cn.pedant.SweetAlert.SweetAlertDialog;
 import info.truemd.android.R;
 import info.truemd.android.adapter.CustomSearchAdapter;
 import info.truemd.android.adapter.SuggestionAdapter;
+import info.truemd.android.helper.ExceptionHandler;
 import info.truemd.android.model.JsonParse;
 import info.truemd.android.model.SuggestGetSet;
 import info.truemd.android.service.ConnectionDetector;
@@ -89,6 +90,7 @@ public class SearchActivity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Thread.setDefaultUncaughtExceptionHandler(new ExceptionHandler(this));
         setContentView(R.layout.search_activity);
 
         new MainActivity().checkInternet(this);

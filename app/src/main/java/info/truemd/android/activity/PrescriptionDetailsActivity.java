@@ -30,6 +30,7 @@ import java.util.HashMap;
 
 import info.truemd.android.R;
 import info.truemd.android.adapter.CustomPrescriptionMedAdapter;
+import info.truemd.android.helper.ExceptionHandler;
 import info.truemd.android.helper.TrueMDJSONUtils;
 
 /**
@@ -46,6 +47,7 @@ public class PrescriptionDetailsActivity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Thread.setDefaultUncaughtExceptionHandler(new ExceptionHandler(this));
         setContentView(R.layout.activity_prescription_details);
 
         Intent fromPL = getIntent();

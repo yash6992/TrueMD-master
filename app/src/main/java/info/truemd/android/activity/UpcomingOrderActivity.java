@@ -53,6 +53,7 @@ import java.util.Map;
 import info.truemd.android.R;
 import info.truemd.android.adapter.CustomInvoiceAdapter;
 import info.truemd.android.adapter.CustomPreviousOrderAdapter;
+import info.truemd.android.helper.ExceptionHandler;
 import info.truemd.android.helper.SessionManager;
 
 /**
@@ -82,6 +83,7 @@ public class UpcomingOrderActivity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Thread.setDefaultUncaughtExceptionHandler(new ExceptionHandler(this));
         setContentView(R.layout.activity_upcoming_order);
         context_poa=getApplicationContext();
 

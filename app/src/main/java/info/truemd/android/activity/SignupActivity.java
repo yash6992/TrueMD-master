@@ -42,6 +42,7 @@ import java.util.Map;
 
 
 import info.truemd.android.R;
+import info.truemd.android.helper.ExceptionHandler;
 import io.paperdb.Paper;
 
 public class SignupActivity extends AppCompatActivity {
@@ -74,6 +75,7 @@ public class SignupActivity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Thread.setDefaultUncaughtExceptionHandler(new ExceptionHandler(this));
         setContentView(R.layout.activity_signup);
 
         truemdTitle = (TextView) findViewById(R.id.truemdtitle_tv);

@@ -24,6 +24,7 @@ import com.zl.reik.dilatingdotsprogressbar.DilatingDotsProgressBar;
 
 import info.truemd.android.R;
 //import info.androidhive.materialdesign.app.MyApplication;
+import info.truemd.android.helper.ExceptionHandler;
 import info.truemd.android.service.HttpService;
 
 public class SmsActivity extends AppCompatActivity implements View.OnClickListener {
@@ -46,6 +47,7 @@ public class SmsActivity extends AppCompatActivity implements View.OnClickListen
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Thread.setDefaultUncaughtExceptionHandler(new ExceptionHandler(this));
         setContentView(R.layout.activity_sms);
 
 

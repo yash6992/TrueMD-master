@@ -27,6 +27,7 @@ import java.io.OutputStream;
 import java.util.ArrayList;
 
 import info.truemd.android.R;
+import info.truemd.android.helper.ExceptionHandler;
 
 /**
  * Created by yashvardhansrivastava on 16/04/16.
@@ -44,6 +45,7 @@ public class MarkImageActivity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Thread.setDefaultUncaughtExceptionHandler(new ExceptionHandler(this));
         setContentView(R.layout.activity_mark_image);
 
         Intent getImagesFromMain = getIntent();

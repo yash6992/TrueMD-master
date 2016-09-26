@@ -215,9 +215,9 @@
                 app:dd_horizontalSpacing="12dp" android:layout_below="@+id/add_rl"
                 />
 
-            <TextView
-                android:layout_width="match_parent" android:layout_marginTop="10dp" android:background="@drawable/button_purple" android:padding="13dp"
-                android:layout_height="wrap_content" android:textColor="@color/white" android:textSize="15dp"
+            <android.support.v7.widget.AppCompatButton
+                android:layout_width="match_parent" android:layout_marginTop="10dp" android:backgroundTint="@color/windowBackground" android:padding="13dp"
+                android:layout_height="56dp" android:textColor="@color/white" android:textSize="15dp"
                 android:layout_below="@+id/progress_aa" android:id="@+id/save_tv_aa" android:gravity="center" android:text="SAVE ADDRESS"/>
 
 

@@ -263,7 +263,7 @@ public class ConfirmOrderActivity extends AppCompatActivity {
         if(pincode.startsWith("4520"))
             deliveryConditions.setText(cityname.substring(0,cityname.indexOf(','))+": Free home delivery for all orders.");
         else
-            deliveryConditions.setText(cityname.substring(0,cityname.indexOf(','))+": \u20B9 99 delivery charge applicable on this orders.");
+            deliveryConditions.setText(cityname.substring(0,cityname.indexOf(','))+": "+MainActivity.shippingMsg);
 
         yourOrderCO.setText(Paper.book("user").read("name", ""));
 

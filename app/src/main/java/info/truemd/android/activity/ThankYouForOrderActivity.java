@@ -23,6 +23,7 @@ import java.util.Date;
 import java.util.HashMap;
 
 import info.truemd.android.R;
+import info.truemd.android.helper.ExceptionHandler;
 
 /**
  * Created by yashvardhansrivastava on 20/04/16.
@@ -36,6 +37,7 @@ public class ThankYouForOrderActivity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Thread.setDefaultUncaughtExceptionHandler(new ExceptionHandler(this));
         setContentView(R.layout.activity_thankyou);
 
         Typeface tf_l=Typeface.createFromAsset(getAssets(),"fonts/OpenSans-Regular.ttf");

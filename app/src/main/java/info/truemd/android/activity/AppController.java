@@ -16,6 +16,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
 import com.tramsun.libs.prefcompat.Pref;
 
+import java.io.File;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -133,6 +134,57 @@ public class AppController extends MultiDexApplication {
 
 
 
+
+    }
+
+
+    public void clearApplicationData() {
+
+        File cacheDirectory = getCacheDir();
+        File applicationDirectory = new File(cacheDirectory.getParent());
+        if (applicationDirectory.exists()) {
+
+            String[] fileNames = applicationDirectory.list();
+
+            for (String fileName : fileNames) {
+
+                if (!fileName.equals("lib")) {
+
+                    deleteFile(new File(applicationDirectory, fileName));
+
+                }
+
+            }
+
+        }
+
+    }
+
+    public static boolean deleteFile(File file) {
+
+        boolean deletedAll = true;
+
+        if (file != null) {
+
+            if (file.isDirectory()) {
+
+                String[] children = file.list();
+
+                for (int i = 0; i < children.length; i++) {
+
+                    deletedAll = deleteFile(new File(file, children[i])) && deletedAll;
+
+                }
+
+            } else {
+
+                deletedAll = file.delete();
+
+            }
+
+        }
+
+        return deletedAll;
 
     }
 
