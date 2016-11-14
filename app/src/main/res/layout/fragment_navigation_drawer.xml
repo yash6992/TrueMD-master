@@ -55,7 +55,7 @@
     <TextView
         android:layout_width="match_parent" android:id="@+id/version_tv"
         android:layout_height="match_parent" android:layout_centerHorizontal="true"
-        android:text="TrueMD Technologies Pvt. Ltd." android:padding="8dp" android:gravity="center_horizontal|bottom"
+        android:text="ProjectX Technologies Pvt. Ltd." android:padding="8dp" android:gravity="center_horizontal|bottom"
         android:textSize="12dp" android:textColor="@color/aluminum"
         />
 

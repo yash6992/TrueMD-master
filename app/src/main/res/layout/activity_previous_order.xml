@@ -112,11 +112,11 @@
                     android:layout_height="0.8dp" android:background="@color/steel" android:id="@+id/poa_b12" />
 
 
-                <info.truemd.android.helper.NestedListView
+                <com.truemdhq.projectx.helper.NestedListView
                     android:id="@+id/poa_listView" android:layout_marginTop="0dp" android:layout_below="@+id/poa_b12"
                     android:layout_width="match_parent" android:padding="2dp" android:background="@color/white"
                     android:layout_height="wrap_content">
-                </info.truemd.android.helper.NestedListView>
+                </com.truemdhq.projectx.helper.NestedListView>
 
                 <View
                    android:padding="10dp" android:layout_margin="10dp"

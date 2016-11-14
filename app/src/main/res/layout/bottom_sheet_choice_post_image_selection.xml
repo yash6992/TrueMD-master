@@ -81,7 +81,7 @@ xmlns:android="http://schemas.android.com/apk/res/android">
         android:gravity="left|center_horizontal" android:background="?attr/selectableItemBackground"
         android:clickable="true"
         android:padding="15dp" android:textColor="@color/jumbo"
-        android:text="I will confirm the medicines and their quantities when the TrueMD pharmacist calls."
+        android:text="I will confirm the medicines and their quantities when the ProjectX pharmacist calls."
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <LinearLayout

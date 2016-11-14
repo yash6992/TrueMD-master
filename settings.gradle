@@ -1,1 +1,1 @@
-include ':app', ':volley', ':stickyscrollviewlib'
+include ':app', ':circlerefresh'

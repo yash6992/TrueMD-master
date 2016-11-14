@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/TrueMD-master.iml" filepath="$PROJECT_DIR$/TrueMD-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ProjectX-master.iml" filepath="$PROJECT_DIR$/ProjectX-master.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/stickyscrollviewlib/stickyscrollviewlib.iml" filepath="$PROJECT_DIR$/stickyscrollviewlib/stickyscrollviewlib.iml" />
-      <module fileurl="file://$PROJECT_DIR$/volley/volley.iml" filepath="$PROJECT_DIR$/volley/volley.iml" />
+      <module fileurl="file://$PROJECT_DIR$/circlerefresh/circlerefresh.iml" filepath="$PROJECT_DIR$/circlerefresh/circlerefresh.iml" />
     </modules>
   </component>
 </project>

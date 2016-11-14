@@ -35,14 +35,14 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" android:textSize="35dp"
-                android:text="TrueMD" android:textColor="@color/white" android:textStyle="bold"
+                android:text="ProjectX" android:textColor="@color/white" android:textStyle="bold"
                 android:id="@+id/truemdtitle_tv"
                 android:paddingTop="3dp"
                 android:layout_centerHorizontal="true" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" android:textSize="14dp"
-                android:text="Your Local Pharmacy, Reinvented" android:textColor="@color/white" android:textStyle="bold"
+                android:text="Your Business Money, Managed" android:textColor="@color/white" android:textStyle="bold"
                 android:id="@+id/truemdsubtitle_tv"
                 android:paddingTop="5dp"
                 android:layout_centerHorizontal="true" />
@@ -120,7 +120,7 @@
             android:layout_width="fill_parent" android:visibility="invisible"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
-            android:text="TrueMD isn't your pharmacy yet? SIGN UP"
+            android:text="ProjectX isn't your pharmacy yet? SIGN UP"
             android:gravity="center" android:textColor="@color/steel"
             android:textSize="14dip"/>
         <TextView android:id="@+id/link_forgot_pwd"

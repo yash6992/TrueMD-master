@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent" android:padding="8dp" android:layout_margin="0dp" android:id="@+id/custom_et"
+    android:layout_height="wrap_content" android:background="@drawable/shape_steel_ghost_squ">
+
+    <LinearLayout
+        android:layout_width="wrap_content" android:orientation="horizontal" android:id="@+id/errorLL"
+        android:layout_height="wrap_content" android:layout_marginLeft="5dp" android:layout_marginTop="3dp">
+
+        <ImageView
+            android:layout_width="14dp" android:layout_marginTop="3dp" android:id="@+id/error_image"
+            android:layout_height="10dp" android:src="@drawable/icic_textfield_valid" />
+
+        <com.truemdhq.projectx.views.TextViewFont1Small
+            android:layout_width="wrap_content" android:layout_marginLeft="5dp" android:id="@+id/error_text"
+            android:layout_height="wrap_content" android:textColor="@color/primary_violet_lighter_1" />
+
+    </LinearLayout>
+
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent" android:id="@+id/text_input_layout"
+            android:layout_height="wrap_content" android:layout_below="@+id/errorLL"
+            android:layout_marginTop="0dp" android:paddingRight="5dp" android:paddingLeft="5dp" android:layout_marginLeft="5dp">
+            <EditText android:id="@+id/edit_text" android:backgroundTint="#00000000" android:inputType="textMultiLine"
+                android:layout_width="match_parent"  android:background="@null" android:paddingBottom="4dp"
+                android:layout_height="wrap_content" android:textSize="16dp" android:textColorHint="@color/primary_violet_lighter_1"
+                 android:textColor="@color/primary_violet"
+                 />
+        </android.support.design.widget.TextInputLayout>
+
+
+    <ImageView
+        android:id="@+id/clearable_button_clear"
+        android:layout_width="14dp"
+        android:layout_height="14dp" android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/icic_textfield_delete"
+        android:layout_marginRight="8dip"/>
+
+</RelativeLayout>

@@ -41,7 +41,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:1093810313818:android:0fda6f6590751525",
         "android_client_info": {
-          "package_name": "info.truemd.android"
+          "package_name": "com.truemdhq.projectx"
         }
       },
       "oauth_client": [

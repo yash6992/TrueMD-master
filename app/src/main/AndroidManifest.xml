@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="info.truemd.android">
+    package="com.truemdhq.projectx">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -26,7 +26,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
-        android:name=".activity.AppController"
+        android:name="com.truemdhq.projectx.activity.AppController"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -34,7 +34,7 @@
         android:largeHeap="true"
         tools:replace="android:icon">
         <activity
-            android:name=".activity.MainActivity"
+            android:name="com.truemdhq.projectx.activity.MainActivity"
             android:hardwareAccelerated="true"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
@@ -50,120 +50,150 @@
             android:screenOrientation="portrait"
             android:theme="@style/TedAppTheme" />
         <activity
-            android:name=".activity.Intro"
+            android:name="com.truemdhq.projectx.activity.Intro"
             android:screenOrientation="portrait"
             android:theme="@style/MyMaterialTheme" />
         <activity
-            android:name=".activity.LoginActivity"
+            android:name="com.truemdhq.projectx.activity.LoginActivity"
             android:screenOrientation="portrait"
             android:theme="@style/MyMaterialTheme"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".activity.SignupActivity"
+            android:name="com.truemdhq.projectx.activity.SignupActivity"
             android:screenOrientation="portrait"
             android:theme="@style/MyMaterialTheme"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".activity.SmsForgotPwdActivity"
+            android:name="com.truemdhq.projectx.activity.SmsForgotPwdActivity"
             android:screenOrientation="portrait"
             android:theme="@style/MyMaterialTheme"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".activity.ForgetPwdActivity"
+            android:name="com.truemdhq.projectx.activity.ForgetPwdActivity"
             android:screenOrientation="portrait"
             android:theme="@style/MyMaterialTheme"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".activity.SearchActivity"
+            android:name="com.truemdhq.projectx.activity.SearchActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:theme="@style/MyMaterialTheme" />
         <activity
-            android:name=".activity.MedicineDetailsActivity2"
+            android:name="com.truemdhq.projectx.activity.MedicineDetailsActivity2"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:theme="@style/MyMaterialTheme" />
         <activity
-            android:name=".activity.SmsActivity"
+            android:name="com.truemdhq.projectx.activity.SmsActivity"
             android:screenOrientation="portrait"
             android:theme="@style/MyMaterialTheme" />
         <activity
-            android:name=".activity.MarkImageActivity"
+            android:name="com.truemdhq.projectx.activity.ChooseClientActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:theme="@style/MyMaterialTheme" />
         <activity
-            android:name=".activity.OrderMedicineActivity"
+            android:name="com.truemdhq.projectx.activity.InvoiceActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:theme="@style/MyMaterialTheme" />
         <activity
-            android:name=".activity.ThankYouForOrderActivity"
+            android:name="com.truemdhq.projectx.activity.AddItemChoiceActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:theme="@style/MyMaterialTheme" />
         <activity
-            android:name=".activity.ConfirmOrderActivity"
+            android:name="com.truemdhq.projectx.activity.InvoiceCreateActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:theme="@style/MyMaterialTheme" />
         <activity
-            android:name=".activity.AddAddressActivity"
+            android:name="com.truemdhq.projectx.activity.InvoiceViewActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:theme="@style/MyMaterialTheme" />
         <activity
-            android:name=".activity.RefillAddAddressActivity"
+            android:name="com.truemdhq.projectx.activity.OrderMedicineActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:theme="@style/MyMaterialTheme" />
         <activity
-            android:name=".activity.OrderDetailsActivity"
+            android:name="com.truemdhq.projectx.activity.ThankYouForOrderActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:theme="@style/MyMaterialTheme" />
         <activity
-            android:name=".activity.PreviousOrderActivity"
+            android:name="com.truemdhq.projectx.activity.ConfirmOrderActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:theme="@style/MyMaterialTheme" />
         <activity
-            android:name=".activity.UpcomingOrderActivity"
+            android:name="com.truemdhq.projectx.activity.AddAddressActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:theme="@style/MyMaterialTheme" />
         <activity
-            android:name=".activity.HowToConfirmOrerActivity"
+            android:name="com.truemdhq.projectx.activity.RefillAddAddressActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:theme="@style/MyMaterialTheme" />
         <activity
-            android:name=".activity.PrescriptionDetailsActivity"
+            android:name="com.truemdhq.projectx.activity.OrderDetailsActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:theme="@style/MyMaterialTheme" />
         <activity
-            android:name=".activity.PrescriptionListActivity"
+            android:name="com.truemdhq.projectx.activity.PreviousOrderActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:theme="@style/MyMaterialTheme" />
         <activity
-            android:name=".activity.ReminderActivity"
+            android:name="com.truemdhq.projectx.activity.UpcomingOrderActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:theme="@style/MyMaterialTheme" />
         <activity
-            android:name=".activity.ReminderAlarmActivity"
+            android:name="com.truemdhq.projectx.activity.HowToConfirmOrerActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:theme="@style/MyMaterialTheme" />
         <activity
-            android:name=".activity.AllNotificationActivity"
+            android:name="com.truemdhq.projectx.activity.PrescriptionDetailsActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:theme="@style/MyMaterialTheme" />
         <activity
-            android:name=".activity.SplashActivity"
+            android:name="com.truemdhq.projectx.activity.ClientListActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+        <activity
+            android:name="com.truemdhq.projectx.activity.UpdateClientActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+        <activity
+            android:name="com.truemdhq.projectx.activity.AddClientActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+        <activity
+            android:name="com.truemdhq.projectx.activity.ReminderActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+        <activity
+            android:name="com.truemdhq.projectx.activity.ReminderAlarmActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+        <activity
+            android:name="com.truemdhq.projectx.activity.AllNotificationActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+        <activity
+            android:name="com.truemdhq.projectx.activity.SplashActivity"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -172,58 +202,58 @@
             </intent-filter>
         </activity>
         <!-- SMS Receiver -->
-        <receiver android:name=".receiver.SmsReceiver">
+        <receiver android:name="com.truemdhq.projectx.receiver.SmsReceiver">
             <intent-filter android:priority="99999">
                 <action android:name="android.provider.Telephony.SMS_RECEIVED" />
             </intent-filter>
         </receiver>
 
         <!-- Register the Alarm Receiver -->
-        <receiver android:name=".receiver.AlarmReceiver" />
+        <receiver android:name="com.truemdhq.projectx.receiver.AlarmReceiver" />
         <!--<receiver android:name=".receiver.AlarmSetter">-->
             <!--<intent-filter>-->
                 <!--<action android:name="android.intent.action.BOOT_COMPLETED" />-->
             <!--</intent-filter>-->
         <!--</receiver>-->
 
-        <service android:name=".service.AlarmService" />
+        <service android:name="com.truemdhq.projectx.service.AlarmService" />
 
         <!-- Intent service -->
         <service
-            android:name=".service.HttpService"
+            android:name="com.truemdhq.projectx.service.HttpService"
             android:exported="false" />
-        <service android:name=".service.FCMMessageService">
+        <service android:name="com.truemdhq.projectx.service.FCMMessageService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
-        <service android:name=".service.FCMService">
+        <service android:name="com.truemdhq.projectx.service.FCMService">
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
         </service>
 
         <activity
-            android:name=".activity.RefillOrderActivity"
+            android:name="com.truemdhq.projectx.activity.RefillOrderActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:theme="@style/MyMaterialTheme" />
         <activity
-            android:name=".activity.OfferDisplayActivity"
+            android:name="com.truemdhq.projectx.activity.OfferDisplayActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:theme="@style/MyMaterialTheme" />
         <activity
-            android:name=".activity.FAQsQuestionActivity"
+            android:name="com.truemdhq.projectx.activity.FAQsQuestionActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:theme="@style/MyMaterialTheme" />
         <activity
-            android:name=".activity.PreLoginActivity"
+            android:name="com.truemdhq.projectx.activity.PreLoginActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:theme="@style/MyMaterialTheme" />
-        <activity android:name=".activity.ProfileActivity"
+        <activity android:name="com.truemdhq.projectx.activity.ProfileActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:theme="@style/MyMaterialTheme"/>

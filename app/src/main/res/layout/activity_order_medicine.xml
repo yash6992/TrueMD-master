@@ -25,7 +25,7 @@
         <TextView
             android:layout_width="100dp" android:layout_centerHorizontal="true" android:layout_alignParentTop="true"
             android:layout_height="wrap_content" android:textColor="@color/windowBackground" android:layout_marginTop="0dp"
-            android:text="TrueMD" android:textSize="25dp"
+            android:text="ProjectX" android:textSize="25dp"
             android:id="@+id/titleOM" />
 
         <ImageButton

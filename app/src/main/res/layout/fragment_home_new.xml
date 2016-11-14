@@ -41,7 +41,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent" android:textSize="40dp"
-                    android:text="TrueMD" android:textColor="@color/windowBackground" android:textStyle="bold"
+                    android:text="ProjectX" android:textColor="@color/windowBackground" android:textStyle="bold"
                     android:id="@+id/truemdtitle_tv" android:gravity="bottom|center_horizontal"
                     android:paddingBottom="4dp" android:paddingRight="2dp" android:paddingEnd="2dp"
                     android:layout_centerHorizontal="true" />

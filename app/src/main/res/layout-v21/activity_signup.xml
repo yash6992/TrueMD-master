@@ -27,14 +27,14 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" android:textSize="35dp"
-                android:text="TrueMD" android:textColor="@color/white" android:textStyle="bold"
+                android:text="ProjectX" android:textColor="@color/white" android:textStyle="bold"
                 android:id="@+id/truemdtitle_tv"
                 android:paddingTop="0dp"
                 android:layout_centerHorizontal="true" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" android:textSize="14dp"
-                android:text="Your Local Pharmacy, Reinvented" android:textColor="@color/white" android:textStyle="bold"
+                android:text="Your Business Money, Managed" android:textColor="@color/white" android:textStyle="bold"
                 android:id="@+id/truemdsubtitle_tv"
                 android:paddingTop="5dp"
                 android:layout_centerHorizontal="true" />

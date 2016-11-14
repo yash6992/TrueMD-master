@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:id="@+id/popup_window"
+    android:layout_height="wrap_content" android:background="@color/white"
+
+    android:padding="10dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent" android:id="@+id/bs_header_main"
+        android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_width="match_parent" android:id="@+id/bs_header"
+        android:layout_height="wrap_content" >
+
+        <com.truemdhq.projectx.views.TextViewFont2Medium
+            android:layout_width="wrap_content" android:layout_centerInParent="true" android:textColor="@color/primary_blue"
+            android:layout_height="wrap_content" android:text="Choose Sales"/>
+
+        <ImageView
+            android:layout_width="22dp" android:layout_margin="10dp"
+            android:layout_height="22dp" android:padding="3dp"
+            android:id="@+id/btn_img" android:src="@drawable/ic_arrow_show_more"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+    </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent" android:orientation="horizontal"
+            android:layout_height="wrap_content" android:layout_below="@+id/bs_header">
+
+        <View
+            android:layout_width="match_parent" android:layerType="software"
+            android:layout_height="2dp" android:background="@drawable/line_dotted_contact_search" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent" android:layout_margin="5dp" android:id="@+id/choice_sales" android:orientation="vertical"
+        android:layout_height="wrap_content" android:layout_below="@+id/bs_header_main">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent" android:id="@+id/choice_invoice"
+            android:layout_height="wrap_content">
+            <com.truemdhq.projectx.views.TextViewFont1Medium
+                android:layout_width="match_parent" android:layout_centerInParent="true" android:textColor="@color/primary_violet"
+                android:layout_height="wrap_content" android:gravity="left" android:padding="14dp"  android:text="Send an Invoice"/>
+
+            <ImageView
+                android:layout_width="22dp" android:layout_margin="10dp"
+                android:layout_height="22dp" android:padding="0dp"
+                android:id="@+id/btn_img_next1" android:src="@drawable/ic_arrow_right_violet"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp" android:layout_marginLeft="5dp" android:layout_marginRight="5dp" android:background="@color/primary_violet_lighter_2" />
+        <RelativeLayout
+            android:layout_width="match_parent" android:id="@+id/choice_quote"
+            android:layout_height="wrap_content">
+            <com.truemdhq.projectx.views.TextViewFont1Medium
+                android:layout_width="match_parent" android:layout_centerInParent="true" android:textColor="@color/primary_violet"
+                android:layout_height="wrap_content" android:gravity="left" android:padding="14dp"  android:text="Send a Quote"/>
+
+            <ImageView
+                android:layout_width="22dp" android:layout_margin="10dp"
+                android:layout_height="22dp" android:padding="0dp"
+                android:id="@+id/btn_img_next2" android:src="@drawable/ic_arrow_right_violet"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent" android:layout_marginLeft="5dp" android:layout_marginRight="5dp"
+            android:layout_height="1dp" android:background="@color/primary_violet_lighter_2" />
+
+        <RelativeLayout
+            android:layout_width="match_parent" android:id="@+id/choice_credit_memo"
+            android:layout_height="wrap_content">
+        <com.truemdhq.projectx.views.TextViewFont1Medium
+            android:layout_width="match_parent" android:layout_centerInParent="true" android:textColor="@color/primary_violet"
+            android:layout_height="wrap_content" android:gravity="left" android:padding="14dp"  android:text="Send a Credit Memo"/>
+
+            <ImageView
+                android:layout_width="22dp" android:layout_margin="10dp"
+                android:layout_height="22dp" android:padding="0dp"
+                android:id="@+id/btn_img_next3" android:src="@drawable/ic_arrow_right_violet"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent" android:layout_below="@+id/choice_sales"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent" android:orientation="horizontal"
+            android:layout_height="wrap_content" android:padding="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent" android:layerType="software"
+                android:layout_height="2dp" android:background="@drawable/line_dotted_contact_search" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="28dp" android:layout_margin="10dp" android:layout_alignParentLeft="true"
+            android:layout_height="28dp" android:padding="3dp" android:layout_centerVertical="true"
+            android:id="@+id/disabled_img" android:src="@drawable/icwarning"
+             />
+
+        <com.truemdhq.projectx.views.TextViewFont1Small
+            android:layout_width="wrap_content" android:layout_marginTop="8dp" android:layout_toRightOf="@+id/disabled_img" android:layout_centerInParent="true" android:textColor="@color/primary_text_disabled_material_light"
+            android:layout_height="wrap_content" android:padding="7dp" android:layout_marginLeft="0dp" android:text="Invoices and Credit Memos will reflect in your Accounts.\nWhereas, Quotes will only be for the recipient and are not 'account receivables'."/>
+
+
+    </RelativeLayout>
+
+
+
+
+</RelativeLayout>

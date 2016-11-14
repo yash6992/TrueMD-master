@@ -19,9 +19,9 @@
 
 
     <TextView
-        android:layout_width="100dp" android:layout_centerHorizontal="true" android:layout_alignParentTop="true"
+        android:layout_width="140dp" android:layout_centerHorizontal="true" android:layout_alignParentTop="true"
         android:layout_height="wrap_content" android:textColor="@color/windowBackground" android:layout_marginTop="6dp"
-        android:text="TrueMD" android:textSize="25dp"
+        android:text="ProjectX" android:textSize="25dp" android:gravity="center"
         android:id="@+id/hf_title" />
 
 
@@ -33,7 +33,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
-    <ir.afshin.stickyscrollviewlib.StickyScrollView
+    <ScrollView
         android:layout_width="match_parent" android:layout_below="@id/image_button_drawer_home"
         android:layout_height="wrap_content" android:layout_marginLeft="12dp" android:layout_marginRight="12dp"
         android:layout_above="@+id/home_relative_layout1" android:visibility="gone">
@@ -50,7 +50,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent" android:textSize="40dp"
-                    android:text="TrueMD" android:textColor="@color/windowBackground" android:textStyle="bold"
+                    android:text="ProjectX" android:textColor="@color/windowBackground" android:textStyle="bold"
                     android:id="@+id/truemdtitle_tv" android:gravity="bottom|center_horizontal"
                     android:paddingBottom="4dp" android:paddingRight="2dp" android:paddingEnd="2dp"
                     android:layout_centerHorizontal="true" />
@@ -64,7 +64,7 @@
 
             </LinearLayout>
 
-            <ir.afshin.stickyscrollviewlib.StickyHeader
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:id="@+id/stick"
                 android:layout_below="@+id/truemdtitle_linear"
@@ -99,7 +99,7 @@
                     </RelativeLayout>
                 </LinearLayout>
 
-            </ir.afshin.stickyscrollviewlib.StickyHeader>
+            </RelativeLayout>
 
 
 
@@ -110,7 +110,7 @@
 
 
         </RelativeLayout>
-    </ir.afshin.stickyscrollviewlib.StickyScrollView>
+    </ScrollView>
     <RelativeLayout
         android:layout_width="match_parent" android:visibility="gone" android:background="@drawable/button_purple_ghost" android:layout_above="@+id/home_relative_layout2"
         android:layout_height="wrap_content" android:layout_marginTop="0dp" android:layout_marginLeft="8dp" android:layout_marginRight="8dp"
@@ -221,7 +221,7 @@
 
     </RelativeLayout>
 
-    <ir.afshin.stickyscrollviewlib.StickyScrollView
+    <ScrollView
         android:layout_width="match_parent" android:id="@+id/hf_sticky_scroll"
         android:layout_height="wrap_content" android:layout_below="@+id/image_button_drawer_home">
 
@@ -243,7 +243,7 @@
 
 
 
-            <ir.afshin.stickyscrollviewlib.StickyHeader
+            <RelativeLayout
                 android:layout_width="match_parent"  android:id="@+id/hf_2"
                 android:layout_height="wrap_content" android:layout_below="@+id/hf_1">
                 <RelativeLayout
@@ -272,7 +272,7 @@
                     </android.support.v7.widget.CardView>
 
                 </RelativeLayout>
-            </ir.afshin.stickyscrollviewlib.StickyHeader>
+            </RelativeLayout>
 
 
 
@@ -517,13 +517,13 @@
                 android:layout_width="match_parent" android:id="@+id/hf_7" android:layout_below="@+id/hf_6"
                 android:layout_height="wrap_content">
 
-                <info.truemd.android.helper.SnappingHorizontalScrollView
+                <HorizontalScrollView
                     android:id="@+id/scroll"
                     android:layout_width="match_parent"
                     android:layout_height="200dp" android:layout_marginTop="0dp"
                     android:layout_weight="0.5">
 
-                </info.truemd.android.helper.SnappingHorizontalScrollView>
+                </HorizontalScrollView>
 
             </RelativeLayout>
             <RelativeLayout
@@ -694,6 +694,6 @@
         </RelativeLayout>
 
 
-    </ir.afshin.stickyscrollviewlib.StickyScrollView>
+    </ScrollView>
 
 </RelativeLayout>

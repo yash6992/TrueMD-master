@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:background="@color/window_bg">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent" android:id="@+id/main_toolbar"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:id="@+id/toolbar"
+            android:background="@color/toolbar_bg">
+            <ImageView
+                android:layout_width="30dp" android:layout_margin="10dp"
+                android:layout_height="30dp" android:padding="3dp"
+                android:id="@+id/btn_back" android:src="@drawable/icic_nav_back_button"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+
+            <com.truemdhq.projectx.views.TextViewFont3Medium
+                android:layout_width="fill_parent" android:layout_centerInParent="true" android:layout_margin="12dp"
+                android:layout_height="wrap_content" android:textColor="@color/primary_violet" android:layout_marginTop="6dp"
+                android:text="Create Invoice" android:singleLine="true" android:gravity="center"
+                android:id="@+id/hf_title"  />
+
+
+            <ImageView
+                android:layout_width="30dp" android:layout_margin="10dp"
+                android:layout_height="30dp" android:padding="3dp"
+                android:id="@+id/btn_search" android:src="@drawable/ic_fee_dark_17_dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent" android:layout_below="@+id/toolbar"
+            android:layout_height="3dp" android:background="@drawable/shape7" />
+
+    </RelativeLayout>
+
+
+    <com.emilsjolander.components.StickyScrollViewItems.StickyScrollView
+        android:layout_width="match_parent" xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_height="wrap_content" android:background="@color/toolbar_bg" android:layout_below="@+id/main_toolbar">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent" android:id="@+id/ci_header"
+            android:layout_height="wrap_content" android:padding="10dp" android:background="@color/toolbar_bg">
+
+
+            <ImageView
+                android:layout_width="80dp" android:layout_margin="0dp" android:layout_centerVertical="true"
+                android:layout_height="80dp" android:src="@drawable/ic_business_partnership"
+                android:padding="5dp" android:id="@+id/vendor_logo"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent" android:layout_marginLeft="5dp"
+                android:id="@+id/client_choose"
+                android:layout_height="wrap_content" android:paddingTop="5dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignBottom="@+id/client_detail">
+
+                <com.truemdhq.projectx.views.TextViewFont2Medium
+                    android:layout_width="match_parent" android:gravity="center"
+                    android:layout_height="wrap_content" android:text="Choose Client" android:textColor="@color/primary_blue"
+                    android:layout_centerInParent="true" />
+
+                <ImageView
+                    android:layout_width="22dp" android:layout_margin="0dp"
+                    android:layout_height="22dp" android:padding="4dp"
+                    android:id="@+id/btn_img_client" android:src="@drawable/ic_arrow_right"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content" android:layout_marginLeft="30dp" android:layout_toRightOf="@+id/vendor_logo"
+                android:id="@+id/client_detail" android:layout_centerVertical="true" android:visibility="invisible"
+                android:layout_height="wrap_content" android:paddingTop="5dp" android:orientation="vertical">
+
+                <com.truemdhq.projectx.views.TextViewFont1Medium
+                    android:layout_width="wrap_content" android:text="Vendor's Name" android:singleLine="true"
+                    android:layout_height="wrap_content" android:id="@+id/vendor_name" />
+
+                <com.truemdhq.projectx.views.TextViewFont1Small
+                    android:layout_width="wrap_content" android:layout_marginTop="5dp" android:id="@+id/vendor_address" android:maxLines="3"
+                    android:layout_height="75dp" android:text="Address Line 1\nLine 2\nCity- XXX XXX"/>
+
+                <com.truemdhq.projectx.views.TextViewFont1Small
+                    android:layout_width="wrap_content" android:layout_marginTop="10dp" android:id="@+id/vendor_contact" android:maxLines="3"
+                    android:layout_height="wrap_content" android:text="XXXXX-XXXXX | email@id.com" android:textColor="@color/primary_violet"/>
+
+
+            </LinearLayout>
+
+
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent" android:id="@+id/ci_detail"
+            android:layout_height="wrap_content" android:tag="sticky" android:layout_below="@+id/ci_header">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent" android:id="@+id/detail" android:visibility="invisible"
+                android:layout_height="wrap_content" android:padding="5dp" android:background="@color/window_bg" >
+                <com.truemdhq.projectx.views.TextViewFont1Large
+                    android:layout_width="wrap_content" android:id="@+id/invoice_no_h_" android:layout_centerVertical="true"
+                    android:paddingBottom="10dp" android:paddingLeft="10dp" android:paddingTop="10dp"
+                    android:layout_height="wrap_content" android:text="Invoice #" android:textColor="@color/primary_blue" />
+
+                <com.truemdhq.projectx.views.TextViewFont1Large
+                    android:layout_width="wrap_content" android:id="@+id/invoice_no_" android:layout_centerVertical="true"
+
+                    android:layout_height="wrap_content" android:text="8" android:textColor="@color/primary_blue" android:layout_toRightOf="@+id/invoice_no_h_" />
+
+                <com.truemdhq.projectx.views.TextViewFont1Medium
+                    android:layout_width="wrap_content" android:id="@+id/invoice_date_"
+                    android:layout_alignParentRight="true" android:textColor="@color/primary_violet"
+                    android:paddingRight="10dp"
+                    android:layout_height="wrap_content" android:text="29/11/2016" />
+
+                <com.truemdhq.projectx.views.TextViewFont1Medium
+                    android:layout_width="wrap_content" android:id="@+id/invoice_due_in_"
+                    android:paddingRight="10dp"
+                    android:layout_alignParentRight="true" android:textColor="@color/primary_violet"  android:layout_below="@+id/invoice_date_"
+                    android:layout_height="wrap_content" android:text="due in 30 days" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent" android:id="@+id/detail_choose"
+                android:layout_height="wrap_content" android:padding="5dp" android:background="@color/darker_bg" >
+            <com.truemdhq.projectx.views.TextViewFont3Medium
+                android:layout_width="wrap_content" android:id="@+id/invoice_no_h" android:layout_centerVertical="true"
+                android:paddingBottom="10dp" android:paddingLeft="10dp" android:paddingTop="10dp"
+                android:layout_height="wrap_content" android:text="Invoice #" android:textColor="@color/primary_violet" />
+
+            <com.truemdhq.projectx.views.TextViewFont3Medium
+                android:layout_width="wrap_content" android:id="@+id/invoice_no" android:layout_centerVertical="true"
+                android:layout_height="wrap_content"  android:text="8" android:textColor="@color/primary_violet" android:layout_toRightOf="@+id/invoice_no_h" />
+
+                <com.truemdhq.projectx.views.TextViewFont2Medium
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:text="Due Date ?" android:textColor="@color/primary_violet"
+                   android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true" />
+
+                <ImageView
+                    android:layout_width="23dp" android:layout_marginRight="0dp"
+                    android:layout_height="23dp" android:padding="0dp"
+                    android:id="@+id/btn_img_date" android:src="@drawable/ic_arrow_right_violet"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true" />
+
+
+            </RelativeLayout>
+
+
+
+
+            <View
+                android:layout_width="match_parent" android:layout_below="@+id/detail_choose"
+                android:layout_height="1dp" android:background="@color/black_20" android:id="@+id/divider2" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent" android:id="@+id/ci_items"
+            android:layout_height="wrap_content" android:layout_below="@id/ci_detail">
+
+
+            <com.truemdhq.projectx.helper.NestedListView
+                android:layout_width="match_parent" android:id="@+id/item_list"
+                android:layout_height="wrap_content" >
+
+            </com.truemdhq.projectx.helper.NestedListView>
+
+
+
+
+            <RelativeLayout
+                android:layout_width="match_parent" android:background="@color/toolbar_bg"
+                android:layout_height="30dp" android:id="@+id/no_of_items" android:layout_below="@+id/item_list">
+
+                <com.truemdhq.projectx.views.TextViewFont1Medium
+                    android:layout_width="wrap_content" android:layout_centerInParent="true"
+                    android:layout_height="wrap_content" android:text="no items selected" android:textColor="@color/primary_text_disabled_material_light"
+                    android:id="@+id/no_items_tv" />
+
+
+
+            </RelativeLayout>
+
+
+
+            <View
+                android:layout_width="match_parent" android:layout_below="@+id/no_of_items"
+                android:layout_height="1dp" android:background="@color/black_20" android:id="@+id/divider1" />
+
+
+
+            <RelativeLayout
+                android:layout_width="match_parent" android:background="@color/toolbar_bg"
+                android:layout_height="45dp" android:id="@+id/add_item" android:layout_below="@+id/divider1">
+
+                <com.truemdhq.projectx.views.TextViewFont2Medium
+                    android:layout_width="wrap_content" android:layout_centerInParent="true"
+                    android:layout_height="wrap_content" android:text="Add Item" android:textColor="@color/primary_blue"/>
+
+                <ImageView
+                    android:layout_width="22dp" android:layout_margin="10dp"
+                    android:layout_height="22dp" android:padding="3dp"
+                    android:id="@+id/add_image" android:src="@drawable/icic_add_inline"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent" android:layout_below="@+id/add_item"
+                android:layout_height="1dp" android:background="@color/black_20" />
+
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent" android:id="@+id/ci_accounts" android:paddingTop="5dp"
+            android:layout_height="wrap_content" android:layout_below="@+id/ci_items">
+
+            <LinearLayout
+                android:layout_width="match_parent" android:orientation="vertical"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="wrap_content" android:layout_marginBottom="3dp" android:orientation="horizontal"  android:id="@+id/subtotal_ll"
+                    android:layout_height="wrap_content" android:layout_gravity="right" android:layout_marginRight="15dp">
+
+                    <com.truemdhq.projectx.views.TextViewFont1Medium
+                        android:layout_width="wrap_content" android:textColor="@color/primary_text_disabled_material_light"
+                        android:layout_height="wrap_content" android:text="Subtotal" android:layout_marginRight="20dp"/>
+
+                    <com.truemdhq.projectx.views.TextViewFont1Medium
+                        android:layout_width="wrap_content" android:textColor="@color/primary_violet"
+                        android:layout_height="wrap_content"  android:id="@+id/subtotal" android:text="Rs. 0.00"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content" android:layout_marginBottom="3dp"  android:orientation="horizontal"  android:id="@+id/vat_ll"
+                    android:layout_height="wrap_content" android:layout_gravity="right" android:layout_marginRight="15dp">
+
+                    <com.truemdhq.projectx.views.TextViewFont1Medium
+                        android:layout_width="wrap_content"  android:textColor="@color/primary_text_disabled_material_light"
+                        android:layout_height="wrap_content" android:text="VAT" android:layout_marginRight="20dp"/>
+
+                    <com.truemdhq.projectx.views.TextViewFont1Medium
+                        android:layout_width="wrap_content" android:textColor="@color/primary_violet"
+                        android:layout_height="wrap_content"  android:id="@+id/vat" android:text="Rs. 0.00"/>
+
+                </LinearLayout>
+                <LinearLayout android:visibility="gone"
+                    android:layout_width="wrap_content" android:layout_marginBottom="3dp"  android:orientation="horizontal"  android:id="@+id/tax1_ll"
+                    android:layout_height="wrap_content" android:layout_gravity="right" android:layout_marginRight="15dp">
+
+                    <com.truemdhq.projectx.views.TextViewFont1Medium
+                        android:layout_width="wrap_content" android:textColor="@color/primary_text_disabled_material_light"
+                        android:layout_height="wrap_content" android:text="Tax 1" android:layout_marginRight="20dp"/>
+
+                    <com.truemdhq.projectx.views.TextViewFont1Medium
+                        android:layout_width="wrap_content" android:textColor="@color/primary_violet"
+                        android:layout_height="wrap_content"  android:id="@+id/tax1" android:text="Rs. 0.00"/>
+
+                </LinearLayout>
+                <LinearLayout android:visibility="gone"
+                    android:layout_width="wrap_content" android:layout_marginBottom="3dp"  android:orientation="horizontal"  android:id="@+id/tax2_ll"
+                    android:layout_height="wrap_content" android:layout_gravity="right" android:layout_marginRight="15dp">
+
+                    <com.truemdhq.projectx.views.TextViewFont1Medium
+                        android:layout_width="wrap_content" android:textColor="@color/primary_text_disabled_material_light"
+                        android:layout_height="wrap_content" android:text="Tax 2" android:layout_marginRight="20dp"/>
+
+                    <com.truemdhq.projectx.views.TextViewFont1Medium
+                        android:layout_width="wrap_content" android:textColor="@color/primary_violet"
+                        android:layout_height="wrap_content"  android:id="@+id/tax2" android:text="Rs. 0.00"/>
+
+                </LinearLayout>
+                <LinearLayout android:visibility="gone"
+                    android:layout_width="wrap_content" android:layout_marginBottom="3dp" android:orientation="horizontal"  android:id="@+id/shipping_ll"
+                    android:layout_height="wrap_content" android:layout_gravity="right" android:layout_marginRight="15dp">
+
+                    <com.truemdhq.projectx.views.TextViewFont1Medium
+                        android:layout_width="wrap_content" android:textColor="@color/primary_text_disabled_material_light"
+                        android:layout_height="wrap_content" android:text="Shipping" android:layout_marginRight="20dp"/>
+
+                    <com.truemdhq.projectx.views.TextViewFont1Medium
+                        android:layout_width="wrap_content" android:textColor="@color/primary_violet"
+                        android:layout_height="wrap_content" android:id="@+id/shipping" android:text="Rs. 0.00"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content" android:layout_marginBottom="3dp" android:orientation="horizontal" android:id="@+id/total_ll"
+                    android:layout_height="wrap_content" android:layout_gravity="right" android:layout_marginRight="15dp">
+
+                    <com.truemdhq.projectx.views.TextViewFont1Medium
+                        android:layout_width="wrap_content" android:textColor="@color/primary_text_disabled_material_light"
+                        android:layout_height="wrap_content" android:text="Total" android:layout_marginRight="20dp"/>
+
+                    <com.truemdhq.projectx.views.TextViewFont1Medium
+                        android:layout_width="wrap_content" android:textColor="@color/primary_violet"
+                        android:layout_height="wrap_content"  android:id="@+id/total" android:text="Rs. 0.00"/>
+
+                </LinearLayout>
+                <LinearLayout android:visibility="gone"
+                    android:layout_width="wrap_content" android:layout_marginBottom="3dp" android:orientation="horizontal"  android:id="@+id/previously_paid_ll"
+                    android:layout_height="wrap_content"  android:layout_gravity="right" android:layout_marginRight="15dp">
+
+                    <com.truemdhq.projectx.views.TextViewFont1Medium
+                        android:layout_width="wrap_content" android:textColor="@color/primary_text_disabled_material_light"
+                        android:layout_height="wrap_content" android:text="Previously Paid" android:layout_marginRight="20dp"/>
+
+                    <com.truemdhq.projectx.views.TextViewFont1Medium
+                        android:layout_width="wrap_content" android:textColor="@color/primary_violet"
+                        android:layout_height="wrap_content" android:id="@+id/previously_paid" android:text="Rs. 0.00"/>
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent" android:id="@+id/ci_balance_due"
+                android:layout_height="wrap_content" android:layout_below="@+id/ci_accounts">
+
+                <com.truemdhq.projectx.views.TextViewFont3Medium
+                    android:layout_width="wrap_content" android:id="@+id/balance_due_h" android:layout_centerVertical="true"
+                    android:paddingBottom="10dp" android:paddingLeft="15dp" android:paddingTop="10dp"
+                    android:layout_height="wrap_content" android:text="Balance Due" android:textColor="@color/primary_blue" />
+
+                <com.truemdhq.projectx.views.TextViewFont2Large
+                    android:layout_width="wrap_content" android:id="@+id/balance_due" android:layout_centerVertical="true" android:layout_marginRight="15dp"
+                    android:paddingBottom="10dp" android:paddingLeft="10dp" android:paddingTop="10dp" android:layout_alignParentRight="true"
+                    android:layout_height="wrap_content" android:text="Rs. 0.00" android:textColor="@color/primary_green" />
+
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+    </com.emilsjolander.components.StickyScrollViewItems.StickyScrollView>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent" android:background="@color/primary_blue"
+        android:layout_height="55dp" android:id="@+id/btn_bottom" android:layout_alignParentBottom="true" >
+
+        <com.truemdhq.projectx.views.TextViewFont2Medium
+            android:layout_width="wrap_content" android:layout_centerInParent="true"
+            android:layout_height="wrap_content" android:text="Confirm" android:textColor="@color/white"/>
+
+        <ImageView
+            android:layout_width="22dp" android:layout_margin="10dp"
+            android:layout_height="22dp" android:padding="4dp"
+            android:id="@+id/btn_img" android:src="@drawable/ic_arrow_right_white"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
