@@ -19,10 +19,10 @@ import java.net.URLConnection;
 import com.truemdhq.projectx.activity.ForgetPwdActivity;
 import com.truemdhq.projectx.activity.MainActivity;
 import com.truemdhq.projectx.activity.PreLoginActivity;
-import com.truemdhq.projectx.activity.SignupActivity;
 import com.truemdhq.projectx.app.ConfigOTP;
 import com.truemdhq.projectx.helper.SessionManager;
 import com.truemdhq.projectx.model.UserObject;
+
 import io.paperdb.Paper;
 //import info.androidhive.materialdesign.app.MyApplication;
 

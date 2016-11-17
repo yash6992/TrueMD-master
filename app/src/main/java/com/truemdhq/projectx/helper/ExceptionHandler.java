@@ -5,7 +5,6 @@ package com.truemdhq.projectx.helper;
  */
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Build;
 
 import java.io.PrintWriter;
@@ -13,7 +12,6 @@ import java.io.StringWriter;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
 import com.truemdhq.projectx.activity.AppController;
-import com.truemdhq.projectx.activity.OrderMedicineActivity;
 
 
 public class ExceptionHandler implements

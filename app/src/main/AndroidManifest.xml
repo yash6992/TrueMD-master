@@ -74,21 +74,16 @@
             android:theme="@style/MyMaterialTheme"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name="com.truemdhq.projectx.activity.SearchActivity"
-            android:launchMode="singleTop"
-            android:screenOrientation="portrait"
-            android:theme="@style/MyMaterialTheme" />
-        <activity
-            android:name="com.truemdhq.projectx.activity.MedicineDetailsActivity2"
-            android:launchMode="singleTop"
-            android:screenOrientation="portrait"
-            android:theme="@style/MyMaterialTheme" />
-        <activity
             android:name="com.truemdhq.projectx.activity.SmsActivity"
             android:screenOrientation="portrait"
             android:theme="@style/MyMaterialTheme" />
         <activity
             android:name="com.truemdhq.projectx.activity.ChooseClientActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+        <activity
+            android:name="com.truemdhq.projectx.activity.ChooseInvoiceItemActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:theme="@style/MyMaterialTheme" />
@@ -113,56 +108,6 @@
             android:screenOrientation="portrait"
             android:theme="@style/MyMaterialTheme" />
         <activity
-            android:name="com.truemdhq.projectx.activity.OrderMedicineActivity"
-            android:launchMode="singleTop"
-            android:screenOrientation="portrait"
-            android:theme="@style/MyMaterialTheme" />
-        <activity
-            android:name="com.truemdhq.projectx.activity.ThankYouForOrderActivity"
-            android:launchMode="singleTop"
-            android:screenOrientation="portrait"
-            android:theme="@style/MyMaterialTheme" />
-        <activity
-            android:name="com.truemdhq.projectx.activity.ConfirmOrderActivity"
-            android:launchMode="singleTop"
-            android:screenOrientation="portrait"
-            android:theme="@style/MyMaterialTheme" />
-        <activity
-            android:name="com.truemdhq.projectx.activity.AddAddressActivity"
-            android:launchMode="singleTop"
-            android:screenOrientation="portrait"
-            android:theme="@style/MyMaterialTheme" />
-        <activity
-            android:name="com.truemdhq.projectx.activity.RefillAddAddressActivity"
-            android:launchMode="singleTop"
-            android:screenOrientation="portrait"
-            android:theme="@style/MyMaterialTheme" />
-        <activity
-            android:name="com.truemdhq.projectx.activity.OrderDetailsActivity"
-            android:launchMode="singleTop"
-            android:screenOrientation="portrait"
-            android:theme="@style/MyMaterialTheme" />
-        <activity
-            android:name="com.truemdhq.projectx.activity.PreviousOrderActivity"
-            android:launchMode="singleTop"
-            android:screenOrientation="portrait"
-            android:theme="@style/MyMaterialTheme" />
-        <activity
-            android:name="com.truemdhq.projectx.activity.UpcomingOrderActivity"
-            android:launchMode="singleTop"
-            android:screenOrientation="portrait"
-            android:theme="@style/MyMaterialTheme" />
-        <activity
-            android:name="com.truemdhq.projectx.activity.HowToConfirmOrerActivity"
-            android:launchMode="singleTop"
-            android:screenOrientation="portrait"
-            android:theme="@style/MyMaterialTheme" />
-        <activity
-            android:name="com.truemdhq.projectx.activity.PrescriptionDetailsActivity"
-            android:launchMode="singleTop"
-            android:screenOrientation="portrait"
-            android:theme="@style/MyMaterialTheme" />
-        <activity
             android:name="com.truemdhq.projectx.activity.ClientListActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
@@ -173,22 +118,12 @@
             android:screenOrientation="portrait"
             android:theme="@style/MyMaterialTheme" />
         <activity
+            android:name="com.truemdhq.projectx.activity.ChooseInvoiceDateActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+        <activity
             android:name="com.truemdhq.projectx.activity.AddClientActivity"
-            android:launchMode="singleTop"
-            android:screenOrientation="portrait"
-            android:theme="@style/MyMaterialTheme" />
-        <activity
-            android:name="com.truemdhq.projectx.activity.ReminderActivity"
-            android:launchMode="singleTop"
-            android:screenOrientation="portrait"
-            android:theme="@style/MyMaterialTheme" />
-        <activity
-            android:name="com.truemdhq.projectx.activity.ReminderAlarmActivity"
-            android:launchMode="singleTop"
-            android:screenOrientation="portrait"
-            android:theme="@style/MyMaterialTheme" />
-        <activity
-            android:name="com.truemdhq.projectx.activity.AllNotificationActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:theme="@style/MyMaterialTheme" />
@@ -233,21 +168,6 @@
             </intent-filter>
         </service>
 
-        <activity
-            android:name="com.truemdhq.projectx.activity.RefillOrderActivity"
-            android:launchMode="singleTop"
-            android:screenOrientation="portrait"
-            android:theme="@style/MyMaterialTheme" />
-        <activity
-            android:name="com.truemdhq.projectx.activity.OfferDisplayActivity"
-            android:launchMode="singleTop"
-            android:screenOrientation="portrait"
-            android:theme="@style/MyMaterialTheme" />
-        <activity
-            android:name="com.truemdhq.projectx.activity.FAQsQuestionActivity"
-            android:launchMode="singleTop"
-            android:screenOrientation="portrait"
-            android:theme="@style/MyMaterialTheme" />
         <activity
             android:name="com.truemdhq.projectx.activity.PreLoginActivity"
             android:launchMode="singleTop"

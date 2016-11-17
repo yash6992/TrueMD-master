@@ -167,8 +167,10 @@ public class InvoiceActivity extends AppCompatActivity {
         invoice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                mBottomSheetDialog1.dismiss();
+                Hawk.put("invoiceDraft", "{}");
                 Intent nextActivity = new Intent(InvoiceActivity.this, InvoiceCreateActivity.class);
-                startActivity(nextActivity);
+                startActivityForResult(nextActivity,0);
                 //push from bottom to top
                 //overridePendingTransition(R.anim.push_up_in, R.anim.push_up_out);
                 //slide from right to left
@@ -178,8 +180,10 @@ public class InvoiceActivity extends AppCompatActivity {
         quote.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                mBottomSheetDialog1.dismiss();
+                Hawk.put("invoiceDraft", "{}");
                 Intent nextActivity = new Intent(InvoiceActivity.this, InvoiceCreateActivity.class);
-                startActivity(nextActivity);
+                startActivityForResult(nextActivity,0);
                 //push from bottom to top
                 //overridePendingTransition(R.anim.push_up_in, R.anim.push_up_out);
                 //slide from right to left
@@ -189,8 +193,10 @@ public class InvoiceActivity extends AppCompatActivity {
         creditMemo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                mBottomSheetDialog1.dismiss();
+                Hawk.put("invoiceDraft", "{}");
                 Intent nextActivity = new Intent(InvoiceActivity.this, InvoiceCreateActivity.class);
-                startActivity(nextActivity);
+                startActivityForResult(nextActivity,0);
                 //push from bottom to top
                 //overridePendingTransition(R.anim.push_up_in, R.anim.push_up_out);
                 //slide from right to left

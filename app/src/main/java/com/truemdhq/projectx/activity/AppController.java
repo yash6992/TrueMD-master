@@ -66,6 +66,15 @@ public class AppController extends MultiDexApplication {
 
         String baseUrl = "";
 
+        if (Hawk.contains("invoiceDraft"))
+        {}
+        else{
+
+            JSONObject invoiceJSONObject = new JSONObject();
+            Hawk.put("invoiceDraft", invoiceJSONObject.toString());
+
+        }
+
         if(Hawk.contains("invoiceList"))
         {}
         else

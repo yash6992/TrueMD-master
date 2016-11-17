@@ -1,23 +1,23 @@
 [
     {
-        "merged": "/Users/yashvardhansrivastava/Desktop/Android Code/ProjectX-master/circlerefresh/build/intermediates/res/merged/androidTest/debug/layout/abc_activity_chooser_view_list_item.xml",
-        "source": "/Users/yashvardhansrivastava/Desktop/Android Code/ProjectX-master/circlerefresh/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.1/res/layout/abc_activity_chooser_view_list_item.xml"
-    },
-    {
         "merged": "/Users/yashvardhansrivastava/Desktop/Android Code/ProjectX-master/circlerefresh/build/intermediates/res/merged/androidTest/debug/layout/abc_list_menu_item_checkbox.xml",
         "source": "/Users/yashvardhansrivastava/Desktop/Android Code/ProjectX-master/circlerefresh/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.1/res/layout/abc_list_menu_item_checkbox.xml"
+    },
+    {
+        "merged": "/Users/yashvardhansrivastava/Desktop/Android Code/ProjectX-master/circlerefresh/build/intermediates/res/merged/androidTest/debug/layout/abc_activity_chooser_view_list_item.xml",
+        "source": "/Users/yashvardhansrivastava/Desktop/Android Code/ProjectX-master/circlerefresh/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.1/res/layout/abc_activity_chooser_view_list_item.xml"
     },
     {
         "merged": "/Users/yashvardhansrivastava/Desktop/Android Code/ProjectX-master/circlerefresh/build/intermediates/res/merged/androidTest/debug/layout/support_simple_spinner_dropdown_item.xml",
         "source": "/Users/yashvardhansrivastava/Desktop/Android Code/ProjectX-master/circlerefresh/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.1/res/layout/support_simple_spinner_dropdown_item.xml"
     },
     {
-        "merged": "/Users/yashvardhansrivastava/Desktop/Android Code/ProjectX-master/circlerefresh/build/intermediates/res/merged/androidTest/debug/layout/abc_select_dialog_material.xml",
-        "source": "/Users/yashvardhansrivastava/Desktop/Android Code/ProjectX-master/circlerefresh/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.1/res/layout/abc_select_dialog_material.xml"
-    },
-    {
         "merged": "/Users/yashvardhansrivastava/Desktop/Android Code/ProjectX-master/circlerefresh/build/intermediates/res/merged/androidTest/debug/layout/abc_action_menu_layout.xml",
         "source": "/Users/yashvardhansrivastava/Desktop/Android Code/ProjectX-master/circlerefresh/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.1/res/layout/abc_action_menu_layout.xml"
+    },
+    {
+        "merged": "/Users/yashvardhansrivastava/Desktop/Android Code/ProjectX-master/circlerefresh/build/intermediates/res/merged/androidTest/debug/layout/abc_select_dialog_material.xml",
+        "source": "/Users/yashvardhansrivastava/Desktop/Android Code/ProjectX-master/circlerefresh/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.1/res/layout/abc_select_dialog_material.xml"
     },
     {
         "merged": "/Users/yashvardhansrivastava/Desktop/Android Code/ProjectX-master/circlerefresh/build/intermediates/res/merged/androidTest/debug/layout/abc_popup_menu_item_layout.xml",
@@ -80,12 +80,12 @@
         "source": "/Users/yashvardhansrivastava/Desktop/Android Code/ProjectX-master/circlerefresh/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.1/res/layout/abc_search_view.xml"
     },
     {
-        "merged": "/Users/yashvardhansrivastava/Desktop/Android Code/ProjectX-master/circlerefresh/build/intermediates/res/merged/androidTest/debug/layout/abc_simple_dropdown_hint.xml",
-        "source": "/Users/yashvardhansrivastava/Desktop/Android Code/ProjectX-master/circlerefresh/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.1/res/layout/abc_simple_dropdown_hint.xml"
-    },
-    {
         "merged": "/Users/yashvardhansrivastava/Desktop/Android Code/ProjectX-master/circlerefresh/build/intermediates/res/merged/androidTest/debug/layout/abc_action_bar_view_list_nav_layout.xml",
         "source": "/Users/yashvardhansrivastava/Desktop/Android Code/ProjectX-master/circlerefresh/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.1/res/layout/abc_action_bar_view_list_nav_layout.xml"
+    },
+    {
+        "merged": "/Users/yashvardhansrivastava/Desktop/Android Code/ProjectX-master/circlerefresh/build/intermediates/res/merged/androidTest/debug/layout/abc_simple_dropdown_hint.xml",
+        "source": "/Users/yashvardhansrivastava/Desktop/Android Code/ProjectX-master/circlerefresh/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.1/res/layout/abc_simple_dropdown_hint.xml"
     },
     {
         "merged": "/Users/yashvardhansrivastava/Desktop/Android Code/ProjectX-master/circlerefresh/build/intermediates/res/merged/androidTest/debug/layout/abc_dialog_title_material.xml",

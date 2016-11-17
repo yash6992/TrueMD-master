@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.truemdhq.projectx.R;
+import com.truemdhq.projectx.activity.InvoiceCreateActivity;
 import com.truemdhq.projectx.activity.InvoiceViewActivity;
 import com.truemdhq.projectx.model.Item;
 import com.truemdhq.projectx.views.TextViewFont2Medium;
@@ -63,17 +64,35 @@ public class CustomInvoiceItemListAdapter extends BaseAdapter {
         TextView itemBarcode;
         TextViewFont2Medium itemAmount;
 
-
-
         ImageView productOrService;
+
+        Holder (View rowView){
+            itemName = (TextView) rowView.findViewById(R.id.item_name);
+            itemBarcode = (TextView) rowView.findViewById(R.id.item_barcode);
+            itemAmount = (TextViewFont2Medium) rowView.findViewById(R.id.item_amount);
+            productOrService = (ImageView) rowView.findViewById(R.id.product_or_service);
+
+        }
     }
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
         // TODO Auto-generated method stub
-        Holder holder=new Holder();
-        View rowView = inflater.inflate(R.layout.list_item_search_null, null);
-
          Item item = (Item) result1.get(position);
+
+        View rowView = convertView;
+
+        Holder holder = null;
+
+        if(rowView==null)
+        {
+            rowView = inflater.inflate(R.layout.list_item_invoice_item_projectx,parent, false);
+            holder = new Holder(rowView);
+            rowView.setTag(holder);
+        }
+        else{
+            holder = (Holder) rowView.getTag();
+        }
+
 
 
 
@@ -85,17 +104,6 @@ public class CustomInvoiceItemListAdapter extends BaseAdapter {
 
             try {
                 if (p1.getItemName().length() < 0 )
-                    rowView = inflater.inflate(R.layout.list_item_search_null, null);
-                else {
-                    rowView = inflater.inflate(R.layout.list_item_invoice_item_projectx, null);
-
-
-                    holder.itemName = (TextView) rowView.findViewById(R.id.item_name);
-                    holder.itemBarcode = (TextView) rowView.findViewById(R.id.item_barcode);
-                    holder.itemAmount = (TextViewFont2Medium) rowView.findViewById(R.id.item_amount);
-                    holder.productOrService = (ImageView) rowView.findViewById(R.id.product_or_service);
-
-
 
                     holder.itemAmount.setText(p1.getItemAmount(),2);
                     holder.itemBarcode.setText("ISBN"+p1.getItemBarcode());
@@ -107,20 +115,10 @@ public class CustomInvoiceItemListAdapter extends BaseAdapter {
                         @Override
                         public void onClick(View v) {
 
-                            Activity activity = (Activity) context;
-
-                            Intent nextActivity = new Intent(context, InvoiceViewActivity.class);
-                            nextActivity.putExtra("item", position);
-                            //activity.startActivity(nextActivity);
-                            //push from bottom to top
-                            //overridePendingTransition(R.anim.push_up_in, R.anim.push_up_out);
-                            //slide from right to left
-                            //activity.overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-
-
+                           //bottom sheet for editing particular item
                         }
                     });
-                }
+
             } catch (Exception e) {
                 e.printStackTrace();
                 //rowView = inflater.inflate(R.layout.list_item_address_bottom_sheet, null);
@@ -135,16 +133,6 @@ public class CustomInvoiceItemListAdapter extends BaseAdapter {
              Item s1 =  item;
             Log.e("InvoiceItem: ","item: "+s1.getItemName());
             try {
-                if (s1.getItemName().length() < 0 )
-                    rowView = inflater.inflate(R.layout.list_item_search_null, null);
-                else {
-                    rowView = inflater.inflate(R.layout.list_item_invoice_item_projectx, null);
-
-
-                    holder.itemName = (TextView) rowView.findViewById(R.id.item_name);
-                    holder.itemBarcode = (TextView) rowView.findViewById(R.id.item_barcode);
-                    holder.itemAmount = (TextViewFont2Medium) rowView.findViewById(R.id.item_amount);
-                    holder.productOrService = (ImageView) rowView.findViewById(R.id.product_or_service);
 
                     holder.itemAmount.setText(s1.getItemAmount(),2);
                     holder.itemBarcode.setText("ISBN"+s1.getItemBarcode());
@@ -158,20 +146,12 @@ public class CustomInvoiceItemListAdapter extends BaseAdapter {
                         @Override
                         public void onClick(View v) {
 
-                            Activity activity = (Activity) context;
-
-                            Intent nextActivity = new Intent(context, InvoiceViewActivity.class);
-                            nextActivity.putExtra("item", position);
-                           // activity.startActivity(nextActivity);
-                            //push from bottom to top
-                            //overridePendingTransition(R.anim.push_up_in, R.anim.push_up_out);
-                            //slide from right to left
-                            //activity.overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                            //bottom sheet for editing particular item
 
 
                         }
                     });
-                }
+
             } catch (Exception e) {
                 e.printStackTrace();
                 //rowView = inflater.inflate(R.layout.list_item_address_bottom_sheet, null);

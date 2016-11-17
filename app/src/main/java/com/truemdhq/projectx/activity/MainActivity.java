@@ -357,7 +357,8 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
 
 
     public void displayView(int position) {
-        Fragment fragment = null;
+        Fragment fragment = new HomeFragment();
+
         String title="ProjectX";// = getString(R.string.app_name);
         switch (position) {
             case 0:
@@ -374,28 +375,28 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
                 break;
             case 2:
                 Paper.book("nav").write("selected","2");
-                Intent goToOrderDetails = new Intent(MainActivity.this, OrderDetailsActivity.class);
+                Intent goToOrderDetails = new Intent(MainActivity.this, ClientListActivity.class);
                 goToOrderDetails.putExtra("to",0);
                 startActivity(goToOrderDetails);
                 break;
             case 3:
                 Paper.book("nav").write("selected","3");
-                fragment = new ProjectXSiriFragment();
+                //fragment = new ProjectXSiriFragment();
                 position_Main=3;
                 break;
             case 4:
                 Paper.book("nav").write("selected","4");
-                fragment = new InviteFriendsFragment();
+                //fragment = new InviteFriendsFragment();
                 position_Main=4;
                 break;
             case 5:
                 Paper.book("nav").write("selected","5");
-                fragment = new HelpFragment();
+                //fragment = new HelpFragment();
                 position_Main=5;
                 break;
             case 6:
                 Paper.book("nav").write("selected","6");
-                fragment = new AboutUsFragment();
+                //fragment = new AboutUsFragment();
                 position_Main=6;
                 break;
             case 7:
@@ -451,7 +452,7 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
 
                 if(fromMedicineDetailsChat) {
                     fromMedicineDetailsChat = false;
-                    Intent intent_main = new Intent(getApplicationContext(), MedicineDetailsActivity2.class);
+                    Intent intent_main = new Intent(getApplicationContext(), MainActivity.class);
                     intent_main.putExtra("truemdCode",chatInitializerProjectXCode+":"+chatInitializerProjectXName);
                     intent_main.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     getApplicationContext().startActivity(intent_main);

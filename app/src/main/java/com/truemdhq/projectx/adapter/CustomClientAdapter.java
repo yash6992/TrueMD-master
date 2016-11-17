@@ -12,12 +12,17 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.orhanobut.hawk.Hawk;
 import com.truemdhq.projectx.R;
 import com.truemdhq.projectx.activity.ChooseClientActivity;
 import com.truemdhq.projectx.activity.ClientListActivity;
+import com.truemdhq.projectx.activity.InvoiceCreateActivity;
 import com.truemdhq.projectx.activity.InvoiceViewActivity;
 import com.truemdhq.projectx.activity.UpdateClientActivity;
 import com.truemdhq.projectx.model.Client;
+import com.truemdhq.projectx.model.Invoice;
 import com.truemdhq.projectx.model.Item;
 import com.truemdhq.projectx.views.TextViewFont2Medium;
 import com.truemdhq.projectx.views.TextViewFont3Large;
@@ -30,12 +35,25 @@ import java.util.List;
 public class CustomClientAdapter extends BaseAdapter {
 
     List<Client> result1;
+    Invoice invoiceDraft;
     Context context;
     //int [] imageId;
     private static LayoutInflater inflater=null;
     public CustomClientAdapter(Context c1, List<Client> prgmNameList) {
         // TODO Auto-generated constructor stub
         result1=prgmNameList;
+
+        try{
+
+            ObjectMapper objectMapper = new ObjectMapper();
+            invoiceDraft = objectMapper.readValue(Hawk.get("invoiceDraft").toString(), Invoice.class);
+
+
+        }
+        catch (Exception e){
+            Log.e("DateError: ",""+e.getMessage());
+        }
+
 
         context=c1;
         //imageId=prgmImages;
@@ -70,35 +88,42 @@ public class CustomClientAdapter extends BaseAdapter {
         TextViewFont3Large vendorAmount;
 
         LinearLayout edit;
+
+        Holder(View rowView){
+            vendorName = (TextView) rowView.findViewById(R.id.invoice_no_h);
+            vendorEmail = (TextView) rowView.findViewById(R.id.vendor_name);
+            vendorAmount = (TextViewFont3Large) rowView.findViewById(R.id.balance_due);
+            edit = (LinearLayout) rowView.findViewById(R.id.edit);
+
+        }
     }
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
         // TODO Auto-generated method stub
-        Holder holder=new Holder();
-        View rowView = inflater.inflate(R.layout.list_item_search_null, null);
+        View rowView = convertView;
 
-        Client client = (Client) result1.get(position);
+        Holder holder = null;
+
+        if(rowView==null)
+        {
+            rowView = inflater.inflate(R.layout.list_item_client_projectx,parent, false);
+            holder = new Holder(rowView);
+            rowView.setTag(holder);
+        }
+        else{
+            holder = (Holder) rowView.getTag();
+        }
+
+        final Client client = (Client) result1.get(position);
 
 
 
-            Log.e("InvoiceItem: ","item: "+client.getVendorName());
+            Log.e("InvoiceItem: ","item: " + client.getVendorName());
 
             try {
-                if (client.getVendorName().length() < 0 )
-                    rowView = inflater.inflate(R.layout.list_item_search_null, null);
-                else {
-                    rowView = inflater.inflate(R.layout.list_item_client_projectx, null);
-
-
-                    holder.vendorName = (TextView) rowView.findViewById(R.id.invoice_no_h);
-                    holder.vendorEmail = (TextView) rowView.findViewById(R.id.vendor_name);
-                    holder.vendorAmount = (TextViewFont3Large) rowView.findViewById(R.id.balance_due);
-                    holder.edit = (LinearLayout) rowView.findViewById(R.id.edit);
 
                     holder.vendorName.setText(client.getVendorName());
                     holder.vendorEmail.setText(client.getVendorEmail());
-
-
 
                     // holder.img.setImageResource(imageId[position]);
                     rowView.setOnClickListener(new View.OnClickListener() {
@@ -107,10 +132,13 @@ public class CustomClientAdapter extends BaseAdapter {
 
                             Activity activity = (Activity) context;
 
-                            if(activity.equals(ClientListActivity.class))
+                            Log.e("ClientAdapter: ","rowClick: "+activity.getLocalClassName());
+
+                            if(activity.getLocalClassName().equals("activity.ClientListActivity"))
                             {
-                                Intent nextActivity = new Intent(context, InvoiceViewActivity.class);
-                                nextActivity.putExtra("item", position);
+                                Log.e("ClientAdapter: ","ClientListActivity");
+                                //Intent nextActivity = new Intent(context, ClientViewActivity.class);
+                                //nextActivity.putExtra("item", position);
                                 //activity.startActivity(nextActivity);
                                 //push from bottom to top
                                 //overridePendingTransition(R.anim.push_up_in, R.anim.push_up_out);
@@ -118,15 +146,28 @@ public class CustomClientAdapter extends BaseAdapter {
                                 //activity.overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
 
                             }
-                            else if(activity.equals(ChooseClientActivity.class))
+                            else if(activity.getLocalClassName().equals("activity.ChooseClientActivity"))
                             {
-                                Intent nextActivity = new Intent(context, InvoiceViewActivity.class);
-                                nextActivity.putExtra("item", position);
-                                //activity.startActivity(nextActivity);
+                                Log.e("ClientAdapter: ","ChooseClientActivity");
+
+                                try {
+                                    ObjectMapper mapper = new ObjectMapper();
+                                    invoiceDraft.setClient(client);
+                                    String jsonInvoiceDraft = mapper.writeValueAsString(invoiceDraft);
+                                    Hawk.put("invoiceDraft",jsonInvoiceDraft);
+                                } catch (JsonProcessingException e) {
+                                    e.printStackTrace();
+                                }
+
+
+                                Intent nextActivity = new Intent(context, InvoiceCreateActivity.class);
+                                nextActivity.putExtra("clientPosition", position);
+                                activity.startActivityForResult(nextActivity, 1);
                                 //push from bottom to top
                                 //overridePendingTransition(R.anim.push_up_in, R.anim.push_up_out);
                                 //slide from right to left
-                                //activity.overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                                activity.overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+                                activity.finish();
 
                             }
 
@@ -141,10 +182,13 @@ public class CustomClientAdapter extends BaseAdapter {
 
                             Activity activity = (Activity) context;
 
-                            if(activity.equals(ClientListActivity.class))
+                            Log.e("ClientAdapter: ","editClick: "+activity.getLocalClassName());
+
+                            if(activity.getLocalClassName().equals("activity.ClientListActivity"))
                             {
+                                Log.e("ClientAdapter: ","ClientListActivity");
                                 Intent nextActivity = new Intent(context, UpdateClientActivity.class);
-                                nextActivity.putExtra("item", position);
+                                nextActivity.putExtra("clientPosition", position);
                                 //activity.startActivity(nextActivity);
                                 //push from bottom to top
                                 //overridePendingTransition(R.anim.push_up_in, R.anim.push_up_out);
@@ -152,22 +196,15 @@ public class CustomClientAdapter extends BaseAdapter {
                                 activity.overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
 
                             }
-                            else if(activity.equals(ChooseClientActivity.class))
+                            else if(activity.getLocalClassName().equals("activity.ChooseClientActivity"))
                             {
-                                Intent nextActivity = new Intent(context, InvoiceViewActivity.class);
-                                nextActivity.putExtra("item", position);
-                                //activity.startActivity(nextActivity);
-                                //push from bottom to top
-                                //overridePendingTransition(R.anim.push_up_in, R.anim.push_up_out);
-                                //slide from right to left
-                                //activity.overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-
+                                //openBottomSheet for editing customer
                             }
 
                         }
                     });
 
-                }
+
             } catch (Exception e) {
                 e.printStackTrace();
                 //rowView = inflater.inflate(R.layout.list_item_address_bottom_sheet, null);

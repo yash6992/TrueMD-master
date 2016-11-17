@@ -21,6 +21,7 @@ import com.truemdhq.projectx.R;
 import com.truemdhq.projectx.adapter.CustomClientAdapter;
 import com.truemdhq.projectx.adapter.CustomInvoiceListAdapter;
 import com.truemdhq.projectx.model.Client;
+import com.truemdhq.projectx.model.Invoice;
 import com.truemdhq.projectx.views.EditTextProjectX;
 import com.tuesda.walker.circlerefresh.CircleRefreshLayout;
 
@@ -64,6 +65,8 @@ public class ChooseClientActivity extends AppCompatActivity {
     Dialog mBottomSheetDialog1;
     JSONArray clientJSONArray;
 
+    Invoice invoiceDraft;
+
     EditTextProjectX name, address, phoneNo, email, tax; RelativeLayout confirm;
 
 
@@ -96,6 +99,18 @@ public class ChooseClientActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
+        try{
+
+            ObjectMapper objectMapper = new ObjectMapper();
+            invoiceDraft = objectMapper.readValue(Hawk.get("invoiceDraft").toString(), Invoice.class);
+
+
+        }
+        catch (Exception e){
+            Log.e("DateError: ",""+e.getMessage());
+        }
+
+
         Log.e("ClientList: ",""+clients.size());
 
         mClientListView.setAdapter(new CustomClientAdapter(ChooseClientActivity.this, clients ));
@@ -119,7 +134,8 @@ public class ChooseClientActivity extends AppCompatActivity {
     }
     @Override
     public void onBackPressed(){
-        finish();
+        Intent newIntent = new Intent(ChooseClientActivity.this, InvoiceCreateActivity.class);
+        startActivity(newIntent);
         //push from top to bottom
         //overridePendingTransition(R.anim.push_down_in, R.anim.push_down_out);
         //slide from left to right
@@ -249,6 +265,11 @@ public class ChooseClientActivity extends AppCompatActivity {
             ObjectMapper mapper = new ObjectMapper();
 
             try {
+
+                invoiceDraft.setClient(newClient);
+                String jsonInvoiceDraft = mapper.writeValueAsString(invoiceDraft);
+                Hawk.put("invoiceDraft",jsonInvoiceDraft);
+
                 String jsonClient1 = mapper.writeValueAsString(newClient);
                 JSONObject clientJSONObject1 = new JSONObject(jsonClient1);
 
@@ -257,13 +278,13 @@ public class ChooseClientActivity extends AppCompatActivity {
                 Hawk.put("clientList", clientJSONArray.toString());
 
                 Intent newIntent = new Intent(ChooseClientActivity.this, InvoiceCreateActivity.class);
-                startActivity(newIntent);
+                startActivityForResult(newIntent,1);
                 //push from top to bottom
                 //overridePendingTransition(R.anim.push_down_in, R.anim.push_down_out);
                 //slide from left to right
-                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
 
-                ChooseClientActivity.this.finishAffinity();
+                ChooseClientActivity.this.finish();
 
 
 

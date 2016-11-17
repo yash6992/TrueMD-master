@@ -18,8 +18,6 @@ import java.util.Random;
 
 import com.truemdhq.projectx.R;
 import com.truemdhq.projectx.activity.MainActivity;
-import com.truemdhq.projectx.activity.ReminderActivity;
-import com.truemdhq.projectx.activity.ReminderAlarmActivity;
 import io.paperdb.Paper;
 
 /**
@@ -62,7 +60,7 @@ public class AlarmReceiver extends BroadcastReceiver
 
 
 
-        Intent intent3 = new Intent(context, ReminderAlarmActivity.class);
+        Intent intent3 = new Intent(context, MainActivity.class);
         intent3.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent3);
         PendingIntent pIntent3 = PendingIntent.getActivity(context, Integer.parseInt(id), intent3, PendingIntent.FLAG_UPDATE_CURRENT);

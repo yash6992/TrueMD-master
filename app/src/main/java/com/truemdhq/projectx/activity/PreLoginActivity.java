@@ -30,7 +30,6 @@ import java.util.HashMap;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
 import com.truemdhq.projectx.R;
-import com.truemdhq.projectx.adapter.CustomAndroidGridViewAdapter;
 import com.truemdhq.projectx.helper.SessionManager;
 import io.paperdb.Paper;
 

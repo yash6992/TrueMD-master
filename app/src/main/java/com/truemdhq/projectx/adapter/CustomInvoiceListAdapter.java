@@ -3,32 +3,19 @@ package com.truemdhq.projectx.adapter;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Typeface;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.bignerdranch.expandablerecyclerview.Model.ParentListItem;
 import com.truemdhq.projectx.R;
-import com.truemdhq.projectx.activity.ConfirmOrderActivity;
 import com.truemdhq.projectx.activity.InvoiceViewActivity;
-import com.truemdhq.projectx.activity.MedicineDetailsActivity2;
-import com.truemdhq.projectx.activity.OrderMedicineActivity;
 import com.truemdhq.projectx.model.Invoice;
-import com.truemdhq.projectx.model.InvoiceChild;
-import com.truemdhq.projectx.model.InvoiceParent;
 import com.truemdhq.projectx.views.TextViewFont3Large;
 
-import java.util.ArrayList;
 import java.util.List;
-
-import butterknife.BindView;
-import butterknife.ButterKnife;
 
 /**
  * Created by yashvardhansrivastava on 23/04/16.
@@ -78,37 +65,46 @@ public class CustomInvoiceListAdapter extends BaseAdapter {
          TextViewFont3Large balanceDue;
 
         ImageView statusImage;
+
+       public Holder (View v){
+
+           invoiceNo = (TextView) v.findViewById(R.id.invoice_no);
+           invoiceDate = (TextView) v.findViewById(R.id.invoice_date);
+           vendorName = (TextView) v.findViewById(R.id.vendor_name);
+           dueDate = (TextView) v.findViewById(R.id.due_date);
+           status = (TextView) v.findViewById(R.id.status_text);
+           balanceDue = (TextViewFont3Large) v.findViewById(R.id.balance_due);
+           statusImage = (ImageView) v.findViewById(R.id.status_img);
+
+
+       }
     }
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
         // TODO Auto-generated method stub
-        Holder holder=new Holder();
+        //Holder holder=new Holder();
 
         final Invoice invoiceParent =result1.get(position);
 
-        View rowView = inflater.inflate(R.layout.list_item_search_null, null);
+        View rowView = convertView;
+
+        Holder holder = null;
+
+        if(rowView==null)
+        {
+            rowView = inflater.inflate(R.layout.list_item_invoice,parent, false);
+            holder = new Holder(rowView);
+            rowView.setTag(holder);
+        }
+        else{
+            holder = (Holder) rowView.getTag();
+        }
+
+
 
 
         try {
-            if (invoiceParent.getClient().getVendorName().length() < 0)
-                rowView = inflater.inflate(R.layout.list_item_search_null, null);
-            else {
-                rowView = inflater.inflate(R.layout.list_item_invoice, null);
 
-
-                holder.invoiceNo = (TextView) rowView.findViewById(R.id.invoice_no);
-                holder.invoiceDate = (TextView) rowView.findViewById(R.id.invoice_date);
-                holder.vendorName = (TextView) rowView.findViewById(R.id.vendor_name);
-                holder.dueDate = (TextView) rowView.findViewById(R.id.due_date);
-                holder.status = (TextView) rowView.findViewById(R.id.status_text);
-                holder.balanceDue = (TextViewFont3Large) rowView.findViewById(R.id.balance_due);
-
-                holder.statusImage = (ImageView) rowView.findViewById(R.id.status_img);
-
-
-
-
-                // holder.img.setImageResource(imageId[position]);
                 rowView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -126,7 +122,7 @@ public class CustomInvoiceListAdapter extends BaseAdapter {
 
                     }
                 });
-            }
+
         } catch (Exception e) {
             e.printStackTrace();
             //rowView = inflater.inflate(R.layout.list_item_address_bottom_sheet, null);

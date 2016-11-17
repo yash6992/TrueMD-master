@@ -3,7 +3,6 @@ package com.truemdhq.projectx.service;
 import android.app.AlarmManager;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
-import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.media.RingtoneManager;
@@ -12,19 +11,16 @@ import android.os.Build;
 import android.support.annotation.Nullable;
 import android.support.v7.app.NotificationCompat;
 import android.util.Log;
-import android.widget.Toast;
 
 import com.alirezaafkar.json.requester.interfaces.ContentType;
 import com.alirezaafkar.json.requester.interfaces.Methods;
 import com.alirezaafkar.json.requester.interfaces.Response;
-import com.alirezaafkar.json.requester.requesters.JsonArrayRequester;
 import com.alirezaafkar.json.requester.requesters.JsonObjectRequester;
 import com.alirezaafkar.json.requester.requesters.RequestBuilder;
 import com.android.volley.Request;
 import com.android.volley.VolleyError;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
-import com.google.gson.JsonArray;
 
 import org.joda.time.DateTime;
 import org.joda.time.chrono.ISOChronology;
@@ -40,9 +36,7 @@ import java.util.Locale;
 import java.util.Map;
 
 import com.truemdhq.projectx.R;
-import com.truemdhq.projectx.activity.AllNotificationActivity;
 import com.truemdhq.projectx.activity.MainActivity;
-import com.truemdhq.projectx.activity.OrderDetailsActivity;
 import com.truemdhq.projectx.helper.SessionManager;
 import com.truemdhq.projectx.helper.ProjectXJSONUtils;
 import com.truemdhq.projectx.receiver.AlarmReceiver;
@@ -168,7 +162,7 @@ public class FCMMessageService extends FirebaseMessagingService{
      * @param messageBody FCM message body received.
      */
     private void sendNotificationNormal(String... messageBody) {
-        Intent intent = new Intent(this, AllNotificationActivity.class);
+        Intent intent = new Intent(this, MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0 /* Request code */, intent,
                 PendingIntent.FLAG_ONE_SHOT);
@@ -192,7 +186,7 @@ public class FCMMessageService extends FirebaseMessagingService{
 
         Log.e("Noti: ", "performActionOPac");
 
-        Intent intent = new Intent(this, AllNotificationActivity.class);
+        Intent intent = new Intent(this, MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0 /* Request code */, intent,
                 PendingIntent.FLAG_ONE_SHOT);
@@ -254,7 +248,7 @@ public class FCMMessageService extends FirebaseMessagingService{
 
 
 
-        Intent intent = new Intent(this, AllNotificationActivity.class);
+        Intent intent = new Intent(this, MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0 /* Request code */, intent,
                 PendingIntent.FLAG_ONE_SHOT);

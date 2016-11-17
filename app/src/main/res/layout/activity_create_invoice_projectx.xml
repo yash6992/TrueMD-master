@@ -48,7 +48,7 @@
 
 
     <com.emilsjolander.components.StickyScrollViewItems.StickyScrollView
-        android:layout_width="match_parent" xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent" xmlns:android="http://schemas.android.com/apk/res/android" android:layout_marginBottom="55dp"
         android:layout_height="wrap_content" android:background="@color/toolbar_bg" android:layout_below="@+id/main_toolbar">
 
         <RelativeLayout
@@ -69,7 +69,7 @@
                 android:layout_width="match_parent" android:layout_marginLeft="5dp"
                 android:id="@+id/client_choose"
                 android:layout_height="wrap_content" android:paddingTop="5dp"
-                android:layout_alignParentTop="true"
+                android:layout_alignParentTop="true" android:background="?attr/selectableItemBackgroundBorderless"
                 android:layout_alignBottom="@+id/client_detail">
 
                 <com.truemdhq.projectx.views.TextViewFont2Medium
@@ -90,15 +90,16 @@
             <LinearLayout
                 android:layout_width="wrap_content" android:layout_marginLeft="30dp" android:layout_toRightOf="@+id/vendor_logo"
                 android:id="@+id/client_detail" android:layout_centerVertical="true" android:visibility="invisible"
-                android:layout_height="wrap_content" android:paddingTop="5dp" android:orientation="vertical">
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:layout_height="wrap_content" android:paddingTop="5dp" android:paddingBottom="10dp" android:orientation="vertical">
 
                 <com.truemdhq.projectx.views.TextViewFont1Medium
                     android:layout_width="wrap_content" android:text="Vendor's Name" android:singleLine="true"
-                    android:layout_height="wrap_content" android:id="@+id/vendor_name" />
+                    android:layout_height="wrap_content" android:id="@+id/vendor_name" android:textColor="@color/primary_blue" />
 
                 <com.truemdhq.projectx.views.TextViewFont1Small
                     android:layout_width="wrap_content" android:layout_marginTop="5dp" android:id="@+id/vendor_address" android:maxLines="3"
-                    android:layout_height="75dp" android:text="Address Line 1\nLine 2\nCity- XXX XXX"/>
+                    android:layout_height="wrap_content" android:text="Address Line 1\nLine 2\nCity- XXX XXX"/>
 
                 <com.truemdhq.projectx.views.TextViewFont1Small
                     android:layout_width="wrap_content" android:layout_marginTop="10dp" android:id="@+id/vendor_contact" android:maxLines="3"
@@ -111,22 +112,22 @@
 
         </RelativeLayout>
         <RelativeLayout
-            android:layout_width="match_parent" android:id="@+id/ci_detail"
+            android:layout_width="match_parent" android:id="@+id/ci_detail" android:background="@color/darker_bg"
             android:layout_height="wrap_content" android:tag="sticky" android:layout_below="@+id/ci_header">
 
 
             <RelativeLayout
-                android:layout_width="match_parent" android:id="@+id/detail" android:visibility="invisible"
-                android:layout_height="wrap_content" android:padding="5dp" android:background="@color/window_bg" >
-                <com.truemdhq.projectx.views.TextViewFont1Large
+                android:layout_width="match_parent" android:id="@+id/detail" android:background="?attr/selectableItemBackgroundBorderless" android:visibility="invisible"
+                android:layout_height="wrap_content" android:padding="5dp" >
+                <com.truemdhq.projectx.views.TextViewFont3Medium
                     android:layout_width="wrap_content" android:id="@+id/invoice_no_h_" android:layout_centerVertical="true"
                     android:paddingBottom="10dp" android:paddingLeft="10dp" android:paddingTop="10dp"
-                    android:layout_height="wrap_content" android:text="Invoice #" android:textColor="@color/primary_blue" />
+                    android:layout_height="wrap_content" android:text="Invoice #" android:textColor="@color/primary_violet" />
 
-                <com.truemdhq.projectx.views.TextViewFont1Large
+                <com.truemdhq.projectx.views.TextViewFont3Medium
                     android:layout_width="wrap_content" android:id="@+id/invoice_no_" android:layout_centerVertical="true"
 
-                    android:layout_height="wrap_content" android:text="8" android:textColor="@color/primary_blue" android:layout_toRightOf="@+id/invoice_no_h_" />
+                    android:layout_height="wrap_content" android:text="8" android:textColor="@color/primary_violet" android:layout_toRightOf="@+id/invoice_no_h_" />
 
                 <com.truemdhq.projectx.views.TextViewFont1Medium
                     android:layout_width="wrap_content" android:id="@+id/invoice_date_"
@@ -144,8 +145,8 @@
             </RelativeLayout>
 
             <RelativeLayout
-                android:layout_width="match_parent" android:id="@+id/detail_choose"
-                android:layout_height="wrap_content" android:padding="5dp" android:background="@color/darker_bg" >
+                android:layout_width="match_parent" android:id="@+id/detail_choose" android:background="?attr/selectableItemBackgroundBorderless" android:visibility="visible"
+                android:layout_height="wrap_content" android:padding="5dp"  >
             <com.truemdhq.projectx.views.TextViewFont3Medium
                 android:layout_width="wrap_content" android:id="@+id/invoice_no_h" android:layout_centerVertical="true"
                 android:paddingBottom="10dp" android:paddingLeft="10dp" android:paddingTop="10dp"
@@ -186,12 +187,11 @@
             android:layout_height="wrap_content" android:layout_below="@id/ci_detail">
 
 
-            <com.truemdhq.projectx.helper.NestedListView
-                android:layout_width="match_parent" android:id="@+id/item_list"
-                android:layout_height="wrap_content" >
+            <LinearLayout
+                android:layout_width="match_parent" android:layout_marginTop="5dp" android:orientation="vertical"
+                android:layout_height="wrap_content" android:id="@+id/item_list">
 
-            </com.truemdhq.projectx.helper.NestedListView>
-
+            </LinearLayout>
 
 
 

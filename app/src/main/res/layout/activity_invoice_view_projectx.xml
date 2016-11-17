@@ -94,7 +94,7 @@
                 <LinearLayout
                     android:layout_width="wrap_content" android:layout_marginLeft="30dp" android:layout_toRightOf="@+id/vendor_logo"
                     android:id="@+id/client_detail"
-                    android:layout_height="wrap_content" android:paddingTop="5dp" android:orientation="vertical"
+                    android:layout_height="wrap_content" android:paddingTop="5dp" android:paddingBottom="10dp" android:orientation="vertical"
                     android:layout_alignParentBottom="true"
                     android:layout_alignParentTop="true">
 
@@ -121,7 +121,7 @@
 
 
                 <RelativeLayout
-                    android:layout_width="match_parent" android:id="@+id/detail" android:background="@color/window_bg"
+                    android:layout_width="match_parent" android:id="@+id/detail" android:background="@color/darker_bg"
                     android:layout_height="wrap_content" android:padding="5dp" >
                     <com.truemdhq.projectx.views.TextViewFont3Medium
                         android:layout_width="wrap_content" android:id="@+id/invoice_no_h_" android:layout_centerVertical="true"

@@ -89,6 +89,7 @@ public class Item {
      * @param itemCode
      */
     public Item(String itemCode, double itemQuantity, double itemRate, double itemAmount, String itemName, String itemBarcode, double vatRate, double tax1Rate, double tax2Rate, boolean vat, boolean tax1, boolean tax2, boolean product) {
+
         this.itemCode = itemCode;
         this.itemQuantity = itemQuantity;
         this.itemRate = itemRate;
@@ -102,6 +103,7 @@ public class Item {
         this.tax1 = tax1;
         this.tax2 = tax2;
         this.product = product;
+
     }
 
     /**

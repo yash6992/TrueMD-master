@@ -172,7 +172,7 @@ public class AddClientActivity extends AppCompatActivity {
                 //slide from left to right
                 overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
 
-                AddClientActivity.this.finishAffinity();
+                AddClientActivity.this.finish();
 
 
 

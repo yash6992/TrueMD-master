@@ -8,7 +8,7 @@
         <shape android:shape="line">
             <stroke
                 android:width="1dp"
-                android:color="@color/primary_violet_lighter_1"
+                android:color="@color/primary_violet_lighter_3"
                 android:dashGap="3dp"
                 android:dashWidth="5dp" />
 

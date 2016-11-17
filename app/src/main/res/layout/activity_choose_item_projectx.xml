@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent" android:background="@color/toolbar_bg"
+    android:layout_height="match_parent" >
+    <RelativeLayout
+        android:layout_width="match_parent" android:id="@+id/main_toolbar"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:id="@+id/toolbar"
+            android:background="@color/header_bg">
+            <ImageView
+                android:layout_width="30dp" android:layout_margin="10dp"
+                android:layout_height="30dp" android:padding="3dp"
+                android:id="@+id/btn_back" android:src="@drawable/icic_nav_back_button"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+
+            <com.truemdhq.projectx.views.TextViewFont3Medium
+                android:layout_width="140dp" android:layout_centerInParent="true" android:layout_margin="12dp"
+                android:layout_height="wrap_content" android:textColor="@color/primary_violet" android:layout_marginTop="6dp"
+                android:text="Choose Item"  android:gravity="center"
+                android:id="@+id/hf_title"  />
+
+
+
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent" android:layout_below="@+id/toolbar"
+            android:layout_height="3dp" android:background="@drawable/shape7" android:visibility="gone" />
+
+    </RelativeLayout>
+
+
+    <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_below="@+id/main_toolbar"
+        android:layout_width="match_parent" android:background="@color/toolbar_bg"
+        android:layout_height="match_parent">
+
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+
+
+            <android.support.design.widget.TabLayout
+                android:id="@+id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:tabMode="fixed" app:tabTextColor="@color/disabled"
+                app:tabGravity="fill" app:tabSelectedTextColor="@color/primary_blue"/>
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"  />
+    </android.support.design.widget.CoordinatorLayout>
+
+
+
+
+</RelativeLayout>

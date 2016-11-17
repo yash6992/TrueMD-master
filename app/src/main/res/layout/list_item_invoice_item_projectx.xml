@@ -38,7 +38,7 @@
 
 
     <View
-        android:layout_width="match_parent" android:layout_marginTop="5dp" android:background="@color/primary_violet"
+        android:layout_width="match_parent" android:layout_marginTop="5dp" android:background="@drawable/line_dotted_contact_search"
         android:layout_height="0.7dp" android:layout_below="@id/item_amount" />
 
 
